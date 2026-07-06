@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Newsreader',serif;color:#1C1A16}
+  h1,h2{font-weight:400}
+  .lbl{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+  doc-page:not(:defined){visibility:hidden}
+</style>
+</helmet>
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" hint-size="100%,100%">
+<doc-page size="a4" margin="0.85in">
+
+  <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #1C1A16;padding-bottom:14px;margin-bottom:22px">
+    <div>
+      <h1 style="font-size:2rem;margin:0 0 4px;letter-spacing:-.01em">Simon Schaugg</h1>
+      <p class="lbl" style="color:#6B6355;margin:0">Friedberger Landstr. 122 · 60316 Frankfurt am Main</p>
+    </div>
+    <div style="text-align:right">
+      <p class="lbl" style="color:#6B6355;margin:0 0 4px">+49 151 12329556</p>
+      <p class="lbl" style="color:#6B6355;margin:0 0 4px">s.schaugg@gmx.de</p>
+      <p class="lbl" style="color:#6B6355;margin:0">linkedin.com/in/simonschaugg</p>
+    </div>
+  </div>
+
+  <p style="font-style:italic;font-size:1.05rem;line-height:1.6;margin:0 0 26px;max-width:70ch">Psychologiestudent (Top 5 %, Goethe-Universität Frankfurt) mit nachgewiesener Erfahrung in Sozialunternehmertum, intergenerationaler Zusammenarbeit und digitaler Produktentwicklung. Gründer der gemeinnützigen Initiative YOLD mit Pressepräsenz in FAZ und Journal Frankfurt sowie zweier Sozialunternehmen. Musikabiturient mit 15-jähriger aktiver Klavierbiografie.</p>
+
+  <h2 class="lbl" style="font-size:12px;border-bottom:1px solid #1C1A16;padding-bottom:6px;margin:0 0 14px">Berufliche Erfahrung &amp; Gründungen</h2>
+
+  <div style="break-inside:avoid;margin-bottom:16px">
+    <div style="display:flex;justify-content:space-between;gap:12px"><strong style="font-size:1.05rem">Mitgründer · Strategie, Business Development &amp; Marketing</strong><span class="lbl" style="color:#6B6355;white-space:nowrap">03/2026 – heute</span></div>
+    <p style="margin:2px 0 6px;font-style:italic">NeuHier · neuhier.com</p>
+    <p style="margin:0;line-height:1.55">KI-basierte Plattform zur sozialen Integration internationaler Fachkräfte und Studierender (Fokusmarkt China); Verantwortung für Strategie, Go-To-Market, Marketing und Kooperationsaufbau. Kooperationsvereinbarung mit EUROPA-Versicherung, Aufbau eines deutschlandweiten Partnernetzwerks. Mentoren &amp; Beirat: Felipe Macias (Leiter Goethe-Unibator), Prof. Dr. Bongard (Goethe-Universität, wiss. Beirat), Alexander Dörsam (CTO, Antago GmbH), Dr. Heinz Dörsam (CEO, Biocat). Finalist International Founders Award Local Final Hessen 2026.</p>
+  </div>
+
+  <div style="break-inside:avoid;margin-bottom:16px">
+    <div style="display:flex;justify-content:space-between;gap:12px"><strong style="font-size:1.05rem">Mitgründer · Projektleiter &amp; Mentor</strong><span class="lbl" style="color:#6B6355;white-space:nowrap">10/2024 – heute</span></div>
+    <p style="margin:2px 0 6px;font-style:italic">YOLD · yold.info · Ausgründung aus dem Deutschlandstipendium, Goethe-Universität</p>
+    <p style="margin:0;line-height:1.55">Gründung &amp; Leitung eines intergenerationellen Tandemprojekts; bislang ~60 vernetzte Personen und 150+ Beteiligte (Tandems &amp; Team); 2024/25 Initiator und gewählter Gruppensprecher. Seit 2025 Leiter und Mentor einer eigenen Stipendiums-Projektgruppe (~20 Stipendiaten). Kooperationspartner: Stiftung Polytechnische Gesellschaft, Polytechnische Gesellschaft Frankfurt WeAid, Plattform 55+ Frankfurt (VHS Frankfurt), Goethe-Universität, Deutschlandstipendium. Mediale Resonanz: FAZ, Journal Frankfurt, Stadt Frankfurt im Blick, Frankfurt Live, Goethe-Universität Frankfurt (LinkedIn). Finalist Social Impact Award Germany 2026 — Aufnahme in das dreimonatige Inkubationsprogramm, Top 15 vielversprechendste Social Startups Deutschlands.</p>
+  </div>
+
+  <div style="break-inside:avoid;margin-bottom:16px">
+    <div style="display:flex;justify-content:space-between;gap:12px"><strong style="font-size:1.05rem">Gründer · Bildungs- &amp; Mentoring-Plattform</strong><span class="lbl" style="color:#6B6355;white-space:nowrap">05/2026 – heute</span></div>
+    <p style="margin:2px 0 6px;font-style:italic">YOLD Connect · yoldconnect.de · laufende Ausgründung aus YOLD (Beta-Phase)</p>
+    <p style="margin:0;line-height:1.55">Digitale Plattform zur kostenlosen Mentoring-Vermittlung (B2C) mit finanzierendem B2B-Zweig für Unternehmen — Mission: Bildungsgerechtigkeit durch generationenübergreifendes Wissen, Sinnstiftung nach dem Ruhestand &amp; Prävention psychischer Erkrankungen.</p>
+  </div>
+
+  <div style="break-inside:avoid;margin-bottom:16px">
+    <div style="display:flex;justify-content:space-between;gap:12px"><strong style="font-size:1.05rem">Gründer &amp; Inhaber · E-Commerce / Reselling</strong><span class="lbl" style="color:#6B6355;white-space:nowrap">08/2025 – heute</span></div>
+    <p style="margin:2px 0 6px;font-style:italic">RoyalTies · Kuratierter Second-Hand-Handel</p>
+    <p style="margin:0;line-height:1.55">Eigenständiger Aufbau von Einkauf, Preisstrategie, Branding und Onlinevertrieb; Break-Even innerhalb von sechs Wochen.</p>
+  </div>
+
+  <div style="break-inside:avoid;margin-bottom:16px">
+    <div style="display:flex;justify-content:space-between;gap:12px"><strong style="font-size:1.05rem">Praktikum · Klinische Psychologie</strong><span class="lbl" style="color:#6B6355;white-space:nowrap">12/2025 – 02/2026</span></div>
+    <p style="margin:2px 0 6px;font-style:italic">Psychologisch-Psychotherapeutische Praxis Sujata Amend-Sarkar und Kolleg:innen · Frankfurt</p>
+    <p style="margin:0;line-height:1.55">Klinisch-psychologische Diagnostik, Therapie-Assistenz und Praxisverwaltung.</p>
+  </div>
+
+  <div style="break-inside:avoid;margin-bottom:16px">
+    <div style="display:flex;justify-content:space-between;gap:12px"><strong style="font-size:1.05rem">Wissenschaftliche Hilfskraft</strong><span class="lbl" style="color:#6B6355;white-space:nowrap">04/2025 – 11/2025</span></div>
+    <p style="margin:2px 0 6px;font-style:italic">Testsammlung, Bibliothek Psychologie und Sozialwissenschaften · Goethe-Universität Frankfurt</p>
+    <p style="margin:0;line-height:1.55">Beratung zu psychologischen/pädagogischen Testverfahren; Assistenz bei Seminareinheiten; Fortbildung Konfliktlösung &amp; anspruchsvolle Kundenkommunikation.</p>
+  </div>
+
+  <div style="break-inside:avoid;margin-bottom:22px">
+    <div style="display:flex;justify-content:space-between;gap:12px"><strong style="font-size:1.05rem">Jugendleiter</strong><span class="lbl" style="color:#6B6355;white-space:nowrap">11/2021 – 09/2024</span></div>
+    <p style="margin:2px 0 6px;font-style:italic">Evangelisches Kinder- und Jugendwerk Heidelberg</p>
+    <p style="margin:0;line-height:1.55">Drei internationale Jugendfreizeiten (je ca. 2 Wochen, ~30 Teilnehmende; Dänemark, Italien, Norwegen); pädagogische Betreuung Jugendlicher (13–16 J.).</p>
+  </div>
+
+  <h2 class="lbl" style="font-size:12px;border-bottom:1px solid #1C1A16;padding-bottom:6px;margin:0 0 14px">Ausbildung</h2>
+
+  <div style="break-inside:avoid;margin-bottom:16px">
+    <div style="display:flex;justify-content:space-between;gap:12px"><strong style="font-size:1.05rem">B.Sc. Psychologie</strong><span class="lbl" style="color:#6B6355;white-space:nowrap">10/2022 – vsl. 2026</span></div>
+    <p style="margin:2px 0 6px;font-style:italic">Goethe-Universität Frankfurt am Main</p>
+    <p style="margin:0;line-height:1.55">Notendurchschnitt 1,2 · Top 5 % der Kohorte (Prüfungsamt bestätigt, Feb. 2026). Schwerpunkt: Klinische Psychologie und Psychotherapie. Bachelorarbeit (Sozial- &amp; Arbeitspsychologie, in Bearbeitung): Identity Leadership und Sprache. Hochschulgruppen: MTP (Akquise- &amp; Kommunikationsressort), Enactus (Innovationsressort), je seit SoSe 2026. Seminararbeit Biopsychologie (Note 1,0, Prof. Dr. Christian Fiebach — Neurokognitive Psychologie): Neuronale Grundlagen musikalischer Improvisation. Vertiefungen: Intensivkurs Forensische Psychiatrie, 2× Goethe Startup School, Ringvorlesung Entrepreneurship.</p>
+  </div>
+
+  <div style="break-inside:avoid;margin-bottom:16px">
+    <div style="display:flex;justify-content:space-between;gap:12px"><strong style="font-size:1.05rem">Gastsemester · Jazzpiano &amp; Musikwissenschaft</strong><span class="lbl" style="color:#6B6355;white-space:nowrap">04/2022 – 09/2022</span></div>
+    <p style="margin:2px 0 6px;font-style:italic">Hochschule für Kirchenmusik Heidelberg &amp; Universität Heidelberg</p>
+    <p style="margin:0;line-height:1.55">Jazzpiano bei KMD Prof. Christoph Georgii; Germanistik und Musikwissenschaft an der Universität Heidelberg.</p>
+  </div>
+
+  <div style="break-inside:avoid;margin-bottom:22px">
+    <div style="display:flex;justify-content:space-between;gap:12px"><strong style="font-size:1.05rem">Allgemeine Hochschulreife</strong><span class="lbl" style="color:#6B6355;white-space:nowrap">09/2013 – 07/2021</span></div>
+    <p style="margin:2px 0 6px;font-style:italic">St. Raphael Gymnasium Heidelberg</p>
+    <p style="margin:0;line-height:1.55">Abschlussnote 1,2 · Musikabitur Klavier: 15 Punkte, jahrgangsbestes Musikabitur. Kurssprecher (Jahrgangsstufe 12).</p>
+  </div>
+
+  <h2 class="lbl" style="font-size:12px;border-bottom:1px solid #1C1A16;padding-bottom:6px;margin:0 0 14px">Stipendien &amp; Auszeichnungen</h2>
+  <ul style="margin:0 0 22px;padding-left:18px;line-height:1.6">
+    <li>Finalist Social Impact Award Germany 2026</li>
+    <li>Finalist International Founders Award 2026 Hessen</li>
+    <li>e-fellows.net Stipendium (12/2025 – heute) — ideelles Netzwerk für die besten 10 % der Studierenden in Deutschland</li>
+    <li>Deutschlandstipendium, Goethe-Universität Frankfurt (10/2024 – 09/2025)</li>
+    <li>Top 5 % der Kohorte — Bescheinigung des Prüfungsamts (02/2026)</li>
+  </ul>
+
+  <h2 class="lbl" style="font-size:12px;border-bottom:1px solid #1C1A16;padding-bottom:6px;margin:0 0 14px">Musik</h2>
+  <p style="margin:0 0 22px;line-height:1.6"><strong>Klavier — aktiver Instrumentalist</strong> seit 2003. 15 Jahre privater Unterricht: Markus Tyroller (bimu Heidelberg, 2011–2021), KMD Prof. Christoph Georgii (Jazzpiano, HfK Heidelberg, Gastsemester 2022), Yuriy Sych (Hessischer Jazzpreis 2016, Musikschule Frankfurt, seit Feb. 2025). Schulchor St. Raphael Gymnasium (8 Jahre), Auszeichnung Badischer Chorwettbewerb „Konzertchor"; Bigband St. Raphael Gymnasium.</p>
+
+  <h2 class="lbl" style="font-size:12px;border-bottom:1px solid #1C1A16;padding-bottom:6px;margin:0 0 14px">Weiterbildung &amp; Kurse</h2>
+  <ul style="margin:0 0 22px;padding-left:18px;line-height:1.6">
+    <li>GROW@Goethe — Berufliches Mentoring-Programm (2025/26), Mentorin Dr. Christine Burtscheidt</li>
+    <li>Goethe Startup School — Gründungsintensivkurs (Okt. 2025 &amp; Apr. 2026)</li>
+    <li>Ringvorlesung Entrepreneurship, Goethe-Universität (SoSe 2026)</li>
+    <li>Intensivkurs Forensische Psychiatrie, Fachbereich Psychologie (SoSe 2025)</li>
+    <li>Jugendleitergrundkurs (JuLeiCa), 2021</li>
+    <li>Zertifikate Goethe-Universität: Konstruktiver Umgang mit Konflikten, Souverän im Umgang mit Nutzer:innen (2025)</li>
+    <li>Online-Kurse: University of London (Coursera), ZEIT Akademie, LinkedIn Learning, PMI — Marketingstrategie, Design Thinking, Verhandlungspsychologie, KI-gestütztes Management, Neuromarketing, Projektmanagement</li>
+  </ul>
+
+  <h2 class="lbl" style="font-size:12px;border-bottom:1px solid #1C1A16;padding-bottom:6px;margin:0 0 14px">Sprachen</h2>
+  <p style="margin:0;line-height:1.6">Deutsch (Muttersprache) · Englisch (Fließend, C1/C2) · Französisch (Gute Kenntnisse, B2)</p>
+
+</doc-page>
+</x-import>
+
+</x-dc>
+</body>
+</html>

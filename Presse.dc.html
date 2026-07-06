@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:#F3EEE2;color:#211C15;font-family:'Newsreader',Georgia,serif;font-weight:400;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--ac);color:#F3EEE2}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .lbl{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+  .rv{opacity:0;transform:translateY(16px);transition:opacity 1.25s cubic-bezier(.2,.6,.2,1),transform 1.25s cubic-bezier(.2,.6,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  .nav-a{opacity:.6;transition:opacity .4s,color .4s}
+  .nav-a:hover{opacity:1;color:var(--ac)}
+  .nav-drop{position:relative;display:inline-flex}
+  .nav-drop .submenu{position:absolute;top:100%;right:0;padding-top:15px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .3s,transform .3s,visibility .3s;z-index:80}
+  .nav-drop:hover .submenu{opacity:1;visibility:visible;transform:none}
+  .nav-drop .smbox{display:flex;flex-direction:column;gap:14px;background:#F3EEE2;border:1px solid var(--line);padding:16px 20px;box-shadow:0 24px 48px -30px rgba(0,0,0,.45)}
+  .nav-drop .submenu .nav-a{opacity:.72;white-space:nowrap}
+  .prow{transition:padding-left .5s cubic-bezier(.2,.6,.2,1),background .5s}
+  .prow:hover{padding-left:14px;background:rgba(194,74,30,.04)}
+  .prow .arr{color:var(--ac);opacity:0;transform:translateX(-6px);transition:opacity .45s,transform .45s;display:inline-block}
+  .prow:hover .arr{opacity:1;transform:none}
+  .chan{border:1px solid var(--line);padding:20px 22px;transition:border-color .45s,background .45s,transform .45s}
+  .chan:hover{border-color:var(--ac);background:rgba(194,74,30,.04);transform:translateY(-3px)}
+  .faz:hover{padding-left:10px}
+  .faz .arr{display:inline-block;transition:transform .45s}
+  .faz:hover .fazmeta .arr,.faz:hover .fazlink .arr{transform:translateX(4px)}
+  .faz .fazlink{border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .45s}
+  .faz:hover .fazlink{border-color:var(--ac)}
+  @media(max-width:760px){.fazgrid{grid-template-columns:1fr !important;gap:26px !important}}
+  @media(max-width:900px){
+    .navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}
+    .prow{grid-template-columns:1fr !important;gap:6px !important}
+    .prow .meta{text-align:left !important;justify-content:flex-start !important}
+    .qgrid{grid-template-columns:1fr !important;gap:14px !important}
+    .qmeta{position:static !important}
+    .chans{grid-template-columns:1fr !important}
+    .twocol{grid-template-columns:1fr !important;gap:26px !important}
+  }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="--ac:#C24A1E;--dim:#6F6552;--faint:#A89878;--line:rgba(33,28,21,.16);background:#F3EEE2;min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:60;display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:18px clamp(18px,5vw,60px);background:linear-gradient(180deg,#F3EEE2 60%,rgba(243,238,226,0))">
+    <a href="index.html" style="display:flex;align-items:baseline;gap:11px"><span style="font-size:17px">Simon Elias Schaugg</span><span class="lbl" style="color:var(--faint)">Archiv</span></a>
+    <nav class="navwrap" style="display:flex;gap:22px">
+      <a href="Forschung.dc.html" class="nav-a lbl">Psychologie</a>
+      <a href="Kunst.dc.html" class="nav-a lbl">Bilder</a>
+      <a href="Klavier.dc.html" class="nav-a lbl">Klavier</a>
+      <span class="nav-drop"><a href="Projekte.dc.html" class="nav-a lbl">Projekte</a><span class="submenu"><span class="smbox"><a href="Projekte.dc.html#yold" class="nav-a lbl">YOLD</a><a href="Projekte.dc.html#neuhier" class="nav-a lbl">NeuHier</a><a href="Kulturprojekte.dc.html" class="nav-a lbl">Kultur</a></span></span></span>
+      <a href="Presse.dc.html" class="nav-a lbl" style="opacity:1;color:var(--ac)">Presse</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section data-screen-label="Presse · Titel" style="max-width:1220px;padding:clamp(32px,5vw,64px) clamp(18px,5vw,60px) clamp(40px,6vw,72px)">
+    <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(30px,5vw,56px)">Pressespiegel · was andere über die Projekte schreiben</p>
+    <h1 class="rv" style="font-weight:300;font-size:clamp(2.2rem,5.6vw,4.8rem);line-height:1.08;letter-spacing:-.012em;max-width:20ch;margin-bottom:clamp(30px,4vw,52px);text-wrap:balance">Was über die Projekte <em style="font-style:italic;color:var(--ac)">geschrieben, gesendet und gedreht</em> wurde.</h1>
+    <p class="rv" style="max-width:62ch;font-size:clamp(1.06rem,1.5vw,1.3rem);line-height:1.68;color:#37301F">Berichte, Interviews, Podcasts und Erwähnungen zu YOLD, NeuHier und den filmischen Mitwirkungen — gesammelt und verlinkt. Presse im engeren Sinn steht oben, Verzeichnisse und eigene Kanäle darunter.</p>
+  </section>
+
+  <!-- FAZ — FOKUS -->
+  <section id="faz" data-screen-label="Presse · FAZ" style="padding:clamp(24px,3vw,44px) clamp(18px,5vw,60px) clamp(56px,8vw,96px)">
+    <a href="https://www.faz.net/aktuell/rhein-main/frankfurt/boomer-und-genz-gehen-miteinander-aus-projekt-yold-an-uni-frankfurt-200765724.html" target="_blank" rel="noopener" class="faz rv" style="display:block;max-width:1220px;border-top:2px solid #211C15;padding-top:clamp(22px,3vw,34px);transition:padding-left .5s cubic-bezier(.2,.6,.2,1)">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px 20px;margin-bottom:clamp(24px,3.5vw,44px)">
+        <span class="lbl" style="color:var(--ac)">Im Fokus · YOLD in der Frankfurter Allgemeinen Zeitung</span>
+        <span class="lbl fazmeta" style="color:var(--faint);display:inline-flex;gap:8px;align-items:baseline">F.A.Z. · 28.04.2026 · Hochschule, S. 6 <span class="arr" style="color:var(--ac)">↗</span></span>
+      </div>
+      <div class="fazgrid" style="display:grid;grid-template-columns:1.35fr .95fr;gap:clamp(30px,4.5vw,72px);align-items:start">
+        <div>
+          <h2 style="font-weight:300;font-style:italic;font-size:clamp(2rem,4.6vw,3.7rem);line-height:1.1;letter-spacing:-.01em;text-wrap:balance;color:#211C15">„Beim ersten Treffen waren sie zusammen joggen."</h2>
+          <p style="font-size:1.08rem;line-height:1.66;color:#37301F;max-width:52ch;margin-top:clamp(20px,2.6vw,30px)">Ein halbseitiges Feature von <em style="font-style:italic">Vanessa Fatho</em> über das YOLD-Tandem von Steffen Luhn (28) und Lydia Fratzer (66).</p>
+          <span class="lbl fazlink" style="display:inline-flex;gap:8px;align-items:baseline;color:var(--ac);margin-top:clamp(22px,3vw,32px)">Artikel auf faz.net lesen <span class="arr">↗</span></span>
+        </div>
+        <blockquote style="margin:0;border-left:3px solid var(--ac);padding-left:clamp(20px,2.5vw,30px)">
+          <p style="font-weight:300;font-style:italic;font-size:clamp(1.5rem,2.8vw,2.2rem);line-height:1.26;text-wrap:pretty;color:#2E2A20">„Meine Güte, was sind das für tolle junge Menschen."</p>
+          <p class="lbl" style="color:var(--dim);margin-top:18px">Lydia Fratzer, 66 · Mentorin, ehem. Programmiererin</p>
+        </blockquote>
+      </div>
+    </a>
+  </section>
+
+  <!-- YOLD — PRESSE -->
+  <section id="yold" data-screen-label="Presse · YOLD" style="padding:clamp(50px,8vw,100px) clamp(18px,5vw,60px);border-top:1px solid var(--line);background:#EDE6D7">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:clamp(28px,4vw,50px)">
+      <p class="rv lbl" style="color:var(--ac)">01 — YOLD · Presse &amp; redaktionelle Berichterstattung</p>
+      <p class="rv lbl" style="color:var(--faint)">weitere zehn Beiträge</p>
+    </div>
+    <div class="rv" style="border-top:1px solid rgba(33,28,21,.3);max-width:1220px">
+
+      <a href="https://www.fnp.de/frankfurt/yold-sucht-junge-tandems-zwei-drittel-der-100-registrierten-ueber-55-94382211.html" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Frankfurter Neue Presse</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„YOLD sucht junge Tandems"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Zwei Drittel der rund 100 Registrierten sind über 55 — das Projekt sucht nun gezielt junge Tandempartner.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">04.07.26 <span class="arr">↗</span></span>
+      </a>
+
+      <a href="https://www.news.de/karriere/859683496/ehrenamt-in-frankfurt-am-main-jobs-fuer-freiwilligenarbeit-und-soziales-engagement-ehrenamtliche-taetigkeit-in-nordend-west-bahnhofsviertel-und-innenstadt-fuer-fundraising-alltagsbegleitung-und-lernunterstuetzung-gesucht/1/" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">news.de</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Ehrenamt in Frankfurt am Main"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Überblick zu Freiwilligenarbeit und Engagement, erwähnt YOLD.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">01.07.26 <span class="arr">↗</span></span>
+      </a>
+
+      <a href="https://www.uni-frankfurt.de/de/newsroom/uni-report/ausgabe-2-2026/erfahrungsaustausch-ueber-generationengrenzen-hinweg" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Uni-Report</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Erfahrungsaustausch über Generationengrenzen hinweg"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Goethe-Universität Frankfurt, Uni-Report Ausgabe 2/2026.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">25.06.26 <span class="arr">↗</span></span>
+      </a>
+
+      <a href="https://www.uni-frankfurt.de/en/newsroom/uni-report/ausgabe-2-2026/erfahrungsaustausch-ueber-generationengrenzen-hinweg" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">UniReport · Goethe-Universität</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Sharing Experiences Across Generations"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Englischsprachiges Feature im Newsroom der Universität.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">EN · 25.06.26 <span class="arr">↗</span></span>
+      </a>
+
+      <a href="https://www.openpr.de/news/1316110/Eine-kollaborative-Werkstatt-und-eine-Generationenbruecke-gegen-Einsamkeit-idw.html" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">openPR · idw</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Eine kollaborative Werkstatt und eine Generationenbrücke gegen Einsamkeit"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Wissenschafts-Pressemeldung (Informationsdienst Wissenschaft).</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">25.06.26 <span class="arr">↗</span></span>
+      </a>
+
+      <a href="https://aktuell24.ch/2026/06/25/eine-kollaborative-werkstatt-und-eine-generationenbruecke-gegen-einsamkeit/" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">aktuell24.ch</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Eine kollaborative Werkstatt und eine Generationenbrücke gegen Einsamkeit"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Übernahme der Pressemitteilung.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">25.06.26 <span class="arr">↗</span></span>
+      </a>
+
+      <a href="https://www.frankfurter.online/service/13141-eine-kollaborative-werkstatt-und-eine-generationenbr%C3%BCcke-gegen-einsamkeit.html" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Vorsprung Frankfurt</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">Generationenbrücke gegen Einsamkeit</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Übernahme der Meldung auf frankfurter.online.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">25.06.26 <span class="arr">↗</span></span>
+      </a>
+
+      <a href="https://germany.socialimpactaward.net/article/15-vielversprechende-antworten-auf-die-draengendsten-fragen-unserer-zeit/" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Social Impact Award Germany</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„15 vielversprechende Antworten auf die drängendsten Fragen unserer Zeit"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">YOLD offiziell als einer von 15 Finalisten 2026 verkündet — mit Kurzporträt und Zitat.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">18.06.26 <span class="arr">↗</span></span>
+      </a>
+
+      <a href="https://www.journal-frankfurt.de/journal_news/Stadtleben-2/Einsamkeit-in-Frankfurt-Tandem-Projekt-bringt-Studierende-und-Senioren-zusammen-45501.html" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Journal Frankfurt</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Tandem-Projekt bringt Studierende und Senioren zusammen"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Interview mit Simon Schaugg über Einsamkeit in Frankfurt.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">14.04.26 <span class="arr">↗</span></span>
+      </a>
+
+      <a href="https://stadt-frankfurt-im-blick.de/generationen-verbinden-erfahrungen-teilen/" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Stadt Frankfurt im Blick</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Generationen verbinden, Erfahrungen teilen"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Magazin-Beitrag über das intergenerationelle Programm.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">14.04.26 <span class="arr">↗</span></span>
+      </a>
+
+      <a href="https://www.frankfurt-live.com/frankfurt-next-generation-laedt-ein" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Frankfurt-Live</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Frankfurt Next Generation lädt ein"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Bericht, der die YOLD-Skillbörse erwähnt.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">30.05.25 <span class="arr">↗</span></span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- O-TÖNE -->
+  <section id="otoene" data-screen-label="Presse · O-Töne" style="padding:clamp(50px,8vw,100px) clamp(18px,5vw,60px);border-top:1px solid var(--line);background:#EDE6D7">
+    <div style="max-width:760px;margin-bottom:clamp(28px,4vw,52px)">
+      <p class="rv lbl" style="color:var(--ac);margin-bottom:20px">02 — O-Töne aus der Berichterstattung</p>
+      <p class="rv" style="font-weight:300;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.3;text-wrap:balance">Direkte Zitate von Simon Schaugg aus den Artikeln und Interviews — sofern nicht anders vermerkt.</p>
+    </div>
+
+    <div class="rv qgrid" style="display:grid;grid-template-columns:190px 1fr;gap:clamp(18px,4vw,64px);max-width:1160px;border-top:1px solid rgba(33,28,21,.3);padding:clamp(28px,4vw,50px) 0">
+      <div class="qmeta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">Frankfurter Neue Presse</p><p class="lbl" style="color:var(--dim)">04.07.2026</p></div>
+      <div>
+        <blockquote style="margin:0"><p style="font-weight:300;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.38;text-wrap:pretty">„Abgesehen vom familiären Umfeld gibt es zwischen der jüngeren und der älteren Generation nur wenig Austausch. Man spricht eher übereinander als miteinander. Die Generation Z sagt, die Babyboomer hätten die Umwelt belastet, die Älteren wiederum sagen, wir seien nicht fleißig genug."</p></blockquote>
+      </div>
+    </div>
+
+    <div class="rv qgrid" style="display:grid;grid-template-columns:190px 1fr;gap:clamp(18px,4vw,64px);max-width:1160px;border-top:1px solid var(--line);padding:clamp(28px,4vw,50px) 0">
+      <div class="qmeta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">F.A.Z.</p><p class="lbl" style="color:var(--dim)">28.04.2026</p></div>
+      <div>
+        <blockquote style="margin:0 0 clamp(20px,2.6vw,30px)"><p style="font-weight:300;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.38;text-wrap:pretty">„Einsamkeit hat Auswirkungen auf die Gesundheit, die vergleichbar mit Rauchen sind und mit körperlichen und psychischen Erkrankungen einhergehen können."</p></blockquote>
+        <blockquote style="margin:0 0 clamp(20px,2.6vw,30px)"><p style="font-weight:300;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.38;text-wrap:pretty">„Wir sind bewusst kein klassisches Mentoring, das die Karriere ankurbeln soll. Bei uns geht es um die Begegnung an sich, unabhängig davon, was wer geleistet hat."</p></blockquote>
+        <blockquote style="margin:0"><p style="font-weight:300;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.38;text-wrap:pretty">„Rentner sind Menschen, die wahnsinnig viel erlebt haben und viel Erfahrung mitbringen, aber gesellschaftlich oft eher als Belastung wahrgenommen werden."</p></blockquote>
+      </div>
+    </div>
+
+    <div class="rv qgrid" style="display:grid;grid-template-columns:190px 1fr;gap:clamp(18px,4vw,64px);max-width:1160px;border-top:1px solid var(--line);padding:clamp(28px,4vw,50px) 0">
+      <div class="qmeta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">Journal Frankfurt</p><p class="lbl" style="color:var(--dim)">14.04.2026</p></div>
+      <div>
+        <blockquote style="margin:0 0 clamp(20px,2.6vw,30px)"><p style="font-weight:300;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.38;text-wrap:pretty">„Das ist total toll für mich. Wir treffen uns zum Beispiel entspannt auf einen Wein und schlagen einander Literatur vor."</p></blockquote>
+        <blockquote style="margin:0"><p style="font-weight:300;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.38;text-wrap:pretty">„Das sind Gruppen, die sich im Alltag heutzutage wenig begegnen."</p></blockquote>
+      </div>
+    </div>
+
+    <div class="rv qgrid" style="display:grid;grid-template-columns:190px 1fr;gap:clamp(18px,4vw,64px);max-width:1160px;border-top:1px solid var(--line);padding:clamp(28px,4vw,50px) 0">
+      <div class="qmeta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">UniReport · EN</p><p class="lbl" style="color:var(--dim)">2/2026</p></div>
+      <div>
+        <blockquote style="margin:0 0 clamp(20px,2.6vw,30px)"><p style="font-weight:300;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.38;text-wrap:pretty">„YOLD is all about the richness of human experience."</p></blockquote>
+        <blockquote style="margin:0"><p style="font-weight:300;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.38;text-wrap:pretty">„Every experience and perspective within a tandem is equally valuable; both people should benefit from the exchange."</p></blockquote>
+      </div>
+    </div>
+
+    <div class="rv qgrid" style="display:grid;grid-template-columns:190px 1fr;gap:clamp(18px,4vw,64px);max-width:1160px;border-top:1px solid var(--line);padding:clamp(28px,4vw,50px) 0">
+      <div class="qmeta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">openPR · idw</p><p class="lbl" style="color:var(--dim)">26.06.2026</p></div>
+      <div>
+        <blockquote style="margin:0"><p style="font-weight:300;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.38;text-wrap:pretty">„Hier ist der Blick aus beiden Perspektiven wertvoll: derjenigen, die alle Entscheidungen noch vor sich haben, und denen, die eher auf ein Leben und Erfahrungen zurückblicken. Wir wollen eine Plattform werden, die diesen Fragen Raum gibt und den Wert dieser Erfahrungen anerkennt."</p></blockquote>
+      </div>
+    </div>
+
+    <div class="rv qgrid" style="display:grid;grid-template-columns:190px 1fr;gap:clamp(18px,4vw,64px);max-width:1160px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(28px,4vw,50px) 0">
+      <div class="qmeta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">Social Impact Award</p><p class="lbl" style="color:var(--dim)">18.06.2026</p><p class="lbl" style="color:var(--faint);margin-top:8px;text-transform:none;letter-spacing:.04em">Projektbeschreibung, kein persönliches Zitat</p></div>
+      <div>
+        <blockquote style="margin:0"><p style="font-weight:300;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.38;text-wrap:pretty">„Was passiert, wenn junge und ältere Generationen füreinander da sind, statt aneinander vorbeizuleben? YOLD verbindet erfahrene Ältere mit bildungsbenachteiligten Jugendlichen und jungen Erwachsenen. Wissen wird geteilt, Einsamkeit bekämpft — ein Ansatz, zwei Krisen."</p></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOLD — VERZEICHNISSE -->
+  <section data-screen-label="Presse · Verzeichnisse" style="padding:clamp(50px,8vw,100px) clamp(18px,5vw,60px);border-top:1px solid var(--line)">
+    <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(24px,4vw,44px)">03 — YOLD · Verzeichnis- &amp; Netzwerkeinträge</p>
+    <div class="rv" style="border-top:1px solid rgba(33,28,21,.3);max-width:1220px">
+      <a href="https://frankfurter-plattform-55plus.de/netzwerk/yold/" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Frankfurter Plattform 55+</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">YOLD-Profil</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Gelistet über die VHS Frankfurt / Dezernat für Bildung.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">07.05.26 <span class="arr">↗</span></span>
+      </a>
+      <a href="https://www.freizeit-helden.de/project/yold-generationspate-finden/" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Freizeit-Helden</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„YOLD — Generationspate finden"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Eigener Projekteintrag zu YOLD Community &amp; YOLD Connect, mit Mitmach-Aufruf.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">17.06.26 <span class="arr">↗</span></span>
+      </a>
+      <a href="https://www.ehrenamtssuche-hessen.de/" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Ehrenamtssuche Hessen</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">YOLD gelistet</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Eintrag über das Bürgerinstitut e.V.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">Eintrag <span class="arr">↗</span></span>
+      </a>
+    </div>
+    <p class="rv lbl" style="color:var(--faint);margin-top:22px;line-height:1.7;text-transform:none;letter-spacing:.04em;font-size:12px">Weitere Erwähnung (keine Presse im engeren Sinn): interner Teilnahmeaufruf der Fachschaft Physik / Biophysik der Goethe-Universität.</p>
+  </section>
+
+  <!-- YOLD — EIGENE KANÄLE -->
+  <section data-screen-label="Presse · Kanäle" style="padding:clamp(50px,8vw,100px) clamp(18px,5vw,60px);border-top:1px solid var(--line);background:#EDE6D7">
+    <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(24px,4vw,44px)">04 — YOLD · Eigene Kanäle</p>
+    <div class="chans rv" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);max-width:1220px">
+      <a href="https://yold.info/" target="_blank" rel="noopener" class="chan">
+        <p class="lbl" style="color:var(--faint);margin-bottom:12px">Website</p>
+        <p style="font-size:1.3rem;display:inline-flex;gap:8px;align-items:baseline">yold.info <span style="color:var(--ac)">↗</span></p>
+      </a>
+      <a href="https://www.instagram.com/yold.stadtderzukunftffm" target="_blank" rel="noopener" class="chan">
+        <p class="lbl" style="color:var(--faint);margin-bottom:12px">Instagram</p>
+        <p style="font-size:1.3rem;display:inline-flex;gap:8px;align-items:baseline">@yold.stadtderzukunftffm <span style="color:var(--ac)">↗</span></p>
+      </a>
+      <a href="https://www.linkedin.com/company/yold-info" target="_blank" rel="noopener" class="chan">
+        <p class="lbl" style="color:var(--faint);margin-bottom:12px">LinkedIn</p>
+        <p style="font-size:1.3rem;display:inline-flex;gap:8px;align-items:baseline">YOLD auf LinkedIn <span style="color:var(--ac)">↗</span></p>
+      </a>
+    </div>
+  </section>
+
+  <!-- NEUHIER — PODCASTS -->
+  <section id="neuhier" data-screen-label="Presse · NeuHier" style="padding:clamp(50px,8vw,100px) clamp(18px,5vw,60px);border-top:1px solid var(--line)">
+    <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(24px,4vw,44px)">05 — NeuHier · Podcasts</p>
+    <div class="rv" style="border-top:1px solid rgba(33,28,21,.3);max-width:1220px">
+      <a href="https://open.spotify.com/episode/4nGDY33sTV8h79qBOQomOM" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Her Way — Women Living Abroad</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Building a Startup as an Outsider in Germany: Legitimacy Before Results"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Ziyue Zhang zu Gast über NeuHier und das Gründen als Außenstehende.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">14.06.26 <span class="arr">↗</span></span>
+      </a>
+      <a href="https://www.podcast.de/episode/702189910/migration-nach-deutschland-neuhiercom-mit-robin-schaugg" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Best Practice Startup Club</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Migration nach Deutschland (neuhier.com) mit Robin Schaugg"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Von der Idee bis zur Umsetzung von NeuHier.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">02.12.25 <span class="arr">↗</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FILM -->
+  <section id="film" data-screen-label="Presse · Film" style="padding:clamp(50px,8vw,100px) clamp(18px,5vw,60px);border-top:1px solid var(--line);background:#EDE6D7">
+    <div style="max-width:760px;margin-bottom:clamp(28px,4vw,48px)">
+      <p class="rv lbl" style="color:var(--ac);margin-bottom:20px">06 — Filmische Mitwirkungen</p>
+      <p class="rv" style="font-weight:300;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.3;text-wrap:balance">Rollen und Stimme in Filmen von <em style="font-style:italic">Peter Bösselmann</em>, Heidelberg — und die Presse dazu.</p>
+    </div>
+    <div class="rv" style="border-top:1px solid rgba(33,28,21,.3);max-width:1220px">
+      <a href="https://klausenpfad.de/peter-boesselmann" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Atelier Klausenpfad</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">Künstlerseite Peter Bösselmann</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Übersicht aller drei Filme.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">Übersicht <span class="arr">↗</span></span>
+      </a>
+      <a href="https://klausenpfad.de/vontagzutag" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">„Von Tag zu Tag"</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">Mini-Musical · Video-Singspiel</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Mitwirkung: Gesang. Produziert vom Kulturamt Heidelberg, gefördert von Stadt Heidelberg &amp; LBBW-Stiftung.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">Gesang <span class="arr">↗</span></span>
+      </a>
+      <a href="https://www.mannheimer-morgen.de/orte/heidelberg_artikel,-heidelberg-spielfiguren-demonstrieren-in-heidelberg-fuer-klimaschutz-_arid,1986471.html" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Mannheimer Morgen</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Spielfiguren demonstrieren in Heidelberg für Klimaschutz"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Porträt von Peter Bösselmann und „Von Tag zu Tag" (MM+, Teaser).</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">2022 <span class="arr">↗</span></span>
+      </a>
+      <a href="https://www.mannheimer-morgen.de/fotos_fotostrecke,-fotostrecke-inselbewohnern-droht-der-untergang-_mediagalid,40501.html" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Mannheimer Morgen</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Inselbewohnern droht der Untergang"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Fotostrecke zu „Von Tag zu Tag".</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">Fotos <span class="arr">↗</span></span>
+      </a>
+      <a href="https://www.fnweb.de/deutschland-welt_artikel,-seite-1-klimaschutz-mal-anders-_arid,1986974.html" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">fnweb.de</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Klimaschutz mal anders"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Syndizierung derselben Berichterstattung zu „Von Tag zu Tag".</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">Bericht <span class="arr">↗</span></span>
+      </a>
+      <a href="https://klausenpfad.de/entotsu" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">„36 Ansichten des Kôsô Entotsu"</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">Kurzspielfilm</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Rolle laut Abspann: „Anrufer Forum".</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">Rolle <span class="arr">↗</span></span>
+      </a>
+      <a href="https://www.mrn-news.de/2024/12/10/heidelberg-und-prag-stellen-gemeinsamen-kurzfilm-zum-kafka-jahr-vor-premiere-am-12-dezember-in-der-reichspraesident-friedrich-ebert-gedenkstaette-558916/" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">MRN-News</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Heidelberg und Prag stellen gemeinsamen Kurzfilm zum Kafka-Jahr vor"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Zum Film „In die Ferne grüßen" — Rolle laut Abspann: „Die Zuhörenden / Posluchači".</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">10.12.24 <span class="arr">↗</span></span>
+      </a>
+      <a href="https://www.heidelberg.de/HD/Leben/10+jahre.html" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
+        <span style="font-weight:500;font-size:1.14rem">Stadt Heidelberg</span>
+        <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„10 Jahre UNESCO City of Literature"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Erwähnt „In die Ferne grüßen" im Kafka-Kontext.</span></span>
+        <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">Stadt HD <span class="arr">↗</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER NAV -->
+  <footer style="padding:clamp(40px,7vw,90px) clamp(18px,5vw,60px) clamp(34px,5vw,56px);border-top:1px solid var(--line)">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:clamp(28px,4vw,44px)">
+      <p class="rv lbl" style="color:var(--faint)">Weiter im Archiv</p>
+      <p class="rv lbl" style="color:var(--faint)">Stand · 3. Juli 2026</p>
+    </div>
+    <div class="rv" style="display:flex;gap:28px;flex-wrap:wrap;font-style:italic;font-size:clamp(1.3rem,2.4vw,2rem)">
+      <a href="Projekte.dc.html" class="nav-a" style="opacity:1">Projekte →</a>
+      <a href="Forschung.dc.html" class="nav-a" style="opacity:1">Psychologie →</a>
+      <a href="index.html" class="nav-a" style="opacity:1">Zurück zum Index →</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#C24A1E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;,&quot;options&quot;:[&quot;#C24A1E&quot;,&quot;#3A6B4A&quot;,&quot;#2E4A6E&quot;,&quot;#211C15&quot;]}}">
+class Component extends DCLogic {
+  applyTheme(){ const r=this.rootEl; if(!r) return; r.style.setProperty('--ac', this.props.accent || '#C24A1E'); }
+  componentDidMount(){
+    this.applyTheme();
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.rv').forEach((el)=>{const s=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));el.style.transitionDelay=(Math.max(0,s.indexOf(el))%4)*0.08+'s';io.observe(el);});
+  }
+  componentDidUpdate(){ this.applyTheme(); }
+  renderVals(){ return { rootRef:(el)=>{this.rootEl=el;} }; }
+}
+</script>
+</body>
+</html>

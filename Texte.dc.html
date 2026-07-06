@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:#EDE8DD;color:#211E18;font-family:'Spectral',Georgia,serif;font-weight:400;-webkit-font-smoothing:antialiased}
+  ::selection{background:#211E18;color:#EDE8DD}
+  a{color:inherit;text-decoration:none}
+  .lbl{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+  .rv{opacity:0;transform:translateY(16px);transition:opacity 1.3s cubic-bezier(.2,.6,.2,1),transform 1.3s cubic-bezier(.2,.6,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  .nav-a{opacity:.6;transition:opacity .4s,color .4s}
+  .nav-a:hover{opacity:1;color:var(--ac)}
+  .nav-drop{position:relative;display:inline-flex}
+  .nav-drop .submenu{position:absolute;top:100%;right:0;padding-top:15px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .3s,transform .3s,visibility .3s;z-index:80}
+  .nav-drop:hover .submenu{opacity:1;visibility:visible;transform:none}
+  .nav-drop .smbox{display:flex;flex-direction:column;gap:14px;background:#EDE8DD;border:1px solid var(--line);padding:16px 20px;box-shadow:0 24px 48px -30px rgba(0,0,0,.45)}
+  .nav-drop .submenu .nav-a{opacity:.72;white-space:nowrap}
+  .poem{font-size:clamp(1.3rem,2.1vw,1.7rem);line-height:1.62;font-weight:300}
+  .poem em{font-style:inherit;color:inherit}
+  .verse:hover{padding-left:14px}
+  .verse{transition:padding-left .55s cubic-bezier(.2,.6,.2,1)}
+  @media(max-width:820px){.entry{grid-template-columns:1fr !important;gap:8px !important}.entry .meta{position:static !important;text-align:left !important;margin-bottom:6px}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}}
+  .prose{font-size:clamp(1.02rem,1.35vw,1.18rem);line-height:1.76;color:#2E2A22}
+  .prose p{margin:0 0 1em}
+  .prose p:last-child{margin:0}
+  .prose .lo{text-transform:none}
+  details.more{margin:0}
+  details.more>summary{cursor:pointer;list-style:none;color:var(--ac);font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:opacity .35s;margin-top:.2em}
+  details.more>summary::-webkit-details-marker{display:none}
+  details.more>summary .arw{transition:transform .35s;font-family:Georgia,serif}
+  details.more[open]>summary .arw{transform:rotate(90deg)}
+  details.more>summary:hover{opacity:.58}
+  details.more .body{margin-top:1.2em}
+  .col2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3.5vw,52px);align-items:start}
+  .repl{position:sticky;top:90px}
+  .facwrap{background:#fff;border:1px solid rgba(33,30,24,.18);box-shadow:inset 0 1px 10px rgba(33,30,24,.07),0 2px 14px rgba(33,30,24,.06);overflow-y:auto}
+  .facwrap img{display:block;width:100%}
+  .facwrap::-webkit-scrollbar{width:9px}
+  .facwrap::-webkit-scrollbar-thumb{background:rgba(33,30,24,.22);border-radius:6px}
+  .facwrap::-webkit-scrollbar-track{background:transparent}
+  @media(max-width:820px){.col2{grid-template-columns:1fr !important}.repl{position:static !important}}
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="--ac:#8A2B1B;--dim:#6E685B;--faint:#A39A88;--line:rgba(33,30,24,.16);background:#EDE8DD;min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:60;display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:18px clamp(18px,5vw,60px);background:linear-gradient(180deg,#EDE8DD 60%,rgba(237,232,221,0))">
+    <a href="index.html" style="display:flex;align-items:baseline;gap:11px"><span style="font-size:17px">Simon Elias Schaugg</span><span class="lbl" style="color:var(--faint)">Archiv</span></a>
+    <nav class="navwrap" style="display:flex;gap:22px">
+      <a href="Forschung.dc.html" class="nav-a lbl">Psychologie</a>
+      <a href="Kunst.dc.html" class="nav-a lbl">Bilder</a>
+      <a href="Klavier.dc.html" class="nav-a lbl">Klavier</a>
+      <a href="Texte.dc.html" class="nav-a lbl" style="opacity:1;color:var(--ac)">Texte</a>
+      <span class="nav-drop"><a href="Projekte.dc.html" class="nav-a lbl">Projekte</a><span class="submenu"><span class="smbox"><a href="Projekte.dc.html#yold" class="nav-a lbl">YOLD</a><a href="Projekte.dc.html#neuhier" class="nav-a lbl">NeuHier</a><a href="Kulturprojekte.dc.html" class="nav-a lbl">Kultur</a></span></span></span>
+      <a href="Presse.dc.html" class="nav-a lbl">Presse</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section data-screen-label="Texte · Titel" style="max-width:1160px;padding:clamp(46px,9vw,120px) clamp(18px,5vw,60px) clamp(40px,6vw,80px)">
+    <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(30px,5vw,56px)">Texte · Fragmente &amp; Sammlungen</p>
+    <h1 class="rv" style="font-weight:300;font-size:clamp(2.2rem,5.6vw,4.8rem);line-height:1.08;letter-spacing:-.01em;max-width:18ch;margin-bottom:clamp(30px,4vw,52px);text-wrap:balance">Textfragmente und <em style="font-style:italic;color:var(--ac)">Sammlungen</em>.</h1>
+    <p class="rv" style="max-width:60ch;font-size:clamp(1.05rem,1.5vw,1.28rem);line-height:1.7;color:#3A362D">Gedichte, Prosa und Notizen. Mich interessiert das phänomenologische Schreiben — das präzise Beschreiben innerer Zustände.</p>
+  </section>
+
+  <!-- POEMS -->
+  <section data-screen-label="Texte · Gedichte" style="max-width:1160px;padding:0 clamp(18px,5vw,60px) clamp(40px,6vw,80px)">
+
+    <p class="rv lbl" style="color:var(--dim);padding-bottom:clamp(20px,3vw,32px)">Gedichte · 2023</p>
+
+    <article class="entry rv" style="display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,64px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div class="meta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">I</p><p class="lbl" style="color:var(--dim)">Blauer Vogel</p><p class="lbl" style="color:var(--faint);margin-top:6px">04.06.23</p></div>
+      <div class="poem">
+        <p class="verse">Blauer Vogel, tauber Vogel,<br>verbrauchter Vogel, zerstaubter Vogel,<br>beraubter Vogel.</p>
+        <p class="verse" style="margin-top:1.1em">Gib das Träumen auf.</p>
+        <p class="verse" style="margin-top:1.1em"><em>Niemals wirst du fliegen, Vogel.<br>Niemals wirst du frei.<br>Niemals wirst du fliegen, Vogel.<br>Niemals wirst du frei.</em></p>
+      </div>
+    </article>
+
+    <article class="entry rv" style="display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,64px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div class="meta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">II</p><p class="lbl" style="color:var(--dim)">Schuld</p><p class="lbl" style="color:var(--faint);margin-top:6px">18.06.23</p></div>
+      <div class="poem">
+        <p class="verse">Dann bekamst du immer dieses ängstliche Flackern<br>in deinen warmen Augen.</p>
+        <p class="verse" style="margin-top:1.1em"><em>Bis heute muss ich deshalb weinen.</em></p>
+      </div>
+    </article>
+
+    <article class="entry rv" style="display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,64px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div class="meta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">III</p><p class="lbl" style="color:var(--dim)">Ich wollte gut sein</p><p class="lbl" style="color:var(--faint);margin-top:6px">2023</p></div>
+      <div class="poem">
+        <p class="verse">Habe versucht, alles richtig zu machen,<br>um am Ende der Gute zu sein,<br>um mir nichts vorwerfen zu müssen.</p>
+        <p class="verse" style="margin-top:1.1em">Und doch bin ich schuldig.<br>Schäme mich, wer ich vor dir war.</p>
+        <p class="verse" style="margin-top:1.1em"><em>Ich wollte es richtig machen.<br>Ich wollte gut sein.</em></p>
+      </div>
+    </article>
+
+    <article class="entry rv" style="display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,64px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div class="meta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">IV</p><p class="lbl" style="color:var(--dim)">Gelitten</p><p class="lbl" style="color:var(--faint);margin-top:6px">2023</p></div>
+      <div class="poem">
+        <p class="verse">Warum hast du für mich gelitten.</p>
+        <p class="verse" style="margin-top:1.1em"><em>Ich wünschte, du hättest es nicht getan.<br>Wärst du nur einfach gegangen.</em></p>
+      </div>
+    </article>
+
+    <article class="entry rv" style="display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,64px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div class="meta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">V</p><p class="lbl" style="color:var(--dim)">Stierarsch</p><p class="lbl" style="color:var(--faint);margin-top:6px">21.03.23</p></div>
+      <div class="poem">
+        <p class="verse">Mann mit Stierarsch und knackigen Beinen.</p>
+        <p class="verse" style="margin-top:1.1em">Doch verdreht, verkehrt —<br><em>da könnt er weinen.</em></p>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- NEUE SAMMLUNG · INTRO -->
+  <section data-screen-label="Texte · Neue Sammlung" style="max-width:1160px;padding:clamp(46px,8vw,104px) clamp(18px,5vw,60px) clamp(6px,1.5vw,16px);border-top:1px solid var(--line)">
+    <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(20px,3vw,30px)">Erste Sammlung · 2023 – 2024</p>
+    <h2 class="rv" style="font-weight:300;font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.08;letter-spacing:-.01em;max-width:16ch;margin-bottom:clamp(22px,3vw,34px);text-wrap:balance">Auswahl guter Texte</h2>
+    <p class="rv" style="max-width:56ch;font-size:clamp(1.02rem,1.4vw,1.22rem);line-height:1.7;color:#3A362D">Prosa, Fragmente und handschriftliche Blätter. Wo es sie gibt, steht die getippte Reinschrift neben ihrer Originalseite — maßgeblich bleibt das Blatt.</p>
+  </section>
+
+  <!-- PROSA -->
+  <section data-screen-label="Texte · Prosa" style="max-width:1160px;padding:clamp(24px,4vw,48px) clamp(18px,5vw,60px) clamp(40px,6vw,80px)">
+
+    <p class="rv lbl" style="color:var(--dim);padding-bottom:clamp(20px,3vw,32px)">Prosa &amp; Fragmente</p>
+
+    <article class="entry rv" style="display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,64px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div class="meta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">Prosa</p><p class="lbl" style="color:var(--dim)">Und manchmal</p></div>
+      <div class="prose" style="max-width:64ch">
+        <p>Und manchmal, ganz selten – so selten, dass ich nicht sagen könnte, wann zuletzt – ich weiß nur, dass es sie gegeben hat, sonst könnte ich nicht von ihnen schreiben – ersteigt ein echtes Gefühl. Ein tiefes, reines Gefühl, das aus der Tiefe des Bauches hervorsteigt, aussprudelt und leben will. Das verzweifelt aufflammt und dann, sobald es entdeckt und entlarvt ist, wieder erlischt.</p>
+        <details class="more"><summary><span class="arw">›</span> Weiterlesen</summary><div class="body">
+          <p>Ich brauche diese Momente, diese Flecken Licht, um zu wissen, dass es Leben gibt – nein, dass man leben kann, denn es nützt einem ein Leben nichts, das man nicht greifen, nicht fühlen kann. Es nützt nichts, wenn man es nur sehen, nicht aber leben kann.</p>
+          <p>Ein frisches, tiefes, verzweifeltes, hoffendes, verletzlich-lebendiges Frühlingsgefühl. Ein grün-blaues, rot leidendes, frisch lebend hoffendes Liebesgefühl, das leben will, ach endlich endlich leben! Ein verzweifelt liebendes Lebensgefühl. Könnte doch das Leben nur voll sein davon. Jeder Tag, voll mit dieser tiefen sprudelnden, zerreißenden Lebenslust.</p>
+          <p>Ich habe immer gesagt, das Leben soll mich endlich greifen. Jetzt weiß ich – ich muss es packen lernen. Muss es fühlen lernen, endlich fühlen. Immer war es da, um mich, in mir. Und immer habe ich es übersehen, war blind und taub für seinen Duft, in mir – um mich. Ich will es endlich greifen und packen, umarmen und kämpfen können.</p>
+          <p>Was nützt das Leben und was das Geld, wenn man es nicht fühlen kann? Der Mensch ist zum Fühlen gemacht und das Leben so reich an Fülle. Erstaunlich, wie sehr ein Mensch, der nicht fühlen – doch leiden kann.</p>
+          <p><em style="font-style:normal;color:inherit">Sind es wirklich die Dinge, die ich sagen will – oder Dinge, die sich gut sagen lassen?</em></p>
+        </div></details>
+      </div>
+    </article>
+
+    <article class="entry rv" style="display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,64px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div class="meta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">Prosa</p><p class="lbl" style="color:var(--dim)">Ich scheue jede Art der Prüfung</p></div>
+      <div class="prose" style="max-width:64ch">
+        <p>Ich scheue jede Art der Prüfung, aus Angst zu verlieren. Unter anderem deshalb gehe ich immer so stark in die Gegenposition, wenn sich jemand auf einem Gebiet auffallend hervortut. Um mich nicht messen und vergleichen zu müssen, verweigere ich von vornherein den Dienst und isoliere mich in der Gegenposition, wo ich keinen Mitbewerber habe.</p>
+        <details class="more"><summary><span class="arw">›</span> Weiterlesen</summary><div class="body">
+          <p>Als ich meinen Bruder mit in meine Vorlesung genommen habe und er sich, wie es seine Art ist, übermäßig für alles interessiert und jede neue Erkenntnis mit lautstarkem „ohh“ und „ahhh“ belohnt hat, da habe ich aus Prinzip nicht mehr zugehört und mich partout für alles außer die Folien und die Worte des Professors interessiert, um keinen intellektuellen Vergleich gegen ihn antreten zu müssen. Immer verhält es sich so. Wenn T. wieder laut ist und lacht und Sprüche reißt, dann werde ich still und zurückhaltend, um mich nicht messen zu müssen.</p>
+          <p>Denn wer es dem andern gleichtut, der kann verglichen werden. Wer es gar nicht erst versucht, dem traut man es noch immer zu. In allen Bereichen lebe ich in dieser feigen Bequemlichkeit, mich nie zu beweisen, um immer im „bestimmt könnte ich es auch“ leben zu können. <em style="font-style:normal;color:inherit">Obwohl man so natürlich von vornherein verliert.</em></p>
+        </div></details>
+      </div>
+    </article>
+
+    <article class="entry rv" style="display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,64px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div class="meta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">Prosa</p><p class="lbl" style="color:var(--dim)">Entweder leben wir paradies</p></div>
+      <div class="prose lo" style="max-width:64ch">
+        <p>Entweder leben wir paradies, gehen zusammen unter. Oder es ist aus. Es ist Kälte. Es ist schuld und reue. Hätte ich mich an dich verschwören sollen? Hättest du mein gott werden sollen, wie ich dein gott wurde? Wer hätte diese entscheidung treffen können? Wer hätte diese verantwortung übernehmen können? Deinen wahn wahr zu machen, ihn zu beglaubigen, indem man ihm selbst verfällt?</p>
+        <details class="more"><summary><span class="arw">›</span> Weiterlesen</summary><div class="body">
+          <p>Manchmal wünschte ich mir, es wäre leicht gewesen. Es hätte nicht die wucht der unbedingtheit auf uns gelastet. Die untragbare schwere des bedingungslosen bekenntnisses. Liebe ist ein bekenntnis, doch es darf nicht bedingungslos sein. Sie muss überprüfbar sein, sie muss sich immer rechtfertigen. Sie muss fluchtbar sein, sonst ist sie wertlos.</p>
+          <p>Was ist ein bekenntnis, dem man nicht mehr entrinnen kann? Ein bekenntnis auf ewigkeit ist keines. Ein bekenntnis lebt in seiner ständigen wiederholung, in seiner immerwährenden bekräftigung. Ein bekenntnis ist ein neuer entschluss, jeden tag. Manchmal habe ich mir gewünscht, ich hätte diesen entschluss jeden tag fassen dürfen, nicht einmal. Die entscheidung war ein gefängnis. Ich habe fliehen müssen, jeder hätte fliehen müssen.</p>
+          <p>Manchmal wünschte ich mir, „ich liebe dich“ hätte für einen tag gereicht. Manchmal wünschte ich mir, ich hätte fehler machen dürfen, mich irren, verwirren in meinen jungen trieben, in meinem wilden, bunten gefühl. Doch der entschluss hat mich erstarrt, wie hätte ich dir näher, wärmer sein können, wenn jedes annähern im fall der falschen entscheidung ein weiteres schwert gegen mich, ein weiteres schwert in dein zartes, empfindliches gefühlsfleisch gewesen wäre?</p>
+          <p>Wäre nicht jeder kuss, jedes wort ein verrat an dir, träfe ich die falsche entscheidung? Wäre es nicht eine straftat, eine schwere schuld? Ich wollte nicht an dir schuldig werden – und bin es gerade deswegen geworden. ich wünschte, es wäre leicht gewesen. <em style="font-style:normal;color:inherit">Ich wünschte, ich hätte dich lieben dürfen – auch wenn es nicht auf ewig wär.</em></p>
+        </div></details>
+      </div>
+    </article>
+
+    <article class="entry rv" style="display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,64px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div class="meta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">Prosa</p><p class="lbl" style="color:var(--dim)">Mit das Schönste an Cafés</p></div>
+      <div class="prose" style="max-width:64ch">
+        <p>Mit das Schönste an Cafés ist ihre Eigenschaft, uns Teil sein zu lassen, Teil der Welt – ohne daran teilnehmen zu müssen. Das schenken sie uns – Flucht aus der toten Windstille des Zimmers, getrennt vom Leben durch müde Scheiben – rein in das Leben, so weit wir es wünschen und brauchen.</p>
+        <details class="more"><summary><span class="arw">›</span> Weiterlesen</summary><div class="body">
+          <p>Das Café verlangt nicht, bis auf ein Getränk, um bleiben zu dürfen; sonst verlangt es nicht, sich zum Leben zu verhalten. Du darfst einfach Teil sein, Teil im Treiben, ohne treiben zu müssen, darfst zusehen und dich verbunden fühlen und dich trennen, so viel du es brauchst und magst.</p>
+          <p>Hauptsache nicht tot allein im einsamen Zimmer, immer getrennt, immer mit dem Blick ins Leben, nach draußen, getrennt durch nichts als lächerliches Glas und doch so weit weg. Das Café lässt mich leben, schenkt mir zumindest ein Gefühl, nichts vergeudet zu haben. Denn das Café ist eine Tätigkeit für sich, die reicht. Wer Stunden sitzt auf einem Stuhl und glotzt, der verschwendet seine Zeit und ist trauriger Mann – um wen dabei jedoch ein Café steht, der genießt und lässt die Seele baumeln.</p>
+          <p><em style="font-style:normal;color:inherit">Sitzen im Café ist eine Tätigkeit für sich, das Café ist einer der wenigen Schutzräume, der dem modernen Menschen noch das Sitzen und das Glotzen und das Baumeln erlaubt, ohne sich dafür schämen und erklären zu sollen.</em></p>
+        </div></details>
+      </div>
+    </article>
+
+    <article class="entry rv" style="display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,64px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div class="meta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">Prosa · Brief</p><p class="lbl" style="color:var(--dim)">Es war schon schlimm</p></div>
+      <div class="prose" style="max-width:64ch">
+        <p>Es war schon schlimm. Auch, wenn ich dir niemals Rache unterstellen würde. Ich glaube nicht, dass du dich rächen wolltest. Im Gegenteil. Ich glaube, dass du all das endlich einfach los sein wolltest. Dass du endlich einfach frei sein wolltest.</p>
+        <details class="more"><summary><span class="arw">›</span> Den ganzen Brief lesen</summary><div class="body">
+          <p>Vielleicht hast du dich einfach nicht mehr mit uns beschäftigt, hast deine neue Geschichte einfach über uns geschrieben. Vielleicht hast du auch wirklich nicht mehr an uns gedacht und hast deshalb die Dinge nicht gemieden, die andere nach Trennungen meiden, weil sie weh tun. Vielleicht war deine Welt nicht vermint mit uns, mit Schmerz, der hinter jeder vertrauten Ecke schlummert, weil immer und überall der Verlorene andere eingeschlossen ist, als leiser, trauriger Schatten. Vielleicht war vor dir einfach nur viel neue, leere Welt. Freie Luft zu atmen. Vielleicht hast du einfach neu gelebt und deshalb über uns geschrieben, über unsere Geschichten, weil für dich die Welt wieder neu war, endlich neu war, endlich frei war. Ich glaube, ich tue dir unrecht, weil man es immer tut. Man ist dem anderen immer ungerecht, weil ein Mensch immer zu groß sein wird, um ihn zu fassen. Ich glaube gleichzeitig, dass ich mir große Mühe gebe, es nicht zu tun, und ich glaube, dass dieses Bemühen, dieser tiefe Wunsch, gerecht zu dir zu sein, zählt. Ich hoffe, dass du es weißt.</p>
+          <p>Es war schon schlimm, dass du mit ihm wieder in Paris bist. Im Frühling des neuen Jahres, nachdem wir dort waren. Als wir Monate darauf gewartet haben, als Paar nach Paris, als du es zum Abitur geschenkt bekommen und mich mitgenommen hast. Dein Geschenk auch zu meinem gemacht hast, zu meinem unter allen, die du kanntest. Und dass du dann wenige Monate später auch mit ihm dort bist – einfach so. Dass ihr dann auch noch Bilder gemacht habt im Buttes-Chaumont. Der Park bei unserer Wohnung damals, der Park, in dem wir unseren ersten Tag in Paris verbrachten, über den ich vorher schon gelesen hatte, weil er fast vor unserer Tür begann. Ein kleiner Automat stand dort, eine kleine Kabine, um Fotos zu machen. Wir sind vorbeigelaufen und haben überlegt, uns zu fotografieren, aber wir haben es nicht getan. Ich glaube, es war zu teuer – vielleicht war er auch zu gewesen. Ich dachte, wir waren uns einig, keine zu machen. Ich habe oft daran gedacht, als du mit ihm dort welche gemacht hast, selbstverständlich. Und ich habe mich oft gefragt, ob du damals überhaupt noch wusstest, dass wir auch davorstanden. Ob es ein rebellischer, ein wütender Akt war, diesmal doch welche zu machen, oder ob es dir überhaupt nichts mehr bedeutet hat, ob es ganz einfach selbstverständlich war, Fotos zu schießen an einem schönen Tag, in Paris mit seinem Liebling. Wie oft habe ich mich das gefragt, als du es hochgeladen hast, dass jeder es sehen konnte. Buttes-Chaumont, ihr beide im Kuss verewigt. Wolltest du es überschreiben?</p>
+          <p>Es war schon schlimm, dass ich dich 5 Monate nicht sehen durfte. Dass du mir sagst, du bist weg und keine Frage von mir hören wolltest, kein letztes Wort, keinen Abschied. Dass du mir keine Trauer erlaubt hast, keine Wut, nicht einmal ein letztes Liebesglimmen, kein trauriger, wissender Blick aus vertrauten Augen – nichts hast du mir gegeben, als wühlenden, eingesperrten, ausweglosen Schmerz. Wieso hast du es nicht ertragen? Wieso hast du mir nicht vertraut? Nichts hat so sehr gebrannt wie dein Misstrauen, ein letztes, ewiges Misstrauen, mit dem du uns beschlossen hast, das Misstrauen, dass ich es gut machen möchte. Ich hatte dir nur Gutes zu sagen, T. Ich wollte so gerne gut zu dir sein, dir Danke sagen, ein letztes Mal deine Augen sehen, um dich gehen zu lassen. Ich wollte so gerne gut zu dir sein, am Ende nach langem Leiden. Wie oft habe ich dir gesagt, dass ich ein schönes Ende für uns möchte, dass wir es verdienen, dass ich das Gute von uns bewahren möchte. Kein einziges warmes Wort hast du mir mehr erlaubt, du hast mich bestraft mit der Distanz und Kälte, die einer verdient, der dich nicht gehen lassen will, wie ein Gift, dem man entrinnen muss, um nicht an ihm zu vergehen. Dein Misstrauen, deine Kälte nach so langer Zeit von Vertrauen in deinen Augen, war die härteste Strafe, die du mir hättest geben können. Ich habe mich nicht gesehen gefühlt, nicht verstanden, denn wenn es eines gab, was ich richtig machen wollte, dann war es das Ende. Sinnbildlich für uns, für mich, für unser Scheitern und meine Schuld darin, dass ich von Anfang an das Ende gedacht habe. Um diesen letzten Sieg hast du mich gebracht. Denn du bist gegangen, eigenmächtig, emanzipiert und kalt, ohne noch ein letztes Mal zurückzublicken, ohne mir ein letztes Mal zuzuhören. Und hast mich damit mit Schuld zurückgelassen, mit Fragen und Schmerz und Verantwortung für uns beide, für unser Scheitern. Hättest du es nicht ertragen? Wusstest du, dass ich gut zu dir sein wollte? Dass ich nicht geschrien hätte, dass ich dich nicht hätte fesseln wollen mit Vorwürfen und Schuld? Dass ich dich nicht hätte klein machen wollen vor dir und dir den Mut rauben, zu gehen? Wusstest du es und bist deswegen kalt gewesen? Weil du es sonst nicht gekonnt hättest? Weil du gelernt hast, dass Abschied kurz ist und ohne Wärme – dass es so am wenigsten weh tut?</p>
+          <p>Erst durch meine Sprachlosigkeit, durch mein Eingesperrtsein in Trauer und Wut und Schmerz, den niemand außer dir verstehen könnte – erst durch meine Einsamkeit darin hast du mich wütend gemacht, weil es ungerecht ist, den anderen um seinen Abschied zu bringen. Man trägt eine Verantwortung, nicht in seiner Entscheidung zu gehen, aber darin, den anderen auch gehen zu lassen. Und gehen kann nur, wer Abschied hat. <em style="font-style:normal;color:inherit">Du hast mich um meinen gebracht.</em></p>
+        </div></details>
+      </div>
+    </article>
+
+    <article class="entry rv" style="display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,64px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div class="meta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">Prosa</p><p class="lbl" style="color:var(--dim)">Manchmal wünschte ich</p></div>
+      <div class="prose" style="max-width:64ch">
+        <p>Manchmal wünschte ich, ich hätte es einfach gesagt. In keinem großen Augenblick – sie wären einfach aus mir rausgepurzelt, bevor ich es selbst gegriffen hätte. Und danach hätte ich gewusst, dass es wahr ist. Wir hätten uns angesehen und gelacht und beide gewusst, dass wir uns einig sind. Manchmal wünschte ich, es wäre so gewesen.</p>
+        <details class="more"><summary><span class="arw">›</span> Weiterlesen</summary><div class="body">
+          <p>Aber sie sind gewachsen, diese drei kleinen Worte, sind gewachsen und gewachsen, als ich sie noch gar nicht habe sehen können, als ich noch mit dir gerungen habe, als du mir noch Angst gemacht hast und ich dich am liebsten nicht mehr gesehen hätte und es nur deshalb nicht konnte, weil ich wusste, dass es dich weiter geben würde und dass du ohne mich mir noch mehr weh getan hättest als bei mir. In dieser Wüste zwischen uns sind diese kleinen Triebe gewachsen und gewachsen und sind riesig geworden, und während du mir immer vertrauter und weniger bedrohlich wurdest, sind sie es geworden, sind sie mir riesig und bedrohlich geworden, standen sie über mir, immer, schwer und dunkel. Als gewaltiger Vorwurf sind sie über mir geschwebt bei jedem Schritt, bei jedem Satz, und während du mir näher kamst, standen sie zwischen uns und haben es schwer gemacht, so unendlich schwer. Sie haben mich erdrückt, so schwer wurden sie. Wie massige nasse Regenwolken, die jederzeit über mir hereinzubrechen drohten.</p>
+          <p>Du warst leicht, du hättest es sein können, du warst mir der Begriff von Leben, von Leichtigkeit und Jugend, du warst sinnlich und jung und lebendig, doch konntest du mich damit nicht erreichen. Wahrscheinlich warst du es auch nie. In allem von dir lagen sie, diese drei kleinen Worte, die riesig waren. In allem sah ich sie. In jedem Blick, jeder Berührung, jedem Wort. Sie standen geschrieben in deinen großen braunen Augen, in deinem warmen Hoffnungsblick. Ich werde ihn nie vergessen können und nie die Schuld, als ich ihn brechen musste; wieder und wieder sah ich deine Augen splittern, sah ich den Riss, der durch sie ging, bevor du sie abwandtest und leise wurdest. Ich konnte es nicht mehr ertragen, deinen Blick zu zerbrechen.</p>
+          <p>Ich wünschte, diese drei Worte wären mir passiert, als sie gleich viel bedeutet hätten wie deine. Als sie scheu gewesen wären, scheue keusche Worte. Unsicher, was sie bedeuten. Als sie ein Tasten gewesen wären nach dir, nach mir, nach uns. Kein Eingeständnis, kein Eid. Als sie keine schwarze Wand wären, zu hoch, als dass ich noch sehen könnte, was dahinter wäre. Als sie mir noch keine Angst machten. Ich wünschte, sie hätten mir weniger bedeutet. Nein – ich wünschte, sie hätten dir weniger bedeutet. Vielleicht hätten sie dann auch für mich eine Bedeutung haben können. <em style="font-style:normal;color:inherit">Ich wünschte, sie hätten unschuldig sein dürfen, kein Eingeständnis der Schuld nach langem Leid. Keine Entschuldigung.</em></p>
+        </div></details>
+      </div>
+    </article>
+
+    <article class="entry rv" style="display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,64px);padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div class="meta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">Prosa</p><p class="lbl" style="color:var(--dim)">Berlin</p></div>
+      <div class="prose" style="max-width:64ch">
+        <p>Am ersten Tag ging es um mich. Um die Kränkung des Verlangenden.</p>
+        <p>Am dritten Tag übermannte mich diese Stadt. Verzauberte mich, betörte mich. Sog mich ein in tausend irrer Welten. Nirgends kann man so weit reisen, in den Grenzen einer einzigen Stadt. Sie machte mir Angst, weil sie sich nicht fassen ließ. Sie ist endlos und man muss es akzeptieren. Sie entzieht sich und offenbart sich nie.</p>
+        <p>Am vierten Tage hasste ich sie und ihre Kälte. Sie ist ein tugendloses, sündhaftes, egozentrisches, selbstverliebtes und selbstzerstörendes dreckiges Loch. Sie verdirbt, wer in sie gerät. Wirft einen krankhaft auf sich zurück, während sie von tausend Seiten lockt. Sie macht den Menschen wahnsinnig und allein und endlos selbstsüchtig suchend.</p>
+        <p><em style="font-style:normal;color:inherit">Am letzten Tage zeigte sie sich versöhnlich und nahbar. War sie schön und lebendig und warm. Menschen grüßten und lächelten auf den Straßen. Am Sonntag war sie schön und ich wäre gerne dort geblieben.</em></p>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- BLÄTTER · FAKSIMILES -->
+  <section data-screen-label="Texte · Blätter" style="max-width:1160px;padding:clamp(46px,8vw,104px) clamp(18px,5vw,60px) clamp(6px,1.5vw,16px);border-top:1px solid var(--line)">
+    <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(20px,3vw,30px)">Blätter · Bild &amp; Text</p>
+    <h2 class="rv" style="font-weight:300;font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.08;letter-spacing:-.01em;max-width:15ch;margin-bottom:clamp(22px,3vw,34px);text-wrap:balance">Nicht die Reinschrift ist der Text. <em style="font-style:italic;color:var(--ac)">Das Blatt ist es.</em></h2>
+    <p class="rv" style="max-width:54ch;font-size:clamp(1.02rem,1.4vw,1.22rem);line-height:1.7;color:#3A362D">Handschriftliche Originalblätter mit ihren Zeichnungen. Die getippte Fassung steht daneben — die Blätter sind scrollbar.</p>
+  </section>
+
+  <section style="max-width:1160px;padding:clamp(24px,4vw,48px) clamp(18px,5vw,60px) clamp(40px,6vw,80px)">
+
+    <article class="entry rv" style="padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:clamp(22px,3vw,34px)"><span class="lbl" style="color:var(--ac)">Blatt</span><span class="lbl" style="color:var(--dim)">Es stinkt nach Kiffen</span><span class="lbl" style="color:var(--faint)">2023</span></div>
+      <div class="col2">
+        <div class="repl poem" style="font-size:clamp(1.1rem,1.7vw,1.5rem);line-height:1.6">
+          <p class="verse">Es stinkt nach Kiffen.</p>
+          <p class="verse" style="margin-top:1em">Süß, ekelhaft. Wie ein dritter im Bunde<br>lebt er in unserer dreckigen Wohnung.</p>
+          <p class="verse" style="margin-top:1em">Begrüßt mich freundlich beim Eintreten,<br>was nicht ändert, dass er nicht eingeladen ist.</p>
+          <p class="verse" style="margin-top:1em">Er passt zu uns.<br><em>Deshalb hasse ich ihn.</em></p>
+          <p class="lbl" style="color:var(--faint);margin-top:1.6em;font-style:normal">Reinschrift</p>
+        </div>
+        <div>
+          <div class="facwrap" style="max-height:min(72vh,640px)"><img src="assets/texts/fx-kiffen.png" alt="Handschriftliches Originalblatt: Es stinkt nach Kiffen, mit durchgestrichener Zeichnung"></div>
+          <p class="lbl" style="color:var(--faint);margin-top:10px">Faksimile · Originalblatt · scrollbar</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="entry rv" style="padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:clamp(22px,3vw,34px)"><span class="lbl" style="color:var(--ac)">Blatt</span><span class="lbl" style="color:var(--dim)">Die Maus</span><span class="lbl" style="color:var(--faint)">2023</span></div>
+      <div class="col2">
+        <div class="repl poem" style="font-size:clamp(1.1rem,1.7vw,1.5rem);line-height:1.6">
+          <p class="verse">Du kleine Maus.<br>Dreckige kleine Maus, wie süß du schauen kannst mit Honig im Maul.</p>
+          <p class="verse" style="margin-top:1em">Stellst brav Fallen auf, kleine Maus. Nur zu. Sei mein Gast! Ich hab Köstliches für dich, noch und noch. Komm und such danach, such such, mit deinem hübschen zitternden Näschen.</p>
+          <p class="verse" style="margin-top:1em">Denk nicht an die Fallen, hübschen Mäusen tun sie nichts. Und hast du sie nicht selbst gelegt? Wie gut hast du das gemacht, kleine Maus.</p>
+          <p class="verse" style="margin-top:1em">Hast brav Buch geführt, wo eine liegt. <em>Wie gut, du dumme Maus, dass du nicht lesen kannst.</em></p>
+          <p class="lbl" style="color:var(--faint);margin-top:1.6em;font-style:normal">Reinschrift</p>
+        </div>
+        <div>
+          <div class="facwrap" style="max-height:min(72vh,640px)"><img src="assets/texts/fx-maus.png" alt="Handschriftliches Originalblatt: Die Maus"></div>
+          <p class="lbl" style="color:var(--faint);margin-top:10px">Faksimile · Originalblatt · scrollbar</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="entry rv" style="padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line)">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:clamp(22px,3vw,34px)"><span class="lbl" style="color:var(--ac)">Blatt</span><span class="lbl" style="color:var(--dim)">Eingeschnürt sollst du sein</span><span class="lbl" style="color:var(--faint)">2023</span></div>
+      <div class="col2">
+        <div class="repl poem" style="font-size:clamp(1.1rem,1.7vw,1.5rem);line-height:1.6">
+          <p class="verse">Eingeschnürt sollst du sein. Wär das was?</p>
+          <p class="verse" style="margin-top:1em">Mit schweren Riemen nagel ich dich fest, dass du dich nicht mehr regen kannst. Nur deine großen blauen Augen drehen sich. Nach links. Mal nach rechts.</p>
+          <p class="verse" style="margin-top:1em">Sagen tust du nichts, wie auch. Mit dem schweren Metall im Mund.</p>
+          <p class="verse" style="margin-top:1em"><em>Es steht dir, wenn du so bist.</em></p>
+          <p class="lbl" style="color:var(--faint);margin-top:1.6em;font-style:normal">Reinschrift</p>
+        </div>
+        <div>
+          <div class="facwrap" style="max-height:min(72vh,640px)"><img src="assets/texts/fx-eingeschnuert.png" alt="Handschriftliches Originalblatt: Eingeschnürt sollst du sein, mit zwei Portraitzeichnungen"></div>
+          <p class="lbl" style="color:var(--faint);margin-top:10px">Faksimile · Originalblatt · scrollbar</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="entry rv" style="padding:clamp(34px,5vw,64px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div style="display:flex;gap:14px;align-items:baseline;margin-bottom:clamp(22px,3vw,34px)"><span class="lbl" style="color:var(--ac)">Blatt</span><span class="lbl" style="color:var(--dim)">Der Stein</span><span class="lbl" style="color:var(--faint)">Bild-Text-Seite</span></div>
+      <div class="col2">
+        <div class="repl" style="align-self:start">
+          <p style="font-style:italic;font-weight:300;font-size:clamp(1.2rem,1.9vw,1.6rem);line-height:1.5;color:#3A362D;max-width:30ch">Eine Bild-Text-Seite — Stein unter Wasser, eine Hand, die loslässt.</p>
+          <p class="lbl" style="color:var(--faint);margin-top:1.6em;line-height:1.9">Keine gesetzte Transkription.<br>Der Wortlaut ist noch nicht vollständig gesichert — hier gilt allein das Blatt.</p>
+        </div>
+        <div>
+          <div class="facwrap" style="max-height:min(78vh,720px)"><img src="assets/texts/fx-stein.png" alt="Handschriftliche Bild-Text-Seite: Der Stein, mit Zeichnung eines Steins unter Wasser und einer Hand"></div>
+          <p class="lbl" style="color:var(--faint);margin-top:10px">Faksimile · Bild-Text-Seite · scrollbar</p>
+        </div>
+      </div>
+    </article>
+
+    <p class="rv" style="font-style:italic;font-weight:300;font-size:clamp(1.2rem,2vw,1.6rem);color:var(--dim);margin-top:clamp(40px,6vw,72px);max-width:44ch">Mehr liegt in Heften. Das meiste bleibt dort.</p>
+  </section>
+
+  <!-- FOOTER NAV -->
+  <footer style="padding:clamp(40px,7vw,90px) clamp(18px,5vw,60px) clamp(34px,5vw,56px);border-top:1px solid var(--line)">
+    <p class="rv lbl" style="color:var(--faint);margin-bottom:24px">Weiter im Archiv</p>
+    <div class="rv" style="display:flex;gap:28px;flex-wrap:wrap;font-style:italic;font-size:clamp(1.3rem,2.4vw,2rem)">
+      <a href="Kunst.dc.html" class="nav-a" style="opacity:1">Bilder →</a>
+      <a href="Forschung.dc.html" class="nav-a" style="opacity:1">Psychologie →</a>
+      <a href="index.html" class="nav-a" style="opacity:1">Zurück zum Index →</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#8A2B1B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;,&quot;options&quot;:[&quot;#8A2B1B&quot;,&quot;#2E4A6E&quot;,&quot;#3A4A2E&quot;,&quot;#211E18&quot;]}}">
+class Component extends DCLogic {
+  applyTheme(){ const r=this.rootEl; if(!r) return; r.style.setProperty('--ac', this.props.accent || '#8A2B1B'); }
+  componentDidMount(){
+    this.applyTheme();
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.rv').forEach((el)=>{const s=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));el.style.transitionDelay=(Math.max(0,s.indexOf(el))%4)*0.07+'s';io.observe(el);});
+  }
+  componentDidUpdate(){ this.applyTheme(); }
+  renderVals(){ return { rootRef:(el)=>{this.rootEl=el;} }; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:#E9E9E4;color:#1C1E1D;font-family:'Newsreader',Georgia,serif;font-weight:400;-webkit-font-smoothing:antialiased}
+  ::selection{background:#1C1E1D;color:#E9E9E4}
+  a{color:inherit;text-decoration:none}
+  .lbl{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+  .rv{opacity:0;transform:translateY(15px);transition:opacity 1.25s cubic-bezier(.2,.6,.2,1),transform 1.25s cubic-bezier(.2,.6,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  .nav-a{opacity:.6;transition:opacity .4s,color .4s}
+  .nav-a:hover{opacity:1;color:var(--ac)}
+  .nav-drop{position:relative;display:inline-flex}
+  .nav-drop .submenu{position:absolute;top:100%;right:0;padding-top:15px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .3s,transform .3s,visibility .3s;z-index:80}
+  .nav-drop:hover .submenu{opacity:1;visibility:visible;transform:none}
+  .nav-drop .smbox{display:flex;flex-direction:column;gap:14px;background:#E9E9E4;border:1px solid var(--line);padding:16px 20px;box-shadow:0 24px 48px -30px rgba(0,0,0,.45)}
+  .nav-drop .submenu .nav-a{opacity:.72;white-space:nowrap}
+  .card{border:1px solid var(--line);padding:clamp(22px,3vw,38px);background:#EFEFEA;transition:transform .55s cubic-bezier(.2,.6,.2,1),box-shadow .55s,border-color .55s}
+  .card:hover{transform:translateY(-5px);box-shadow:0 26px 50px -34px rgba(28,30,29,.4);border-color:var(--ac)}
+  .qrow{transition:padding-left .5s cubic-bezier(.2,.6,.2,1)}
+  .qrow:hover{padding-left:14px}
+  @media(max-width:880px){.split{grid-template-columns:1fr !important;gap:30px !important}.cards{grid-template-columns:1fr !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.marg{position:static !important;margin-bottom:10px}}
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="--ac:#2A5FD9;--dim:#6A6E69;--faint:#9DA09A;--line:rgba(28,30,29,.18);background:#E9E9E4;min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:60;display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:18px clamp(18px,5vw,60px);background:linear-gradient(180deg,#E9E9E4 60%,rgba(233,233,228,0))">
+    <a href="index.html" style="display:flex;align-items:baseline;gap:11px"><span style="font-size:17px">Simon Elias Schaugg</span><span class="lbl" style="color:var(--faint)">Archiv</span></a>
+    <nav class="navwrap" style="display:flex;gap:22px">
+      <a href="Forschung.dc.html" class="nav-a lbl" style="opacity:1;color:var(--ac)">Psychologie</a>
+      <a href="Kunst.dc.html" class="nav-a lbl">Bilder</a>
+      <a href="Klavier.dc.html" class="nav-a lbl">Klavier</a>
+      <span class="nav-drop"><a href="Projekte.dc.html" class="nav-a lbl">Projekte</a><span class="submenu"><span class="smbox"><a href="Projekte.dc.html#yold" class="nav-a lbl">YOLD</a><a href="Projekte.dc.html#neuhier" class="nav-a lbl">NeuHier</a><a href="Kulturprojekte.dc.html" class="nav-a lbl">Kultur</a></span></span></span>
+      <a href="Presse.dc.html" class="nav-a lbl">Presse</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section data-screen-label="Forschung · Titel" style="max-width:1200px;padding:clamp(46px,9vw,120px) clamp(18px,5vw,60px) clamp(40px,6vw,80px)">
+    <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(30px,5vw,56px)">Forschung · Psychologie · Goethe-Universität Frankfurt</p>
+    <h1 class="rv" style="font-weight:300;font-size:clamp(2.2rem,5.4vw,4.6rem);line-height:1.09;letter-spacing:-.012em;max-width:20ch;margin-bottom:clamp(30px,4vw,52px);text-wrap:balance">Kein Mensch ist eins. Das Selbst ist <em style="font-style:italic;color:var(--ac)">viele</em>.</h1>
+    <p class="rv" style="max-width:62ch;font-size:clamp(1.06rem,1.5vw,1.3rem);line-height:1.68;color:#33352F">Mich beschäftigt, wie widersprüchlich und wenig konsistent Identität ist — kein fester Kern, sondern ein Prozess aus vielen Stimmen und Rollen, wie der Steppenwolf, der sich erst für einen hält und dann für hundert. Studium der Psychologie (B.Sc., Note 1,2, Top 5 % der Kohorte), Schwerpunkt Klinische Psychologie &amp; Psychotherapie. Forschung ist für mich kein Beweis, sondern ein längeres Hinsehen.</p>
+  </section>
+
+  <!-- BANNER · IDENTITÄT -->
+  <section data-screen-label="Forschung · Banner" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <figure class="rv" style="margin:0;position:relative;overflow:hidden;background:#E4E4DE">
+      <img src="assets/identitaet-koepfe.png" alt="Viele Köpfe — dasselbe Motiv in unterschiedlichen Materialien" style="width:100%;height:clamp(220px,32vw,420px);object-fit:cover;object-position:center 42%;display:block">
+      <figcaption class="lbl" style="position:absolute;left:clamp(18px,5vw,60px);bottom:clamp(16px,2.5vw,28px);color:#33352F;background:rgba(233,233,228,.82);padding:9px 14px;backdrop-filter:blur(3px)">Ein Kopf, viele Fassungen — das Selbst als Prozess</figcaption>
+    </figure>
+  </section>
+
+  <!-- DIE FRAGEN -->
+  <section data-screen-label="Forschung · Fragen" style="max-width:1200px;padding:clamp(20px,3vw,40px) clamp(18px,5vw,60px) clamp(60px,9vw,110px)">
+    <div class="split" style="display:grid;grid-template-columns:200px 1fr;gap:clamp(24px,5vw,80px);align-items:start">
+      <p class="marg rv lbl" style="position:sticky;top:90px;color:var(--dim)">Leitfragen</p>
+      <div class="rv" style="border-top:1px solid var(--line)">
+        <div class="qrow" style="padding:clamp(20px,2.6vw,32px) 4px;border-bottom:1px solid var(--line)"><p style="font-weight:300;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.24">Wie erzählt sich das Ich über die Zeit — und wer schreibt mit?</p></div>
+        <div class="qrow" style="padding:clamp(20px,2.6vw,32px) 4px;border-bottom:1px solid var(--line)"><p style="font-weight:300;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.24">Wie formt <em style="font-style:italic;color:var(--ac)">Sprache</em>, wer wir in einer Gruppe sein dürfen?</p></div>
+        <div class="qrow" style="padding:clamp(20px,2.6vw,32px) 4px;border-bottom:1px solid var(--line)"><p style="font-weight:300;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.24">Was hält uns zusammen — Scham, Sehnsucht, Zugehörigkeit?</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARBEITEN -->
+  <section data-screen-label="Forschung · Arbeiten" style="max-width:1200px;padding:clamp(40px,6vw,80px) clamp(18px,5vw,60px) clamp(60px,9vw,120px);border-top:1px solid var(--line)">
+    <h2 class="rv lbl" style="color:var(--dim);margin-bottom:clamp(28px,4vw,48px)">Ausgewählte Arbeiten</h2>
+    <div class="cards" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.5vw,34px)">
+      <article class="card rv">
+        <p class="lbl" style="color:var(--ac);margin-bottom:16px">Bachelorarbeit</p>
+        <h3 style="font-weight:400;font-size:clamp(1.4rem,2.4vw,1.95rem);line-height:1.2;margin-bottom:14px">Identity Leadership und Sprache</h3>
+        <p style="color:#44463F;font-size:1.05rem;line-height:1.6;margin-bottom:18px">Wie Führungssprache ein gemeinsames „Wir“ herstellt — Sozial- &amp; Arbeitspsychologie. Die Frage nach Identität, vom Individuum auf die Gruppe gedreht.</p>
+        <p class="lbl" style="color:var(--faint)">Sozial- &amp; Organisationspsychologie</p>
+      </article>
+      <article class="card rv">
+        <p class="lbl" style="color:var(--ac);margin-bottom:16px">Seminararbeit · Note 1,0</p>
+        <h3 style="font-weight:400;font-size:clamp(1.4rem,2.4vw,1.95rem);line-height:1.2;margin-bottom:14px">Neuronale Grundlagen musikalischer Improvisation</h3>
+        <p style="color:#44463F;font-size:1.05rem;line-height:1.6;margin-bottom:18px">Was im Kopf geschieht, wenn eine Hand etwas erfindet, das es eine Sekunde vorher nicht gab. Biopsychologie bei Prof. Christian Fiebach.</p>
+        <p class="lbl" style="color:var(--faint);display:flex;gap:20px;flex-wrap:wrap"><span>Biopsychologie</span><a href="assets/seminararbeit-improvisation.pdf" rel="noopener" class="nav-a" style="opacity:1;color:var(--ac)">↓ PDF lesen</a><a href="Klavier.dc.html" class="nav-a" style="opacity:1;color:var(--ac)">→ siehe Klavier</a></p>
+      </article>
+      <article class="card rv">
+        <figure style="margin:0 0 18px;overflow:hidden;background:#E4E4DE"><img src="assets/forschung-poster-praesentation.jpg" alt="Posterpräsentation zum experimentellen Praktikum" style="width:100%;aspect-ratio:3/2;object-fit:cover"></figure>
+        <p class="lbl" style="color:var(--ac);margin-bottom:16px">Experimentelles Praktikum · Note 1,0</p>
+        <h3 style="font-weight:400;font-size:clamp(1.4rem,2.4vw,1.95rem);line-height:1.2;margin-bottom:14px">Attention in Auditory Entrainment and its Effects on Perception</h3>
+        <p style="color:#44463F;font-size:1.05rem;line-height:1.6;margin-bottom:18px">Gruppenprojekt zu rhythmischem Entrainment und auditiver Aufmerksamkeit, als wissenschaftliches Poster an der Goethe-Universität präsentiert.</p>
+        <p class="lbl" style="color:var(--faint);display:flex;gap:20px;flex-wrap:wrap"><span>Kognitive Psychologie</span><a href="assets/expra-report-schaugg.pdf" rel="noopener" class="nav-a" style="opacity:1;color:var(--ac)">↓ Bericht lesen</a></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- LEHRE / FÖRDERUNG -->
+  <section data-screen-label="Forschung · Stationen" style="max-width:1200px;padding:0 clamp(18px,5vw,60px) clamp(60px,9vw,120px)">
+    <div class="split" style="display:grid;grid-template-columns:200px 1fr;gap:clamp(24px,5vw,80px);align-items:start">
+      <p class="marg rv lbl" style="position:sticky;top:90px;color:var(--dim)">Stationen &amp; Förderung</p>
+      <div class="rv" style="border-top:1px solid var(--line)">
+        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2021–24</span><span style="font-size:1.18rem">Jugendleiter · Ev. Kinder- und Jugendwerk Heidelberg — drei internationale Jugendfreizeiten</span></div>
+        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2024</span><span style="font-size:1.18rem">Deutschlandstipendium · Goethe-Universität Frankfurt</span></div>
+        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2025</span><span style="font-size:1.18rem">Intensivkurs Forensische Psychiatrie · Fachbereich Psychologie, Goethe-Universität</span></div>
+        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2025</span><span style="font-size:1.18rem">Wissenschaftliche Hilfskraft · Testsammlung, Bibliothek Psychologie und Sozialwissenschaften</span></div>
+        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2025</span><span style="font-size:1.18rem">e-fellows.net · Online-Stipendium &amp; Karrierenetzwerk</span></div>
+        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2025/26</span><span style="font-size:1.18rem">Praktikum Klinische Psychologie · Praxis Sujata Amend-Sarkar — Diagnostik &amp; Therapie-Assistenz</span></div>
+        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2025/26</span><span style="font-size:1.18rem">GROW@Goethe · Berufliches Mentoring-Programm, Career Service</span></div>
+        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">lfd.</span><span style="font-size:1.18rem">B.Sc. Psychologie — Note 1,2 · Top 5 % der Kohorte</span></div>
+        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">Fokus</span><span style="font-size:1.18rem">Klinische Psychologie &amp; Psychotherapie</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER NAV -->
+  <footer style="padding:clamp(40px,7vw,90px) clamp(18px,5vw,60px) clamp(34px,5vw,56px);border-top:1px solid var(--line)">
+    <p class="rv lbl" style="color:var(--faint);margin-bottom:24px">Weiter im Archiv</p>
+    <div class="rv" style="display:flex;gap:28px;flex-wrap:wrap;font-style:italic;font-size:clamp(1.3rem,2.4vw,2rem)">
+      <a href="Projekte.dc.html" class="nav-a" style="opacity:1">Projekte →</a>
+      <a href="Kunst.dc.html" class="nav-a" style="opacity:1">Bilder →</a>
+      <a href="index.html" class="nav-a" style="opacity:1">Zurück zum Index →</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2A5FD9&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;,&quot;options&quot;:[&quot;#3A6B4A&quot;,&quot;#2A5FD9&quot;,&quot;#8A2B1B&quot;,&quot;#1C1E1D&quot;]}}">
+class Component extends DCLogic {
+  applyTheme(){ const r=this.rootEl; if(!r) return; r.style.setProperty('--ac', this.props.accent || '#2A5FD9'); }
+  componentDidMount(){
+    this.applyTheme();
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.rv').forEach((el)=>{const s=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));el.style.transitionDelay=(Math.max(0,s.indexOf(el))%4)*0.08+'s';io.observe(el);});
+  }
+  componentDidUpdate(){ this.applyTheme(); }
+  renderVals(){ return { rootRef:(el)=>{this.rootEl=el;} }; }
+}
+</script>
+</body>
+</html>
