@@ -30,7 +30,7 @@
     </div>
     <div style="text-align:right">
       <p class="lbl" style="color:#6B6355;margin:0 0 4px">+49 151 12329556</p>
-      <p class="lbl" style="color:#6B6355;margin:0 0 4px"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4d3e633e2e252c382a2a0d2a2035632928">[email&#160;protected]</a></p>
+      <p class="lbl" style="color:#6B6355;margin:0 0 4px"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e6d306d7d767f6b79795e797366307a7b">[email&#160;protected]</a></p>
       <p class="lbl" style="color:#6B6355;margin:0">linkedin.com/in/simonschaugg</p>
     </div>
   </div>
@@ -131,5 +131,18 @@
 </x-import>
 
 </x-dc>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+addEventListener('load', () => {
+  (async () => {
+    try { await document.fonts.ready; } catch (e) {}
+    const imgs = Array.from(document.images).filter((i) => !i.complete);
+    await Promise.race([
+      Promise.allSettled(imgs.map((i) => i.decode())),
+      new Promise((r) => setTimeout(r, 8000)),
+    ]);
+    setTimeout(() => window.print(), 500);
+  })();
+});
+</script>
+</body>
 </html>
