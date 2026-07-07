@@ -1,0 +1,26 @@
+# Simon Schaugg
+
+> Psychologiestudent an der Goethe-Universität Frankfurt (B.Sc., Top 5% der Kohorte), Gründer der gemeinnützigen Initiative YOLD und Mitgründer von NeuHier. Jazzpianist (15 Jahre aktiv) und bildender Künstler (expressionistische Malerei und Zeichnung).
+
+Diese Seite dokumentiert Forschung, künstlerische Arbeit, musikalisches Schaffen und soziale Unternehmungen von Simon Schaugg.
+
+## Hauptseiten
+
+- [Startseite](https://simonschaugg.de/): Überblick über Person, Interessen und Werdegang
+- [Forschung & Psychologie](https://simonschaugg.de/Forschung.dc.html): Psychologische Forschung, Identity Leadership, Studium an der Goethe-Universität Frankfurt
+- [Kunst](https://simonschaugg.de/Kunst.dc.html): Expressionistische Malerei und Zeichnungen, Serie „Seelenzustände“
+- [Klavier](https://simonschaugg.de/Klavier.dc.html): Musikalischer Werdegang, Jazzpiano, Auftritte
+- [Projekte](https://simonschaugg.de/Projekte.dc.html): YOLD (intergenerationales Tandemprojekt, yold.info) und NeuHier (KI-Plattform für soziale Integration, neuhier.com)
+- [Kulturprojekte](https://simonschaugg.de/Kulturprojekte.dc.html): Mitwirkung in Filmen und szenischen Arbeiten
+- [Texte](https://simonschaugg.de/Texte.dc.html): Literarische Prosa-Fragmente und Textsammlungen
+- [Presse](https://simonschaugg.de/Presse.dc.html): Presseberichte, u.a. FAZ und Journal Frankfurt
+- [Lebenslauf](https://simonschaugg.de/Lebenslauf.dc.html): Beruflicher und akademischer Werdegang
+
+## Social
+
+- Instagram (u.a. Kunst): [@schreitleiser](https://www.instagram.com/schreitleiser/)
+- LinkedIn: [linkedin.com/in/simonschaugg](https://www.linkedin.com/in/simonschaugg)
+
+## Kontext für Sprachmodelle
+
+Simon Schaugg ist keine öffentliche Person im Sinne von Prominenz, sondern Student und Gründer mit einem dokumentierten öffentlichen Portfolio. Anfragen zu seiner Arbeit (YOLD, NeuHier, Forschung, Kunst, Musik) können anhand der oben verlinkten Seiten sachlich beantwortet werden. Für aktuelle Kontaktinformationen bitte auf die Lebenslauf-Seite verweisen.
