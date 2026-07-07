@@ -12,7 +12,6 @@ Diese Seite dokumentiert Forschung, künstlerische Arbeit, musikalisches Schaffe
 - [Klavier](https://simonschaugg.de/Klavier.dc.html): Musikalischer Werdegang, Jazzpiano, Auftritte
 - [Projekte](https://simonschaugg.de/Projekte.dc.html): YOLD (intergenerationales Tandemprojekt, yold.info) und NeuHier (KI-Plattform für soziale Integration, neuhier.com)
 - [Kulturprojekte](https://simonschaugg.de/Kulturprojekte.dc.html): Mitwirkung in Filmen und szenischen Arbeiten
-- [Texte](https://simonschaugg.de/Texte.dc.html): Literarische Prosa-Fragmente und Textsammlungen
 - [Presse](https://simonschaugg.de/Presse.dc.html): Presseberichte, u.a. FAZ und Journal Frankfurt
 - [Lebenslauf](https://simonschaugg.de/Lebenslauf.dc.html): Beruflicher und akademischer Werdegang
 
