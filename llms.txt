@@ -9,7 +9,7 @@ Diese Seite dokumentiert Forschung, künstlerische Arbeit, musikalisches Schaffe
 - [Startseite](https://simonschaugg.de/): Überblick über Person, Interessen und Werdegang
 - [Forschung & Psychologie](https://simonschaugg.de/Forschung.dc.html): Psychologische Forschung, Identity Leadership, Studium an der Goethe-Universität Frankfurt
 - [Kunst](https://simonschaugg.de/Kunst.dc.html): Expressionistische Malerei und Zeichnungen, Serie „Seelenzustände“
-- [Klavier](https://simonschaugg.de/Klavier.dc.html): Musikalischer Werdegang, Jazzpiano, Auftritte
+- [Musik](https://simonschaugg.de/Klavier.dc.html): Musikalischer Werdegang, Jazzpiano, Auftritte
 - [Projekte](https://simonschaugg.de/Projekte.dc.html): YOLD (intergenerationales Tandemprojekt, yold.info) und NeuHier (KI-Plattform für soziale Integration, neuhier.com)
 - [Kulturprojekte](https://simonschaugg.de/Kulturprojekte.dc.html): Mitwirkung in Filmen und szenischen Arbeiten
 - [Presse](https://simonschaugg.de/Presse.dc.html): Presseberichte, u.a. FAZ und Journal Frankfurt
