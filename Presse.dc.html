@@ -55,6 +55,12 @@
   .faz:hover .fazmeta .arr,.faz:hover .fazlink .arr{transform:translateX(4px)}
   .faz .fazlink{border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .45s}
   .faz:hover .fazlink{border-color:var(--ac)}
+  .emb{border:1px solid var(--line);padding:24px 26px 26px;background:#F3EEE2;display:flex;flex-direction:column;gap:16px}
+  .emb .embbtn{align-self:flex-start;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac);background:none;border:1px solid var(--ac);padding:11px 18px;cursor:pointer;transition:background .4s,color .4s}
+  .emb .embbtn:hover{background:var(--ac);color:#F3EEE2}
+  .emb.loaded{padding:0;border-color:transparent;background:none}
+  .emb.loaded .embhead{display:none}
+  .emb iframe{width:100%;border:0}
   @media(max-width:760px){.fazgrid{grid-template-columns:1fr !important;gap:26px !important}}
   @media(max-width:900px){
     .navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}
@@ -354,6 +360,46 @@
     </div>
   </section>
 
+  <!-- EIGENE KANÄLE · EINGEBETTETE BEITRÄGE -->
+  <section id="beitraege" data-screen-label="Presse · Beiträge" style="padding:clamp(50px,8vw,100px) clamp(18px,5vw,60px);border-top:1px solid var(--line)">
+    <div style="max-width:760px;margin-bottom:clamp(28px,4vw,50px)">
+      <p class="rv lbl" style="color:var(--ac);margin-bottom:20px">07 — Ausgewählte Beiträge aus den eigenen Kanälen</p>
+      <p class="rv" style="font-weight:300;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.3;text-wrap:balance">Einzelne Posts von Instagram und LinkedIn — sie werden erst geladen, wenn du sie öffnest.</p>
+    </div>
+
+    <div class="chans rv" style="display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2.4vw,28px);max-width:1220px;align-items:start">
+
+      <!-- Neuen Beitrag ergänzen: dieses div kopieren.
+           Instagram — data-emb="ig",  data-post = Post-URL (https://www.instagram.com/p/XXXX/)
+           LinkedIn  — data-emb="li",  data-post = Aktivitäts-URN (urn:li:activity:XXXXXXXXXXXXXXXXXXX)
+                       oder die vollständige .../embed/feed/update/... URL aus „Beitrag einbetten". -->
+
+      <div class="emb" data-emb="ig" data-post="">
+        <div class="embhead" style="display:flex;flex-direction:column;gap:14px">
+          <p class="lbl" style="color:var(--faint)">Instagram · @schreitleiser</p>
+          <p style="font-size:1.14rem;line-height:1.5;color:#37301F">Beitrag noch nicht hinterlegt.</p>
+          <p class="lbl" style="color:var(--faint);text-transform:none;letter-spacing:.04em;font-size:12px;line-height:1.6">Beim Öffnen wird eine Verbindung zu Instagram hergestellt und es werden Daten an Meta übertragen.</p>
+          <button type="button" class="embbtn">Beitrag laden</button>
+        </div>
+      </div>
+
+      <div class="emb" data-emb="li" data-post="">
+        <div class="embhead" style="display:flex;flex-direction:column;gap:14px">
+          <p class="lbl" style="color:var(--faint)">LinkedIn · Simon Schaugg</p>
+          <p style="font-size:1.14rem;line-height:1.5;color:#37301F">Beitrag noch nicht hinterlegt.</p>
+          <p class="lbl" style="color:var(--faint);text-transform:none;letter-spacing:.04em;font-size:12px;line-height:1.6">Beim Öffnen wird eine Verbindung zu LinkedIn hergestellt und es werden Daten dorthin übertragen.</p>
+          <button type="button" class="embbtn">Beitrag laden</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="rv" style="display:flex;gap:26px;flex-wrap:wrap;margin-top:clamp(28px,4vw,44px)">
+      <a href="https://www.instagram.com/schreitleiser/" target="_blank" rel="noopener" class="nav-a lbl" style="opacity:1;color:var(--dim);display:inline-flex;gap:8px;align-items:baseline">Alle Beiträge · @schreitleiser <span style="color:var(--ac)">↗</span></a>
+      <a href="https://www.linkedin.com/in/simonschaugg" target="_blank" rel="noopener" class="nav-a lbl" style="opacity:1;color:var(--dim);display:inline-flex;gap:8px;align-items:baseline">Profil · LinkedIn <span style="color:var(--ac)">↗</span></a>
+    </div>
+  </section>
+
   <!-- FOOTER NAV -->
   <footer style="padding:clamp(40px,7vw,90px) clamp(18px,5vw,60px) clamp(34px,5vw,56px);border-top:1px solid var(--line)">
     <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:clamp(28px,4vw,44px)">
@@ -372,8 +418,57 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#C24A1E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Look&quot;,&quot;options&quot;:[&quot;#C24A1E&quot;,&quot;#3A6B4A&quot;,&quot;#2E4A6E&quot;,&quot;#211C15&quot;]}}">
 class Component extends DCLogic {
   applyTheme(){ const r=this.rootEl; if(!r) return; r.style.setProperty('--ac', this.props.accent || '#C24A1E'); }
+
+  // Klick-zum-Laden: vor dem Klick geht keine Anfrage an Instagram oder LinkedIn raus.
+  liEmbedSrc(v){
+    if(/^https?:\/\/.*\/embed\/feed\/update\//.test(v)) return v;
+    const urn = /^urn:li:/.test(v) ? v : (v.match(/-activity-(\d+)/)||[])[1] && 'urn:li:activity:'+v.match(/-activity-(\d+)/)[1];
+    return urn ? 'https://www.linkedin.com/embed/feed/update/'+urn : null;
+  }
+  loadInstagram(box, url){
+    const bq=document.createElement('blockquote');
+    bq.className='instagram-media';
+    bq.setAttribute('data-instgrm-permalink', url);
+    bq.setAttribute('data-instgrm-version','14');
+    bq.style.margin='0';
+    box.appendChild(bq);
+    const done=()=>{ if(window.instgrm) window.instgrm.Embeds.process(); };
+    if(window.instgrm) return done();
+    if(document.getElementById('ig-embed-js')) return document.getElementById('ig-embed-js').addEventListener('load', done);
+    const s=document.createElement('script');
+    s.id='ig-embed-js'; s.async=true; s.src='https://www.instagram.com/embed.js';
+    s.onload=done; document.body.appendChild(s);
+  }
+  loadLinkedIn(box, src){
+    const f=document.createElement('iframe');
+    f.src=src; f.height='600'; f.setAttribute('frameborder','0');
+    f.setAttribute('allowfullscreen',''); f.setAttribute('loading','lazy');
+    f.title='Eingebetteter LinkedIn-Beitrag';
+    box.appendChild(f);
+  }
+  initEmbeds(){
+    let live=0;
+    document.querySelectorAll('.emb').forEach((box)=>{
+      const kind=box.getAttribute('data-emb'), post=(box.getAttribute('data-post')||'').trim();
+      const src = kind==='li' ? this.liEmbedSrc(post) : post;
+      if(!post || !src){ box.style.display='none'; return; }   // ohne Beitrag nichts anzeigen
+      const btn=box.querySelector('.embbtn');
+      if(!btn) return;
+      live++;
+      btn.addEventListener('click', ()=>{
+        btn.disabled=true; btn.textContent='Wird geladen …';
+        box.classList.add('loaded');
+        kind==='li' ? this.loadLinkedIn(box, src) : this.loadInstagram(box, src);
+      }, { once:true });
+    });
+    // Solange kein Beitrag hinterlegt ist, bleibt der ganze Abschnitt verborgen.
+    const sec=document.getElementById('beitraege');
+    if(sec && !live) sec.style.display='none';
+  }
+
   componentDidMount(){
     this.applyTheme();
+    this.initEmbeds();
     const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
     document.querySelectorAll('.rv').forEach((el)=>{const s=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));el.style.transitionDelay=(Math.max(0,s.indexOf(el))%4)*0.08+'s';io.observe(el);});
   }
