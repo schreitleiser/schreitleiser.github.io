@@ -12,19 +12,53 @@
 <meta property="og:title" content="Kunst-Archiv — alle Arbeiten | Simon Schaugg">
 <meta property="og:description" content="Das vollständige Bildarchiv von Simon Schaugg: alle Zeichnungen, sämtliche Original-Seiten des Notizbuchs, Reise-Skizzen und die fotografischen Serien.">
 <meta property="og:url" content="https://simonschaugg.de/Kunst-Archiv.dc.html">
-<meta property="og:image" content="https://simonschaugg.de/assets/hero.jpg">
+<meta property="og:image" content="https://simonschaugg.de/assets/draw/new-feige-sau-rot-blau.jpg">
+<meta property="og:image:alt" content="„Feige Sau“ — Zeichnung von Simon Schaugg, Tusche und Wachsmalstift, 2023: eine rot gemalte Figur greift nach einem weißen Kopf vor blauem Grund, oben rechts der Schriftzug „FEIGE SAU“.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Simon Schaugg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Kunst-Archiv — alle Arbeiten | Simon Schaugg">
 <meta name="twitter:description" content="Das vollständige Bildarchiv von Simon Schaugg: alle Zeichnungen, sämtliche Original-Seiten des Notizbuchs, Reise-Skizzen und die fotografischen Serien.">
-<meta name="twitter:image" content="https://simonschaugg.de/assets/hero.jpg">
+<meta name="twitter:image" content="https://simonschaugg.de/assets/draw/new-feige-sau-rot-blau.jpg">
 
 <!-- React lokal ausgeliefert: support.js greift nur auf unpkg zurueck,
      falls diese Dateien fehlen. -->
 <script src="./assets/vendor/react.production.min.js"></script>
 <script src="./assets/vendor/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Kunst-Archiv",
+  "url": "https://simonschaugg.de/Kunst-Archiv.dc.html",
+  "description": "Das vollständige Bildarchiv von Simon Schaugg: alle Zeichnungen, sämtliche Original-Seiten des Notizbuchs, Reise-Skizzen und die fotografischen Serien.",
+  "inLanguage": "de-DE",
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "contentUrl": "https://simonschaugg.de/assets/draw/new-feige-sau-rot-blau.jpg",
+    "creator": {
+      "@id": "https://simonschaugg.de/#person"
+    }
+  },
+  "about": {
+    "@type": "Person",
+    "@id": "https://simonschaugg.de/#person",
+    "name": "Simon Schaugg",
+    "alternateName": "Simon Elias Schaugg",
+    "url": "https://simonschaugg.de/",
+    "sameAs": [
+      "https://www.linkedin.com/in/simonschaugg",
+      "https://www.instagram.com/schreitleiser/"
+    ]
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Simon Schaugg",
+    "url": "https://simonschaugg.de/"
+  }
+}
+</script>
 </head>
 <body>
 <x-dc>
@@ -108,7 +142,7 @@
     </div>
     <div class="wall" style="column-count:5;column-gap:clamp(12px,1.6vw,20px)">
       <sc-for list="{{ seeleGallery }}" as="item" hint-placeholder-count="6">
-        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.title }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
       </sc-for>
     </div>
   </section>
@@ -125,25 +159,25 @@
 
     <!-- der tisch: gestreute originalfotos -->
     <div class="wall" style="column-count:3;column-gap:clamp(16px,2vw,30px);margin-bottom:clamp(50px,8vw,96px)">
-      <figure class="rv plate" style="transform:rotate(1.3deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenAktivurlaub }}"><img src="assets/notizbuch/aktivurlaub-leuchtturm.jpg" alt="Unsere Vorstellung von Aktivurlaub" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Aktivurlaub</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Marker · 01.08.23</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(1.1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenKopfkraulen }}"><img src="assets/notizbuch/kopfkraulen-rom.jpg" alt="Manchmal ist Kopf-kraulen die beste Medizin" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Kopf-kraulen</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · Rom, 05.09.23</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(-1.3deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenPortugal }}"><img src="assets/notizbuch/rueckfahrt-portugal.jpg" alt="Rückfahrt Portugal" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Rückfahrt Portugal</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · 2023</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(.9deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenOrange }}"><img src="assets/notizbuch/orange-figuren.jpg" alt="Figuren, orange" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · 2023</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(-.9deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenAuto }}"><img src="assets/notizbuch/autoinnenraum-portugal.jpg" alt="Autoinnenraum, Rückfahrt Portugal" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Autoinnenraum</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · Rückfahrt Portugal, 2023</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(1.1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenCamping }}"><img src="assets/notizbuch/campingplatz-toskana.jpg" alt="Campingplatz Toskana" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Campingplatz</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · Grosseto, August 23</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(-1.2deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenVolksfest }}"><img src="assets/notizbuch/volksfest-hauptwache.jpg" alt="Volksfest an der Hauptwache" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Volksfest an der Hauptwache</span><span class="lbl" style="color:var(--faint)">Tusche · Frankfurt</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenPortraits }}"><img src="assets/notizbuch/portraits-orange.jpg" alt="Porträts, orange" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Marker · 2023</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(1.2deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenTagebuch }}"><img src="assets/notizbuch/tagebuch-vergessen.jpg" alt="Blick auf Hafen, Lissabon" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Blick auf Hafen Lissabon</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Text · 2023</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(-1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenBaumallee }}"><img src="assets/notizbuch/baumallee-lila.jpg" alt="Baumallee" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Baumallee</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · 2022</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(-1.2deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenFeldweg }}"><img src="assets/notizbuch/feldweg-baum.jpg" alt="Feldweg" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Feldweg</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · 2022</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenMarkthalle }}"><img src="assets/notizbuch/markthalle-porto.jpg" alt="Markthalle Porto" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Markthalle Porto</span><span class="lbl" style="color:var(--faint)">Porto, 08.08.23</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(-1.1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenHaengematte }}"><img src="assets/notizbuch/haengematte-rot.jpg" alt="Hängematte" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Hängematte</span><span class="lbl" style="color:var(--faint)">Portugal, 2021</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(1.3deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenAlbufeira2 }}"><img src="assets/notizbuch/albufeira-strand-2.jpg" alt="Am Strand von Albufeira" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Am Strand von Albufeira</span><span class="lbl" style="color:var(--faint)">Portugal, 30.07.23</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(-.9deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenRobinHaengematte }}"><img src="assets/notizbuch/robin-haengematte.jpg" alt="Robin in der Hängematte" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Robin in der Hängematte</span><span class="lbl" style="color:var(--faint)">06.09.21</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(-1.1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenHandschuhsheim }}"><img src="assets/notizbuch/handschuhsheimer-feld.jpg" alt="Handschuhsheimer Feld" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Handschuhsheimer Feld</span><span class="lbl" style="color:var(--faint)">Heidelberg, 18.05.22</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(1.2deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenHecke }}"><img src="assets/notizbuch/hecke-gruen.jpg" alt="Ohne Titel" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Aquarell · 2022</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(-1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenStrassenszene }}"><img src="assets/notizbuch/strassenszene-notiz.jpg" alt="Ohne Titel" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · 2022</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(1.1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenGruneburgParkBaumreihe }}"><img src="assets/notizbuch/gruneburg-park-baumreihe.jpg" alt="Grüneburgpark" style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Grüneburgpark</span><span class="lbl" style="color:var(--faint)">Frankfurt, 21.05.23</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(1.3deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenAktivurlaub }}"><img src="assets/notizbuch/aktivurlaub-leuchtturm.jpg" alt="„Unsere Vorstellung von Aktivurlaub“ — Notizbuchseite von Simon Schaugg, Tusche und Marker, 1. August 2023: eine gelb kolorierte Figur mit Kaffeetasse über die aufgeschlagene Doppelseite, daneben handschriftlicher Text." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Aktivurlaub</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Marker · 01.08.23</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(1.1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenKopfkraulen }}"><img src="assets/notizbuch/kopfkraulen-rom.jpg" alt="„Manchmal ist Kopfkraulen die beste Medizin“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Rom, 5. September 2023: zwei blau gezeichnete Köpfe auf orange grundierter Doppelseite." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Kopf-kraulen</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · Rom, 05.09.23</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(-1.3deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenPortugal }}"><img src="assets/notizbuch/rueckfahrt-portugal.jpg" alt="„Rückfahrt Portugal“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 2023: der Innenraum eines Autos mit Kopfstützen und Seitenfenster, in feiner Bleistiftlinie." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Rückfahrt Portugal</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · 2023</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(.9deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenOrange }}"><img src="assets/notizbuch/orange-figuren.jpg" alt="„Ohne Titel“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 2023: blaue Figuren auf orange grundiertem, leicht gerolltem Papier." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · 2023</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(-.9deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenAuto }}"><img src="assets/notizbuch/autoinnenraum-portugal.jpg" alt="„Autoinnenraum“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Rückfahrt aus Portugal, 2023: Blick von der Rückbank über Kopfstützen und Fenster." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Autoinnenraum</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · Rückfahrt Portugal, 2023</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(1.1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenCamping }}"><img src="assets/notizbuch/campingplatz-toskana.jpg" alt="„Campingplatz“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Grosseto, August 2023: ein blau laviertes Vorzelt zwischen hohen Bäumen." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Campingplatz</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · Grosseto, August 23</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(-1.2deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenVolksfest }}"><img src="assets/notizbuch/volksfest-hauptwache.jpg" alt="„Volksfest an der Hauptwache“ — Notizbuchseite von Simon Schaugg, Tusche, Frankfurt: ein Platz mit Gebäuden und Fahrgeschäften in dichter Bleistiftschraffur." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Volksfest an der Hauptwache</span><span class="lbl" style="color:var(--faint)">Tusche · Frankfurt</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenPortraits }}"><img src="assets/notizbuch/portraits-orange.jpg" alt="„Ohne Titel“ — Notizbuchseite von Simon Schaugg, Tusche und Marker, 2023: zwei Porträts auf orange grundierter Doppelseite, darunter eine Reihe kleiner Gefäße." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Marker · 2023</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(1.2deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenTagebuch }}"><img src="assets/notizbuch/tagebuch-vergessen.jpg" alt="„Blick auf Hafen Lissabon“ — Notizbuchseite von Simon Schaugg, Tusche und Text, 2023: eine blau kolorierte Hafenszene mit Kran auf gerolltem Papier, daneben handschriftliche Notizen." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Blick auf Hafen Lissabon</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Text · 2023</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(-1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenBaumallee }}"><img src="assets/notizbuch/baumallee-lila.jpg" alt="„Baumallee“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 2022: eine Baumreihe an einem Ufer in Grün und Violett, über die ganze Doppelseite laviert." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Baumallee</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · 2022</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(-1.2deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenFeldweg }}"><img src="assets/notizbuch/feldweg-baum.jpg" alt="„Feldweg“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 2022: ein einzelner Baum an einem Feldweg unter weitem Himmel." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Feldweg</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · 2022</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenMarkthalle }}"><img src="assets/notizbuch/markthalle-porto.jpg" alt="„Markthalle Porto“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Porto, 8. August 2023: die blauen Stände einer Markthalle mit roten Waren, in perspektivischer Reihe." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Markthalle Porto</span><span class="lbl" style="color:var(--faint)">Porto, 08.08.23</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(-1.1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenHaengematte }}"><img src="assets/notizbuch/haengematte-rot.jpg" alt="„Hängematte“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Portugal, 2021: eine rote Hängematte zwischen zwei Bäumen mit dichtem Laub." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Hängematte</span><span class="lbl" style="color:var(--faint)">Portugal, 2021</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(1.3deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenAlbufeira2 }}"><img src="assets/notizbuch/albufeira-strand-2.jpg" alt="„Am Strand von Albufeira“ — Notizbuchseite von Simon Schaugg, Tusche, Portugal, 30. Juli 2023: flach lavierte Felsen und Strandlinie über die Doppelseite." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Am Strand von Albufeira</span><span class="lbl" style="color:var(--faint)">Portugal, 30.07.23</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(-.9deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenRobinHaengematte }}"><img src="assets/notizbuch/robin-haengematte.jpg" alt="„Robin in der Hängematte“ — Notizbuchseite von Simon Schaugg, Tusche, 6. September 2021: eine Person liegt in einer Hängematte unter überhängenden Zweigen." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Robin in der Hängematte</span><span class="lbl" style="color:var(--faint)">06.09.21</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(-1.1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenHandschuhsheim }}"><img src="assets/notizbuch/handschuhsheimer-feld.jpg" alt="„Handschuhsheimer Feld“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Heidelberg, 18. Mai 2022: eine Reihe kahler Bäume auf einem Skizzenblock mit Spiralbindung." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Handschuhsheimer Feld</span><span class="lbl" style="color:var(--faint)">Heidelberg, 18.05.22</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(1.2deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenHecke }}"><img src="assets/notizbuch/hecke-gruen.jpg" alt="„Ohne Titel“ — Notizbuchseite von Simon Schaugg, Aquarell, 2022: eine grüne Hecke vor hellem Feld, nass in nass gemalt, auf einem Spiralblock." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Aquarell · 2022</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(-1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenStrassenszene }}"><img src="assets/notizbuch/strassenszene-notiz.jpg" alt="„Ohne Titel“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 2022: eine Straßenszene mit Passanten unter Bäumen, links eine engzeilige handschriftliche Notiz." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · 2022</span></figcaption></figure>
+      <figure class="rv plate" style="transform:rotate(1.1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenGruneburgParkBaumreihe }}"><img src="assets/notizbuch/gruneburg-park-baumreihe.jpg" alt="„Grüneburgpark“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Frankfurt, 21. Mai 2023: eine Laubbaumgruppe und dunkle Nadelbäume vor blauem Himmel." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Grüneburgpark</span><span class="lbl" style="color:var(--faint)">Frankfurt, 21.05.23</span></figcaption></figure>
     </div>
 
   </section>
@@ -160,7 +194,7 @@
     </div>
     <div class="wall" style="column-count:5;column-gap:clamp(12px,1.6vw,20px)">
       <sc-for list="{{ reiseGallery }}" as="item" hint-placeholder-count="6">
-        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.title }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
       </sc-for>
     </div>
   </section>
@@ -191,9 +225,9 @@
       <p style="font-style:italic;font-size:1.15rem;line-height:1.6;color:#E7E2DA">„Wann erleben wir heute noch echte Stille?“</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,20px)">
-      <figure class="rv plate mz" style="margin:0;transform:rotate(-.7deg);cursor:zoom-in" onClick="{{ zoomOpenStille1 }}"><img src="assets/stille/stille-1.jpg" alt="Stille — vor einer Bildercollage aus Medien und Werbung" style="width:100%;aspect-ratio:3/2;object-fit:cover"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Stille · ’20</span></figcaption></figure>
-      <figure class="rv plate mz" style="margin:0;transform:rotate(.6deg);cursor:zoom-in" onClick="{{ zoomOpenStille2 }}"><img src="assets/stille/stille-2.jpg" alt="Stille — im Nachrichtenstudio" style="width:100%;aspect-ratio:3/2;object-fit:cover"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Stille · ’20</span></figcaption></figure>
-      <figure class="rv plate mz" style="margin:0;transform:rotate(-.4deg);cursor:zoom-in" onClick="{{ zoomOpenStille3 }}"><img src="assets/stille/stille-3.jpg" alt="Stille — in einer belebten Straße" style="width:100%;aspect-ratio:3/2;object-fit:cover"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Stille · ’20</span></figcaption></figure>
+      <figure class="rv plate mz" style="margin:0;transform:rotate(-.7deg);cursor:zoom-in" onClick="{{ zoomOpenStille1 }}"><img src="assets/stille/stille-1.jpg" alt="Aus der fotografischen Serie „Stille“ von Simon Schaugg, 2020: Simon Schaugg mit roten Gehörschützern vor einer Collage aus Werbe- und Medienbildern." style="width:100%;aspect-ratio:3/2;object-fit:cover"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Stille · ’20</span></figcaption></figure>
+      <figure class="rv plate mz" style="margin:0;transform:rotate(.6deg);cursor:zoom-in" onClick="{{ zoomOpenStille2 }}"><img src="assets/stille/stille-2.jpg" alt="Aus der fotografischen Serie „Stille“ von Simon Schaugg, 2020: Simon Schaugg mit roten Gehörschützern vor laufenden Nachrichtenbildschirmen." style="width:100%;aspect-ratio:3/2;object-fit:cover"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Stille · ’20</span></figcaption></figure>
+      <figure class="rv plate mz" style="margin:0;transform:rotate(-.4deg);cursor:zoom-in" onClick="{{ zoomOpenStille3 }}"><img src="assets/stille/stille-3.jpg" alt="Aus der fotografischen Serie „Stille“ von Simon Schaugg, 2020: Simon Schaugg mit roten Gehörschützern in einer belebten Straße mit fließendem Verkehr." style="width:100%;aspect-ratio:3/2;object-fit:cover"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Stille · ’20</span></figcaption></figure>
     </div>
   </div>
 
@@ -210,21 +244,21 @@
     <p class="rv lbl" style="color:var(--ac);margin-bottom:16px">Figuren</p>
     <div class="wall" style="column-count:6;column-gap:10px;margin-bottom:clamp(30px,4.5vw,52px)">
       <sc-for list="{{ fotoFiguren }}" as="item" hint-placeholder-count="9">
-        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.title }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
       </sc-for>
     </div>
 
     <p class="rv lbl" style="color:var(--ac);margin-bottom:16px">Orte &amp; Landschaft</p>
     <div class="wall" style="column-count:6;column-gap:10px;margin-bottom:clamp(30px,4.5vw,52px)">
       <sc-for list="{{ fotoOrte }}" as="item" hint-placeholder-count="6">
-        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.title }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
       </sc-for>
     </div>
 
     <p class="rv lbl" style="color:var(--ac);margin-bottom:16px">Abstraktes</p>
     <div class="wall" style="column-count:6;column-gap:10px">
       <sc-for list="{{ fotoAbstrakt }}" as="item" hint-placeholder-count="8">
-        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.title }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
       </sc-for>
     </div>
   </section>
@@ -345,12 +379,104 @@ class Component extends DCLogic {
     orig: { pages: this.origPages, idx:0, anim:false }
   };
   refs = { seele:{}, reise:{}, orig:{} };
+  // Bildbeschreibungen fuer Suchmaschinen und Screenreader; die Bildunterschrift bleibt der kurze Titel.
+  ALTTEXTE = {
+    "assets/art/urteil-backpacking-84.jpg": "„backpacking in 84“ — digitale Arbeit von Simon Schaugg aus der Serie „Das Urteil“, 2025: eine Person mit Rucksack an einem Geländer, dahinter eine Bergkette.",
+    "assets/art/urteil-council.jpg": "„the council has spoken“ — digitale Arbeit von Simon Schaugg aus der Serie „Das Urteil“, 2025: ein rosafarbenes Objekt auf einem hohen Sockel vor schwarzem Grund.",
+    "assets/art/urteil-good-view.jpg": "„enjoying a good view“ — digitale Arbeit von Simon Schaugg aus der Serie „Das Urteil“, 2025: ein Aussichtssteg über einer rosa eingefärbten Hügellandschaft.",
+    "assets/art/urteil-guilty.png": "„Guilty“ — digitale Arbeit von Simon Schaugg aus der Serie „Das Urteil“, 2025: eine grüne und eine schwarze Figur vor pinkem Grund, darüber die Schriftzüge „The Council Has Spoken“ und „GUILTY“.",
+    "assets/art/urteil-please.png": "„Please“ — digitale Arbeit von Simon Schaugg aus der Serie „Das Urteil“, 2025: eine violette Hand, die aus dem Bildrand greift, vor schwarzem Grund.",
+    "assets/art/urteil-you-or-me.jpg": "„You or Me“ — digitale Arbeit von Simon Schaugg aus der Serie „Das Urteil“, 2025: eine pinke Krone aus Perlen und Schmuck vor schwarzem Grund.",
+    "assets/digital/berg-blau-grafisch.jpg": "„Berg, grafisch“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: eine Berglandschaft, allein aus feinen blauen Strichlagen aufgebaut.",
+    "assets/digital/berg-rot.jpg": "„Roter Berg“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: eine schwarze Bergsilhouette mit rotem Saum über türkisfarbenem Wasser.",
+    "assets/digital/wolken-1.jpg": "„Wolken“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: eine graue Wolkenbank über einer hellen, fast aufgelösten Fläche.",
+    "assets/digital/wolken-horizont.jpg": "„Horizont“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: ein schmaler Horizont zwischen Wolken und Wasser, nahezu monochrom.",
+    "assets/digital/wolken-wald.jpg": "„Wald unter Wolken“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: ein dunkler Waldsaum unter schwerer Wolkendecke.",
+    "assets/draw/blueline.png": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche, 2023: ein Kopf, allein aus feinen Konturlinien gebaut, vor flächigem Blau.",
+    "assets/draw/gelitten.jpg": "„Warum hast du für mich gelitten“ — Zeichnung von Simon Schaugg, Tusche, 2023: eine liegende nackte Figur in feiner Konturlinie, darüber ein schwarzes Feld mit einem zweiten Kopf und handschriftlichem Text.",
+    "assets/draw/gibmichauf.jpg": "„Gib mich auf“ — Zeichnung von Simon Schaugg, Tusche, 17. Januar 2023: ein verwischtes Doppelgesicht mit gezeichneten Tränen, rechts der Schriftzug „gib mich auf“.",
+    "assets/draw/new-beobachtung-strand.jpg": "„Beobachtung am Strand“ — Zeichnung von Simon Schaugg, Tusche, Portugal, 30. Juli 2023: eine Person stützt den Kopf in die Hand, daneben eine handschriftliche Notiz über schreiende Kinder.",
+    "assets/draw/new-coffee-talk.jpg": "„Make me coffee, then talk“ — Zeichnung von Simon Schaugg, Tusche und Marker, 2023: eine Figur mit Tasse an einem schwarzen Tisch, links senkrecht der Schriftzug, umlaufend ein violetter Rahmen.",
+    "assets/draw/new-crouching-figure.jpg": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche, 2023: eine kauernde nackte Figur, die den Kopf auf die Arme stützt, in reiner Umrisslinie.",
+    "assets/draw/new-feige-sau-rot-blau.jpg": "„Feige Sau“ — Zeichnung von Simon Schaugg, Tusche und Wachsmalstift, 2023: eine rot gemalte Figur greift nach einem weißen Kopf vor blauem Grund, oben rechts der Schriftzug „FEIGE SAU“.",
+    "assets/draw/new-flieg-engel.jpg": "„Flieg, Engel“ — Zeichnung von Simon Schaugg, Tusche, 13. Januar 2023: ein Männerkopf in reiner Umrisslinie, daneben ein einzelner ausgestreckter Flügel.",
+    "assets/draw/new-ganz-entspannt.jpg": "„Ganz entspannt im Hier und Jetzt“ — Zeichnung von Simon Schaugg, Tusche und Aquarell, Caldas de Monchique, 1. August 2023: eine sitzende Person mit Kaffeetasse unter grünem Blattwerk.",
+    "assets/draw/new-gemeinsam-entspannt.jpg": "„Gemeinsam entspannt im Hier und Jetzt“ — Zeichnung von Simon Schaugg, Tusche und Aquarell, Portugal, 1. August 2023: zwei Personen mit Kaffeetassen an einem Tisch unter Bäumen.",
+    "assets/draw/new-graprih-griffel.jpg": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche, 2023: zwei Figuren mit übergroßen Augen sitzen einander an einem Tisch gegenüber.",
+    "assets/draw/new-piano-figur.jpg": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche und Wachsmalstift, 2023: eine Figur über eine Klaviatur gebeugt, umgeben von weißen Federformen vor blauem Grund.",
+    "assets/draw/new-pink-heart.jpg": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche und Marker, 2023: ein Halbporträt im schwarzen Pullover mit kleinem Herz, vor kräftig pinkem Grund.",
+    "assets/draw/new-prost-voegel.jpg": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche, 2023: mehrere Figuren stoßen mit Gläsern an, darüber eine strahlenförmige Sonne.",
+    "assets/draw/new-robin-kaffee.jpg": "„Robin mit Kaffee, Mama malt im Hintergrund“ — Zeichnung von Simon Schaugg, Tusche und Aquarell, Caldas de Monchique, 1. August 2023.",
+    "assets/draw/new-schuld-drip.jpg": "„Schuld“ — Zeichnung von Simon Schaugg, Tusche und Aquarell, 2023: ein Kopf, dessen untere Hälfte in blau-schwarzen Farbläufen zerrinnt, darunter das Wort „Schuld“.",
+    "assets/draw/new-segelboot-vogel.jpg": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche, 2023: ein Segelboot mit einem Gesicht im Rumpf, darunter ein schwarz gerahmtes Bildfeld mit einer weiteren Figur.",
+    "assets/draw/new-yellow-glasses.jpg": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche und Marker, 2023: eine Person mit großer Brille und verschränkten Armen vor gelbem Grund.",
+    "assets/draw/rad.jpg": "„RAD“ — Zeichnung von Simon Schaugg, Aquarell und Tusche, 2023: eine langgliedrige Figur auf einem roten Rennrad, von der Seite gesehen.",
+    "assets/draw/schuld-blau.jpg": "„Schuld“ — Zeichnung von Simon Schaugg, Aquarell und Tusche, 18. Juni 2023: ein frontales Gesicht in dichter Strichschraffur vor tiefblauem Grund, ringsum das handgeschriebene Wort „schuld“.",
+    "assets/draw/schuld-kind.png": "„schuld“ — Zeichnung von Simon Schaugg, Aquarell und Tusche, 2023: ein bleicher, kindlich wirkender Kopf mit dem eingesetzten Schriftzug „schuld“ über den Augen, darüber handschriftlich „Steh zu deinen Taten“.",
+    "assets/draw/scribble.jpg": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche, 2023: ein aus dichten schwarzen Kritzellinien aufgebautes Gesicht mit großen, starren Augen.",
+    "assets/draw/stier.jpg": "„Mann mit Stierarsch“ — Zeichnung von Simon Schaugg, Aquarell und Tusche, 21. März 2023: ein Mann im blauen Hemd, dessen Unterkörper in einen Stierleib mit Hufen übergeht, daneben handschriftlicher Text.",
+    "assets/draw/tower.jpg": "„Schiefer Turm“ — Zeichnung von Simon Schaugg, Marker und Aquarell, 2023: der schiefe Turm von Pisa in kräftigem Rot und Blau, stark verzeichnet.",
+    "assets/draw/vogel.jpg": "„Blauer Vogel“ — Zeichnung von Simon Schaugg, Tusche und Marker, 4. Juni 2023: ein Vogel mit menschlichem Gesicht und blau schraffiertem Gefieder, daneben der handgeschriebene Text „Blauer Vogel, tauber Vogel, verbrauchter Vogel“.",
+    "assets/foto/balkon-blumen-frankfurt.jpg": "Fotografie von Simon Schaugg: blühende Balkonblumen im Vordergrund, dahinter Dächer und Häuser in Frankfurt.",
+    "assets/foto/figur-dunkel.jpg": "Fotografie von Simon Schaugg: eine Gestalt geht in einem dunklen Raum auf einen schmalen Lichtstreifen zu.",
+    "assets/foto/gaensebluemchen-wiese.jpg": "Fotografie von Simon Schaugg: eine Gänseblümchenwiese, aus Bodenhöhe fotografiert.",
+    "assets/foto/galerie-weiss.jpg": "Fotografie von Simon Schaugg: eine fast leere weiße Galeriehalle, in der Ferne eine einzelne Person.",
+    "assets/foto/glaskopf.jpg": "Fotografie von Simon Schaugg: ein schwarz glänzender Kopf aus Glas vor weißem Grund.",
+    "assets/foto/haende-glas.jpg": "Fotografie von Simon Schaugg: zwei Hände drücken sich von innen gegen eine Milchglasscheibe.",
+    "assets/foto/installation-schwarz.jpg": "Fotografie von Simon Schaugg: eine schwarze Installation aus gereihten Elementen, davor die Silhouette einer Person.",
+    "assets/foto/kuh-figur-gesicht.jpg": "Fotografie von Simon Schaugg: Nahaufnahme des Gesichts einer Kuhfigur aus Keramik.",
+    "assets/foto/kuh-figur-tasse.jpg": "Fotografie von Simon Schaugg: eine hölzerne Kuhfigur neben einer weißen Tasse auf heller Fläche.",
+    "assets/foto/lamm-ente-figuren.jpg": "Fotografie von Simon Schaugg: eine Lammfigur und eine Entenfigur nebeneinander auf einer Kante.",
+    "assets/foto/lamm-nahaufnahme.jpg": "Fotografie von Simon Schaugg: Nahaufnahme einer weißen Lammfigur vor einem unscharfen Schwarzweißbild.",
+    "assets/foto/lampe-schatten.jpg": "Fotografie von Simon Schaugg: das unscharfe Licht einer Lampe und ihr Schatten auf einer Wand.",
+    "assets/foto/lounge-moebel.jpg": "Fotografie von Simon Schaugg: helle Loungemöbel in einem dunklen Raum unter punktuellem Licht.",
+    "assets/foto/menge-gruen.jpg": "Fotografie von Simon Schaugg: eine Menschenmenge in Grün getaucht und bis zur Unkenntlichkeit verwischt.",
+    "assets/foto/menge-koernig.jpg": "Fotografie von Simon Schaugg: eine Menschenmenge, stark körnig und bis ins Abstrakte aufgelöst.",
+    "assets/foto/mond-meer.jpg": "Fotografie von Simon Schaugg: der Mond über dem Meer, seine Spiegelung als heller Streifen auf dem Wasser.",
+    "assets/foto/qualle-blau.jpg": "Fotografie von Simon Schaugg: eine Qualle in blauem und violettem Licht, die Tentakel weit aufgefächert.",
+    "assets/foto/qualle-dunkel.jpg": "Fotografie von Simon Schaugg: eine Qualle im dunklen Wasser eines Aquariums.",
+    "assets/foto/rosen-nahaufnahme.jpg": "Fotografie von Simon Schaugg: rote Rosen in Nahaufnahme, teils aufgeblüht, teils bereits verwelkt.",
+    "assets/foto/stillleben-kuh.jpg": "Fotografie von Simon Schaugg: eine gefleckte Kuhfigur mit buntem Band neben einer Tasse, vor einem roten Streifen.",
+    "assets/foto/teddybaeren.jpg": "Fotografie von Simon Schaugg: ein dicht gefüllter Haufen aus Teddybären und Stofftieren.",
+    "assets/foto/vitra-museum.jpg": "Fotografie von Simon Schaugg: das Vitra Design Museum in offener Landschaft unter blauem Himmel.",
+    "assets/notizbuch/aktivurlaub-leuchtturm.jpg": "„Unsere Vorstellung von Aktivurlaub“ — Notizbuchseite von Simon Schaugg, Tusche und Marker, 1. August 2023: eine gelb kolorierte Figur mit Kaffeetasse über die aufgeschlagene Doppelseite, daneben handschriftlicher Text.",
+    "assets/notizbuch/albufeira-strand-2.jpg": "„Am Strand von Albufeira“ — Notizbuchseite von Simon Schaugg, Tusche, Portugal, 30. Juli 2023: flach lavierte Felsen und Strandlinie über die Doppelseite.",
+    "assets/notizbuch/albufeira-strand.jpeg": "„Albufeira Strand“ — Notizbuchseite von Simon Schaugg, Tusche, Portugal, 30. Juli 2023: ein großer heller Fels am Strand, das Meer in dichter Schraffur.",
+    "assets/notizbuch/autoinnenraum-portugal.jpg": "„Autoinnenraum“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Rückfahrt aus Portugal, 2023: Blick von der Rückbank über Kopfstützen und Fenster.",
+    "assets/notizbuch/baumallee-lila.jpg": "„Baumallee“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 2022: eine Baumreihe an einem Ufer in Grün und Violett, über die ganze Doppelseite laviert.",
+    "assets/notizbuch/campingplatz-toskana.jpg": "„Campingplatz“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Grosseto, August 2023: ein blau laviertes Vorzelt zwischen hohen Bäumen.",
+    "assets/notizbuch/feldweg-baum.jpg": "„Feldweg“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 2022: ein einzelner Baum an einem Feldweg unter weitem Himmel.",
+    "assets/notizbuch/friedberger-platz.jpeg": "„Friedberger Platz“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Frankfurt, 22. April 2023: ein kahler Baum vor einem Wohnhaus mit Giebeldach.",
+    "assets/notizbuch/gruneburg-baum.jpeg": "„Grüneburgpark“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Frankfurt, 21. Mai 2023: ein Baum mit gelbgrünem Laub über einer Wiese.",
+    "assets/notizbuch/gruneburg-cafe.jpeg": "„Grüneburgpark, Parkcafé“ — Notizbuchseite von Simon Schaugg, Tusche, Frankfurt, 21. Mai 2023: das Rundgebäude des Parkcafés mit Gästen davor.",
+    "assets/notizbuch/gruneburg-park-baumreihe.jpg": "„Grüneburgpark“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Frankfurt, 21. Mai 2023: eine Laubbaumgruppe und dunkle Nadelbäume vor blauem Himmel.",
+    "assets/notizbuch/gruneburg-silvan.jpeg": "„Grüneburgpark mit Silvan Rauchschlund“ — Notizbuchseite von Simon Schaugg, Tusche, Frankfurt, 21. Mai 2023: Parkbäume und ein Pavillon in dichter Federschraffur.",
+    "assets/notizbuch/haengematte-rot.jpg": "„Hängematte“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Portugal, 2021: eine rote Hängematte zwischen zwei Bäumen mit dichtem Laub.",
+    "assets/notizbuch/handschuhsheimer-feld.jpg": "„Handschuhsheimer Feld“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Heidelberg, 18. Mai 2022: eine Reihe kahler Bäume auf einem Skizzenblock mit Spiralbindung.",
+    "assets/notizbuch/hecke-gruen.jpg": "„Ohne Titel“ — Notizbuchseite von Simon Schaugg, Aquarell, 2022: eine grüne Hecke vor hellem Feld, nass in nass gemalt, auf einem Spiralblock.",
+    "assets/notizbuch/kopfkraulen-rom.jpg": "„Manchmal ist Kopfkraulen die beste Medizin“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Rom, 5. September 2023: zwei blau gezeichnete Köpfe auf orange grundierter Doppelseite.",
+    "assets/notizbuch/markthalle-porto.jpg": "„Markthalle Porto“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Porto, 8. August 2023: die blauen Stände einer Markthalle mit roten Waren, in perspektivischer Reihe.",
+    "assets/notizbuch/orange-figuren.jpg": "„Ohne Titel“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 2023: blaue Figuren auf orange grundiertem, leicht gerolltem Papier.",
+    "assets/notizbuch/portraits-orange.jpg": "„Ohne Titel“ — Notizbuchseite von Simon Schaugg, Tusche und Marker, 2023: zwei Porträts auf orange grundierter Doppelseite, darunter eine Reihe kleiner Gefäße.",
+    "assets/notizbuch/robin-haengematte.jpg": "„Robin in der Hängematte“ — Notizbuchseite von Simon Schaugg, Tusche, 6. September 2021: eine Person liegt in einer Hängematte unter überhängenden Zweigen.",
+    "assets/notizbuch/rueckfahrt-portugal.jpg": "„Rückfahrt Portugal“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 2023: der Innenraum eines Autos mit Kopfstützen und Seitenfenster, in feiner Bleistiftlinie.",
+    "assets/notizbuch/strassenszene-notiz.jpg": "„Ohne Titel“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 2022: eine Straßenszene mit Passanten unter Bäumen, links eine engzeilige handschriftliche Notiz.",
+    "assets/notizbuch/tagebuch-vergessen.jpg": "„Blick auf Hafen Lissabon“ — Notizbuchseite von Simon Schaugg, Tusche und Text, 2023: eine blau kolorierte Hafenszene mit Kran auf gerolltem Papier, daneben handschriftliche Notizen.",
+    "assets/notizbuch/tebo-kirche.jpg": "„Blick auf Tebo und Kirche“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Portugal, 2023: ein Kirchturm mit rot laviertem Dach über einer Häuserzeile.",
+    "assets/notizbuch/terrassentoepfe.jpeg": "„Terrassentöpfe“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 9. April 2023: bepflanzte Tontöpfe und ein dunkler Kasten auf einer Terrasse.",
+    "assets/notizbuch/volksfest-hauptwache.jpg": "„Volksfest an der Hauptwache“ — Notizbuchseite von Simon Schaugg, Tusche, Frankfurt: ein Platz mit Gebäuden und Fahrgeschäften in dichter Bleistiftschraffur.",
+    "assets/stille/stille-1.jpg": "Aus der fotografischen Serie „Stille“ von Simon Schaugg, 2020: Simon Schaugg mit roten Gehörschützern vor einer Collage aus Werbe- und Medienbildern.",
+    "assets/stille/stille-2.jpg": "Aus der fotografischen Serie „Stille“ von Simon Schaugg, 2020: Simon Schaugg mit roten Gehörschützern vor laufenden Nachrichtenbildschirmen.",
+    "assets/stille/stille-3.jpg": "Aus der fotografischen Serie „Stille“ von Simon Schaugg, 2020: Simon Schaugg mit roten Gehörschützern in einer belebten Straße mit fließendem Verkehr."
+  };
+  altFor(src, ersatz){ return this.ALTTEXTE[src] || ersatz; }
   applyTheme(){ const r=this.rootEl; if(!r) return; r.style.setProperty('--ac', this.props.accent || '#E23A22'); }
   pad(n){ return String(n).padStart(2,'0'); }
   updateMeta(id){
     const b=this.books[id], r=this.refs[id];
     if(r.titleEl) r.titleEl.textContent = b.pages[b.idx].title;
     if(r.metaEl)  r.metaEl.textContent  = b.pages[b.idx].meta;
+    if(r.baseImg) r.baseImg.alt = this.altFor(b.pages[b.idx].src, b.pages[b.idx].title);
     if(r.counterEl) r.counterEl.textContent = this.pad(b.idx+1)+' / '+this.pad(b.pages.length);
     if(r.prevBtn) r.prevBtn.disabled = (b.idx<=0);
     if(r.nextBtn) r.nextBtn.disabled = (b.idx>=b.pages.length-1);
@@ -384,7 +510,7 @@ class Component extends DCLogic {
     this._navList = navList || null;
     this._navIdx = navList ? navList.indexOf(item) : -1;
     if(this._zoomOverlay){ this._zoomOverlay.style.display='flex'; }
-    if(this._zoomImg){ this._zoomImg.src=item.src; }
+    if(this._zoomImg){ this._zoomImg.src=item.src; this._zoomImg.alt=this.altFor(item.src, item.title||''); }
     if(this._zoomCaption){ this._zoomCaption.textContent = item.meta ? (item.title + ' · ' + item.meta) : item.title; }
     const showNav = !!(navList && navList.length>1);
     if(this._zoomPrevBtn) this._zoomPrevBtn.style.display = showNav ? 'flex' : 'none';
@@ -424,8 +550,8 @@ class Component extends DCLogic {
   componentDidUpdate(){ this.applyTheme(); }
   renderVals(){ return {
     rootRef:(el)=>{this.rootEl=el;},
-    seeleGallery: this.books.seele.pages.map((p)=>({ src:p.src, title:p.title, zoom:()=>this.zoomOpen(p, this.books.seele.pages) })),
-    reiseGallery: this.books.reise.pages.map((p)=>({ src:p.src, title:p.title, zoom:()=>this.zoomOpen(p, this.books.reise.pages) })),
+    seeleGallery: this.books.seele.pages.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpen(p, this.books.seele.pages) })),
+    reiseGallery: this.books.reise.pages.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpen(p, this.books.reise.pages) })),
     origBaseImgRef:(el)=>{this.refs.orig.baseImg=el;},
     origLeafRef:(el)=>{this.refs.orig.leafEl=el;},
     origLeafImgRef:(el)=>{this.refs.orig.leafImg=el;},
@@ -445,9 +571,9 @@ class Component extends DCLogic {
     zoomPrevClick:(e)=>{e.stopPropagation(); this.zoomNav(-1);},
     zoomNextClick:(e)=>{e.stopPropagation(); this.zoomNav(1);},
     zoomClose:()=>this.zoomClose(),
-    fotoFiguren: this.fotoFigurenSrc.map((p)=>({ src:p.src, title:p.title, zoom:()=>this.zoomOpenFoto(p) })),
-    fotoOrte: this.fotoOrteSrc.map((p)=>({ src:p.src, title:p.title, zoom:()=>this.zoomOpenFoto(p) })),
-    fotoAbstrakt: this.fotoAbstraktSrc.map((p)=>({ src:p.src, title:p.title, zoom:()=>this.zoomOpenFoto(p) })),
+    fotoFiguren: this.fotoFigurenSrc.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpenFoto(p) })),
+    fotoOrte: this.fotoOrteSrc.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpenFoto(p) })),
+    fotoAbstrakt: this.fotoAbstraktSrc.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpenFoto(p) })),
     zoomOpenAktivurlaub:()=>this.zoomOpen(this.origPages[0]),
     zoomOpenKopfkraulen:()=>this.zoomOpen(this.origPages[1]),
     zoomOpenPortugal:()=>this.zoomOpen(this.origPages[2]),
