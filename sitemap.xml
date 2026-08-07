@@ -13,6 +13,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://simonschaugg.de/Kunst-Archiv.dc.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://simonschaugg.de/Klavier.dc.html</loc>
     <priority>0.8</priority>
   </url>
