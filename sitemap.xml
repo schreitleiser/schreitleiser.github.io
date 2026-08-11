@@ -7,6 +7,9 @@
     <image:image>
       <image:loc>https://simonschaugg.de/assets/simon-schaugg-portrait-anzug-kamera.jpg</image:loc>
     </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/simon-schaugg-portrait-anzug-backsteinwand.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://simonschaugg.de/Forschung.dc.html</loc>
