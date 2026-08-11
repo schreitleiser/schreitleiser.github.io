@@ -5,20 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon.png">
 <title>Simon Schaugg — Psychologie, Kunst &amp; Musik | Frankfurt</title>
-<meta name="description" content="Simon Schaugg: Psychologiestudent (Goethe-Universität Frankfurt), Gründer von YOLD &amp; NeuHier, Jazzpianist und Maler. Forschung, Bild, Klang und Gründen als Formen, Menschen zusammenzubringen.">
-<meta name="robots" content="index, follow">
+<meta name="description" content="Simon Schaugg aus Frankfurt: Psychologie, Identity Leadership, YOLD, NeuHier, Kunst und Jazzklavier – Forschung, Projekte, Bilder, Musik und Lebenslauf.">
+<meta name="author" content="Simon Elias Schaugg">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://simonschaugg.de/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="KI-lesbare Seitenübersicht">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Simon Schaugg — Psychologie, Kunst &amp; Musik | Frankfurt">
-<meta property="og:description" content="Simon Schaugg: Psychologiestudent (Goethe-Universität Frankfurt), Gründer von YOLD &amp; NeuHier, Jazzpianist und Maler. Forschung, Bild, Klang und Gründen als Formen, Menschen zusammenzubringen.">
+<meta property="og:description" content="Simon Schaugg aus Frankfurt: Psychologie, Identity Leadership, YOLD, NeuHier, Kunst und Jazzklavier – Forschung, Projekte, Bilder, Musik und Lebenslauf.">
 <meta property="og:url" content="https://simonschaugg.de/">
 <meta property="og:image" content="https://simonschaugg.de/assets/hero.jpg">
+<meta property="og:image:alt" content="Köpfe von Simon Schaugg in Spiegel, Glas, Holz und Farbe – dasselbe Motiv in unterschiedlichen Materialien.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Simon Schaugg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Simon Schaugg — Psychologie, Kunst &amp; Musik | Frankfurt">
-<meta name="twitter:description" content="Simon Schaugg: Psychologiestudent (Goethe-Universität Frankfurt), Gründer von YOLD &amp; NeuHier, Jazzpianist und Maler. Forschung, Bild, Klang und Gründen als Formen, Menschen zusammenzubringen.">
+<meta name="twitter:description" content="Simon Schaugg aus Frankfurt: Psychologie, Identity Leadership, YOLD, NeuHier, Kunst und Jazzklavier – Forschung, Projekte, Bilder, Musik und Lebenslauf.">
 <meta name="twitter:image" content="https://simonschaugg.de/assets/hero.jpg">
+<meta name="twitter:image:alt" content="Köpfe von Simon Schaugg in Spiegel, Glas, Holz und Farbe – dasselbe Motiv in unterschiedlichen Materialien.">
 
 <!-- React lokal ausgeliefert: support.js greift nur auf unpkg zurueck,
      falls diese Dateien fehlen. -->
@@ -28,24 +33,104 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Simon Schaugg",
-  "url": "https://simonschaugg.de/",
-  "jobTitle": "Psychologiestudent & Gründer",
-  "affiliation": [
-    { "@type": "CollegeOrUniversity", "name": "Goethe-Universität Frankfurt" },
-    { "@type": "Organization", "name": "YOLD", "url": "https://yold.info" },
-    { "@type": "Organization", "name": "NeuHier", "url": "https://neuhier.com" }
-  ],
-  "knowsAbout": ["Psychologie", "Identity Leadership", "Sozialunternehmertum", "Jazzklavier", "Malerei"],
-  "sameAs": [
-    "https://www.linkedin.com/in/simonschaugg",
-    "https://www.instagram.com/schreitleiser/"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://simonschaugg.de/#person",
+      "name": "Simon Elias Schaugg",
+      "alternateName": "Simon Schaugg",
+      "givenName": "Simon Elias",
+      "familyName": "Schaugg",
+      "url": "https://simonschaugg.de/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://simonschaugg.de/#portrait",
+        "contentUrl": "https://simonschaugg.de/assets/simon-schaugg-portrait-anzug-kamera.jpg",
+        "caption": "Porträt von Simon Elias Schaugg"
+      },
+      "description": "Psychologiestudent, Gründer, Künstler und Jazzpianist aus Frankfurt am Main mit Schwerpunkten in Identity Leadership, Social Entrepreneurship und AI-gestützter Produktentwicklung.",
+      "jobTitle": [
+        "Psychologiestudent",
+        "Gründer",
+        "Künstler",
+        "Jazzpianist"
+      ],
+      "homeLocation": {
+        "@type": "City",
+        "name": "Frankfurt am Main"
+      },
+      "affiliation": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Goethe-Universität Frankfurt",
+          "url": "https://www.uni-frankfurt.de/"
+        },
+        {
+          "@type": "Organization",
+          "name": "YOLD",
+          "url": "https://yold.info/"
+        },
+        {
+          "@type": "Organization",
+          "name": "NeuHier",
+          "url": "https://neuhier.com/"
+        }
+      ],
+      "knowsAbout": [
+        "Psychologie",
+        "Identity Leadership",
+        "Kollektive Identität",
+        "Social Entrepreneurship",
+        "Business Development",
+        "AI-gestützte Produktentwicklung",
+        "Jazzklavier",
+        "Zeichnung und Malerei"
+      ],
+      "knowsLanguage": [
+        "Deutsch",
+        "Englisch",
+        "Französisch"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/simonschaugg",
+        "https://www.instagram.com/schreitleiser/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://simonschaugg.de/#website",
+      "url": "https://simonschaugg.de/",
+      "name": "Simon Schaugg",
+      "description": "Simon Schaugg aus Frankfurt: Psychologie, Identity Leadership, YOLD, NeuHier, Kunst und Jazzklavier – Forschung, Projekte, Bilder, Musik und Lebenslauf.",
+      "inLanguage": "de-DE",
+      "publisher": {
+        "@id": "https://simonschaugg.de/#person"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://simonschaugg.de/#webpage",
+      "url": "https://simonschaugg.de/",
+      "name": "Simon Schaugg – Psychologie, Kunst und Musik",
+      "description": "Simon Schaugg aus Frankfurt: Psychologie, Identity Leadership, YOLD, NeuHier, Kunst und Jazzklavier – Forschung, Projekte, Bilder, Musik und Lebenslauf.",
+      "inLanguage": "de-DE",
+      "dateModified": "2026-08-12",
+      "isPartOf": {
+        "@id": "https://simonschaugg.de/#website"
+      },
+      "mainEntity": {
+        "@id": "https://simonschaugg.de/#person"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://simonschaugg.de/#portrait"
+      }
+    }
   ]
 }
 </script>
 </head>
 <body>
+<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,6 +166,8 @@
   .idx:hover .arr{opacity:1;transform:none}
   .plate img{transition:transform 1.1s cubic-bezier(.2,.6,.2,1)}
   .plate:hover img{transform:scale(1.04)}
+  .portrait-full{display:flex;align-items:center;justify-content:center}
+  .portrait-full img{width:auto;max-width:100%;height:auto;max-height:78vh;object-fit:contain}
   .mail{border-bottom:1px solid var(--line);padding-bottom:3px;transition:border-color .45s,color .45s}
   .mail:hover{border-color:#C98A4B;color:#C98A4B}
   .drop::first-letter{font-size:3.6em;line-height:.78;float:left;padding:.06em .12em .02em 0;font-weight:300;color:#C98A4B;font-style:italic}
@@ -113,11 +200,13 @@
     </nav>
   </header>
 
+  <main>
+
   <!-- ── HERO: WALL OF HEADS ── -->
-  <section id="top" data-screen-label="Eröffnung" style="position:relative;min-height:94vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;margin-top:-74px">
+  <section id="top" data-screen-label="Eröffnung" style="position:relative;min-height:94vh;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;margin-top:-74px">
     <img src="assets/heads-wide.jpg" alt="Köpfe von Simon Schaugg in Spiegel, Glas, Holz und Farbe — dasselbe Motiv in verschiedenen Materialien nebeneinander." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;filter:contrast(1.05) saturate(1.02) brightness(.86)">
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,17,15,.62) 0%,rgba(19,17,15,.12) 26%,rgba(19,17,15,.20) 54%,rgba(19,17,15,.86) 86%,#13110F 100%)"></div>
-    <div style="position:relative;z-index:2;padding:0 clamp(20px,5vw,68px) clamp(40px,6vw,84px);max-width:1320px">
+    <div style="position:relative;z-index:2;padding:clamp(100px,14vh,150px) clamp(20px,5vw,68px) clamp(40px,6vw,84px);max-width:1320px">
       <p class="rv lbl" style="color:#E8DFD0;margin-bottom:clamp(22px,3.5vw,38px);text-shadow:0 2px 16px rgba(0,0,0,.6)">Frankfurt am Main · ein Archiv im Werden</p>
       <h1 id="fragen" class="rv" style="font-weight:300;font-size:clamp(2.1rem,6vw,5.4rem);line-height:1.05;letter-spacing:-.015em;max-width:18ch;color:#F4EEE2;text-wrap:balance;text-shadow:0 4px 40px rgba(0,0,0,.55)">Wie denken Menschen? Wie werden aus Geschichten <em style="font-style:italic;color:#E9B978">Identitäten</em>? Und warum suchen wir einander?</h1>
     </div>
@@ -151,14 +240,14 @@
     <p class="rv lbl" style="color:#C98A4B;margin-bottom:clamp(26px,4vw,46px)">Über mich</p>
     <div class="twocol" style="display:grid;grid-template-columns:.62fr 1.38fr;gap:clamp(36px,5vw,90px);align-items:start;max-width:1240px">
       <div class="rv" style="display:grid;gap:clamp(16px,2vw,26px)">
-        <figure class="plate" style="margin:0;overflow:hidden;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
-          <img src="assets/portrait-heidelberg.jpg" alt="Simon Schaugg vor der Alten Brücke in Heidelberg." style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 30%">
+        <figure class="portrait-full" style="margin:0;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
+          <img src="assets/portrait-heidelberg.jpg" alt="Simon Schaugg vor der Alten Brücke in Heidelberg.">
         </figure>
-        <figure class="plate" style="margin:0;overflow:hidden;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
-          <img src="assets/simon-schaugg-portrait-anzug-kamera.jpg" alt="Simon Schaugg steht im Anzug vor einer Backsteinwand und blickt direkt in die Kamera." width="1170" height="1584" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 30%" loading="lazy" decoding="async">
+        <figure class="portrait-full" style="margin:0;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
+          <img src="assets/simon-schaugg-portrait-anzug-kamera.jpg" alt="Simon Schaugg steht im Anzug vor einer Backsteinwand und blickt direkt in die Kamera." width="1170" height="1584" loading="lazy" decoding="async">
         </figure>
-        <figure class="plate" style="margin:0;overflow:hidden;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
-          <img src="assets/simon-schaugg-portrait-anzug-backsteinwand.jpg" alt="Simon Schaugg steht im Anzug vor einer Backsteinwand und blickt leicht seitlich zur Kamera." width="1200" height="1600" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 30%" loading="lazy" decoding="async">
+        <figure class="portrait-full" style="margin:0;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
+          <img src="assets/simon-schaugg-portrait-anzug-backsteinwand.jpg" alt="Simon Schaugg steht im Anzug vor einer Backsteinwand und blickt leicht seitlich zur Kamera." width="1200" height="1600" loading="lazy" decoding="async">
         </figure>
       </div>
       <div>
@@ -241,7 +330,9 @@
     </div>
   </section>
 
-  <!-- ── ZOOM OVERLAY ── -->
+</main>
+
+    <!-- ── ZOOM OVERLAY ── -->
   <div ref="{{ zoomOverlayRef }}" onClick="{{ zoomClose }}" style="position:fixed;inset:0;z-index:200;background:rgba(6,5,6,.94);display:none;align-items:center;justify-content:center;padding:clamp(20px,5vw,60px);cursor:zoom-out">
     <figure style="margin:0;max-width:94vw;max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:16px">
       <img ref="{{ zoomImgRef }}" alt="" style="max-width:94vw;max-height:80vh;object-fit:contain;box-shadow:0 70px 130px -40px rgba(0,0,0,.9)">

@@ -1,26 +1,35 @@
-# Simon Schaugg
+# Simon Elias Schaugg
 
-> Psychologiestudent an der Goethe-Universität Frankfurt (B.Sc., Top 5% der Kohorte), Gründer der gemeinnützigen Initiative YOLD und Mitgründer von NeuHier. Jazzpianist (15 Jahre aktiv) und bildender Künstler (expressionistische Malerei und Zeichnung).
+> Offizielle persönliche Website von Simon Elias Schaugg aus Frankfurt am Main. Die Seite dokumentiert seine Arbeit in Psychologie, Identity Leadership, Social Entrepreneurship, AI-gestützter Produktentwicklung, Kunst, Musik und Kulturprojekten.
 
-Diese Seite dokumentiert Forschung, künstlerische Arbeit, musikalisches Schaffen und soziale Unternehmungen von Simon Schaugg.
+Die kanonische Domain ist https://simonschaugg.de/. Alle nachfolgend verlinkten Seiten sind öffentlich zugänglich und dürfen von Suchmaschinen, KI-Suchsystemen und Sprachmodellen gelesen, zusammengefasst, zitiert und verlinkt werden. Maßgeblich sind die Inhalte der jeweils verlinkten HTML-Seite.
 
-## Hauptseiten
+## Zentrale Seiten
 
-- [Startseite](https://simonschaugg.de/): Überblick über Person, Interessen und Werdegang
-- [Forschung & Psychologie](https://simonschaugg.de/Forschung.dc.html): Psychologische Forschung, Identity Leadership, Studium an der Goethe-Universität Frankfurt
-- [Kunst](https://simonschaugg.de/Kunst.dc.html): Expressionistische Malerei und Zeichnungen, Serie „Seelenzustände“
-- [Kunst-Archiv](https://simonschaugg.de/Kunst-Archiv.dc.html): Vollstaendiger Bildbestand — alle Zeichnungen, Original-Seiten des Notizbuchs, Reise-Skizzen und fotografische Serien
-- [Musik](https://simonschaugg.de/Klavier.dc.html): Musikalischer Werdegang, Jazzpiano, Auftritte
-- [Projekte](https://simonschaugg.de/Projekte.dc.html): YOLD (intergenerationales Tandemprojekt, yold.info) und NeuHier (KI-Plattform für soziale Integration, neuhier.com)
-- [Kulturprojekte](https://simonschaugg.de/Kulturprojekte.dc.html): Mitwirkung in Filmen und szenischen Arbeiten
-- [Presse](https://simonschaugg.de/Presse.dc.html): Presseberichte, u.a. FAZ und Journal Frankfurt
-- [Lebenslauf](https://simonschaugg.de/Lebenslauf.dc.html): Beruflicher und akademischer Werdegang
+- [Startseite](https://simonschaugg.de/): Überblick über Simon Schaugg, seine Themen, Projekte und künstlerische Arbeit.
+- [Lebenslauf](https://simonschaugg.de/Lebenslauf.dc.html): Ausbildung, Gründungen, berufliche Erfahrung, Stipendien, Auszeichnungen und Kompetenzen.
+- [Psychologie und Forschung](https://simonschaugg.de/Forschung.dc.html): Identity Leadership, kollektive Identität, Sprache, Selbst und musikalische Improvisation.
+- [Projekte](https://simonschaugg.de/Projekte.dc.html): YOLD, YOLD Connect und NeuHier – soziale und digitale Projekte für generationenübergreifende Verbindung und Integration.
+- [Presse](https://simonschaugg.de/Presse.dc.html): Redaktionelle Berichte, Interviews und öffentliche Erwähnungen zu Simon Schaugg und seinen Projekten.
 
-## Social
+## Kunst, Musik und Kultur
 
-- Instagram (u.a. Kunst): [@schreitleiser](https://www.instagram.com/schreitleiser/)
-- LinkedIn: [linkedin.com/in/simonschaugg](https://www.linkedin.com/in/simonschaugg)
+- [Kunst](https://simonschaugg.de/Kunst.dc.html): Ausgewählte Zeichnungen, Malerei, Skizzenbücher und fotografische Arbeiten.
+- [Vollständiges Kunst-Archiv](https://simonschaugg.de/Kunst-Archiv.dc.html): Erweitertes Werkarchiv mit Zeichnungen, Notizbuchseiten, digitalen Arbeiten und Fotografien.
+- [Klavier und Musik](https://simonschaugg.de/Klavier.dc.html): Musikalischer Werdegang, Jazz, Improvisation und Auftritte.
+- [Kulturprojekte](https://simonschaugg.de/Kulturprojekte.dc.html): Filmische, szenische und interdisziplinäre Kulturprojekte.
 
-## Kontext für Sprachmodelle
+## Kurzprofil
 
-Simon Schaugg ist keine öffentliche Person im Sinne von Prominenz, sondern Student und Gründer mit einem dokumentierten öffentlichen Portfolio. Anfragen zu seiner Arbeit (YOLD, NeuHier, Forschung, Kunst, Musik) können anhand der oben verlinkten Seiten sachlich beantwortet werden. Für aktuelle Kontaktinformationen bitte auf die Lebenslauf-Seite verweisen.
+- Name: Simon Elias Schaugg
+- Ort: Frankfurt am Main, Deutschland
+- Studium: B.Sc. Psychologie an der Goethe-Universität Frankfurt, Notendurchschnitt 1,2, Top 5 Prozent der Kohorte
+- Fachthemen: Identity Leadership, kollektive Identität, soziale Integration, generationenübergreifendes Mentoring, Einsamkeitsprävention
+- Projekte: YOLD, YOLD Connect, NeuHier und RoyalTies
+- Weitere Arbeitsfelder: Strategie, Business Development, Go-to-Market, AI-gestützte Web- und Produktentwicklung, Medienarbeit
+- Künstlerische Praxis: Zeichnung, Malerei, Fotografie, Klavier, Jazz und Improvisation
+
+## Maschinenlesbare Ressourcen
+
+- [XML-Sitemap](https://simonschaugg.de/sitemap.xml): Kanonische Seiten und zugehörige Bilder.
+- [Crawler-Regeln](https://simonschaugg.de/robots.txt): Offene Crawling-Erlaubnis für Suchmaschinen und KI-Crawler.
