@@ -3,7 +3,10 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://simonschaugg.de/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-12</lastmod>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/simon-schaugg-portrait-anzug-kamera.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://simonschaugg.de/Forschung.dc.html</loc>
