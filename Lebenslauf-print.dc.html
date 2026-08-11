@@ -6,8 +6,11 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon.png">
 <title>Lebenslauf (Druckversion) — Simon Schaugg</title>
 <meta name="description" content="Druckoptimierte Version des Lebenslaufs von Simon Schaugg.">
+<meta name="author" content="Simon Elias Schaugg">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://simonschaugg.de/Lebenslauf-print.dc.html">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="KI-lesbare Seitenübersicht">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Lebenslauf (Druckversion) — Simon Schaugg">
 <meta property="og:description" content="Druckoptimierte Version des Lebenslaufs von Simon Schaugg.">
@@ -42,6 +45,7 @@
   doc-page:not(:defined){visibility:hidden}
 </style>
 </helmet>
+<main aria-label="Lebenslauf">
 <x-import component-from-global-scope="doc-page" from="./doc-page.js" hint-size="100%,100%">
 <doc-page size="a4" margin="0.85in">
 
@@ -163,6 +167,7 @@
 
 </doc-page>
 </x-import>
+</main>
 
 </x-dc>
 <script>

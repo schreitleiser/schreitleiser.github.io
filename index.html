@@ -5,20 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon.png">
 <title>Simon Schaugg — Psychologie, Kunst &amp; Musik | Frankfurt</title>
-<meta name="description" content="Simon Schaugg: Psychologiestudent (Goethe-Universität Frankfurt), Gründer von YOLD &amp; NeuHier, Jazzpianist und Maler. Forschung, Bild, Klang und Gründen als Formen, Menschen zusammenzubringen.">
-<meta name="robots" content="index, follow">
+<meta name="description" content="Simon Schaugg aus Frankfurt: Psychologie, Identity Leadership, YOLD, NeuHier, Kunst und Jazzklavier – Forschung, Projekte, Bilder, Musik und Lebenslauf.">
+<meta name="author" content="Simon Elias Schaugg">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://simonschaugg.de/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="KI-lesbare Seitenübersicht">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Simon Schaugg — Psychologie, Kunst &amp; Musik | Frankfurt">
-<meta property="og:description" content="Simon Schaugg: Psychologiestudent (Goethe-Universität Frankfurt), Gründer von YOLD &amp; NeuHier, Jazzpianist und Maler. Forschung, Bild, Klang und Gründen als Formen, Menschen zusammenzubringen.">
+<meta property="og:description" content="Simon Schaugg aus Frankfurt: Psychologie, Identity Leadership, YOLD, NeuHier, Kunst und Jazzklavier – Forschung, Projekte, Bilder, Musik und Lebenslauf.">
 <meta property="og:url" content="https://simonschaugg.de/">
 <meta property="og:image" content="https://simonschaugg.de/assets/hero.jpg">
+<meta property="og:image:alt" content="Köpfe von Simon Schaugg in Spiegel, Glas, Holz und Farbe – dasselbe Motiv in unterschiedlichen Materialien.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Simon Schaugg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Simon Schaugg — Psychologie, Kunst &amp; Musik | Frankfurt">
-<meta name="twitter:description" content="Simon Schaugg: Psychologiestudent (Goethe-Universität Frankfurt), Gründer von YOLD &amp; NeuHier, Jazzpianist und Maler. Forschung, Bild, Klang und Gründen als Formen, Menschen zusammenzubringen.">
+<meta name="twitter:description" content="Simon Schaugg aus Frankfurt: Psychologie, Identity Leadership, YOLD, NeuHier, Kunst und Jazzklavier – Forschung, Projekte, Bilder, Musik und Lebenslauf.">
 <meta name="twitter:image" content="https://simonschaugg.de/assets/hero.jpg">
+<meta name="twitter:image:alt" content="Köpfe von Simon Schaugg in Spiegel, Glas, Holz und Farbe – dasselbe Motiv in unterschiedlichen Materialien.">
 
 <!-- React lokal ausgeliefert: support.js greift nur auf unpkg zurueck,
      falls diese Dateien fehlen. -->
@@ -28,24 +33,104 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Simon Schaugg",
-  "url": "https://simonschaugg.de/",
-  "jobTitle": "Psychologiestudent & Gründer",
-  "affiliation": [
-    { "@type": "CollegeOrUniversity", "name": "Goethe-Universität Frankfurt" },
-    { "@type": "Organization", "name": "YOLD", "url": "https://yold.info" },
-    { "@type": "Organization", "name": "NeuHier", "url": "https://neuhier.com" }
-  ],
-  "knowsAbout": ["Psychologie", "Identity Leadership", "Sozialunternehmertum", "Jazzklavier", "Malerei"],
-  "sameAs": [
-    "https://www.linkedin.com/in/simonschaugg",
-    "https://www.instagram.com/schreitleiser/"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://simonschaugg.de/#person",
+      "name": "Simon Elias Schaugg",
+      "alternateName": "Simon Schaugg",
+      "givenName": "Simon Elias",
+      "familyName": "Schaugg",
+      "url": "https://simonschaugg.de/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://simonschaugg.de/#portrait",
+        "contentUrl": "https://simonschaugg.de/assets/simon-schaugg-portrait-anzug-kamera.jpg",
+        "caption": "Porträt von Simon Elias Schaugg"
+      },
+      "description": "Psychologiestudent, Gründer, Künstler und Jazzpianist aus Frankfurt am Main mit Schwerpunkten in Identity Leadership, Social Entrepreneurship und AI-gestützter Produktentwicklung.",
+      "jobTitle": [
+        "Psychologiestudent",
+        "Gründer",
+        "Künstler",
+        "Jazzpianist"
+      ],
+      "homeLocation": {
+        "@type": "City",
+        "name": "Frankfurt am Main"
+      },
+      "affiliation": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Goethe-Universität Frankfurt",
+          "url": "https://www.uni-frankfurt.de/"
+        },
+        {
+          "@type": "Organization",
+          "name": "YOLD",
+          "url": "https://yold.info/"
+        },
+        {
+          "@type": "Organization",
+          "name": "NeuHier",
+          "url": "https://neuhier.com/"
+        }
+      ],
+      "knowsAbout": [
+        "Psychologie",
+        "Identity Leadership",
+        "Kollektive Identität",
+        "Social Entrepreneurship",
+        "Business Development",
+        "AI-gestützte Produktentwicklung",
+        "Jazzklavier",
+        "Zeichnung und Malerei"
+      ],
+      "knowsLanguage": [
+        "Deutsch",
+        "Englisch",
+        "Französisch"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/simonschaugg",
+        "https://www.instagram.com/schreitleiser/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://simonschaugg.de/#website",
+      "url": "https://simonschaugg.de/",
+      "name": "Simon Schaugg",
+      "description": "Simon Schaugg aus Frankfurt: Psychologie, Identity Leadership, YOLD, NeuHier, Kunst und Jazzklavier – Forschung, Projekte, Bilder, Musik und Lebenslauf.",
+      "inLanguage": "de-DE",
+      "publisher": {
+        "@id": "https://simonschaugg.de/#person"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://simonschaugg.de/#webpage",
+      "url": "https://simonschaugg.de/",
+      "name": "Simon Schaugg – Psychologie, Kunst und Musik",
+      "description": "Simon Schaugg aus Frankfurt: Psychologie, Identity Leadership, YOLD, NeuHier, Kunst und Jazzklavier – Forschung, Projekte, Bilder, Musik und Lebenslauf.",
+      "inLanguage": "de-DE",
+      "dateModified": "2026-08-12",
+      "isPartOf": {
+        "@id": "https://simonschaugg.de/#website"
+      },
+      "mainEntity": {
+        "@id": "https://simonschaugg.de/#person"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://simonschaugg.de/#portrait"
+      }
+    }
   ]
 }
 </script>
 </head>
 <body>
+<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,6 +199,8 @@
       <a href="Presse.dc.html" class="nav-a lbl" style="--rc:#C24A1E">Presse</a>
     </nav>
   </header>
+
+  <main>
 
   <!-- ── HERO: WALL OF HEADS ── -->
   <section id="top" data-screen-label="Eröffnung" style="position:relative;min-height:94vh;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;margin-top:-74px">
@@ -243,7 +330,9 @@
     </div>
   </section>
 
-  <!-- ── ZOOM OVERLAY ── -->
+</main>
+
+    <!-- ── ZOOM OVERLAY ── -->
   <div ref="{{ zoomOverlayRef }}" onClick="{{ zoomClose }}" style="position:fixed;inset:0;z-index:200;background:rgba(6,5,6,.94);display:none;align-items:center;justify-content:center;padding:clamp(20px,5vw,60px);cursor:zoom-out">
     <figure style="margin:0;max-width:94vw;max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:16px">
       <img ref="{{ zoomImgRef }}" alt="" style="max-width:94vw;max-height:80vh;object-fit:contain;box-shadow:0 70px 130px -40px rgba(0,0,0,.9)">

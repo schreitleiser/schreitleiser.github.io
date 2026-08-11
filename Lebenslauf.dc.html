@@ -6,8 +6,11 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon.png">
 <title>Lebenslauf — Simon Schaugg</title>
 <meta name="description" content="Lebenslauf von Simon Schaugg: Psychologie, Strategie, Business Development, AI-gestützte Produktentwicklung, Social Entrepreneurship, YOLD, YOLD Connect und NeuHier.">
-<meta name="robots" content="index, follow">
+<meta name="author" content="Simon Elias Schaugg">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://simonschaugg.de/Lebenslauf.dc.html">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="KI-lesbare Seitenübersicht">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Lebenslauf — Simon Schaugg">
 <meta property="og:description" content="Lebenslauf von Simon Schaugg: Psychologie, Strategie, Business Development, AI-gestützte Produktentwicklung und Social Entrepreneurship.">
@@ -20,6 +23,7 @@
 <meta name="twitter:title" content="Lebenslauf — Simon Schaugg">
 <meta name="twitter:description" content="Lebenslauf von Simon Schaugg: Psychologie, Strategie, Business Development, AI-gestützte Produktentwicklung und Social Entrepreneurship.">
 <meta name="twitter:image" content="https://simonschaugg.de/assets/portrait-bw.jpg">
+<meta name="twitter:image:alt" content="Porträt von Simon Schaugg, Schwarzweißaufnahme.">
 
 <!-- React lokal ausgeliefert: support.js greift nur auf unpkg zurueck,
      falls diese Dateien fehlen. -->
@@ -39,7 +43,8 @@
     "contentUrl": "https://simonschaugg.de/assets/portrait-bw.jpg",
     "creator": {
       "@id": "https://simonschaugg.de/#person"
-    }
+    },
+    "@id": "https://simonschaugg.de/Lebenslauf.dc.html#primaryimage"
   },
   "about": {
     "@type": "Person",
@@ -50,17 +55,52 @@
     "sameAs": [
       "https://www.linkedin.com/in/simonschaugg",
       "https://www.instagram.com/schreitleiser/"
+    ],
+    "description": "Psychologiestudent, Gründer, Künstler und Jazzpianist aus Frankfurt am Main.",
+    "jobTitle": [
+      "Psychologiestudent",
+      "Gründer",
+      "Künstler",
+      "Jazzpianist"
     ]
   },
   "isPartOf": {
     "@type": "WebSite",
     "name": "Simon Schaugg",
-    "url": "https://simonschaugg.de/"
+    "url": "https://simonschaugg.de/",
+    "@id": "https://simonschaugg.de/#website",
+    "inLanguage": "de-DE"
+  },
+  "@id": "https://simonschaugg.de/Lebenslauf.dc.html#webpage",
+  "dateModified": "2026-08-12",
+  "author": {
+    "@id": "https://simonschaugg.de/#person"
+  },
+  "mainEntity": {
+    "@id": "https://simonschaugg.de/#person"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://simonschaugg.de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Lebenslauf",
+        "item": "https://simonschaugg.de/Lebenslauf.dc.html"
+      }
+    ]
   }
 }
 </script>
 </head>
 <body>
+<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 <x-dc>
 
 <helmet>
@@ -75,6 +115,7 @@
   doc-page:not(:defined){visibility:hidden}
 </style>
 </helmet>
+<main aria-label="Lebenslauf">
 <x-import component-from-global-scope="doc-page" from="./doc-page.js" hint-size="100%,100%">
 <doc-page size="a4" margin="0.85in">
 
@@ -196,6 +237,7 @@
 
 </doc-page>
 </x-import>
+</main>
 
 </x-dc>
 </body>
