@@ -81,6 +81,8 @@
   .idx:hover .arr{opacity:1;transform:none}
   .plate img{transition:transform 1.1s cubic-bezier(.2,.6,.2,1)}
   .plate:hover img{transform:scale(1.04)}
+  .portrait-full{display:flex;align-items:center;justify-content:center}
+  .portrait-full img{width:auto;max-width:100%;height:auto;max-height:78vh;object-fit:contain}
   .mail{border-bottom:1px solid var(--line);padding-bottom:3px;transition:border-color .45s,color .45s}
   .mail:hover{border-color:#C98A4B;color:#C98A4B}
   .drop::first-letter{font-size:3.6em;line-height:.78;float:left;padding:.06em .12em .02em 0;font-weight:300;color:#C98A4B;font-style:italic}
@@ -151,14 +153,14 @@
     <p class="rv lbl" style="color:#C98A4B;margin-bottom:clamp(26px,4vw,46px)">Über mich</p>
     <div class="twocol" style="display:grid;grid-template-columns:.62fr 1.38fr;gap:clamp(36px,5vw,90px);align-items:start;max-width:1240px">
       <div class="rv" style="display:grid;gap:clamp(16px,2vw,26px)">
-        <figure class="plate" style="margin:0;overflow:hidden;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
-          <img src="assets/portrait-heidelberg.jpg" alt="Simon Schaugg vor der Alten Brücke in Heidelberg." style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 30%">
+        <figure class="portrait-full" style="margin:0;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
+          <img src="assets/portrait-heidelberg.jpg" alt="Simon Schaugg vor der Alten Brücke in Heidelberg.">
         </figure>
-        <figure class="plate" style="margin:0;overflow:hidden;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
-          <img src="assets/simon-schaugg-portrait-anzug-kamera.jpg" alt="Simon Schaugg steht im Anzug vor einer Backsteinwand und blickt direkt in die Kamera." width="1170" height="1584" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 30%" loading="lazy" decoding="async">
+        <figure class="portrait-full" style="margin:0;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
+          <img src="assets/simon-schaugg-portrait-anzug-kamera.jpg" alt="Simon Schaugg steht im Anzug vor einer Backsteinwand und blickt direkt in die Kamera." width="1170" height="1584" loading="lazy" decoding="async">
         </figure>
-        <figure class="plate" style="margin:0;overflow:hidden;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
-          <img src="assets/simon-schaugg-portrait-anzug-backsteinwand.jpg" alt="Simon Schaugg steht im Anzug vor einer Backsteinwand und blickt leicht seitlich zur Kamera." width="1200" height="1600" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 30%" loading="lazy" decoding="async">
+        <figure class="portrait-full" style="margin:0;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
+          <img src="assets/simon-schaugg-portrait-anzug-backsteinwand.jpg" alt="Simon Schaugg steht im Anzug vor einer Backsteinwand und blickt leicht seitlich zur Kamera." width="1200" height="1600" loading="lazy" decoding="async">
         </figure>
       </div>
       <div>
