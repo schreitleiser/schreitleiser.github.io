@@ -141,7 +141,7 @@
   .nb-btn{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid var(--line);background:transparent;color:#E7E2DA;cursor:pointer;border-radius:50%;font-size:18px;transition:border-color .4s,color .4s,background .4s}
   .nb-btn:hover{border-color:var(--ac);color:var(--ac)}
   .nb-btn:disabled{opacity:.28;cursor:default}
-  @media(max-width:900px){.feat{grid-template-columns:1fr !important;gap:26px !important}.feat .plate{max-width:460px}.feat .qz{order:2}.wall{column-count:2 !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.kopfwrap{grid-template-columns:1fr !important}.kopfwrap figure{padding-top:36px !important;min-height:280px}.atelier{grid-template-columns:1fr !important;gap:24px !important}}
+  @media(max-width:900px){.feat{grid-template-columns:1fr !important;gap:26px !important}.feat .plate{max-width:460px}.feat .qz{order:2}.wall{column-count:2 !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.kopfwrap{grid-template-columns:1fr !important}.kopfwrap figure{padding-top:36px !important;min-height:280px}.atelier{grid-template-columns:1fr !important;gap:24px !important}.malerei-grid{grid-template-columns:1fr !important}.malerei-grid figure{max-width:620px}}
   @media(max-width:560px){.wall{column-count:1 !important}}
 </style>
 </helmet>
@@ -184,6 +184,18 @@
       <sc-for list="{{ seeleGallery }}" as="item" hint-placeholder-count="6">
         <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
       </sc-for>
+    </div>
+  </section>
+
+  <!-- MALEREI -->
+  <section id="malerei" data-screen-label="Bilder · Malerei" style="padding:clamp(60px,9vw,130px) clamp(18px,5vw,72px);background:#151318;border-top:1px solid var(--line)">
+    <div class="malerei-grid" style="display:grid;grid-template-columns:minmax(0,.75fr) minmax(280px,1fr);gap:clamp(34px,7vw,110px);align-items:center;max-width:1180px;margin:0 auto">
+      <div>
+        <h2 class="rv" style="font-weight:400;font-style:italic;font-size:clamp(1.8rem,4vw,3.2rem)">Malerei</h2>
+        <p class="rv lbl" style="color:var(--dim);margin-top:14px">Blumenstillleben</p>
+        <p class="rv" style="max-width:48ch;font-size:1rem;line-height:1.55;color:#CFC9C0;margin-top:14px">Eine einzelne malerische Arbeit zwischen den umfangreicheren zeichnerischen und fotografischen Serien.</p>
+      </div>
+      <figure class="rv plate mz" style="cursor:zoom-in;margin:0" onClick="{{ zoomOpenFlowers }}"><img src="assets/draw/new-red-flowers.jpg" alt="Blumenstillleben von Simon Schaugg in Rot, Blau, Schwarz und Weiß." style="width:100%;height:auto" loading="lazy" decoding="async"><figcaption style="padding:12px 3px 2px"><span style="font-style:italic">Blumenstillleben</span></figcaption></figure>
     </div>
   </section>
 
@@ -391,6 +403,7 @@ class Component extends DCLogic {
         { src:'assets/draw/rad.jpg',           title:'RAD',                             meta:'Aquarell & Tusche · 2023' },
         { src:'assets/draw/scribble.jpg',      title:'Ohne Titel',                      meta:'Tusche · 2023' },
         { src:'assets/draw/blueline.png',      title:'Ohne Titel',                      meta:'Tusche · 2023' },
+        { src:'assets/draw/simon-schaugg-tuscheportraet-schwarzer-hintergrund.png', title:'Porträt', meta:'Tusche' },
         { src:'assets/draw/new-flieg-engel.jpg', title:'Flieg, Engel',                  meta:'Tusche · 13.01.23' },
         { src:'assets/draw/new-yellow-glasses.jpg', title:'Ohne Titel',                 meta:'Tusche & Marker · 2023' },
         { src:'assets/draw/new-schuld-drip.jpg', title:'Schuld',                        meta:'Tusche & Aquarell · 2023' },
@@ -436,6 +449,8 @@ class Component extends DCLogic {
     "assets/digital/wolken-horizont.jpg": "„Horizont“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: ein schmaler Horizont zwischen Wolken und Wasser, nahezu monochrom.",
     "assets/digital/wolken-wald.jpg": "„Wald unter Wolken“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: ein dunkler Waldsaum unter schwerer Wolkendecke.",
     "assets/draw/blueline.png": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche, 2023: ein Kopf, allein aus feinen Konturlinien gebaut, vor flächigem Blau.",
+    "assets/draw/simon-schaugg-tuscheportraet-schwarzer-hintergrund.png": "Tuscheporträt von Simon Schaugg: ein frontal gezeichnetes Gesicht in schwarzer Tinte vor einem großflächigen schwarzen Hintergrund.",
+    "assets/draw/new-red-flowers.jpg": "Blumenstillleben von Simon Schaugg in Rot, Blau, Schwarz und Weiß.",
     "assets/draw/gelitten.jpg": "„Warum hast du für mich gelitten“ — Zeichnung von Simon Schaugg, Tusche, 2023: eine liegende nackte Figur in feiner Konturlinie, darüber ein schwarzes Feld mit einem zweiten Kopf und handschriftlichem Text.",
     "assets/draw/gibmichauf.jpg": "„Gib mich auf“ — Zeichnung von Simon Schaugg, Tusche, 17. Januar 2023: ein verwischtes Doppelgesicht mit gezeichneten Tränen, rechts der Schriftzug „gib mich auf“.",
     "assets/draw/new-beobachtung-strand.jpg": "„Beobachtung am Strand“ — Zeichnung von Simon Schaugg, Tusche, Portugal, 30. Juli 2023: eine Person stützt den Kopf in die Hand, daneben eine handschriftliche Notiz über schreiende Kinder.",
@@ -616,6 +631,7 @@ class Component extends DCLogic {
     fotoFiguren: this.fotoFigurenSrc.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpenFoto(p) })),
     fotoOrte: this.fotoOrteSrc.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpenFoto(p) })),
     fotoAbstrakt: this.fotoAbstraktSrc.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpenFoto(p) })),
+    zoomOpenFlowers:()=>this.zoomOpen({src:'assets/draw/new-red-flowers.jpg',title:'Blumenstillleben',meta:'Malerei'}),
     zoomOpenAktivurlaub:()=>this.zoomOpen(this.origPages[0]),
     zoomOpenKopfkraulen:()=>this.zoomOpen(this.origPages[1]),
     zoomOpenPortugal:()=>this.zoomOpen(this.origPages[2]),

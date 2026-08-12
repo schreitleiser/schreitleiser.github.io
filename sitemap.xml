@@ -118,12 +118,6 @@
       <image:loc>https://simonschaugg.de/assets/foto/atelier-abend.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://simonschaugg.de/assets/draw/simon-schaugg-tuscheportraet-schwarzer-hintergrund.png</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/draw/new-red-flowers.jpg</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://simonschaugg.de/assets/draw/ausstellung-1.jpg</image:loc>
     </image:image>
     <image:image>
@@ -343,6 +337,12 @@
   <url>
     <loc>https://simonschaugg.de/Kunst-Archiv.dc.html</loc>
     <lastmod>2026-08-12</lastmod>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/draw/simon-schaugg-tuscheportraet-schwarzer-hintergrund.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/draw/new-red-flowers.jpg</image:loc>
+    </image:image>
     <image:image>
       <image:loc>https://simonschaugg.de/assets/notizbuch/aktivurlaub-leuchtturm.jpg</image:loc>
     </image:image>
