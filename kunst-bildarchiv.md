@@ -106,4 +106,3 @@ Künstler: Simon Elias Schaugg, Frankfurt am Main. Die Bildbeschreibungen entspr
 - **assets/stille/stille-1.jpg** — Aus der fotografischen Serie „Stille“ von Simon Schaugg, 2020: Simon Schaugg mit roten Gehörschützern vor einer Collage aus Werbe- und Medienbildern. [Bilddatei](https://simonschaugg.de/assets/stille/stille-1.jpg)
 - **assets/stille/stille-2.jpg** — Aus der fotografischen Serie „Stille“ von Simon Schaugg, 2020: Simon Schaugg mit roten Gehörschützern vor laufenden Nachrichtenbildschirmen. [Bilddatei](https://simonschaugg.de/assets/stille/stille-2.jpg)
 - **assets/stille/stille-3.jpg** — Aus der fotografischen Serie „Stille“ von Simon Schaugg, 2020: Simon Schaugg mit roten Gehörschützern in einer belebten Straße mit fließendem Verkehr. [Bilddatei](https://simonschaugg.de/assets/stille/stille-3.jpg)
-
