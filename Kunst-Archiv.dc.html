@@ -12,6 +12,7 @@
 <link rel="canonical" href="https://simonschaugg.de/Kunst-Archiv.dc.html">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="text/markdown" href="/llms.txt" title="KI-lesbare Seitenübersicht">
+<link rel="alternate" type="text/markdown" href="/kunst-bildarchiv.md" title="Maschinenlesbarer Bildkatalog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kunst-Archiv — alle Arbeiten | Simon Schaugg">
 <meta property="og:description" content="Das vollständige Bildarchiv von Simon Schaugg: alle Zeichnungen, sämtliche Original-Seiten des Notizbuchs, Reise-Skizzen und die fotografischen Serien.">
@@ -76,6 +77,13 @@
   "dateModified": "2026-08-12",
   "author": {
     "@id": "https://simonschaugg.de/#person"
+  },
+  "subjectOf": {
+    "@type": "DataDownload",
+    "name": "Maschinenlesbarer Bildkatalog der Kunstseiten",
+    "contentUrl": "https://simonschaugg.de/kunst-bildarchiv.md",
+    "encodingFormat": "text/markdown",
+    "inLanguage": "de-DE"
   },
   "breadcrumb": {
     "@type": "BreadcrumbList",
@@ -167,6 +175,7 @@
     <h1 class="rv" style="font-weight:400;font-size:clamp(2.6rem,9vw,7.5rem);line-height:.96;letter-spacing:-.01em;margin-bottom:clamp(28px,4vw,52px)">Das <em style="font-style:italic;color:var(--ac)">Archiv</em>.</h1>
     <p class="rv" style="max-width:58ch;font-size:clamp(1.1rem,1.6vw,1.45rem);line-height:1.6;color:#CFC9C0">Hier liegt alles: sämtliche Zeichnungen, alle Original-Seiten des Notizbuchs, die Reise-Skizzen und die fotografischen Serien. Ungefiltert und ohne Auswahl — die kuratierte Fassung steht auf der <a href="Kunst.dc.html" class="nav-a" style="opacity:1;color:var(--ac);border-bottom:1px solid var(--ac)">Kunstseite</a>.</p>
     <p class="rv lbl" style="color:var(--faint);margin-top:clamp(24px,3vw,36px)">Bild anklicken zum Vergrößern · Pfeiltasten zum Blättern</p>
+    <p class="rv lbl" style="margin-top:14px"><a href="kunst-bildarchiv.md" class="nav-a" style="opacity:1;color:var(--ac)">Alle Bildbeschreibungen als Textfassung →</a></p>
   </section>
 
   <!-- DAS NOTIZBUCH: SEELENZUSTÄNDE -->
@@ -182,7 +191,7 @@
     </div>
     <div class="wall" style="column-count:5;column-gap:clamp(12px,1.6vw,20px)">
       <sc-for list="{{ seeleGallery }}" as="item" hint-placeholder-count="6">
-        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"><figcaption style="padding:10px 3px 2px"><span style="font-style:italic;display:block">{{ item.title }}</span><span class="lbl" style="color:var(--faint);display:block;margin-top:4px">{{ item.meta }}</span></figcaption></figure>
       </sc-for>
     </div>
   </section>
@@ -246,7 +255,7 @@
     </div>
     <div class="wall" style="column-count:5;column-gap:clamp(12px,1.6vw,20px)">
       <sc-for list="{{ reiseGallery }}" as="item" hint-placeholder-count="6">
-        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"><figcaption style="padding:10px 3px 2px"><span style="font-style:italic;display:block">{{ item.title }}</span><span class="lbl" style="color:var(--faint);display:block;margin-top:4px">{{ item.meta }}</span></figcaption></figure>
       </sc-for>
     </div>
   </section>
@@ -296,21 +305,21 @@
     <p class="rv lbl" style="color:var(--ac);margin-bottom:16px">Figuren</p>
     <div class="wall" style="column-count:6;column-gap:10px;margin-bottom:clamp(30px,4.5vw,52px)">
       <sc-for list="{{ fotoFiguren }}" as="item" hint-placeholder-count="9">
-        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"><figcaption style="padding:8px 3px 2px;font-style:italic">{{ item.title }}</figcaption></figure>
       </sc-for>
     </div>
 
     <p class="rv lbl" style="color:var(--ac);margin-bottom:16px">Orte &amp; Landschaft</p>
     <div class="wall" style="column-count:6;column-gap:10px;margin-bottom:clamp(30px,4.5vw,52px)">
       <sc-for list="{{ fotoOrte }}" as="item" hint-placeholder-count="6">
-        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"><figcaption style="padding:8px 3px 2px;font-style:italic">{{ item.title }}</figcaption></figure>
       </sc-for>
     </div>
 
     <p class="rv lbl" style="color:var(--ac);margin-bottom:16px">Abstraktes</p>
     <div class="wall" style="column-count:6;column-gap:10px">
       <sc-for list="{{ fotoAbstrakt }}" as="item" hint-placeholder-count="8">
-        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"><figcaption style="padding:8px 3px 2px;font-style:italic">{{ item.title }}</figcaption></figure>
       </sc-for>
     </div>
   </section>
@@ -607,8 +616,8 @@ class Component extends DCLogic {
   componentDidUpdate(){ this.applyTheme(); }
   renderVals(){ return {
     rootRef:(el)=>{this.rootEl=el;},
-    seeleGallery: this.books.seele.pages.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpen(p, this.books.seele.pages) })),
-    reiseGallery: this.books.reise.pages.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpen(p, this.books.reise.pages) })),
+    seeleGallery: this.books.seele.pages.map((p)=>({ src:p.src, title:p.title, meta:p.meta, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpen(p, this.books.seele.pages) })),
+    reiseGallery: this.books.reise.pages.map((p)=>({ src:p.src, title:p.title, meta:p.meta, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpen(p, this.books.reise.pages) })),
     origBaseImgRef:(el)=>{this.refs.orig.baseImg=el;},
     origLeafRef:(el)=>{this.refs.orig.leafEl=el;},
     origLeafImgRef:(el)=>{this.refs.orig.leafImg=el;},
