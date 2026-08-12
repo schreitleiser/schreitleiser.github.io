@@ -140,7 +140,7 @@
   .nb-btn{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid var(--line);background:transparent;color:#E7E2DA;cursor:pointer;border-radius:50%;font-size:18px;transition:border-color .4s,color .4s,background .4s}
   .nb-btn:hover{border-color:var(--ac);color:var(--ac)}
   .nb-btn:disabled{opacity:.28;cursor:default}
-  @media(max-width:900px){.feat{grid-template-columns:1fr !important;gap:26px !important}.feat .plate{max-width:460px}.feat .qz{order:2}.wall{column-count:2 !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.kopfwrap{grid-template-columns:1fr !important}.kopfwrap figure{padding-top:36px !important;min-height:280px}.atelier{grid-template-columns:1fr !important;gap:24px !important}}
+  @media(max-width:900px){.feat{grid-template-columns:1fr !important;gap:26px !important}.feat .plate{max-width:460px}.feat .qz{order:2}.wall{column-count:2 !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.kopfwrap{grid-template-columns:1fr !important}.kopfwrap figure{padding-top:36px !important;min-height:280px}.atelier{grid-template-columns:1fr !important;gap:24px !important}.atelier-more>div{grid-template-columns:1fr !important}}
   @media(max-width:560px){.wall{column-count:1 !important}}
   /* feste Spaltenraster auf kleinen Schirmen umbrechen, sonst scrollt die Seite seitlich */
   @media(max-width:900px){.serie{grid-template-columns:repeat(3,1fr) !important}}
@@ -390,14 +390,13 @@
         <p style="font-size:1rem;line-height:1.55;color:#CFC9C0">Zwischen Zeichnungen, Büchern, Instrumenten und Notizen. Kein abgeschlossenes Atelier, sondern ein Arbeitsraum, in dem sich Psychologie, Kunst, Musik und Schreiben begegnen.</p>
       </div>
     </div>
-    <div class="wall" style="column-count:3;column-gap:clamp(16px,2vw,30px);margin-top:clamp(40px,6vw,76px)">
-      <figure class="rv plate" style="margin:0 0 clamp(16px,2vw,30px);break-inside:avoid"><img src="assets/draw/simon-schaugg-tuscheportraet-schwarzer-hintergrund.png" alt="Tuscheporträt von Simon Schaugg: ein frontal gezeichnetes Gesicht in schwarzer Tinte vor einem großflächigen schwarzen Hintergrund." width="949" height="1306" style="width:100%;height:auto" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate" style="margin:0 0 clamp(16px,2vw,30px);break-inside:avoid"><img src="assets/heads-close.jpg" alt="Kopfskulpturen von Simon Schaugg aus Glas, Holz, Spiegeln und Farbe in einer Ausstellung." style="width:100%" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate" style="margin:0 0 clamp(16px,2vw,30px);break-inside:avoid"><img src="assets/painting.jpg" alt="Abstrakte Malerei von Simon Schaugg in Rot, Orange, Schwarz, Blau und gebrochenem Weiß." style="width:100%" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate" style="margin:0 0 clamp(16px,2vw,30px);break-inside:avoid"><img src="assets/draw/new-red-flowers.jpg" alt="Blumenstillleben von Simon Schaugg in Rot, Blau, Schwarz und Weiß." style="width:100%" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate" style="margin:0 0 clamp(16px,2vw,30px);break-inside:avoid"><img src="assets/draw/jazzcafe-spread.jpg" alt="Notizbuch-Doppelseite von Simon Schaugg mit Gästen und Musikern in einem Jazzcafé." style="width:100%" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate" style="margin:0 0 clamp(16px,2vw,30px);break-inside:avoid"><img src="assets/draw/new-grey-portrait.jpg" alt="Graues gezeichnetes Porträt von Simon Schaugg mit dichter Schraffur." style="width:100%" loading="lazy" decoding="async"></figure>
-    </div>
+    <details class="rv atelier-more" style="margin-top:clamp(38px,6vw,70px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0">
+      <summary class="lbl" style="cursor:pointer;color:var(--dim);list-style-position:inside">Zwei weitere Arbeiten anzeigen</summary>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,38px);max-width:900px;margin:clamp(24px,4vw,42px) auto 8px">
+        <figure class="plate" style="margin:0"><img src="assets/draw/simon-schaugg-tuscheportraet-schwarzer-hintergrund.png" alt="Tuscheporträt von Simon Schaugg: ein frontal gezeichnetes Gesicht in schwarzer Tinte vor einem großflächigen schwarzen Hintergrund." width="949" height="1306" style="width:100%;height:auto" loading="lazy" decoding="async"></figure>
+        <figure class="plate" style="margin:0"><img src="assets/draw/new-red-flowers.jpg" alt="Blumenstillleben von Simon Schaugg in Rot, Blau, Schwarz und Weiß." style="width:100%" loading="lazy" decoding="async"></figure>
+      </div>
+    </details>
   </section>
 
   <!-- AUSSTELLUNG -->
