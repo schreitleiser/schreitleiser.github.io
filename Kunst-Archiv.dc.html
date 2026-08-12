@@ -12,19 +12,20 @@
 <link rel="canonical" href="https://simonschaugg.de/Kunst-Archiv.dc.html">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="text/markdown" href="/llms.txt" title="KI-lesbare Seitenübersicht">
+<link rel="alternate" type="text/markdown" href="/kunst-bildarchiv.md" title="Maschinenlesbarer Bildkatalog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kunst-Archiv — alle Arbeiten | Simon Schaugg">
 <meta property="og:description" content="Das vollständige Bildarchiv von Simon Schaugg: alle Zeichnungen, sämtliche Original-Seiten des Notizbuchs, Reise-Skizzen und die fotografischen Serien.">
 <meta property="og:url" content="https://simonschaugg.de/Kunst-Archiv.dc.html">
-<meta property="og:image" content="https://simonschaugg.de/assets/draw/new-feige-sau-rot-blau.jpg">
-<meta property="og:image:alt" content="„Feige Sau“ — Zeichnung von Simon Schaugg, Tusche und Wachsmalstift, 2023: eine rot gemalte Figur greift nach einem weißen Kopf vor blauem Grund, oben rechts der Schriftzug „FEIGE SAU“.">
+<meta property="og:image" content="https://simonschaugg.de/assets/draw/new-coffee-talk.jpg">
+<meta property="og:image:alt" content="„Make me coffee, then talk“ — Zeichnung von Simon Schaugg, Tusche und Marker, 2023: eine Figur mit Tasse an einem schwarzen Tisch in violettem Rahmen.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Simon Schaugg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Kunst-Archiv — alle Arbeiten | Simon Schaugg">
 <meta name="twitter:description" content="Das vollständige Bildarchiv von Simon Schaugg: alle Zeichnungen, sämtliche Original-Seiten des Notizbuchs, Reise-Skizzen und die fotografischen Serien.">
-<meta name="twitter:image" content="https://simonschaugg.de/assets/draw/new-feige-sau-rot-blau.jpg">
-<meta name="twitter:image:alt" content="„Feige Sau“ — Zeichnung von Simon Schaugg, Tusche und Wachsmalstift, 2023: eine rot gemalte Figur greift nach einem weißen Kopf vor blauem Grund, oben rechts der Schriftzug „FEIGE SAU“.">
+<meta name="twitter:image" content="https://simonschaugg.de/assets/draw/new-coffee-talk.jpg">
+<meta name="twitter:image:alt" content="„Make me coffee, then talk“ — Zeichnung von Simon Schaugg, Tusche und Marker, 2023: eine Figur mit Tasse an einem schwarzen Tisch in violettem Rahmen.">
 
 <!-- React lokal ausgeliefert: support.js greift nur auf unpkg zurueck,
      falls diese Dateien fehlen. -->
@@ -41,7 +42,7 @@
   "inLanguage": "de-DE",
   "primaryImageOfPage": {
     "@type": "ImageObject",
-    "contentUrl": "https://simonschaugg.de/assets/draw/new-feige-sau-rot-blau.jpg",
+    "contentUrl": "https://simonschaugg.de/assets/draw/new-coffee-talk.jpg",
     "creator": {
       "@id": "https://simonschaugg.de/#person"
     },
@@ -76,6 +77,13 @@
   "dateModified": "2026-08-12",
   "author": {
     "@id": "https://simonschaugg.de/#person"
+  },
+  "subjectOf": {
+    "@type": "DataDownload",
+    "name": "Maschinenlesbarer Bildkatalog der Kunstseiten",
+    "contentUrl": "https://simonschaugg.de/kunst-bildarchiv.md",
+    "encodingFormat": "text/markdown",
+    "inLanguage": "de-DE"
   },
   "breadcrumb": {
     "@type": "BreadcrumbList",
@@ -141,7 +149,7 @@
   .nb-btn{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid var(--line);background:transparent;color:#E7E2DA;cursor:pointer;border-radius:50%;font-size:18px;transition:border-color .4s,color .4s,background .4s}
   .nb-btn:hover{border-color:var(--ac);color:var(--ac)}
   .nb-btn:disabled{opacity:.28;cursor:default}
-  @media(max-width:900px){.feat{grid-template-columns:1fr !important;gap:26px !important}.feat .plate{max-width:460px}.feat .qz{order:2}.wall{column-count:2 !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.kopfwrap{grid-template-columns:1fr !important}.kopfwrap figure{padding-top:36px !important;min-height:280px}.atelier{grid-template-columns:1fr !important;gap:24px !important}}
+  @media(max-width:900px){.feat{grid-template-columns:1fr !important;gap:26px !important}.feat .plate{max-width:460px}.feat .qz{order:2}.wall{column-count:2 !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.kopfwrap{grid-template-columns:1fr !important}.kopfwrap figure{padding-top:36px !important;min-height:280px}.atelier{grid-template-columns:1fr !important;gap:24px !important}.malerei-grid{grid-template-columns:1fr !important}.malerei-grid figure{max-width:620px}}
   @media(max-width:560px){.wall{column-count:1 !important}}
 </style>
 </helmet>
@@ -167,6 +175,7 @@
     <h1 class="rv" style="font-weight:400;font-size:clamp(2.6rem,9vw,7.5rem);line-height:.96;letter-spacing:-.01em;margin-bottom:clamp(28px,4vw,52px)">Das <em style="font-style:italic;color:var(--ac)">Archiv</em>.</h1>
     <p class="rv" style="max-width:58ch;font-size:clamp(1.1rem,1.6vw,1.45rem);line-height:1.6;color:#CFC9C0">Hier liegt alles: sämtliche Zeichnungen, alle Original-Seiten des Notizbuchs, die Reise-Skizzen und die fotografischen Serien. Ungefiltert und ohne Auswahl — die kuratierte Fassung steht auf der <a href="Kunst.dc.html" class="nav-a" style="opacity:1;color:var(--ac);border-bottom:1px solid var(--ac)">Kunstseite</a>.</p>
     <p class="rv lbl" style="color:var(--faint);margin-top:clamp(24px,3vw,36px)">Bild anklicken zum Vergrößern · Pfeiltasten zum Blättern</p>
+    <p class="rv lbl" style="margin-top:14px"><a href="kunst-bildarchiv.md" class="nav-a" style="opacity:1;color:var(--ac)">Alle Bildbeschreibungen als Textfassung →</a></p>
   </section>
 
   <!-- DAS NOTIZBUCH: SEELENZUSTÄNDE -->
@@ -182,8 +191,20 @@
     </div>
     <div class="wall" style="column-count:5;column-gap:clamp(12px,1.6vw,20px)">
       <sc-for list="{{ seeleGallery }}" as="item" hint-placeholder-count="6">
-        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"><figcaption style="padding:10px 3px 2px"><span style="font-style:italic;display:block">{{ item.title }}</span><span class="lbl" style="color:var(--faint);display:block;margin-top:4px">{{ item.meta }}</span></figcaption></figure>
       </sc-for>
+    </div>
+  </section>
+
+  <!-- MALEREI -->
+  <section id="malerei" data-screen-label="Bilder · Malerei" style="padding:clamp(60px,9vw,130px) clamp(18px,5vw,72px);background:#151318;border-top:1px solid var(--line)">
+    <div class="malerei-grid" style="display:grid;grid-template-columns:minmax(0,.75fr) minmax(280px,1fr);gap:clamp(34px,7vw,110px);align-items:center;max-width:1180px;margin:0 auto">
+      <div>
+        <h2 class="rv" style="font-weight:400;font-style:italic;font-size:clamp(1.8rem,4vw,3.2rem)">Malerei</h2>
+        <p class="rv lbl" style="color:var(--dim);margin-top:14px">Blumenstillleben</p>
+        <p class="rv" style="max-width:48ch;font-size:1rem;line-height:1.55;color:#CFC9C0;margin-top:14px">Eine einzelne malerische Arbeit zwischen den umfangreicheren zeichnerischen und fotografischen Serien.</p>
+      </div>
+      <figure class="rv plate mz" style="cursor:zoom-in;margin:0" onClick="{{ zoomOpenFlowers }}"><img src="assets/draw/new-red-flowers.jpg" alt="Blumenstillleben von Simon Schaugg in Rot, Blau, Schwarz und Weiß." style="width:100%;height:auto" loading="lazy" decoding="async"><figcaption style="padding:12px 3px 2px"><span style="font-style:italic">Blumenstillleben</span></figcaption></figure>
     </div>
   </section>
 
@@ -234,7 +255,7 @@
     </div>
     <div class="wall" style="column-count:5;column-gap:clamp(12px,1.6vw,20px)">
       <sc-for list="{{ reiseGallery }}" as="item" hint-placeholder-count="6">
-        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"><figcaption style="padding:10px 3px 2px"><span style="font-style:italic;display:block">{{ item.title }}</span><span class="lbl" style="color:var(--faint);display:block;margin-top:4px">{{ item.meta }}</span></figcaption></figure>
       </sc-for>
     </div>
   </section>
@@ -284,21 +305,21 @@
     <p class="rv lbl" style="color:var(--ac);margin-bottom:16px">Figuren</p>
     <div class="wall" style="column-count:6;column-gap:10px;margin-bottom:clamp(30px,4.5vw,52px)">
       <sc-for list="{{ fotoFiguren }}" as="item" hint-placeholder-count="9">
-        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"><figcaption style="padding:8px 3px 2px;font-style:italic">{{ item.title }}</figcaption></figure>
       </sc-for>
     </div>
 
     <p class="rv lbl" style="color:var(--ac);margin-bottom:16px">Orte &amp; Landschaft</p>
     <div class="wall" style="column-count:6;column-gap:10px;margin-bottom:clamp(30px,4.5vw,52px)">
       <sc-for list="{{ fotoOrte }}" as="item" hint-placeholder-count="6">
-        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"><figcaption style="padding:8px 3px 2px;font-style:italic">{{ item.title }}</figcaption></figure>
       </sc-for>
     </div>
 
     <p class="rv lbl" style="color:var(--ac);margin-bottom:16px">Abstraktes</p>
     <div class="wall" style="column-count:6;column-gap:10px">
       <sc-for list="{{ fotoAbstrakt }}" as="item" hint-placeholder-count="8">
-        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"></figure>
+        <figure class="rv plate mz" style="margin:0 0 10px;cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"><figcaption style="padding:8px 3px 2px;font-style:italic">{{ item.title }}</figcaption></figure>
       </sc-for>
     </div>
   </section>
@@ -391,6 +412,7 @@ class Component extends DCLogic {
         { src:'assets/draw/rad.jpg',           title:'RAD',                             meta:'Aquarell & Tusche · 2023' },
         { src:'assets/draw/scribble.jpg',      title:'Ohne Titel',                      meta:'Tusche · 2023' },
         { src:'assets/draw/blueline.png',      title:'Ohne Titel',                      meta:'Tusche · 2023' },
+        { src:'assets/draw/simon-schaugg-tuscheportraet-schwarzer-hintergrund.png', title:'Porträt', meta:'Tusche' },
         { src:'assets/draw/new-flieg-engel.jpg', title:'Flieg, Engel',                  meta:'Tusche · 13.01.23' },
         { src:'assets/draw/new-yellow-glasses.jpg', title:'Ohne Titel',                 meta:'Tusche & Marker · 2023' },
         { src:'assets/draw/new-schuld-drip.jpg', title:'Schuld',                        meta:'Tusche & Aquarell · 2023' },
@@ -398,7 +420,6 @@ class Component extends DCLogic {
         { src:'assets/draw/new-coffee-talk.jpg', title:'Make me coffee, then talk',     meta:'Tusche & Marker · 2023' },
         { src:'assets/draw/new-crouching-figure.jpg', title:'Ohne Titel',               meta:'Tusche · 2023' },
         { src:'assets/draw/new-piano-figur.jpg', title:'Ohne Titel',                    meta:'Tusche & Wachsmalstift · 2023' },
-        { src:'assets/draw/new-feige-sau-rot-blau.jpg', title:'Feige Sau',              meta:'Tusche & Wachsmalstift · 2023' },
         { src:'assets/draw/new-segelboot-vogel.jpg', title:'Ohne Titel',                meta:'Tusche · 2023' },
         { src:'assets/draw/new-graprih-griffel.jpg', title:'Ohne Titel',                meta:'Tusche · 2023' },
         { src:'assets/draw/new-prost-voegel.jpg', title:'Ohne Titel',                   meta:'Tusche · 2023' }
@@ -437,12 +458,13 @@ class Component extends DCLogic {
     "assets/digital/wolken-horizont.jpg": "„Horizont“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: ein schmaler Horizont zwischen Wolken und Wasser, nahezu monochrom.",
     "assets/digital/wolken-wald.jpg": "„Wald unter Wolken“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: ein dunkler Waldsaum unter schwerer Wolkendecke.",
     "assets/draw/blueline.png": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche, 2023: ein Kopf, allein aus feinen Konturlinien gebaut, vor flächigem Blau.",
+    "assets/draw/simon-schaugg-tuscheportraet-schwarzer-hintergrund.png": "Tuscheporträt von Simon Schaugg: ein frontal gezeichnetes Gesicht in schwarzer Tinte vor einem großflächigen schwarzen Hintergrund.",
+    "assets/draw/new-red-flowers.jpg": "Blumenstillleben von Simon Schaugg in Rot, Blau, Schwarz und Weiß.",
     "assets/draw/gelitten.jpg": "„Warum hast du für mich gelitten“ — Zeichnung von Simon Schaugg, Tusche, 2023: eine liegende nackte Figur in feiner Konturlinie, darüber ein schwarzes Feld mit einem zweiten Kopf und handschriftlichem Text.",
     "assets/draw/gibmichauf.jpg": "„Gib mich auf“ — Zeichnung von Simon Schaugg, Tusche, 17. Januar 2023: ein verwischtes Doppelgesicht mit gezeichneten Tränen, rechts der Schriftzug „gib mich auf“.",
     "assets/draw/new-beobachtung-strand.jpg": "„Beobachtung am Strand“ — Zeichnung von Simon Schaugg, Tusche, Portugal, 30. Juli 2023: eine Person stützt den Kopf in die Hand, daneben eine handschriftliche Notiz über schreiende Kinder.",
     "assets/draw/new-coffee-talk.jpg": "„Make me coffee, then talk“ — Zeichnung von Simon Schaugg, Tusche und Marker, 2023: eine Figur mit Tasse an einem schwarzen Tisch, links senkrecht der Schriftzug, umlaufend ein violetter Rahmen.",
     "assets/draw/new-crouching-figure.jpg": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche, 2023: eine kauernde nackte Figur, die den Kopf auf die Arme stützt, in reiner Umrisslinie.",
-    "assets/draw/new-feige-sau-rot-blau.jpg": "„Feige Sau“ — Zeichnung von Simon Schaugg, Tusche und Wachsmalstift, 2023: eine rot gemalte Figur greift nach einem weißen Kopf vor blauem Grund, oben rechts der Schriftzug „FEIGE SAU“.",
     "assets/draw/new-flieg-engel.jpg": "„Flieg, Engel“ — Zeichnung von Simon Schaugg, Tusche, 13. Januar 2023: ein Männerkopf in reiner Umrisslinie, daneben ein einzelner ausgestreckter Flügel.",
     "assets/draw/new-ganz-entspannt.jpg": "„Ganz entspannt im Hier und Jetzt“ — Zeichnung von Simon Schaugg, Tusche und Aquarell, Caldas de Monchique, 1. August 2023: eine sitzende Person mit Kaffeetasse unter grünem Blattwerk.",
     "assets/draw/new-gemeinsam-entspannt.jpg": "„Gemeinsam entspannt im Hier und Jetzt“ — Zeichnung von Simon Schaugg, Tusche und Aquarell, Portugal, 1. August 2023: zwei Personen mit Kaffeetassen an einem Tisch unter Bäumen.",
@@ -594,8 +616,8 @@ class Component extends DCLogic {
   componentDidUpdate(){ this.applyTheme(); }
   renderVals(){ return {
     rootRef:(el)=>{this.rootEl=el;},
-    seeleGallery: this.books.seele.pages.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpen(p, this.books.seele.pages) })),
-    reiseGallery: this.books.reise.pages.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpen(p, this.books.reise.pages) })),
+    seeleGallery: this.books.seele.pages.map((p)=>({ src:p.src, title:p.title, meta:p.meta, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpen(p, this.books.seele.pages) })),
+    reiseGallery: this.books.reise.pages.map((p)=>({ src:p.src, title:p.title, meta:p.meta, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpen(p, this.books.reise.pages) })),
     origBaseImgRef:(el)=>{this.refs.orig.baseImg=el;},
     origLeafRef:(el)=>{this.refs.orig.leafEl=el;},
     origLeafImgRef:(el)=>{this.refs.orig.leafImg=el;},
@@ -618,6 +640,7 @@ class Component extends DCLogic {
     fotoFiguren: this.fotoFigurenSrc.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpenFoto(p) })),
     fotoOrte: this.fotoOrteSrc.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpenFoto(p) })),
     fotoAbstrakt: this.fotoAbstraktSrc.map((p)=>({ src:p.src, title:p.title, alt:this.altFor(p.src,p.title), zoom:()=>this.zoomOpenFoto(p) })),
+    zoomOpenFlowers:()=>this.zoomOpen({src:'assets/draw/new-red-flowers.jpg',title:'Blumenstillleben',meta:'Malerei'}),
     zoomOpenAktivurlaub:()=>this.zoomOpen(this.origPages[0]),
     zoomOpenKopfkraulen:()=>this.zoomOpen(this.origPages[1]),
     zoomOpenPortugal:()=>this.zoomOpen(this.origPages[2]),

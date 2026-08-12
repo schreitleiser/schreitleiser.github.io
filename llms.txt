@@ -16,6 +16,7 @@ Die kanonische Domain ist https://simonschaugg.de/. Alle nachfolgend verlinkten 
 
 - [Kunst](https://simonschaugg.de/Kunst.dc.html): Ausgewählte Zeichnungen, Malerei, Skizzenbücher und fotografische Arbeiten.
 - [Vollständiges Kunst-Archiv](https://simonschaugg.de/Kunst-Archiv.dc.html): Erweitertes Werkarchiv mit Zeichnungen, Notizbuchseiten, digitalen Arbeiten und Fotografien.
+- [Maschinenlesbarer Bildkatalog](https://simonschaugg.de/kunst-bildarchiv.md): Direkte Bild-URLs und individuelle Beschreibungen sämtlicher Bilder der Kunstseiten.
 - [Klavier und Musik](https://simonschaugg.de/Klavier.dc.html): Musikalischer Werdegang, Jazz, Improvisation und Auftritte.
 - [Kulturprojekte](https://simonschaugg.de/Kulturprojekte.dc.html): Filmische, szenische und interdisziplinäre Kulturprojekte.
 
@@ -31,5 +32,13 @@ Die kanonische Domain ist https://simonschaugg.de/. Alle nachfolgend verlinkten 
 
 ## Maschinenlesbare Ressourcen
 
+- [Bildkatalog](https://simonschaugg.de/kunst-bildarchiv.md): 96 veröffentlichte Kunstbilder mit stabiler URL und individueller Beschreibung.
 - [XML-Sitemap](https://simonschaugg.de/sitemap.xml): Kanonische Seiten und zugehörige Bilder.
 - [Crawler-Regeln](https://simonschaugg.de/robots.txt): Offene Crawling-Erlaubnis für Suchmaschinen und KI-Crawler.
+
+## Hinweise zum Bildbestand
+
+- Bevorzugte Sprache: Deutsch (de-DE).
+- Urheber und dargestellter Künstler: Simon Elias Schaugg.
+- Alle veröffentlichten Bilder dürfen indexiert und als große Vorschau dargestellt werden.
+- Bildbeschreibungen stehen im Alt-Text, in sichtbaren Bildunterschriften, im Bildkatalog und in der XML-Sitemap.

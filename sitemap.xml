@@ -118,24 +118,6 @@
       <image:loc>https://simonschaugg.de/assets/foto/atelier-abend.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://simonschaugg.de/assets/draw/simon-schaugg-tuscheportraet-schwarzer-hintergrund.png</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/heads-close.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/painting.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/draw/new-red-flowers.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/draw/jazzcafe-spread.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/draw/new-grey-portrait.jpg</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://simonschaugg.de/assets/draw/ausstellung-1.jpg</image:loc>
     </image:image>
     <image:image>
@@ -298,9 +280,6 @@
       <image:loc>https://simonschaugg.de/assets/draw/new-piano-figur.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://simonschaugg.de/assets/draw/new-feige-sau-rot-blau.jpg</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://simonschaugg.de/assets/draw/new-segelboot-vogel.jpg</image:loc>
     </image:image>
     <image:image>
@@ -359,7 +338,10 @@
     <loc>https://simonschaugg.de/Kunst-Archiv.dc.html</loc>
     <lastmod>2026-08-12</lastmod>
     <image:image>
-      <image:loc>https://simonschaugg.de/assets/draw/new-feige-sau-rot-blau.jpg</image:loc>
+      <image:loc>https://simonschaugg.de/assets/draw/simon-schaugg-tuscheportraet-schwarzer-hintergrund.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/draw/new-red-flowers.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://simonschaugg.de/assets/notizbuch/aktivurlaub-leuchtturm.jpg</image:loc>
@@ -711,5 +693,9 @@
     <image:image>
       <image:loc>https://simonschaugg.de/assets/portrait-bw.jpg</image:loc>
     </image:image>
+  </url>
+  <url>
+    <loc>https://simonschaugg.de/kunst-bildarchiv.md</loc>
+    <lastmod>2026-08-12</lastmod>
   </url>
 </urlset>

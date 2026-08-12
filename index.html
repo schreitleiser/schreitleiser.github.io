@@ -168,6 +168,8 @@
   .plate:hover img{transform:scale(1.04)}
   .portrait-full{display:flex;align-items:center;justify-content:center}
   .portrait-full img{width:auto;max-width:100%;height:auto;max-height:78vh;object-fit:contain}
+  .portrait-crop{height:min(78vh,720px);overflow:hidden}
+  .portrait-crop img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:70% 44%}
   .mail{border-bottom:1px solid var(--line);padding-bottom:3px;transition:border-color .45s,color .45s}
   .mail:hover{border-color:#C98A4B;color:#C98A4B}
   .drop::first-letter{font-size:3.6em;line-height:.78;float:left;padding:.06em .12em .02em 0;font-weight:300;color:#C98A4B;font-style:italic}
@@ -243,7 +245,7 @@
         <figure class="portrait-full" style="margin:0;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
           <img src="assets/portrait-heidelberg.jpg" alt="Simon Schaugg vor der Alten Brücke in Heidelberg.">
         </figure>
-        <figure class="portrait-full" style="margin:0;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
+        <figure class="portrait-full portrait-crop" style="margin:0;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
           <img src="assets/simon-schaugg-portrait-anzug-kamera.jpg" alt="Simon Schaugg steht im Anzug vor einer Backsteinwand und blickt direkt in die Kamera." width="1170" height="1584" loading="lazy" decoding="async">
         </figure>
         <figure class="portrait-full" style="margin:0;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">

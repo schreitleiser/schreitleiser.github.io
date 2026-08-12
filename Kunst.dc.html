@@ -11,6 +11,7 @@
 <link rel="canonical" href="https://simonschaugg.de/Kunst.dc.html">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="text/markdown" href="/llms.txt" title="KI-lesbare Seitenübersicht">
+<link rel="alternate" type="text/markdown" href="/kunst-bildarchiv.md" title="Maschinenlesbarer Bildkatalog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kunst &amp; Zeichnungen — Simon Schaugg">
 <meta property="og:description" content="Expressionistische Malerei, Tuschezeichnungen und Skizzenbuch-Arbeiten von Simon Schaugg — Denken und Fühlen in Bildern, unter anderem aus der Serie „Seelenzustände“.">
@@ -75,6 +76,13 @@
   "dateModified": "2026-08-12",
   "author": {
     "@id": "https://simonschaugg.de/#person"
+  },
+  "subjectOf": {
+    "@type": "DataDownload",
+    "name": "Maschinenlesbarer Bildkatalog der Kunstseiten",
+    "contentUrl": "https://simonschaugg.de/kunst-bildarchiv.md",
+    "encodingFormat": "text/markdown",
+    "inLanguage": "de-DE"
   },
   "breadcrumb": {
     "@type": "BreadcrumbList",
@@ -390,14 +398,6 @@
         <p style="font-size:1rem;line-height:1.55;color:#CFC9C0">Zwischen Zeichnungen, Büchern, Instrumenten und Notizen. Kein abgeschlossenes Atelier, sondern ein Arbeitsraum, in dem sich Psychologie, Kunst, Musik und Schreiben begegnen.</p>
       </div>
     </div>
-    <div class="wall" style="column-count:3;column-gap:clamp(16px,2vw,30px);margin-top:clamp(40px,6vw,76px)">
-      <figure class="rv plate" style="margin:0 0 clamp(16px,2vw,30px);break-inside:avoid"><img src="assets/draw/simon-schaugg-tuscheportraet-schwarzer-hintergrund.png" alt="Tuscheporträt von Simon Schaugg: ein frontal gezeichnetes Gesicht in schwarzer Tinte vor einem großflächigen schwarzen Hintergrund." width="949" height="1306" style="width:100%;height:auto" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate" style="margin:0 0 clamp(16px,2vw,30px);break-inside:avoid"><img src="assets/heads-close.jpg" alt="Kopfskulpturen von Simon Schaugg aus Glas, Holz, Spiegeln und Farbe in einer Ausstellung." style="width:100%" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate" style="margin:0 0 clamp(16px,2vw,30px);break-inside:avoid"><img src="assets/painting.jpg" alt="Abstrakte Malerei von Simon Schaugg in Rot, Orange, Schwarz, Blau und gebrochenem Weiß." style="width:100%" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate" style="margin:0 0 clamp(16px,2vw,30px);break-inside:avoid"><img src="assets/draw/new-red-flowers.jpg" alt="Blumenstillleben von Simon Schaugg in Rot, Blau, Schwarz und Weiß." style="width:100%" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate" style="margin:0 0 clamp(16px,2vw,30px);break-inside:avoid"><img src="assets/draw/jazzcafe-spread.jpg" alt="Notizbuch-Doppelseite von Simon Schaugg mit Gästen und Musikern in einem Jazzcafé." style="width:100%" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate" style="margin:0 0 clamp(16px,2vw,30px);break-inside:avoid"><img src="assets/draw/new-grey-portrait.jpg" alt="Graues gezeichnetes Porträt von Simon Schaugg mit dichter Schraffur." style="width:100%" loading="lazy" decoding="async"></figure>
-    </div>
   </section>
 
   <!-- AUSSTELLUNG -->
@@ -527,7 +527,6 @@ class Component extends DCLogic {
         { src:'assets/draw/new-coffee-talk.jpg', title:'Make me coffee, then talk',     meta:'Tusche & Marker · 2023' },
         { src:'assets/draw/new-crouching-figure.jpg', title:'Ohne Titel',               meta:'Tusche · 2023' },
         { src:'assets/draw/new-piano-figur.jpg', title:'Ohne Titel',                    meta:'Tusche & Wachsmalstift · 2023' },
-        { src:'assets/draw/new-feige-sau-rot-blau.jpg', title:'Feige Sau',              meta:'Tusche & Wachsmalstift · 2023' },
         { src:'assets/draw/new-segelboot-vogel.jpg', title:'Ohne Titel',                meta:'Tusche · 2023' },
         { src:'assets/draw/new-graprih-griffel.jpg', title:'Ohne Titel',                meta:'Tusche · 2023' },
         { src:'assets/draw/new-prost-voegel.jpg', title:'Ohne Titel',                   meta:'Tusche · 2023' }
@@ -571,7 +570,6 @@ class Component extends DCLogic {
     "assets/draw/new-beobachtung-strand.jpg": "„Beobachtung am Strand“ — Zeichnung von Simon Schaugg, Tusche, Portugal, 30. Juli 2023: eine Person stützt den Kopf in die Hand, daneben eine handschriftliche Notiz über schreiende Kinder.",
     "assets/draw/new-coffee-talk.jpg": "„Make me coffee, then talk“ — Zeichnung von Simon Schaugg, Tusche und Marker, 2023: eine Figur mit Tasse an einem schwarzen Tisch, links senkrecht der Schriftzug, umlaufend ein violetter Rahmen.",
     "assets/draw/new-crouching-figure.jpg": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche, 2023: eine kauernde nackte Figur, die den Kopf auf die Arme stützt, in reiner Umrisslinie.",
-    "assets/draw/new-feige-sau-rot-blau.jpg": "„Feige Sau“ — Zeichnung von Simon Schaugg, Tusche und Wachsmalstift, 2023: eine rot gemalte Figur greift nach einem weißen Kopf vor blauem Grund, oben rechts der Schriftzug „FEIGE SAU“.",
     "assets/draw/new-flieg-engel.jpg": "„Flieg, Engel“ — Zeichnung von Simon Schaugg, Tusche, 13. Januar 2023: ein Männerkopf in reiner Umrisslinie, daneben ein einzelner ausgestreckter Flügel.",
     "assets/draw/new-ganz-entspannt.jpg": "„Ganz entspannt im Hier und Jetzt“ — Zeichnung von Simon Schaugg, Tusche und Aquarell, Caldas de Monchique, 1. August 2023: eine sitzende Person mit Kaffeetasse unter grünem Blattwerk.",
     "assets/draw/new-gemeinsam-entspannt.jpg": "„Gemeinsam entspannt im Hier und Jetzt“ — Zeichnung von Simon Schaugg, Tusche und Aquarell, Portugal, 1. August 2023: zwei Personen mit Kaffeetassen an einem Tisch unter Bäumen.",
