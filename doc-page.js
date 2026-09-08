@@ -74,6 +74,7 @@
     }
     .sheet {
       width: var(--doc-page-w);
+      max-width: 100%;
       margin: 0 auto;
       background: #fff;
       box-shadow: 0 2px 14px rgba(20, 20, 19, 0.12);
@@ -81,12 +82,29 @@
       box-sizing: border-box;
       padding: var(--doc-page-margin);
     }
-    .frame { width: 100%; border-collapse: collapse; }
+    /* table-layout:fixed is load-bearing, not cosmetic: with the default
+       auto layout, an unslotted <doc-page> instance projected into this
+       table's single cell contributes its own explicit physical width
+       (e.g. 8.5in) to the cell's intrinsic max-content size — percentage
+       max-width can't resolve during that pass, so it's ignored and the
+       table grows past the sheet, overflowing the viewport. Fixed layout
+       sizes the column purely from the table's own width (100%), so
+       nested content is clipped/wrapped to it instead of expanding it. */
+    .frame { width: 100%; table-layout: fixed; border-collapse: collapse; }
     .frame td, .frame th { padding: 0; text-align: left; font-weight: inherit; }
     .hdr-space { height: var(--doc-hdr-h); }
     .ftr-space { height: var(--doc-ftr-h); }
     ::slotted([slot="header"]),
     ::slotted([slot="footer"]) { display: block; box-sizing: border-box; }
+    /* Auf dem Bildschirm ist die Seite ein Vorschaublatt mit fester Papierbreite
+       (z.B. 210mm); ohne Deckelung laeuft sie auf schmalen Fenstern ueber den
+       Viewport hinaus und erzwingt horizontales Scrollen der ganzen Seite.
+       max-width:100% oben deckelt die Breite, hier wird der Innenabstand fuer
+       kleine Bildschirme verkleinert, damit noch Platz fuer Text bleibt. */
+    @media screen and (max-width: 640px) {
+      :host { padding: 20px 12px; }
+      .sheet { padding: 28px 20px; }
+    }
     @media print {
       :host { background: none; padding: 0; min-height: 0; }
       .sheet {
