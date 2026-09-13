@@ -72,7 +72,7 @@
     "inLanguage": "de-DE"
   },
   "@id": "https://simonschaugg.de/Presse.dc.html#webpage",
-  "dateModified": "2026-09-11",
+  "dateModified": "2026-09-13",
   "author": {
     "@id": "https://simonschaugg.de/#person"
   },
@@ -137,8 +137,35 @@
   .emb.loaded{padding:0;border-color:transparent;background:none}
   .emb.loaded .embhead{display:none}
   .emb iframe{width:100%;border:0}
+  .press-hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:clamp(42px,8vw,110px);align-items:end;max-width:1320px}
+  .press-hero h1{max-width:12ch !important;margin-bottom:0 !important}
+  .press-intro{border-left:1px solid var(--line);padding-left:clamp(22px,3vw,38px)}
+  .press-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:clamp(24px,3vw,34px)}
+  .press-stat{border-top:1px solid var(--line);padding-top:12px}
+  .press-stat strong{display:block;font-size:1.65rem;font-weight:300;color:var(--ac);line-height:1}
+  .press-stat span{display:block;margin-top:7px;color:var(--dim);font-size:.77rem;line-height:1.35}
+  .press-index{position:sticky;top:58px;z-index:50;display:flex;align-items:center;gap:8px;overflow-x:auto;padding:12px clamp(18px,5vw,60px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(243,238,226,.94);backdrop-filter:blur(12px);scrollbar-width:none}
+  .press-index::-webkit-scrollbar{display:none}
+  .press-index a{display:inline-flex;align-items:center;gap:9px;flex:0 0 auto;padding:9px 13px;border:1px solid transparent;color:var(--dim);transition:color .3s,border-color .3s,background .3s}
+  .press-index a:hover{color:var(--ac);border-color:var(--line);background:#F8F4EB}
+  .press-index b{font-weight:400;color:var(--faint)}
+  .press-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);max-width:1220px}
+  .press-list .prow{display:grid !important;grid-template-columns:minmax(0,1fr) auto !important;grid-template-rows:auto 1fr;gap:18px 24px !important;align-content:start;align-items:start !important;min-height:205px;padding:clamp(22px,2.6vw,30px) !important;border:0 !important;background:#F3EEE2}
+  .press-list .prow:hover{padding-left:clamp(22px,2.6vw,30px) !important;background:#FBF7EE;transform:translateY(-2px)}
+  .press-list .prow>span:first-child{grid-column:1;grid-row:1}
+  .press-list .prow>span:nth-child(2){grid-column:1/-1;grid-row:2}
+  .press-list .prow>.meta{grid-column:2;grid-row:1;text-align:right !important;justify-content:flex-end !important;white-space:nowrap}
+  #otoene .qgrid{background:#F7F2E8;border:1px solid var(--line) !important;padding:clamp(24px,3.5vw,42px) !important;margin-bottom:14px;max-width:1220px !important}
+  #otoene .qgrid:last-child{margin-bottom:0}
+  #otoene .qmeta{position:static !important}
+  .section-note{max-width:1220px;margin-top:20px}
   @media(max-width:760px){.fazgrid{grid-template-columns:1fr !important;gap:26px !important}}
   @media(max-width:900px){
+    .press-hero{grid-template-columns:1fr;gap:30px}
+    .press-hero h1{max-width:16ch !important}
+    .press-intro{border-left:0;border-top:1px solid var(--line);padding:24px 0 0}
+    .press-index{top:76px}
+    .press-list{grid-template-columns:1fr}
     .navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}
     .prow{grid-template-columns:1fr !important;gap:6px !important}
     .prow .meta{text-align:left !important;justify-content:flex-start !important}
@@ -147,6 +174,36 @@
     .chans{grid-template-columns:1fr !important}
     .twocol{grid-template-columns:1fr !important;gap:26px !important}
   }
+  @media(max-width:520px){
+    .press-stats{grid-template-columns:1fr 1fr}
+    .press-index{top:98px}
+    #otoene .qgrid{grid-template-columns:1fr !important}
+  }
+
+/* Klar gegliederter Pressespiegel */
+@media(max-width:520px){header{flex-direction:column;align-items:flex-start!important;gap:14px!important;background:#F3EEE2!important}header>a{white-space:nowrap}.navwrap{justify-content:flex-start!important;gap:10px 16px!important}}
+.rv{opacity:1;transform:none}
+main section[id]{scroll-margin-top:130px}
+.press-hero{grid-template-columns:1.1fr 1fr;align-items:center}.press-hero h1{font-size:clamp(2.4rem,5vw,4rem)!important;max-width:18ch!important}.press-stats{display:none}
+.press-index{position:relative;top:auto!important;flex-wrap:wrap;overflow:visible}.press-index a{background:#fffaf2;border-color:var(--line);color:#514839;border-radius:4px}
+.press-list{gap:20px;background:transparent;border:0}
+.press-list .prow{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto auto 1fr auto;gap:12px!important;padding:28px!important;background:#FFFCF6;border:1px solid #d6cbb9!important;border-radius:8px;min-height:270px;box-shadow:0 3px 12px #211c1508;transition:border-color .2s,box-shadow .2s}
+.press-list .prow:hover{padding-left:28px!important;background:#fffdf9;transform:none;border-color:var(--ac)!important;box-shadow:0 7px 22px #211c1514}
+.press-list .prow>span:first-child{grid-column:1;grid-row:1;font-family:Arial,sans-serif;font-size:.88rem!important;font-weight:600!important;line-height:1.5;color:#725035}
+.press-list .prow>.meta{grid-column:1;grid-row:2;text-align:left!important;justify-content:flex-start!important;color:#645b4d!important;font-size:11px;letter-spacing:.04em;white-space:normal}
+.press-list .prow>span:nth-child(2){grid-column:1;grid-row:3}
+.press-list .prow>span:nth-child(2)>span:first-child{font-size:1.5rem!important;font-style:normal!important;font-weight:500;line-height:1.25!important}
+.press-list .prow>span:nth-child(2)>span:nth-child(2){font-family:Arial,sans-serif;font-size:.96rem!important;line-height:1.65!important;color:#514b40!important;margin-top:14px!important}
+.press-list .prow::after{content:'Beitrag öffnen ↗';grid-row:4;align-self:end;padding-top:18px;font-family:Arial,sans-serif;font-size:.86rem;font-weight:600;color:#a53c17}.press-list .prow .arr{display:none}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--ac);outline-offset:5px}.nav-drop:focus-within .submenu{opacity:1;visibility:visible;transform:none}
+.faz{background:#FFFCF6;border:1px solid #d6cbb9!important;border-radius:10px;padding:clamp(22px,3vw,38px)!important;box-shadow:0 6px 24px #211c150a}.faz:hover{border-color:var(--ac)!important}
+.fazgrid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)!important;align-items:center!important}.faz h2{font-style:normal!important;font-weight:400!important;font-size:clamp(2rem,3.5vw,3rem)!important;line-height:1.16!important}.faz h2 em{font-style:normal!important}.fazmeta{color:#645b4d!important;letter-spacing:.04em}
+.fazgrid>div>p:not(.lbl){font-family:Arial,sans-serif;font-size:1rem!important;line-height:1.7!important}.faz-portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:5px}.faz-portrait figcaption{margin-top:12px;font:12px/1.5 Arial,sans-serif;color:#645b4d}
+.fazlink{font-family:Arial,sans-serif;font-size:.95rem;letter-spacing:0;text-transform:none;background:#a53c17;color:#fff!important;padding:13px 18px!important;border-radius:4px}
+.press-quotes{max-width:1220px}.press-quotes>summary{cursor:pointer;font-size:1.35rem;line-height:1.5;margin-bottom:24px;color:#514839}
+@media(max-width:900px){.press-hero{grid-template-columns:1fr}}
+@media(max-width:760px){.fazgrid{grid-template-columns:1fr!important}.faz-portrait{max-width:420px}.press-list .prow{min-height:0}.press-index{gap:8px}.press-index a{font-size:10px;letter-spacing:.04em}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}*{transition:none!important}}
 </style>
 </helmet>
 
@@ -166,11 +223,29 @@
   <main>
 
   <!-- HERO -->
-  <section data-screen-label="Presse · Titel" style="max-width:1220px;padding:clamp(32px,5vw,64px) clamp(18px,5vw,60px) clamp(40px,6vw,72px)">
-    <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(30px,5vw,56px)">Pressespiegel · was andere über die Projekte schreiben</p>
-    <h1 class="rv" style="font-weight:300;font-size:clamp(2.2rem,5.6vw,4.8rem);line-height:1.08;letter-spacing:-.012em;max-width:20ch;margin-bottom:clamp(30px,4vw,52px);text-wrap:balance">Was über die Projekte <em style="font-style:italic;color:var(--ac)">geschrieben, gesendet und gedreht</em> wurde.</h1>
-    <p class="rv" style="max-width:62ch;font-size:clamp(1.06rem,1.5vw,1.3rem);line-height:1.68;color:#37301F">Interviews, Berichte, Podcasts und Erwähnungen — gesammelt und verlinkt. Oben das F.A.Z.-Interview, für das ich als Psychologe zum Übergang in den Ruhestand befragt wurde; darunter die Berichterstattung zu YOLD, NeuHier und den filmischen Mitwirkungen.</p>
+  <section class="press-hero" data-screen-label="Presse · Titel" style="padding:clamp(34px,5vw,66px) clamp(18px,5vw,60px) clamp(44px,6vw,76px)">
+    <div>
+      <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(24px,4vw,42px)">Pressespiegel · Interviews, Berichte &amp; Podcasts</p>
+      <h1 class="rv" style="font-weight:300;font-size:clamp(2.2rem,5.6vw,4.8rem);line-height:1.08;letter-spacing:-.012em;text-wrap:balance">Presse &amp; <em style="color:var(--ac)">Interviews</em></h1>
+    </div>
+    <div class="press-intro rv">
+      <p style="max-width:52ch;font-size:clamp(1.06rem,1.5vw,1.3rem);line-height:1.62;color:#37301F">Ausgewählte Interviews und Berichte über meine Arbeit und die Projekte YOLD und NeuHier. Jeder Beitrag führt direkt zur Originalquelle.</p>
+      <div class="press-stats" aria-label="Umfang des Pressespiegels">
+        <div class="press-stat"><strong>1</strong><span class="lbl">Fokus-Interview</span></div>
+        <div class="press-stat"><strong>14</strong><span class="lbl">YOLD-Beiträge</span></div>
+        <div class="press-stat"><strong>3</strong><span class="lbl">NeuHier-Beiträge</span></div>
+      </div>
+    </div>
   </section>
+
+  <nav class="press-index lbl" aria-label="Inhalt der Presseseite">
+    <a href="#faz">Fokus <b>01</b></a>
+    <a href="#yold">YOLD · Presse <b>14</b></a>
+    <a href="#otoene">O-Töne <b>07</b></a>
+    <a href="#yold-links">YOLD · Links</a>
+    <a href="#neuhier">NeuHier <b>03</b></a>
+    <a href="#film">Film</a>
+  </nav>
 
   <!-- FOKUS · ALS EXPERTE IN DER F.A.Z. -->
   <section id="faz" data-screen-label="Presse · F.A.Z. Ruhestand" style="padding:clamp(24px,3vw,44px) clamp(18px,5vw,60px) clamp(56px,8vw,96px)">
@@ -187,10 +262,10 @@
           <p style="font-size:.99rem;line-height:1.6;color:var(--dim);max-width:52ch;margin-top:clamp(14px,2vw,18px)">Online erschienen auf faz.net unter dem Titel „Die Gefahr ist, dass mit dem Übergang in den Ruhestand ein Identitätsbruch stattfindet."</p>
           <span class="lbl fazlink" style="display:inline-flex;gap:8px;align-items:baseline;color:var(--ac);margin-top:clamp(22px,3vw,32px)">Interview auf faz.net lesen <span class="arr">↗</span></span>
         </div>
-        <blockquote style="margin:0;border-left:3px solid var(--ac);padding-left:clamp(20px,2.5vw,30px)">
-          <p style="font-weight:300;font-style:italic;font-size:clamp(1.3rem,2.4vw,1.9rem);line-height:1.3;text-wrap:pretty;color:#2E2A20">„Wer in seinem Beruf aufgegangen ist, hat mitunter größere Probleme, sich im Alter neu zu orientieren. Das muss aber nicht so sein, sagt Simon Schaugg, der sich mit der psychologischen Dimension des Lebens nach der Arbeitswelt befasst."</p>
-          <p class="lbl" style="color:var(--dim);margin-top:18px">Anriss der F.A.S.</p>
-        </blockquote>
+        <figure class="faz-portrait">
+          <img src="./assets/simon-schaugg-portrait-anzug-backsteinwand.jpg" alt="Simon Schaugg im Anzug vor einer Backsteinwand" width="1200" height="1600" fetchpriority="high">
+          <figcaption>Simon Schaugg · Im Gespräch über den Übergang in den Ruhestand</figcaption>
+        </figure>
       </div>
     </a>
   </section>
@@ -201,7 +276,7 @@
       <p class="rv lbl" style="color:var(--ac)">01 — YOLD · Presse &amp; redaktionelle Berichterstattung</p>
       <p class="rv lbl" style="color:var(--faint)">weitere vierzehn Beiträge</p>
     </div>
-    <div class="rv" style="border-top:1px solid rgba(33,28,21,.3);max-width:1220px">
+    <div class="rv press-list">
 
       <a href="https://germany.socialimpactaward.net/article/yold-finalist-spotlight/" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
         <span style="font-weight:500;font-size:1.14rem">Social Impact Award Germany</span>
@@ -297,7 +372,8 @@
       <p class="rv" style="font-weight:300;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.3;text-wrap:balance">Direkte Zitate von Simon Schaugg aus den Artikeln und Interviews — sofern nicht anders vermerkt.</p>
     </div>
 
-    <div class="rv qgrid" style="display:grid;grid-template-columns:190px 1fr;gap:clamp(18px,4vw,64px);max-width:1160px;border-top:1px solid rgba(33,28,21,.3);padding:clamp(28px,4vw,50px) 0">
+    <details class="press-quotes"><summary>7 O-Töne aus der Berichterstattung lesen</summary>
+<div class="rv qgrid" style="display:grid;grid-template-columns:190px 1fr;gap:clamp(18px,4vw,64px);max-width:1160px;border-top:1px solid rgba(33,28,21,.3);padding:clamp(28px,4vw,50px) 0">
       <div class="qmeta" style="position:sticky;top:90px;align-self:start"><p class="lbl" style="color:var(--ac);margin-bottom:8px">F.A.S. · Titelseite Rhein-Main</p><p class="lbl" style="color:var(--dim)">30.08.2026</p></div>
       <div>
         <blockquote style="margin:0 0 clamp(20px,2.6vw,30px)"><p style="font-weight:300;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.38;text-wrap:pretty">„Die Gefahr ist, dass mit dem Übergang in den Ruhestand ein großer Identitäts- und Rollenbruch stattfindet, auch sozial. In der Sozialpsychologie gibt es den Social Identity Approach. Das heißt, dass wir uns als Personen nicht nur über individuelle Eigenschaften definieren, sondern auch über unsere Zugehörigkeit zu verschiedenen sozialen Gruppen und Rollen."</p></blockquote>
@@ -352,12 +428,13 @@
         <blockquote style="margin:0"><p style="font-weight:300;font-style:italic;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.38;text-wrap:pretty">„Was passiert, wenn junge und ältere Generationen füreinander da sind, statt aneinander vorbeizuleben? YOLD verbindet erfahrene Ältere mit bildungsbenachteiligten Jugendlichen und jungen Erwachsenen. Wissen wird geteilt, Einsamkeit bekämpft — ein Ansatz, zwei Krisen."</p></blockquote>
       </div>
     </div>
+  </details>
   </section>
 
   <!-- YOLD — VERZEICHNISSE -->
-  <section data-screen-label="Presse · Verzeichnisse" style="padding:clamp(50px,8vw,100px) clamp(18px,5vw,60px);border-top:1px solid var(--line)">
+  <section id="yold-links" data-screen-label="Presse · Verzeichnisse" style="padding:clamp(50px,8vw,100px) clamp(18px,5vw,60px);border-top:1px solid var(--line)">
     <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(24px,4vw,44px)">03 — YOLD · Verzeichnis- &amp; Netzwerkeinträge</p>
-    <div class="rv" style="border-top:1px solid rgba(33,28,21,.3);max-width:1220px">
+    <div class="rv press-list">
       <a href="https://frankfurter-plattform-55plus.de/netzwerk/yold/" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
         <span style="font-weight:500;font-size:1.14rem">Frankfurter Plattform 55+</span>
         <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">YOLD-Profil</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Gelistet über die VHS Frankfurt / Dezernat für Bildung.</span></span>
@@ -374,7 +451,7 @@
         <span class="meta lbl" style="color:var(--faint);text-align:right;display:inline-flex;gap:8px;justify-content:flex-end;align-items:baseline">Eintrag <span class="arr">↗</span></span>
       </a>
     </div>
-    <p class="rv lbl" style="color:var(--faint);margin-top:22px;line-height:1.7;text-transform:none;letter-spacing:.04em;font-size:12px">Weitere Erwähnung (keine Presse im engeren Sinn): interner Teilnahmeaufruf der Fachschaft Physik / Biophysik der Goethe-Universität.</p>
+    <p class="rv lbl section-note" style="color:var(--faint);line-height:1.7;text-transform:none;letter-spacing:.04em;font-size:12px">Weitere Erwähnung (keine Presse im engeren Sinn): interner Teilnahmeaufruf der Fachschaft Physik / Biophysik der Goethe-Universität.</p>
   </section>
 
   <!-- YOLD — EIGENE KANÄLE -->
@@ -399,7 +476,7 @@
   <!-- NEUHIER — PODCASTS -->
   <section id="neuhier" data-screen-label="Presse · NeuHier" style="padding:clamp(50px,8vw,100px) clamp(18px,5vw,60px);border-top:1px solid var(--line)">
     <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(24px,4vw,44px)">05 — NeuHier · Presse &amp; Podcasts</p>
-    <div class="rv" style="border-top:1px solid rgba(33,28,21,.3);max-width:1220px">
+    <div class="rv press-list">
       <a href="https://www.uni-frankfurt.de/de/newsroom/einblick/ausgabe-63/neu-hier-endlich-dazugehoeren" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
         <span style="font-weight:500;font-size:1.14rem">EinBlick · Goethe-Universität</span>
         <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">„Neu hier: endlich dazugehören"</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Beitrag über NeuHier im Newsroom der Goethe-Universität Frankfurt, EinBlick Ausgabe 63.</span></span>
@@ -424,7 +501,7 @@
       <p class="rv lbl" style="color:var(--ac);margin-bottom:20px">06 — Filmische Mitwirkungen</p>
       <p class="rv" style="font-weight:300;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.3;text-wrap:balance">Rollen und Stimme in Filmen von <em style="font-style:italic">Peter Bösselmann</em>, Heidelberg — und die Presse dazu.</p>
     </div>
-    <div class="rv" style="border-top:1px solid rgba(33,28,21,.3);max-width:1220px">
+    <div class="rv press-list">
       <a href="https://klausenpfad.de/peter-boesselmann" target="_blank" rel="noopener" class="prow" style="display:grid;grid-template-columns:220px 1fr 150px;gap:24px;align-items:baseline;padding:26px 2px;border-bottom:1px solid var(--line)">
         <span style="font-weight:500;font-size:1.14rem">Atelier Klausenpfad</span>
         <span><span style="font-style:italic;font-size:1.24rem;color:#2E2A20;line-height:1.34;display:block">Künstlerseite Peter Bösselmann</span><span style="font-size:.98rem;color:var(--dim);line-height:1.5;display:block;margin-top:6px">Übersicht aller drei Filme.</span></span>
