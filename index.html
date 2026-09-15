@@ -181,10 +181,20 @@
   .award-vote:hover{background:#F4EEE2;color:#13110F}
   .award-vote:focus-visible{outline:3px solid #13110F;outline-offset:5px}
   @media(max-width:640px){.award-banner{align-items:stretch;flex-direction:column;gap:18px}.award-vote{align-self:flex-start;max-width:100%}}
+  .press-marquee{overflow:hidden;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0C0A09}
+  .press-marquee-track{display:flex;align-items:center;gap:clamp(40px,6vw,80px);width:max-content;animation:press-scroll 38s linear infinite}
+  .press-marquee:hover .press-marquee-track{animation-play-state:paused}
+  .press-marquee-item{flex:0 0 auto;font-family:'Space Mono',monospace;font-size:clamp(14px,1.7vw,19px);letter-spacing:.04em;color:var(--dim);white-space:nowrap;opacity:.82}
+  @keyframes press-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.press-marquee-track{animation:none;flex-wrap:wrap}}
+  .cta-btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+  .cta-btn.primary{background:#E9B978;color:#13110F;transition:background .3s}
+  .cta-btn.primary:hover{background:#F4EEE2}
+  .cta-btn.ghost{border:1px solid rgba(232,226,214,.4);color:#F4EEE2;transition:border-color .3s,color .3s}
+  .cta-btn.ghost:hover{border-color:#E9B978;color:#E9B978}
   @media(max-width:860px){
     .twocol{grid-template-columns:1fr !important;gap:26px !important}
     .nav-list{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}
-    .archiv{grid-template-columns:1fr 1fr !important;gap:18px !important}
     .idx{grid-template-columns:46px 1fr;gap:16px}
     .idx .arr{display:none}
     .kolo{grid-template-columns:1fr !important}
@@ -231,9 +241,34 @@
       <!-- ENTWURF, bitte prüfen/ersetzen -->
       <p class="rv" style="margin-top:clamp(24px,3.5vw,38px);font-size:clamp(1.02rem,1.4vw,1.2rem);line-height:1.6;max-width:52ch;color:#E8E2D6;text-shadow:0 2px 16px rgba(0,0,0,.6)">Simon Schaugg, Gründer von YOLD und Mitgründer von NeuHier — Psychologie und praktische Erfahrung im Aufbau von Gemeinschaft, zu Generationenaustausch, Einsamkeit und sozialem Ankommen.</p>
       <div class="rv" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(24px,3vw,34px)">
-        <a href="mailto:s.schaugg@gmx.de?subject=Anfrage" class="lbl" style="display:inline-flex;align-items:center;gap:10px;padding:15px 22px;background:#E9B978;color:#13110F;transition:background .3s">Kontakt aufnehmen</a>
-        <a href="Presse.dc.html#material" class="lbl" style="display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border:1px solid rgba(232,226,214,.4);color:#F4EEE2;transition:border-color .3s,color .3s">Presse &amp; Interviews</a>
+        <a href="mailto:s.schaugg@gmx.de?subject=Anfrage" class="lbl cta-btn primary">Kontakt aufnehmen</a>
+        <a href="Presse.dc.html#material" class="lbl cta-btn ghost">Presse &amp; Interviews</a>
       </div>
+    </div>
+  </section>
+
+  <!-- ── VERTRETEN IN ── -->
+  <section aria-label="Presse-Erwähnungen" class="press-marquee">
+    <div class="press-marquee-track" aria-hidden="false">
+      <span class="press-marquee-item">Vertreten in</span>
+      <span class="press-marquee-item">F.A.Z. / F.A.S.</span>
+      <span class="press-marquee-item">Journal Frankfurt</span>
+      <span class="press-marquee-item">Frankfurter Neue Presse</span>
+      <span class="press-marquee-item">Mannheimer Morgen</span>
+      <span class="press-marquee-item">MRN-News</span>
+      <span class="press-marquee-item">Frankfurt-Live</span>
+      <span class="press-marquee-item">Stadt Frankfurt im Blick</span>
+      <span class="press-marquee-item">UniReport · Goethe-Universität</span>
+      <!-- Wiederholung fürs nahtlose Scrollen -->
+      <span class="press-marquee-item" aria-hidden="true">Vertreten in</span>
+      <span class="press-marquee-item" aria-hidden="true">F.A.Z. / F.A.S.</span>
+      <span class="press-marquee-item" aria-hidden="true">Journal Frankfurt</span>
+      <span class="press-marquee-item" aria-hidden="true">Frankfurter Neue Presse</span>
+      <span class="press-marquee-item" aria-hidden="true">Mannheimer Morgen</span>
+      <span class="press-marquee-item" aria-hidden="true">MRN-News</span>
+      <span class="press-marquee-item" aria-hidden="true">Frankfurt-Live</span>
+      <span class="press-marquee-item" aria-hidden="true">Stadt Frankfurt im Blick</span>
+      <span class="press-marquee-item" aria-hidden="true">UniReport · Goethe-Universität</span>
     </div>
   </section>
 
@@ -280,50 +315,33 @@
     </div>
   </section>
 
-  <!-- ── EIN STRANG (featured) ── -->
-  <section id="strang" data-screen-label="Strang" style="padding:clamp(60px,9vw,130px) clamp(20px,5vw,68px);border-top:1px solid var(--line);background:#0C0A09">
-    <p class="rv lbl" style="color:#C98A4B;margin-bottom:clamp(26px,4vw,46px)">Ein Strang — wie alles zusammenhängt</p>
-    <div class="twocol" style="display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,90px);align-items:center;max-width:1240px">
-      <div>
-        <h2 class="rv" style="font-weight:300;font-size:clamp(1.9rem,3.8vw,3.3rem);line-height:1.12;letter-spacing:-.01em;margin-bottom:clamp(24px,3vw,40px);text-wrap:balance">Wer sind wir, wenn niemand zusieht — und wer, wenn <em style="font-style:italic;color:#C98A4B">doch</em>?</h2>
-        <p class="rv" style="font-size:1.16rem;line-height:1.68;color:#CFC8BB;max-width:52ch;margin-bottom:clamp(28px,3.5vw,44px);text-wrap:pretty">Ich stelle diese Frage nicht nur in der Psychologie. Ich stelle sie in Zeichnungen, in Improvisationen am Klavier und in Projekten mit anderen Menschen. Jedes Medium antwortet anders. Gerade deshalb interessieren sie mich: Nicht, weil sie dieselbe Wahrheit zeigen, sondern weil sie unterschiedliche Aspekte derselben Wirklichkeit sichtbar machen.</p>
-        <div class="rv" style="display:flex;flex-direction:column;border-top:1px solid var(--line)">
-          <a href="Forschung.dc.html" class="nav-a" style="--rc:#5E9A6E;display:flex;justify-content:space-between;gap:16px;padding:16px 2px;border-bottom:1px solid var(--line);opacity:1"><span style="font-size:1.12rem">Identität &amp; Sprache</span><span class="lbl" style="color:var(--faint)">Psychologie →</span></a>
-          <a href="Kunst.dc.html" class="nav-a" style="--rc:#E2502E;display:flex;justify-content:space-between;gap:16px;padding:16px 2px;border-bottom:1px solid var(--line);opacity:1"><span style="font-size:1.12rem">„Schuld“ — ein Tagebuch in Tusche</span><span class="lbl" style="color:var(--faint)">Kunst →</span></a>
-          <a href="Klavier.dc.html" class="nav-a" style="--rc:#8FB0E8;display:flex;justify-content:space-between;gap:16px;padding:16px 2px;border-bottom:1px solid var(--line);opacity:1"><span style="font-size:1.12rem">Improvisation als Selbstgespräch</span><span class="lbl" style="color:var(--faint)">Musik →</span></a>
-        </div>
-      </div>
-      <figure class="rv plate" style="margin:0;overflow:hidden;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
-        <img src="assets/draw/schuld-blau.jpg" alt="„Schuld“ — Zeichnung von Simon Schaugg, Aquarell und Tusche, 18. Juni 2023: ein frontales Gesicht in dichter Strichschraffur vor tiefblauem Grund, ringsum das handgeschriebene Wort „schuld“." style="width:100%">
+  <!-- ── PRESSE-HIGHLIGHT ── -->
+  <section id="presse-highlight" data-screen-label="Presse-Highlight" style="padding:clamp(60px,9vw,130px) clamp(20px,5vw,68px);border-top:1px solid var(--line);background:#0C0A09">
+    <p class="rv lbl" style="color:#C98A4B;margin-bottom:clamp(26px,4vw,46px)">Im Fokus · F.A.S., Titelseite Rhein-Main &amp; Hessen</p>
+    <a href="https://www.faz.net/aktuell/rhein-main/region-und-hessen/warum-der-uebergang-in-den-ruhestand-fuer-unternehmer-und-manager-gefahren-birgt-accg-201157292.html" target="_blank" rel="noopener" class="twocol rv" style="display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,5vw,90px);align-items:center;max-width:1240px">
+      <figure style="margin:0;overflow:hidden;background:#000;box-shadow:0 40px 80px -42px rgba(0,0,0,.9)">
+        <img src="assets/simon-schaugg-portrait-anzug-backsteinwand.jpg" alt="Simon Schaugg im Anzug vor einer Backsteinwand." style="width:100%;aspect-ratio:4/5;object-fit:cover">
       </figure>
+      <div>
+        <h2 style="font-weight:300;font-style:italic;font-size:clamp(1.7rem,3.6vw,3rem);line-height:1.16;letter-spacing:-.01em;text-wrap:balance;color:#F4EEE2;margin-bottom:clamp(20px,2.6vw,30px)">„Den Leistungsdruck nicht mit in den <em style="font-style:italic;color:#C98A4B">Ruhestand</em> nehmen."</h2>
+        <p style="font-size:1.08rem;line-height:1.66;color:#CFC8BB;max-width:52ch;margin-bottom:clamp(18px,2.4vw,26px)">Titelseiten-Interview in der Frankfurter Allgemeinen Sonntagszeitung darüber, was psychologisch geschieht, wenn nach Jahrzehnten im Beruf die Rolle wegfällt, die das Selbstbild getragen hat.</p>
+        <span class="lbl" style="display:inline-flex;gap:8px;align-items:baseline;color:#C98A4B">Interview auf faz.net lesen ↗</span>
+      </div>
+    </a>
+    <div class="rv" style="margin-top:clamp(40px,5vw,56px)">
+      <a href="Presse.dc.html" class="lbl cta-btn ghost">Weitere Presse &amp; Interviews ansehen</a>
     </div>
   </section>
 
-  <!-- ── AUS DEM ARCHIV ── -->
-  <section id="archiv" data-screen-label="Archiv" style="padding:clamp(60px,9vw,130px) clamp(20px,5vw,68px);border-top:1px solid var(--line)">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:clamp(34px,5vw,64px)">
-      <h2 class="rv" style="font-weight:300;font-size:clamp(1.5rem,2.6vw,2.2rem);font-style:italic">Aus dem Archiv</h2>
-      <a href="Kunst.dc.html" class="rv nav-a lbl" style="color:var(--dim);opacity:1;--rc:#E2502E">alle Blätter →</a>
+  <!-- ── CTA-BANNER ── -->
+  <section data-screen-label="CTA" style="padding:clamp(60px,9vw,120px) clamp(20px,5vw,68px);border-top:1px solid var(--line)">
+    <div class="rv" style="max-width:900px">
+      <h2 style="font-weight:300;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.2;letter-spacing:-.01em;text-wrap:balance;margin-bottom:clamp(20px,2.6vw,30px)">Für Vorträge, Presseanfragen und Kooperationen — <em style="font-style:italic;color:#C98A4B">jederzeit erreichbar</em>.</h2>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <a href="mailto:s.schaugg@gmx.de?subject=Anfrage" class="lbl cta-btn primary">Kontakt aufnehmen</a>
+        <a href="Presse.dc.html#material" class="lbl cta-btn ghost">Presse &amp; Interviews</a>
+      </div>
     </div>
-    <div class="archiv" style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,40px)">
-      <figure class="rv plate" style="margin:0;cursor:zoom-in" onClick="{{ zoomOpenSchuld }}">
-        <div style="overflow:hidden;background:#000"><img src="assets/draw/schuld-kind.png" alt="„schuld“ — Zeichnung von Simon Schaugg, Aquarell und Tusche, 2023: ein bleicher, kindlich wirkender Kopf mit dem eingesetzten Schriftzug „schuld“ über den Augen, darüber handschriftlich „Steh zu deinen Taten“." style="width:100%;aspect-ratio:4/5;object-fit:cover"></div>
-        <figcaption style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:13px 2px 0;border-top:1px solid var(--line);margin-top:13px"><span style="font-size:1.05rem">schuld</span><span class="lbl" style="color:var(--faint)">’23</span></figcaption>
-      </figure>
-      <figure class="rv plate" style="margin:0;cursor:zoom-in" onClick="{{ zoomOpenVogel }}">
-        <div style="overflow:hidden;background:#000"><img src="assets/draw/vogel.jpg" alt="„Blauer Vogel“ — Zeichnung von Simon Schaugg, Tusche und Marker, 4. Juni 2023: ein Vogel mit menschlichem Gesicht und blau schraffiertem Gefieder, daneben der handgeschriebene Text „Blauer Vogel, tauber Vogel, verbrauchter Vogel“." style="width:100%;aspect-ratio:4/5;object-fit:cover"></div>
-        <figcaption style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:13px 2px 0;border-top:1px solid var(--line);margin-top:13px"><span style="font-size:1.05rem">Blauer Vogel</span><span class="lbl" style="color:var(--faint)">’23</span></figcaption>
-      </figure>
-      <figure class="rv plate" style="margin:0;cursor:zoom-in" onClick="{{ zoomOpenGibmichauf }}">
-        <div style="overflow:hidden;background:#000"><img src="assets/draw/gibmichauf.jpg" alt="„Gib mich auf“ — Zeichnung von Simon Schaugg, Tusche, 17. Januar 2023: ein verwischtes Doppelgesicht mit gezeichneten Tränen, rechts der Schriftzug „gib mich auf“." style="width:100%;aspect-ratio:4/5;object-fit:cover"></div>
-        <figcaption style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:13px 2px 0;border-top:1px solid var(--line);margin-top:13px"><span style="font-size:1.05rem">Gib mich auf</span><span class="lbl" style="color:var(--faint)">’23</span></figcaption>
-      </figure>
-      <figure class="rv plate" style="margin:0;cursor:zoom-in" onClick="{{ zoomOpenRad }}">
-        <div style="overflow:hidden;background:#000"><img src="assets/draw/rad.jpg" alt="„RAD“ — Zeichnung von Simon Schaugg, Aquarell und Tusche, 2023: eine langgliedrige Figur auf einem roten Rennrad, von der Seite gesehen." style="width:100%;aspect-ratio:4/5;object-fit:cover"></div>
-        <figcaption style="display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:13px 2px 0;border-top:1px solid var(--line);margin-top:13px"><span style="font-size:1.05rem">RAD</span><span class="lbl" style="color:var(--faint)">’23</span></figcaption>
-      </figure>
-    </div>
-    <p class="rv lbl" style="color:var(--faint);margin-top:22px">Anklicken zum Vergrößern · <a href="Kunst.dc.html" class="nav-a" style="opacity:1;color:var(--dim)">alle Blätter im Detail →</a></p>
   </section>
 
   <!-- ── KOLOPHON ── -->
@@ -349,23 +367,10 @@
 
 </main>
 
-    <!-- ── ZOOM OVERLAY ── -->
-  <div ref="{{ zoomOverlayRef }}" onClick="{{ zoomClose }}" style="position:fixed;inset:0;z-index:200;background:rgba(6,5,6,.94);display:none;align-items:center;justify-content:center;padding:clamp(20px,5vw,60px);cursor:zoom-out">
-    <figure style="margin:0;max-width:94vw;max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:16px">
-      <img ref="{{ zoomImgRef }}" alt="" style="max-width:94vw;max-height:80vh;object-fit:contain;box-shadow:0 70px 130px -40px rgba(0,0,0,.9)">
-      <figcaption ref="{{ zoomCaptionRef }}" class="lbl" style="color:#E7E2DA;text-align:center"></figcaption>
-    </figure>
-  </div>
-
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  zoomOpen(src, caption) {
-    if (this.zoomImgEl) this.zoomImgEl.src = src;
-    if (this.zoomCaptionEl) this.zoomCaptionEl.textContent = caption || '';
-    if (this.zoomOverlayEl) this.zoomOverlayEl.style.display = 'flex';
-  }
   componentDidMount() {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -379,14 +384,6 @@ class Component extends DCLogic {
   renderVals() {
     return {
       rootRef: (el) => { this.rootEl = el; },
-      zoomOverlayRef: (el) => { this.zoomOverlayEl = el; },
-      zoomImgRef: (el) => { this.zoomImgEl = el; },
-      zoomCaptionRef: (el) => { this.zoomCaptionEl = el; },
-      zoomClose: () => { if (this.zoomOverlayEl) this.zoomOverlayEl.style.display = 'none'; },
-      zoomOpenSchuld: (e) => { e.stopPropagation(); this.zoomOpen('assets/draw/schuld-kind.png', 'schuld · ’23'); },
-      zoomOpenVogel: (e) => { e.stopPropagation(); this.zoomOpen('assets/draw/vogel.jpg', 'Blauer Vogel · ’23'); },
-      zoomOpenGibmichauf: (e) => { e.stopPropagation(); this.zoomOpen('assets/draw/gibmichauf.jpg', 'Gib mich auf · ’23'); },
-      zoomOpenRad: (e) => { e.stopPropagation(); this.zoomOpen('assets/draw/rad.jpg', 'RAD · ’23'); },
     };
   }
 }
