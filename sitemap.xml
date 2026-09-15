@@ -695,6 +695,13 @@
     </image:image>
   </url>
   <url>
+    <loc>https://simonschaugg.de/Ueber-mich.dc.html</loc>
+    <lastmod>2026-09-15</lastmod>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/portrait-heidelberg.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://simonschaugg.de/kunst-bildarchiv.md</loc>
     <lastmod>2026-08-12</lastmod>
   </url>
