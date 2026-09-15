@@ -90,12 +90,13 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,340;1,9..144,440;1,9..144,560&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:light only}
-  body{background:#FAF6EE;color:#2A241A;font-family:'Newsreader',Georgia,serif;font-weight:400;-webkit-font-smoothing:antialiased;font-synthesis:none}
-  ::selection{background:#2A241A;color:#FAF6EE}
+  body{background:#FAF6EE;color:#1C170F;font-family:'Newsreader',Georgia,serif;font-weight:400;-webkit-font-smoothing:antialiased;font-synthesis:none}
+  ::selection{background:#1C170F;color:#FAF6EE}
+  .dh{font-family:'Fraunces',Georgia,serif;font-optical-sizing:auto}
   img{display:block;max-width:100%}
   a{color:inherit;text-decoration:none}
   .rv{opacity:0;transform:translateY(18px);transition:opacity 1.3s cubic-bezier(.2,.6,.2,1),transform 1.3s cubic-bezier(.2,.6,.2,1)}
@@ -114,7 +115,7 @@
   .portrait-crop img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:70% 44%}
   .mail{border-bottom:1px solid var(--line);padding-bottom:3px;transition:border-color .45s,color .45s}
   .mail:hover{border-color:#B9843C;color:#B9843C}
-  .drop::first-letter{font-size:3.6em;line-height:.78;float:left;padding:.06em .12em .02em 0;font-weight:300;color:#B9843C;font-style:italic}
+  .drop::first-letter{font-family:'Fraunces',Georgia,serif;font-size:3.6em;line-height:.78;float:left;padding:.06em .12em .02em 0;font-weight:500;color:#B9843C;font-style:italic}
   @media(max-width:860px){
     .twocol{grid-template-columns:1fr !important;gap:26px !important}
     .nav-list{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}
@@ -122,20 +123,20 @@
 </style>
 </helmet>
 
-<div ref="{{ rootRef }}" style="--ink:#2A241A;--dim:#6F6552;--faint:#A99C82;--line:rgba(42,36,26,.14);background:#FAF6EE;min-height:100vh;position:relative">
+<div ref="{{ rootRef }}" style="--ink:#1C170F;--dim:#6F6552;--faint:#A99C82;--line:rgba(28,23,15,.28);background:#FAF6EE;min-height:100vh;position:relative">
 
   <!-- ── MASTHEAD ── -->
-  <header style="position:sticky;top:0;z-index:60;display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding:20px clamp(20px,5vw,68px);background:rgba(250,246,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)">
+  <header style="position:sticky;top:0;z-index:60;display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding:20px clamp(20px,5vw,68px);background:rgba(28,23,15,.94);backdrop-filter:blur(10px)">
     <a href="index.html" style="display:flex;align-items:baseline;gap:12px">
-      <span style="font-size:18px;font-weight:400;letter-spacing:.01em">Simon Elias Schaugg</span>
-      <span class="lbl" style="color:var(--faint)">Archiv</span>
+      <span style="font-size:18px;font-weight:400;letter-spacing:.01em;color:#F4EEDD">Simon Elias Schaugg</span>
+      <span class="lbl" style="color:#8A7F68">Archiv</span>
     </a>
     <nav class="nav-list" style="display:flex;gap:24px">
-      <a href="Forschung.dc.html" class="nav-a lbl" style="--rc:#5E9A6E">Psychologie</a>
-      <a href="Kunst.dc.html" class="nav-a lbl" style="--rc:#E2502E">Kunst</a>
-      <a href="Klavier.dc.html" class="nav-a lbl" style="--rc:#8FB0E8">Musik</a>
-      <span class="nav-drop"><a href="Projekte.dc.html" class="nav-a lbl" style="--rc:#E07A2E">Projekte</a><span class="submenu"><span class="smbox"><a href="Projekte.dc.html#yold" class="nav-a lbl" style="--rc:#E07A2E">YOLD</a><a href="Projekte.dc.html#neuhier" class="nav-a lbl" style="--rc:#E07A2E">NeuHier</a><a href="Kulturprojekte.dc.html" class="nav-a lbl" style="--rc:#E07A2E">Kultur</a></span></span></span>
-      <a href="Presse.dc.html" class="nav-a lbl" style="--rc:#C24A1E">Presse</a>
+      <a href="Forschung.dc.html" class="nav-a lbl" style="--rc:#7FC492;color:#D9D0BE">Psychologie</a>
+      <a href="Kunst.dc.html" class="nav-a lbl" style="--rc:#F07352;color:#D9D0BE">Kunst</a>
+      <a href="Klavier.dc.html" class="nav-a lbl" style="--rc:#8FB0E8;color:#D9D0BE">Musik</a>
+      <span class="nav-drop"><a href="Projekte.dc.html" class="nav-a lbl" style="--rc:#E9A055;color:#D9D0BE">Projekte</a><span class="submenu"><span class="smbox"><a href="Projekte.dc.html#yold" class="nav-a lbl" style="--rc:#E9A055">YOLD</a><a href="Projekte.dc.html#neuhier" class="nav-a lbl" style="--rc:#E9A055">NeuHier</a><a href="Kulturprojekte.dc.html" class="nav-a lbl" style="--rc:#E9A055">Kultur</a></span></span></span>
+      <a href="Presse.dc.html" class="nav-a lbl" style="--rc:#E9865B;color:#D9D0BE">Presse</a>
     </nav>
   </header>
 
@@ -167,14 +168,14 @@
   </section>
 
   <!-- ── KOLOPHON ── -->
-  <section id="kolophon" style="padding:clamp(60px,9vw,130px) clamp(20px,5vw,68px) clamp(40px,6vw,70px);border-top:1px solid var(--line);background:#F1E9D8">
+  <section id="kolophon" style="padding:clamp(50px,7vw,90px) clamp(20px,5vw,68px) clamp(40px,6vw,70px);background:#1C170F">
     <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:baseline">
-      <a href="mailto:s.schaugg@gmx.de" class="rv mail" style="display:inline-block;font-style:italic;font-size:clamp(1.3rem,2.4vw,1.9rem)">s.schaugg@gmx.de</a>
-      <a href="index.html" class="rv nav-a lbl" style="color:var(--dim);opacity:1">Zurück zum Index ↑</a>
+      <a href="mailto:s.schaugg@gmx.de" class="rv mail" style="display:inline-block;font-style:italic;font-size:clamp(1.3rem,2.4vw,1.9rem);color:#F8F3E7;border-color:rgba(244,238,221,.35)">s.schaugg@gmx.de</a>
+      <a href="index.html" class="rv nav-a lbl" style="color:#B4A98E;opacity:1">Zurück zum Index ↑</a>
     </div>
-    <div class="rv" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:clamp(50px,8vw,100px);padding-top:22px;border-top:1px solid var(--line)">
-      <span class="lbl" style="color:var(--faint)">© 2026 Simon Schaugg</span>
-      <span class="lbl" style="color:var(--faint);font-style:normal">Ein Ort zum Nachdenken</span>
+    <div class="rv" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:clamp(50px,8vw,100px);padding-top:22px;border-top:1px solid rgba(244,238,221,.14)">
+      <span class="lbl" style="color:#8A7F68">© 2026 Simon Schaugg</span>
+      <span class="lbl" style="color:#8A7F68;font-style:normal">Ein Ort zum Nachdenken</span>
     </div>
   </section>
 
