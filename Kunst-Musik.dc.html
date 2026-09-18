@@ -143,6 +143,19 @@
   #panel-musik .bkey{position:absolute;top:0;right:-22%;width:44%;height:62%;background:#0A0E1A;border:1px solid rgba(214,220,234,.14);border-top:none;z-index:2}
   #panel-musik .yr{transition:padding-left .5s cubic-bezier(.2,.6,.2,1),background .5s}
   #panel-musik .yr:hover{padding-left:14px;background:rgba(255,255,255,.025)}
+  /* --- Bilderreihe zum Durchklicken --- */
+  .carousel{display:flex;gap:clamp(12px,1.6vw,22px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:10px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(231,226,218,.28) transparent}
+  .carousel::-webkit-scrollbar{height:6px}
+  .carousel::-webkit-scrollbar-thumb{background:rgba(231,226,218,.28)}
+  .carousel>figure{flex:0 0 clamp(210px,24vw,320px);scroll-snap-align:start;margin:0}
+  /* contain statt cover: Zeichnungen duerfen nicht beschnitten werden */
+  .carousel>figure img{width:100%;height:clamp(240px,34vh,400px);object-fit:contain;display:block;background:#0C0B0D}
+  /* Fotos sind querformatig und duerfen beschnitten werden */
+  .carousel.fotos>figure{flex:0 0 clamp(260px,32vw,420px)}
+  .carousel.fotos>figure img{height:clamp(200px,26vh,300px);object-fit:cover}
+  .car-ctl{display:flex;align-items:center;gap:14px;margin-top:clamp(18px,2.4vw,26px);flex-wrap:wrap}
+  .car-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);background:transparent;color:#E7E2DA;cursor:pointer;border-radius:50%;font-size:17px;transition:border-color .4s,color .4s}
+  .car-btn:hover{border-color:var(--ac);color:var(--ac)}
   /* --- Film & Buehne (ehem. Kulturprojekte) --- */
   .ph{overflow:hidden}
   .ph img{transition:transform 1.2s cubic-bezier(.2,.6,.2,1)}
@@ -206,7 +219,7 @@
   <!-- REFLEXION A -->
   <section data-screen-label="Bilder · Reflexion" style="padding:clamp(50px,7vw,90px) clamp(18px,5vw,72px);background:#000;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
     <div style="max-width:68ch;margin:0 auto;text-align:center">
-      <p class="rv lbl" style="color:var(--ac);margin-bottom:22px">Reflexion · I von V</p>
+      <p class="rv lbl" style="color:var(--ac);margin-bottom:22px">Reflexion · I von II</p>
       <p class="rv" style="font-style:italic;font-weight:300;font-size:clamp(1.3rem,2.6vw,1.95rem);line-height:1.52;color:#E7E2DA;text-wrap:balance">Das Wesen der Kunst ist immer die Geschichte. Und die Geschichte ist nicht das Wort — das Wort ist nur eine Annäherung an die Geschichte, genau wie es das Bild ist und das Lied.</p>
     </div>
   </section>
@@ -217,9 +230,8 @@
       <div>
         <h2 class="rv" style="font-weight:400;font-style:italic;font-size:clamp(1.8rem,4vw,3.2rem)">Gezeichnete Gesichter</h2>
         <p class="rv lbl" style="color:var(--dim);margin-top:14px">Tusche · Aquarell · Marker · 2021–2023</p>
-        <p class="rv" style="max-width:58ch;font-size:1rem;line-height:1.55;color:#CFC9C0;margin-top:14px">Gesichter gehören zu meinen wiederkehrenden Motiven. Mich interessiert dabei weniger das Porträt einer bestimmten Person als der Ausdruck menschlicher Erfahrung. Die Figuren stehen selten für einzelne Menschen. Sie sind Verdichtungen von Erinnerungen, Empfindungen und Fragen, die viele kennen.</p>
-        <p class="rv" style="max-width:58ch;font-size:1rem;line-height:1.55;color:#CFC9C0;margin-top:14px">Zwischen Ernst und Ironie, Verletzlichkeit und Absurdität kreisen die Zeichnungen um Schuld, Freiheit, Verantwortung, Würde, Sehnsucht, Gewalt und Trost. Manche Figuren bleiben anonym, andere wirken vertraut. Einige bewegen sich bewusst zwischen Mensch und Symbol, zwischen Wirklichkeit und Traum.</p>
-        <p class="rv" style="max-width:58ch;font-size:1rem;line-height:1.55;color:#CFC9C0;margin-top:14px">Die Arbeiten entstanden über mehrere Jahre hinweg. Manche innerhalb weniger Minuten, andere entwickelten sich über Wochen oder Monate. Zusammen bilden sie kein Tagebuch, sondern ein fortlaufendes Archiv von Beobachtungen über das Menschsein.</p>
+        <p class="rv" style="max-width:58ch;font-size:1rem;line-height:1.55;color:#CFC9C0;margin-top:14px">Gesichter sind mein wiederkehrendes Motiv — weniger Porträts bestimmter Personen als Verdichtungen von Erinnerungen und Fragen: Schuld, Freiheit, Verantwortung, Sehnsucht.</p>
+        <p class="rv" style="max-width:58ch;font-size:1rem;line-height:1.55;color:#CFC9C0;margin-top:14px">Die Arbeiten entstanden über mehrere Jahre, manche in Minuten, andere über Wochen.</p>
       </div>
     </div>
 
@@ -233,48 +245,20 @@
       </div>
     </div>
 
-    <div class="feat" style="display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(34px,6vw,96px);align-items:center">
-      <div class="qz">
-        <p class="rv" style="font-weight:400;font-style:italic;font-size:clamp(1.8rem,3.6vw,3.4rem);line-height:1.18;letter-spacing:-.01em;margin-bottom:24px;text-wrap:balance">„Steh zu deinen Taten. Auch eine gerechte Strafe ist ein <em style="color:var(--ac)">Verbrechen</em>.“</p>
-        <p class="rv lbl" style="color:var(--dim)">schuld · Aquarell &amp; Tusche · 2023</p>
-      </div>
-      <figure class="rv plate" style="margin:0;overflow:hidden;background:#151318;transform:rotate(1.4deg)"><img src="assets/draw/schuld-kind.png" alt="„schuld“ — Zeichnung von Simon Schaugg, Aquarell und Tusche, 2023: ein bleicher, kindlich wirkender Kopf mit dem eingesetzten Schriftzug „schuld“ über den Augen, darüber handschriftlich „Steh zu deinen Taten“." style="width:100%"></figure>
     </div>
 
-    <div class="feat" style="display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(34px,6vw,96px);align-items:center">
-      <figure class="rv plate" style="margin:0;overflow:hidden;background:#151318;transform:rotate(1.2deg)"><img src="assets/draw/schuld-blau.jpg" alt="„Schuld“ — Zeichnung von Simon Schaugg, Aquarell und Tusche, 18. Juni 2023: ein frontales Gesicht in dichter Strichschraffur vor tiefblauem Grund, ringsum das handgeschriebene Wort „schuld“." style="width:100%"></figure>
-      <div class="qz">
-        <p class="rv" style="font-weight:400;font-style:italic;font-size:clamp(1.8rem,3.6vw,3.4rem);line-height:1.18;letter-spacing:-.01em;margin-bottom:24px;text-wrap:balance">„Dann bekamst du immer dieses ängstliche Flackern in deinen warmen Augen. Bis heute muss ich deshalb <em style="color:var(--ac)">weinen</em>.“</p>
-        <p class="rv lbl" style="color:var(--dim)">Schuld · Aquarell · 18.06.23</p>
-      </div>
-    </div>
-
-
-    </div>
-
-    <div class="rv" style="max-width:56ch;margin:clamp(56px,8vw,100px) auto clamp(10px,2vw,20px);text-align:center;padding:0 clamp(0px,2vw,20px)">
-      <p class="lbl" style="color:var(--ac);margin-bottom:20px">Haltung</p>
-      <p style="font-style:italic;font-weight:300;font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.6;color:#E7E2DA;margin-bottom:12px">Kunst muss ernst sein. Meine muss es.</p>
-      <p style="font-style:italic;font-weight:300;font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.6;color:#E7E2DA;margin-bottom:12px">Sie braucht ernste, unerbittliche Augen.</p>
-      <p style="font-style:italic;font-weight:300;font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.6;color:#E7E2DA;margin-bottom:12px">Dicht und ernst muss es sein.</p>
-      <p style="font-style:italic;font-weight:300;font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.6;color:#E7E2DA;margin-bottom:12px">Ich will mich unerbittlich veräußern — konsequent und ohne Zweifel.</p>
-    </div>
-
-    <div class="wall" style="column-count:3;column-gap:clamp(16px,2.2vw,30px)">
-      <sc-for list="{{ kuratiert }}" as="item" hint-placeholder-count="8">
-        <figure class="rv plate mz" style="cursor:zoom-in" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" style="width:100%" loading="lazy" decoding="async"><figcaption style="padding:12px 3px 2px"><span style="font-style:italic;display:block;line-height:1.3">{{ item.title }}</span><span class="lbl" style="color:var(--faint);display:block;margin-top:5px">{{ item.meta }}</span></figcaption></figure>
+    <div class="rv carousel" ref="{{ carGesichterRef }}">
+      <sc-for list="{{ seeleGallery }}" as="item" hint-placeholder-count="8">
+        <figure class="plate" style="cursor:zoom-in;background:#151318;padding:8px;border:1px solid rgba(255,255,255,.06)" onClick="{{ item.zoom }}"><img src="{{ item.src }}" alt="{{ item.alt }}" loading="lazy" decoding="async"><figcaption style="padding:10px 3px 2px"><span style="font-style:italic;display:block;line-height:1.3">{{ item.title }}</span></figcaption></figure>
       </sc-for>
     </div>
-    <p class="rv lbl" style="margin-top:clamp(28px,4vw,44px)"><a href="Kunst-Archiv.dc.html#gesichter" class="nav-a" style="opacity:1;color:var(--ac)">Alle Zeichnungen im Archiv →</a></p>
-  </section>
-
-  <!-- REFLEXION B -->
-  <section data-screen-label="Bilder · Reflexion" style="padding:clamp(50px,7vw,90px) clamp(18px,5vw,72px);background:#151318;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-    <div style="max-width:68ch;margin:0 auto;text-align:center">
-      <p class="rv lbl" style="color:var(--ac);margin-bottom:22px">Reflexion · II von V</p>
-      <p class="rv" style="font-style:italic;font-weight:300;font-size:clamp(1.3rem,2.6vw,1.95rem);line-height:1.52;color:#E7E2DA;text-wrap:balance">Der Mensch liebt die Schönheit der Geschichte, das, was wir Romantik nennen. Aber die tiefere Schönheit liegt auch im Kalten, im Kargen — die tiefe Schönheit der Geschichte, die ein jedes Ding erzählt.</p>
+    <div class="rv car-ctl">
+      <button class="car-btn" onClick="{{ carGesichterPrev }}" aria-label="vorherige Zeichnungen">←</button>
+      <button class="car-btn" onClick="{{ carGesichterNext }}" aria-label="weitere Zeichnungen">→</button>
+      <a href="Kunst-Archiv.dc.html#gesichter" class="nav-a lbl" style="opacity:1;color:var(--ac);margin-left:10px">Alle Zeichnungen ansehen →</a>
     </div>
   </section>
+
 
   <!-- DAS ORIGINAL: ECHTE SKIZZENBUCH-FOTOS -->
   <section id="buch-original" data-screen-label="Bilder · Original-Seiten" style="padding:clamp(60px,9vw,130px) clamp(18px,5vw,72px);background:#0C0B0D">
@@ -286,14 +270,6 @@
       </div>
     </div>
 
-    <div class="wall" style="column-count:3;column-gap:clamp(16px,2vw,30px);margin-bottom:clamp(50px,8vw,96px)">
-      <figure class="rv plate" style="transform:rotate(1.3deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenAktivurlaub }}"><img src="assets/notizbuch/aktivurlaub-leuchtturm.jpg" alt="„Unsere Vorstellung von Aktivurlaub“ — Notizbuchseite von Simon Schaugg, Tusche und Marker, 1. August 2023: eine gelb kolorierte Figur mit Kaffeetasse über die aufgeschlagene Doppelseite, daneben handschriftlicher Text." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Aktivurlaub</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Marker · 01.08.23</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(1.1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenKopfkraulen }}"><img src="assets/notizbuch/kopfkraulen-rom.jpg" alt="„Manchmal ist Kopfkraulen die beste Medizin“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Rom, 5. September 2023: zwei blau gezeichnete Köpfe auf orange grundierter Doppelseite." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Kopf-kraulen</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · Rom, 05.09.23</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(-1.3deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenPortugal }}"><img src="assets/notizbuch/rueckfahrt-portugal.jpg" alt="„Rückfahrt Portugal“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 2023: der Innenraum eines Autos mit Kopfstützen und Seitenfenster, in feiner Bleistiftlinie." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Rückfahrt Portugal</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · 2023</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(.9deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenOrange }}"><img src="assets/notizbuch/orange-figuren.jpg" alt="„Ohne Titel“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, 2023: blaue Figuren auf orange grundiertem, leicht gerolltem Papier." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Ohne Titel</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · 2023</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(-.9deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenAuto }}"><img src="assets/notizbuch/autoinnenraum-portugal.jpg" alt="„Autoinnenraum“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Rückfahrt aus Portugal, 2023: Blick von der Rückbank über Kopfstützen und Fenster." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Autoinnenraum</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · Rückfahrt Portugal, 2023</span></figcaption></figure>
-      <figure class="rv plate" style="transform:rotate(1.1deg);cursor:zoom-in;break-inside:avoid;margin:0 0 clamp(16px,2vw,30px)" onClick="{{ zoomOpenCamping }}"><img src="assets/notizbuch/campingplatz-toskana.jpg" alt="„Campingplatz“ — Notizbuchseite von Simon Schaugg, Tusche und Aquarell, Grosseto, August 2023: ein blau laviertes Vorzelt zwischen hohen Bäumen." style="width:100%"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Campingplatz</span><span class="lbl" style="color:var(--faint)">Tusche &amp; Aquarell · Grosseto, August 23</span></figcaption></figure>
-    </div>
 
     <p class="rv lbl" style="text-align:center;margin-bottom:clamp(40px,6vw,70px)"><a href="Kunst-Archiv.dc.html#originale" class="nav-a" style="opacity:1;color:var(--ac)">Alle 19 Original-Seiten im Archiv →</a></p>
 
@@ -327,13 +303,6 @@
     </div>
   </section>
 
-  <!-- REFLEXION C -->
-  <section data-screen-label="Bilder · Reflexion" style="padding:clamp(50px,7vw,90px) clamp(18px,5vw,72px);background:#000;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-    <div style="max-width:68ch;margin:0 auto;text-align:center">
-      <p class="rv lbl" style="color:var(--ac);margin-bottom:22px">Reflexion · III von V</p>
-      <p class="rv" style="font-style:italic;font-weight:300;font-size:clamp(1.3rem,2.6vw,1.95rem);line-height:1.52;color:#E7E2DA;text-wrap:balance">Die Geschichten sind da, sobald sie gelebt werden. Sie existieren unabhängig von allem anderen. Aber sie überlagern sich, schreiben sich um, fressen sich gegenseitig — und man erreicht sie dann nicht mehr.</p>
-    </div>
-  </section>
 
   <section id="serie" data-screen-label="Bilder · Das Urteil" style="padding:clamp(60px,9vw,130px) clamp(18px,5vw,72px);background:#000;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;margin-bottom:clamp(34px,5vw,64px)">
@@ -354,13 +323,6 @@
     </div>
   </section>
 
-  <!-- REFLEXION D -->
-  <section data-screen-label="Bilder · Reflexion" style="padding:clamp(50px,7vw,90px) clamp(18px,5vw,72px);background:#151318;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-    <div style="max-width:68ch;margin:0 auto;text-align:center">
-      <p class="rv lbl" style="color:var(--ac);margin-bottom:22px">Reflexion · IV von V</p>
-      <p class="rv" style="font-style:italic;font-weight:300;font-size:clamp(1.3rem,2.6vw,1.95rem);line-height:1.52;color:#E7E2DA;text-wrap:balance">Deshalb ist es so wertvoll, wenn wir sie einfangen können — in einem Bild, einem Satz, einer Musik. Um sie behalten zu können. Um sie besitzen zu können. Vielleicht ist es der größte Schatz, den wir haben.</p>
-    </div>
-  </section>
 
   <!-- DIGITALE SERIE -->
   <section id="digital" data-screen-label="Bilder · Raumgründe" style="padding:clamp(60px,9vw,130px) clamp(18px,5vw,72px);background:#0C0B0D">
@@ -368,18 +330,9 @@
       <h2 class="rv" style="font-weight:400;font-style:italic;font-size:clamp(1.8rem,4vw,3.2rem)">Raumgründe</h2>
       <p class="rv lbl" style="color:var(--dim);max-width:34ch;text-align:right">Digitale Malerei · 2020</p>
     </div>
-    <div class="rv" style="max-width:78ch;margin-bottom:clamp(40px,6vw,64px)">
-      <p style="font-size:1.05rem;line-height:1.7;color:#CFC9C0;margin-bottom:18px">Diese Serie entstand aus einer einfachen Aufgabe: Natur darstellen.</p>
-      <p style="font-size:1.05rem;line-height:1.7;color:#CFC9C0;margin-bottom:18px">Mich interessierte jedoch weniger, wie Natur aussieht, sondern was sie ausmacht. Was bleibt von einer Landschaft übrig, wenn man immer mehr Details entfernt? Wann entsteht aus wenigen Farben bereits das Gefühl von Weite, Licht oder Wetter?</p>
-      <p style="font-size:1.05rem;line-height:1.7;color:#CFC9C0;margin-bottom:18px">Deshalb entschied ich mich bewusst für digitale Malerei — ein Medium, das der Natur zunächst fern erscheint. Gerade dieser Gegensatz reizte mich: mit einem künstlichen Werkzeug etwas Organisches sichtbar zu machen.</p>
-      <p style="font-size:1.05rem;line-height:1.7;color:#CFC9C0;margin-bottom:18px">Die Arbeiten versuchen nicht, Landschaften abzubilden. Sie suchen nach ihrer Essenz.</p>
-      <p style="font-size:1.05rem;line-height:1.7;color:#CFC9C0;margin-bottom:18px">Wolken, Licht, Horizonte und organische Formen tauchen immer wieder auf. Manche Bilder bleiben gegenständlich, andere lösen sich fast vollständig in Farbe und Raum auf. Mich interessierte, wie wenig ein Bild braucht, damit der Betrachter dennoch Natur empfindet.</p>
-      <p style="font-size:1.05rem;line-height:1.7;color:#CFC9C0">Rückblickend erkenne ich darin bereits eine Frage, die sich bis heute durch meine Arbeit zieht: Nicht das Sichtbare möglichst genau wiederzugeben, sondern dem Wesen einer Erfahrung näherzukommen.</p>
-    </div>
-    <div class="rv" style="max-width:64ch;margin-bottom:clamp(40px,6vw,64px);padding-left:22px;border-left:2px solid var(--ac)">
-      <p style="font-style:italic;font-size:1.15rem;line-height:1.6;color:#E7E2DA;margin-bottom:16px">„Mein Anspruch war, nicht direkt die Natur darzustellen, sondern eher die Essenz, das Wesen dessen.“</p>
-      <p style="font-style:italic;font-size:1.15rem;line-height:1.6;color:#E7E2DA">„Die Frage, wie man durch möglichst wenig Mittel Raum erzeugen kann, fasziniert mich schon seit längerem.“</p>
-      <p style="font-style:italic;font-size:1.15rem;line-height:1.6;color:#E7E2DA;margin-top:16px">„Wolken können jedem Tag ein Gewicht und eine Stimmung verleihen, wie es kein strahlend blauer Himmel vermag.“</p>
+    <div class="rv" style="max-width:70ch;margin-bottom:clamp(34px,5vw,56px)">
+      <p style="font-size:1.05rem;line-height:1.7;color:#CFC9C0;margin-bottom:18px">Die Serie fragt nicht, wie Natur aussieht, sondern was von einer Landschaft übrig bleibt, wenn man Details entfernt — wann aus wenigen Farben Weite, Licht oder Wetter entsteht.</p>
+      <p style="font-size:1.05rem;line-height:1.7;color:#CFC9C0">Digitale Malerei als bewusster Gegensatz: mit einem künstlichen Werkzeug etwas Organisches sichtbar machen.</p>
     </div>
     <div class="serie" style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.6vw,20px)">
       <figure class="rv plate mz" style="margin:0;transform:rotate(-.8deg);cursor:zoom-in" onClick="{{ zoomOpenDigital1 }}"><img src="assets/digital/wolken-1.jpg" alt="„Wolken“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: eine graue Wolkenbank über einer hellen, fast aufgelösten Fläche." style="width:100%;aspect-ratio:3/4;object-fit:cover"><figcaption style="display:flex;justify-content:space-between;padding:12px 3px 2px"><span style="font-style:italic">Wolken</span><span class="lbl" style="color:var(--faint)">digital · ’20</span></figcaption></figure>
@@ -393,7 +346,7 @@
   <!-- REFLEXION E -->
   <section data-screen-label="Bilder · Reflexion" style="padding:clamp(50px,7vw,90px) clamp(18px,5vw,72px);background:#000;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
     <div style="max-width:68ch;margin:0 auto;text-align:center">
-      <p class="rv lbl" style="color:var(--ac);margin-bottom:22px">Reflexion · V von V</p>
+      <p class="rv lbl" style="color:var(--ac);margin-bottom:22px">Reflexion · II von II</p>
       <p class="rv" style="font-style:italic;font-weight:300;font-size:clamp(1.3rem,2.6vw,1.95rem);line-height:1.52;color:#E7E2DA;text-wrap:balance">Letzten Endes ist es immer das, was die Kunst ist. Was sie versucht. Woran sie sich abarbeitet: der Versuch, die Geschichte einzufangen — die Faszination, die Geschichte, in diesem Moment.</p>
     </div>
   </section>
@@ -422,13 +375,17 @@
     <div class="rv" style="max-width:70ch;margin-bottom:clamp(34px,5vw,56px)">
       <p style="font-size:1.05rem;line-height:1.6;color:#CFC9C0">Die erste öffentliche Präsentation der Arbeiten. Ein Schritt aus dem privaten Arbeitsprozess in den öffentlichen Raum — und damit ein weiterer Abschnitt eines Archivs, das weiter wächst.</p>
     </div>
-    <div class="wall" style="column-count:3;column-gap:clamp(16px,2vw,30px)">
-      <figure class="rv plate mz"><img src="assets/draw/ausstellung-1.jpg" alt="Erste Ausstellung von Simon Schaugg, Juni 2024: Blick durch die Räume mit gerahmten Zeichnungen an hellen Wänden." style="width:100%" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate mz"><img src="assets/draw/ausstellung-2.jpg" alt="Erste Ausstellung von Simon Schaugg, Juni 2024: eine Wand, dicht behängt mit kleinformatigen, unterschiedlich gerahmten Zeichnungen." style="width:100%;image-orientation:none" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate mz"><img src="assets/draw/ausstellung-3.jpg" alt="Erste Ausstellung von Simon Schaugg, Juni 2024: gerahmte Blätter vor einem Atelierfenster mit Pflanzen und Arbeitstisch." style="width:100%" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate mz"><img src="assets/draw/ausstellung-4.jpg" alt="Erste Ausstellung von Simon Schaugg, Juni 2024: eine lange helle Wand mit gerastert gehängten Zeichnungen und Skizzen." style="width:100%;image-orientation:none" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate mz"><img src="assets/draw/ausstellung-5.jpg" alt="Vernissage der ersten Ausstellung von Simon Schaugg, Juni 2024: Gäste im Ausstellungsraum, im Vordergrund applaudierendes Publikum." style="width:100%;image-orientation:none" loading="lazy" decoding="async"></figure>
-      <figure class="rv plate mz"><img src="assets/draw/ausstellung-6.jpg" alt="Vernissage der ersten Ausstellung von Simon Schaugg, Juni 2024: Besucherinnen und Besucher stehen vor der Hängung im Ausstellungsraum." style="width:100%" loading="lazy" decoding="async"></figure>
+    <div class="rv carousel fotos" ref="{{ carAusstellungRef }}">
+      <figure class="plate" style="cursor:zoom-in;background:#151318;padding:8px;border:1px solid rgba(255,255,255,.06)" onClick="{{ zoomOpenAus1 }}"><img src="assets/draw/ausstellung-1.jpg" alt="Erste Ausstellung von Simon Schaugg, Juni 2024: Blick durch die Räume mit gerahmten Zeichnungen an hellen Wänden." loading="lazy" decoding="async" style="aspect-ratio:4/3"></figure>
+      <figure class="plate" style="cursor:zoom-in;background:#151318;padding:8px;border:1px solid rgba(255,255,255,.06)" onClick="{{ zoomOpenAus2 }}"><img src="assets/draw/ausstellung-2.jpg" alt="Erste Ausstellung von Simon Schaugg, Juni 2024: eine Wand, dicht behängt mit kleinformatigen, unterschiedlich gerahmten Zeichnungen." loading="lazy" decoding="async" style="aspect-ratio:4/3;image-orientation:none"></figure>
+      <figure class="plate" style="cursor:zoom-in;background:#151318;padding:8px;border:1px solid rgba(255,255,255,.06)" onClick="{{ zoomOpenAus3 }}"><img src="assets/draw/ausstellung-3.jpg" alt="Erste Ausstellung von Simon Schaugg, Juni 2024: gerahmte Blätter vor einem Atelierfenster mit Pflanzen und Arbeitstisch." loading="lazy" decoding="async" style="aspect-ratio:4/3"></figure>
+      <figure class="plate" style="cursor:zoom-in;background:#151318;padding:8px;border:1px solid rgba(255,255,255,.06)" onClick="{{ zoomOpenAus4 }}"><img src="assets/draw/ausstellung-4.jpg" alt="Erste Ausstellung von Simon Schaugg, Juni 2024: eine lange helle Wand mit gerastert gehängten Zeichnungen und Skizzen." loading="lazy" decoding="async" style="aspect-ratio:4/3;image-orientation:none"></figure>
+      <figure class="plate" style="cursor:zoom-in;background:#151318;padding:8px;border:1px solid rgba(255,255,255,.06)" onClick="{{ zoomOpenAus5 }}"><img src="assets/draw/ausstellung-5.jpg" alt="Vernissage der ersten Ausstellung von Simon Schaugg, Juni 2024: Gäste im Ausstellungsraum, im Vordergrund applaudierendes Publikum." loading="lazy" decoding="async" style="aspect-ratio:4/3;image-orientation:none"></figure>
+      <figure class="plate" style="cursor:zoom-in;background:#151318;padding:8px;border:1px solid rgba(255,255,255,.06)" onClick="{{ zoomOpenAus6 }}"><img src="assets/draw/ausstellung-6.jpg" alt="Vernissage der ersten Ausstellung von Simon Schaugg, Juni 2024: Besucherinnen und Besucher stehen vor der Hängung im Ausstellungsraum." loading="lazy" decoding="async" style="aspect-ratio:4/3"></figure>
+    </div>
+    <div class="rv car-ctl">
+      <button class="car-btn" onClick="{{ carAusstellungPrev }}" aria-label="vorherige Fotos">←</button>
+      <button class="car-btn" onClick="{{ carAusstellungNext }}" aria-label="weitere Fotos">→</button>
     </div>
   </section>
 
@@ -556,18 +513,15 @@
     <img src="assets/music/boesendorfer.jpg" alt="Der Bösendorfer-Flügel, an dem Simon Schaugg spielt, mit Coltranes „Equinox“ und „When I Fall In Love“ auf dem Notenpult." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 78%;filter:brightness(.7) contrast(1.06) saturate(.92)">
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,26,.6) 0%,rgba(10,14,26,.12) 30%,rgba(10,14,26,.34) 60%,rgba(10,14,26,.9) 88%,#0A0E1A 100%)"></div>
     <div style="position:relative;z-index:2;padding:0 clamp(18px,5vw,60px) clamp(38px,6vw,80px);max-width:1180px">
-      <p class="rv lbl" style="color:#BFD0EE;margin-bottom:clamp(22px,3.5vw,40px);text-shadow:0 2px 14px rgba(0,0,0,.7)">Klavier · aktiver Instrumentalist seit 2003</p>
-      <h2 class="rv" style="font-weight:300;font-size:clamp(2.5rem,7.5vw,6.4rem);line-height:1.02;letter-spacing:-.02em;color:#EAF0FB;text-wrap:balance;text-shadow:0 4px 38px rgba(0,0,0,.6)">Was sich nicht sagen lässt, findet im <em style="font-style:italic;color:#A9C2F0">Klang</em> Ausdruck.</h2>
-      <p class="rv lbl" style="color:#BFD0EE;margin-top:clamp(20px,3vw,32px);text-shadow:0 2px 14px rgba(0,0,0,.7)">Musik als Denken ohne Worte</p>
+      <p class="rv lbl" style="color:#BFD0EE;margin-bottom:clamp(22px,3.5vw,40px);text-shadow:0 2px 14px rgba(0,0,0,.7)">Klavier · aktiver Instrumentalist seit 2008</p>
+      <h2 class="rv" style="font-weight:300;font-size:clamp(2.5rem,7.5vw,6.4rem);line-height:1.02;letter-spacing:-.02em;color:#EAF0FB;text-wrap:balance;text-shadow:0 4px 38px rgba(0,0,0,.6)">Jazzpiano und <em style="font-style:italic;color:#A9C2F0">Improvisation</em>.</h2>
     </div>
   </section>
 
   <!-- INTRO TEXT -->
   <section data-screen-label="Klavier · Intro" style="padding:clamp(50px,8vw,110px) clamp(18px,5vw,60px) clamp(20px,3vw,40px);max-width:1180px">
-    <p class="rv" style="max-width:60ch;font-size:clamp(1.2rem,1.8vw,1.55rem);line-height:1.6;color:#C6CEE0;font-weight:300;margin-bottom:20px">Musik ist für mich eine weitere Sprache. Manche Erfahrungen lassen sich gut in Worte fassen, andere weniger. Beim Improvisieren interessiert mich genau dieser Bereich, in dem etwas entsteht, bevor es sich erklären lässt.</p>
-    <p class="rv" style="max-width:60ch;font-size:clamp(1.2rem,1.8vw,1.55rem);line-height:1.6;color:#C6CEE0;font-weight:300;margin-bottom:20px">Wie in der Psychologie oder im Zeichnen fasziniert mich weniger das fertige Werk als der Moment seines Entstehens. Improvisation verbindet Wahrnehmung, Erinnerung, Intuition und Technik auf eine Weise, die sich kaum vollständig planen lässt. Sie verlangt Aufmerksamkeit für den Augenblick — für den eigenen Gedanken ebenso wie für die Menschen, mit denen man spielt.</p>
-    <p class="rv" style="max-width:60ch;font-size:clamp(1.2rem,1.8vw,1.55rem);line-height:1.6;color:#C6CEE0;font-weight:300;margin-bottom:20px">Vielleicht hat mich gerade deshalb der Jazz so angezogen. Er verbindet Freiheit und Struktur, Können und Offenheit. Jede Improvisation ist einmalig und verschwindet unmittelbar wieder. Gerade diese Vergänglichkeit macht sie für mich zu einer der unmittelbarsten Formen menschlichen Ausdrucks.</p>
-    <p class="rv" style="max-width:60ch;font-size:clamp(1.2rem,1.8vw,1.55rem);line-height:1.6;color:#C6CEE0;font-weight:300">Mich interessiert dabei weniger die Musik selbst als die Frage, was sie über den Menschen erzählt. Warum entstehen musikalische Ideen? Weshalb können Klänge manchmal ausdrücken, wofür Worte nicht ausreichen? Und was geschieht in uns, wenn wir gemeinsam improvisieren?</p>
+    <p class="rv" style="max-width:60ch;font-size:clamp(1.2rem,1.8vw,1.55rem);line-height:1.6;color:#C6CEE0;font-weight:300;margin-bottom:20px">Klassisch ausgebildet, seit einigen Jahren vor allem im Jazz. Beim Improvisieren interessiert mich der Moment, in dem etwas entsteht, bevor es sich erklären lässt — dieselbe Frage, die ich auch in der Psychologie und im Zeichnen verfolge.</p>
+    <p class="rv" style="max-width:60ch;font-size:clamp(1.2rem,1.8vw,1.55rem);line-height:1.6;color:#C6CEE0;font-weight:300">Am Jazz reizt mich die Verbindung von Freiheit und Struktur: Technik und Gehör schaffen die Voraussetzung, im Zusammenspiel darauf zu verzichten.</p>
   </section>
 
   <!-- WATERCOLOR DUO -->
@@ -577,7 +531,7 @@
       <div class="rv">
         <p class="lbl" style="color:var(--ac);margin-bottom:18px">Aquarell</p>
         <p class="rv" style="font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.4vw,2rem);line-height:1.3;text-wrap:balance;margin-bottom:14px">Zwei am Klavier</p>
-        <p style="font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.5;color:#C6CEE0">Zweisamkeit ohne Worte. Geteilte Aufmerksamkeit. Geteilter Raum. Geteilter <em style="color:var(--ac);font-style:italic">Klang</em>.</p>
+        <p style="font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.5;color:#C6CEE0">Eigenes Aquarell, entstanden neben dem Üben.</p>
       </div>
     </div>
   </section>
@@ -590,25 +544,23 @@
   <section id="wege" data-screen-label="Klavier · Wege" style="padding:clamp(60px,9vw,130px) clamp(18px,5vw,60px);max-width:1180px">
     <div class="tcol" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,90px)">
       <div class="rv">
-        <p class="lbl" style="color:var(--ac);margin-bottom:20px">Die linke Hand · Fundament</p>
-        <p style="font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.6;color:#C6CEE0;margin-bottom:16px">Seit 2011 begleitet mich das Klavier kontinuierlich. Den Grundstein legte der klassische Unterricht bei <em style="font-style:italic;color:var(--ac)">Markus Tyroller</em> in Heidelberg. Es folgten acht Jahre Konzertchor unter <em style="font-style:italic;color:var(--ac)">Matthias Rickert</em>, ein Jahr Bigband unter <em style="font-style:italic;color:var(--ac)">Dr. Peer Hübel</em> sowie das Musikabitur mit 15 Punkten in schriftlicher Prüfung, Gehörbildung und Klaviervortrag.</p>
-        <p style="font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.6;color:#C6CEE0">Technik, Gehörbildung und musikalische Form waren für mich nie Selbstzweck, sondern die Voraussetzung dafür, später freier spielen zu können.</p>
+        <p class="lbl" style="color:var(--ac);margin-bottom:20px">Klassische Grundlage</p>
+        <p style="font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.6;color:#C6CEE0">Klassischer Unterricht bei <em style="font-style:italic;color:var(--ac)">Markus Tyroller</em> in Heidelberg, acht Jahre Konzertchor unter <em style="font-style:italic;color:var(--ac)">Matthias Rickert</em>, ein Jahr Bigband. Technik und Gehörbildung als Voraussetzung, später freier zu spielen.</p>
       </div>
       <div class="rv">
-        <p class="lbl" style="color:var(--ac);margin-bottom:20px">Die rechte Hand · Freiheit</p>
-        <p style="font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.6;color:#C6CEE0;margin-bottom:16px">Mit dem Jazz rückte die Improvisation in den Mittelpunkt. Mich faszinierte zunehmend weniger das möglichst genaue Wiedergeben bereits geschriebener Musik als der Moment, in dem etwas Neues entsteht.</p>
-        <p style="font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.6;color:#C6CEE0">Ein Gastsemester in Jazzpiano und Musikwissenschaft an der Hochschule für Kirchenmusik und der Universität Heidelberg vertiefte dieses Interesse. Unterricht bei <em style="font-style:italic;color:var(--ac)">Prof. Christoph Georgii</em>, <em style="font-style:italic;color:var(--ac)">Prof. Carola Keil</em> und seit 2025 bei <em style="font-style:italic;color:var(--ac)">Yuriy Sych</em> führte mich weiter in die Improvisation — und schließlich auch zu der Frage, wie Kreativität überhaupt entsteht.</p>
+        <p class="lbl" style="color:var(--ac);margin-bottom:20px">Jazz</p>
+        <p style="font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.6;color:#C6CEE0">Ein Gastsemester Jazzpiano und Musikwissenschaft an der Hochschule für Kirchenmusik und der Universität Heidelberg, Unterricht bei <em style="font-style:italic;color:var(--ac)">Prof. Christoph Georgii</em> und <em style="font-style:italic;color:var(--ac)">Prof. Carola Keil</em>, seit 2025 bei <em style="font-style:italic;color:var(--ac)">Yuriy Sych</em> in Frankfurt.</p>
       </div>
     </div>
   </section>
 
   <!-- ZEITLEISTE -->
   <section data-screen-label="Klavier · Zeit" style="padding:clamp(20px,3vw,40px) clamp(18px,5vw,60px) clamp(60px,9vw,120px);max-width:1180px">
-    <h2 class="rv lbl" style="color:var(--dim);margin-bottom:clamp(24px,4vw,44px)">Eine Biografie in Lehrern</h2>
+    <h2 class="rv lbl" style="color:var(--dim);margin-bottom:clamp(24px,4vw,44px)">Ausbildung</h2>
     <div class="rv" style="border-top:1px solid var(--line)">
       <div class="yr" style="display:grid;grid-template-columns:96px 1fr 220px;gap:18px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2011–2021</span><span style="font-size:1.35rem">Klavierunterricht</span><span class="yt lbl" style="color:var(--faint);text-align:right">Markus Tyroller · bimu Heidelberg</span></div>
-      <div class="yr" style="display:grid;grid-template-columns:96px 1fr 220px;gap:18px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2013–2021</span><span><span style="font-size:1.35rem;display:block">Konzertchor des St.-Raphael-Gymnasiums.</span><span class="lbl" style="display:block;margin-top:8px;color:var(--dim);text-transform:none;letter-spacing:.03em;font-size:.92rem">U. a. Teilnahme am Badischen Chorwettbewerb (Auszeichnung als „Konzertchor“), u. a. Aufführung von Faurés Requiem.</span></span><span class="yt lbl" style="color:var(--faint);text-align:right">St.-Raphael-Gymnasium</span></div>
-      <div class="yr" style="display:grid;grid-template-columns:96px 1fr 220px;gap:18px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2021</span><span><span style="font-size:1.35rem;display:block">Musikabitur — beste Prüfungen des Jahrgangs (Schriftlich, Gehörbildung, Klaviervortrag), je 15 Punkte.</span><span class="lbl" style="display:block;margin-top:8px;color:var(--dim);text-transform:none;letter-spacing:.03em;font-size:.92rem">Programm: Bachs Präludium b-Moll (Wohltemperiertes Klavier, Pflichtstück), Chopins Etüde op. 25 Nr. 1, Chatschaturjans Toccata und freie Jazzimprovisation über „Misty“ (Erroll Garner)</span></span><span class="yt lbl" style="color:var(--faint);text-align:right">St.-Raphael-Gymnasium</span></div>
+      <div class="yr" style="display:grid;grid-template-columns:96px 1fr 220px;gap:18px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2013–2021</span><span><span style="font-size:1.35rem;display:block">Konzertchor</span><span class="lbl" style="display:block;margin-top:8px;color:var(--dim);text-transform:none;letter-spacing:.03em;font-size:.92rem">Badischer Chorwettbewerb, Aufführung von Faurés Requiem.</span></span><span class="yt lbl" style="color:var(--faint);text-align:right">St.-Raphael-Gymnasium</span></div>
+      <div class="yr" style="display:grid;grid-template-columns:96px 1fr 220px;gap:18px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2021</span><span><span style="font-size:1.35rem;display:block">Musikabitur, je 15 Punkte</span><span class="lbl" style="display:block;margin-top:8px;color:var(--dim);text-transform:none;letter-spacing:.03em;font-size:.92rem">Bach, Chopin, Chatschaturjan und freie Improvisation über „Misty“.</span></span><span class="yt lbl" style="color:var(--faint);text-align:right">St.-Raphael-Gymnasium</span></div>
       <div class="yr" style="display:grid;grid-template-columns:96px 1fr 220px;gap:18px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2022</span><span style="font-size:1.35rem">Gastsemester Jazzpiano &amp; Musikwissenschaft</span><span class="yt lbl" style="color:var(--faint);text-align:right">HfK &amp; Universität Heidelberg</span></div>
       <div class="yr" style="display:grid;grid-template-columns:96px 1fr 220px;gap:18px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2022</span><span style="font-size:1.35rem">Jazzpiano bei Prof. Christoph Georgii, Stimmbildung bei Prof. Carola Keil</span><span class="yt lbl" style="color:var(--faint);text-align:right">HfK Heidelberg</span></div>
       <div class="yr" style="display:grid;grid-template-columns:96px 1fr 220px;gap:18px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2025</span><span style="font-size:1.35rem">Jazzpiano bei Yuriy Sych</span><span class="yt lbl" style="color:var(--faint);text-align:right">Musikschule Frankfurt · Hessischer Jazzpreis</span></div>
@@ -620,7 +572,7 @@
     <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;margin-bottom:clamp(30px,4.5vw,56px)">
       <h2 class="rv" style="font-weight:300;font-size:clamp(1.8rem,4vw,3.2rem);font-style:italic">Auftritte</h2>
     </div>
-    <p class="rv" style="max-width:60ch;font-size:1.1rem;line-height:1.6;color:#C6CEE0;margin-bottom:clamp(30px,4.5vw,56px)">Musik entstand für mich lange vor allem im privaten Raum. Erst in den letzten Jahren kamen Jam Sessions und kleinere öffentliche Auftritte hinzu.</p>
+    <p class="rv" style="max-width:60ch;font-size:1.1rem;line-height:1.6;color:#C6CEE0;margin-bottom:clamp(30px,4.5vw,56px)">Lange habe ich vor allem für mich gespielt; seit einigen Jahren kommen Jam Sessions und kleinere Auftritte in Frankfurt dazu.</p>
 
     <div class="livegrid" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,28px);align-items:start">
       <figure class="rv" style="margin:0;overflow:hidden;background:#000">
@@ -652,7 +604,7 @@
       <div class="rv">
         <p class="lbl" style="color:var(--ac);margin-bottom:18px">Zuhause</p>
         <p style="font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.4vw,2rem);line-height:1.3;text-wrap:balance;margin-bottom:16px">Das Klavier in Heidelberg.</p>
-        <p style="font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.6;color:#C6CEE0">An diesem Instrument entstanden über viele Jahre Improvisationen — und oft auch erste Ideen für Texte, Zeichnungen oder wissenschaftliche Arbeiten. Zwischen diesen Bereichen gab es für mich nie eine klare Grenze.</p>
+        <p style="font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.6;color:#C6CEE0">Das Instrument, an dem ich seit Jahren übe — und an dem oft auch erste Ideen für Zeichnungen oder Texte entstehen.</p>
       </div>
       <figure class="rv" style="margin:0;overflow:hidden;background:#0C1120;box-shadow:0 34px 70px -42px rgba(0,0,0,.85)"><img src="assets/music/piano-heidelberg-home.jpg" alt="Das Klavier, an dem Simon Schaugg in Heidelberg übt: ein schwarzes Piano mit Noten im Wohnzimmer, daneben ein gedeckter Tisch." style="width:100%;aspect-ratio:16/10;object-fit:cover;filter:contrast(1.03) saturate(1.04)"></figure>
     </div>
@@ -661,12 +613,11 @@
   <!-- DER STRANG: Forschung -->
   <section data-screen-label="Klavier · Forschung" style="padding:clamp(60px,9vw,130px) clamp(18px,5vw,60px);border-top:1px solid var(--line);background:#0C1120">
     <div style="max-width:920px">
-      <p class="rv lbl" style="color:var(--ac);margin-bottom:26px">Wo Musik und Psychologie sich begegnen</p>
+      <p class="rv lbl" style="color:var(--ac);margin-bottom:26px">Musik und Psychologie</p>
       <p class="rv lbl" style="color:var(--dim);margin-bottom:14px">Seminararbeit · Biopsychologie · Note 1,0</p>
       <h2 class="rv" style="font-weight:300;font-size:clamp(1.7rem,3.6vw,3rem);line-height:1.16;letter-spacing:-.01em;margin-bottom:20px;text-wrap:balance"><em style="font-style:italic;color:var(--ac)">Neuronale Grundlagen musikalischer Improvisation</em></h2>
-      <p class="rv" style="font-size:clamp(1.15rem,1.8vw,1.5rem);line-height:1.5;color:#DDE3F0;font-weight:300;margin-bottom:22px;text-wrap:balance">Irgendwann wollte ich dieselbe Frage nicht mehr nur musikalisch, sondern auch wissenschaftlich verstehen. Was geschieht im Gehirn, wenn wir improvisieren?</p>
-      <p class="rv" style="font-size:clamp(1.1rem,1.6vw,1.35rem);line-height:1.62;color:#B6BFD4;max-width:58ch;margin-bottom:18px">Für eine Seminararbeit bei Prof. Christian Fiebach an der Goethe-Universität Frankfurt habe ich den Forschungsstand zur musikalischen Improvisation zusammengetragen — unter anderem zu Kreativität, motorischer Planung und der vorübergehenden Hemmung bewusster Kontrolle.</p>
-      <p class="rv" style="font-size:clamp(1.1rem,1.6vw,1.35rem);line-height:1.62;color:#B6BFD4;max-width:58ch">Die Arbeit verbindet zwei Bereiche, die mich seit vielen Jahren begleiten: Musik als unmittelbare Form des Ausdrucks und Psychologie als Versuch, menschlichen Ausdruck besser zu verstehen.</p>
+      <p class="rv" style="font-size:clamp(1.15rem,1.8vw,1.5rem);line-height:1.5;color:#DDE3F0;font-weight:300;margin-bottom:22px;text-wrap:balance">Was geschieht im Gehirn, wenn wir improvisieren?</p>
+      <p class="rv" style="font-size:clamp(1.1rem,1.6vw,1.35rem);line-height:1.62;color:#B6BFD4;max-width:58ch">Für eine Seminararbeit bei Prof. Christian Fiebach an der Goethe-Universität Frankfurt habe ich den Forschungsstand zusammengetragen — zu Kreativität, motorischer Planung und der vorübergehenden Hemmung bewusster Kontrolle.</p>
       <p class="rv lbl" style="margin-top:30px;display:flex;gap:24px;flex-wrap:wrap"><a href="assets/seminararbeit-improvisation.pdf" rel="noopener" class="nav-a" style="opacity:1;color:var(--ac)">↓ PDF lesen</a><a href="Forschung.dc.html" class="nav-a" style="opacity:1;color:var(--ac)">→ weiter zur Forschung</a></p>
     </div>
   </section>
@@ -804,6 +755,12 @@ class Component extends DCLogic {
     "assets/digital/wolken-1.jpg": "„Wolken“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: eine graue Wolkenbank über einer hellen, fast aufgelösten Fläche.",
     "assets/digital/wolken-horizont.jpg": "„Horizont“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: ein schmaler Horizont zwischen Wolken und Wasser, nahezu monochrom.",
     "assets/digital/wolken-wald.jpg": "„Wald unter Wolken“ — digitale Malerei von Simon Schaugg aus der Serie „Raumgründe“, 2020: ein dunkler Waldsaum unter schwerer Wolkendecke.",
+    "assets/draw/ausstellung-1.jpg": "Erste Ausstellung von Simon Schaugg, Juni 2024: Blick durch die Räume mit gerahmten Zeichnungen an hellen Wänden.",
+    "assets/draw/ausstellung-2.jpg": "Erste Ausstellung von Simon Schaugg, Juni 2024: eine Wand, dicht behängt mit kleinformatigen, unterschiedlich gerahmten Zeichnungen.",
+    "assets/draw/ausstellung-3.jpg": "Erste Ausstellung von Simon Schaugg, Juni 2024: gerahmte Blätter vor einem Atelierfenster mit Pflanzen und Arbeitstisch.",
+    "assets/draw/ausstellung-4.jpg": "Erste Ausstellung von Simon Schaugg, Juni 2024: eine lange helle Wand mit gerastert gehängten Zeichnungen und Skizzen.",
+    "assets/draw/ausstellung-5.jpg": "Vernissage der ersten Ausstellung von Simon Schaugg, Juni 2024: Gäste im Ausstellungsraum, im Vordergrund applaudierendes Publikum.",
+    "assets/draw/ausstellung-6.jpg": "Vernissage der ersten Ausstellung von Simon Schaugg, Juni 2024: Besucherinnen und Besucher stehen vor der Hängung im Ausstellungsraum.",
     "assets/draw/blueline.png": "„Ohne Titel“ — Zeichnung von Simon Schaugg, Tusche, 2023: ein Kopf, allein aus feinen Konturlinien gebaut, vor flächigem Blau.",
     "assets/draw/gelitten.jpg": "„Warum hast du für mich gelitten“ — Zeichnung von Simon Schaugg, Tusche, 2023: eine liegende nackte Figur in feiner Konturlinie, darüber ein schwarzes Feld mit einem zweiten Kopf und handschriftlichem Text.",
     "assets/draw/gibmichauf.jpg": "„Gib mich auf“ — Zeichnung von Simon Schaugg, Tusche, 17. Januar 2023: ein verwischtes Doppelgesicht mit gezeichneten Tränen, rechts der Schriftzug „gib mich auf“.",
@@ -880,7 +837,17 @@ class Component extends DCLogic {
     "assets/stille/stille-2.jpg": "Aus der fotografischen Serie „Stille“ von Simon Schaugg, 2020: Simon Schaugg mit roten Gehörschützern vor laufenden Nachrichtenbildschirmen.",
     "assets/stille/stille-3.jpg": "Aus der fotografischen Serie „Stille“ von Simon Schaugg, 2020: Simon Schaugg mit roten Gehörschützern in einer belebten Straße mit fließendem Verkehr."
   };
+  ausstellungSrc = [
+    { src:'assets/draw/ausstellung-1.jpg', title:'Ausstellungsraum', meta:'Juni 2024' },
+    { src:'assets/draw/ausstellung-2.jpg', title:'Hängung', meta:'Juni 2024' },
+    { src:'assets/draw/ausstellung-3.jpg', title:'Blätter am Fenster', meta:'Juni 2024' },
+    { src:'assets/draw/ausstellung-4.jpg', title:'Gerasterte Hängung', meta:'Juni 2024' },
+    { src:'assets/draw/ausstellung-5.jpg', title:'Vernissage', meta:'Juni 2024' },
+    { src:'assets/draw/ausstellung-6.jpg', title:'Vernissage', meta:'Juni 2024' }
+  ];
   altFor(src, ersatz){ return this.ALTTEXTE[src] || ersatz; }
+  // Eine Karte weniger als sichtbar, damit beim Blaettern ein Anschluss stehen bleibt.
+  scrollCar(el, dir){ if(!el) return; el.scrollBy({ left: dir * Math.max(240, el.clientWidth * 0.85), behavior:'smooth' }); }
   ACCENTS = { kunst:'#E23A22', musik:'#A9C2F0' };
   MUSIK_ANKER = ['musik','auftritte','wege'];
   setTab(id, opts){
@@ -997,6 +964,18 @@ class Component extends DCLogic {
     panelKunstRef:(el)=>{this._panelKunst=el;},
     panelMusikRef:(el)=>{this._panelMusik=el;},
     tabKunstRef:(el)=>{this._tabKunst=el;},
+    carGesichterRef:(el)=>{this._carGesichter=el;},
+    carGesichterPrev:()=>this.scrollCar(this._carGesichter,-1),
+    carGesichterNext:()=>this.scrollCar(this._carGesichter,1),
+    carAusstellungRef:(el)=>{this._carAusstellung=el;},
+    carAusstellungPrev:()=>this.scrollCar(this._carAusstellung,-1),
+    carAusstellungNext:()=>this.scrollCar(this._carAusstellung,1),
+    zoomOpenAus1:()=>this.zoomOpen(this.ausstellungSrc[0], this.ausstellungSrc),
+    zoomOpenAus2:()=>this.zoomOpen(this.ausstellungSrc[1], this.ausstellungSrc),
+    zoomOpenAus3:()=>this.zoomOpen(this.ausstellungSrc[2], this.ausstellungSrc),
+    zoomOpenAus4:()=>this.zoomOpen(this.ausstellungSrc[3], this.ausstellungSrc),
+    zoomOpenAus5:()=>this.zoomOpen(this.ausstellungSrc[4], this.ausstellungSrc),
+    zoomOpenAus6:()=>this.zoomOpen(this.ausstellungSrc[5], this.ausstellungSrc),
     tabMusikRef:(el)=>{this._tabMusik=el;},
     showKunst:()=>this.setTab('kunst',{scroll:true,hash:true}),
     showMusik:()=>this.setTab('musik',{scroll:true,hash:true}),
