@@ -4,7 +4,7 @@
 
 Künstler: Simon Elias Schaugg, Frankfurt am Main. Die Bildbeschreibungen entsprechen den Alt-Texten der Website. Jede Bilddatei ist unter einer stabilen, direkt crawlbaren URL erreichbar.
 
-- [Kuratierte Kunstseite](https://simonschaugg.de/Kunst.dc.html)
+- [Kuratierte Seite Kunst & Musik](https://simonschaugg.de/Kunst-Musik.dc.html)
 - [Vollständiges Kunstarchiv](https://simonschaugg.de/Kunst-Archiv.dc.html)
 - [XML-Sitemap mit Bild-URLs](https://simonschaugg.de/sitemap.xml)
 

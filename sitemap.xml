@@ -49,8 +49,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://simonschaugg.de/Kunst.dc.html</loc>
-    <lastmod>2026-08-12</lastmod>
+    <loc>https://simonschaugg.de/Kunst-Musik.dc.html</loc>
+    <lastmod>2026-09-18</lastmod>
     <image:image>
       <image:loc>https://simonschaugg.de/assets/draw/vogel.jpg</image:loc>
     </image:image>
@@ -333,6 +333,39 @@
     <image:image>
       <image:loc>https://simonschaugg.de/assets/stille/stille-3.jpg</image:loc>
     </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/music/gig-band2.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/music/boesendorfer.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/music/duo-watercolor.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/music/gig-wide2.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/music/band-jam-1.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/music/band-jam-2.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/music/piano-practice-1.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/music/piano-heidelberg-home.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/film/graben/graben-set-rauch.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/film/ferne-gruessen.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://simonschaugg.de/assets/film/graben/graben-kostuem-franzoesisch.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://simonschaugg.de/Kunst-Archiv.dc.html</loc>
@@ -603,34 +636,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://simonschaugg.de/Klavier.dc.html</loc>
-    <lastmod>2026-08-12</lastmod>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/music/gig-band2.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/music/boesendorfer.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/music/duo-watercolor.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/music/gig-wide2.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/music/band-jam-1.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/music/band-jam-2.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/music/piano-practice-1.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/music/piano-heidelberg-home.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
     <loc>https://simonschaugg.de/Projekte.dc.html</loc>
     <lastmod>2026-08-12</lastmod>
     <image:image>
@@ -665,19 +670,6 @@
     </image:image>
     <image:image>
       <image:loc>https://simonschaugg.de/assets/neuhier-pitch-2.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://simonschaugg.de/Kulturprojekte.dc.html</loc>
-    <lastmod>2026-08-12</lastmod>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/film/graben/graben-set-rauch.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/film/ferne-gruessen.jpg</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://simonschaugg.de/assets/film/graben/graben-kostuem-franzoesisch.jpg</image:loc>
     </image:image>
   </url>
   <url>
