@@ -9,6 +9,7 @@ Die kanonische Domain ist https://simonschaugg.de/. Alle nachfolgend verlinkten 
 - [Startseite](https://simonschaugg.de/): Überblick über Simon Schaugg, seine Themen, Projekte und künstlerische Arbeit.
 - [Über mich](https://simonschaugg.de/Ueber-mich.dc.html): Ausführliche persönliche Geschichte — Herkunft, Prägungen und der Weg zur Psychologie.
 - [Lebenslauf](https://simonschaugg.de/Lebenslauf.dc.html): Ausbildung, Gründungen, berufliche Erfahrung, Stipendien, Auszeichnungen und Kompetenzen.
+- [Expertise und Kompetenzen](https://simonschaugg.de/Expertise.dc.html): Psychologie, Community Building, Gründung, KI-gestützte Produktentwicklung und Presse — für Vorträge, Beratung und Kooperationen.
 - [Psychologie und Forschung](https://simonschaugg.de/Forschung.dc.html): Identity Leadership, kollektive Identität, Sprache, Selbst und musikalische Improvisation.
 - [Projekte](https://simonschaugg.de/Projekte.dc.html): YOLD, YOLD Connect und NeuHier – soziale und digitale Projekte für generationenübergreifende Verbindung und Integration.
 - [Presse](https://simonschaugg.de/Presse.dc.html): Redaktionelle Berichte, Interviews und öffentliche Erwähnungen zu Simon Schaugg und seinen Projekten.
