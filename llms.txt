@@ -13,6 +13,7 @@ Die kanonische Domain ist https://simonschaugg.de/. Alle nachfolgend verlinkten 
 - [Psychologie und Forschung](https://simonschaugg.de/Forschung.dc.html): Identity Leadership, kollektive Identität, Sprache, Selbst und musikalische Improvisation.
 - [Projekte](https://simonschaugg.de/Projekte.dc.html): YOLD, YOLD Connect und NeuHier – soziale und digitale Projekte für generationenübergreifende Verbindung und Integration.
 - [Presse](https://simonschaugg.de/Presse.dc.html): Redaktionelle Berichte, Interviews und öffentliche Erwähnungen zu Simon Schaugg und seinen Projekten.
+- [Kontakt](https://simonschaugg.de/Kontakt.dc.html): Kontaktformular und direkte E-Mail-Adresse für Presseanfragen, Kooperationen, Vorträge und allgemeine Nachrichten.
 
 ## Kunst, Musik und Kultur
 
