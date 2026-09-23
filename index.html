@@ -30,6 +30,9 @@
 <script src="./assets/vendor/react.production.min.js"></script>
 <script src="./assets/vendor/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
+<!-- Befristetes Award-Banner: blendet sich nach Ende der Abstimmung
+     selbst aus (Datum in award-banner.js). Danach entfernbar. -->
+<script src="/award-banner.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -165,15 +168,6 @@
     </div>
     <div style="height:1px;background:rgba(240,239,232,.16);margin-top:18px"><div ref="{{ loaderBarRef }}" style="height:1px;width:0%;background:#D8B65E"></div></div>
   </div>
-
-  <aside style="position: relative; z-index: 61; display: flex; align-items: center; justify-content: space-between; gap: clamp(14px,3vw,34px); flex-wrap: wrap; padding: 13px clamp(16px,4vw,46px); color: #07282A; background-color: #F1F1F1">
-    <div style="display:flex;align-items:center;gap:clamp(12px,2vw,22px);flex-wrap:wrap">
-      <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;white-space:nowrap">Movers of Tomorrow Award 2026 · Finalist</span>
-      <strong style="font-family:'Bodoni Moda',Didot,serif;font-weight:600;font-size:clamp(1.05rem,2vw,1.45rem);letter-spacing:-.01em">Ich bin im Finale!</strong>
-      <span style="font-size:.84rem;line-height:1.5;max-width:52ch">Unterstütze mich und „Gemeinschaft für alle“ mit deiner Stimme. Jede Stimme zählt – danke für deinen Support!</span>
-    </div>
-    <a data-mag="" href="https://movers-of-tomorrow-award.de/videos/gemeinschaft-fuer-alle/" style="display:inline-flex;align-items:center;gap:10px;padding:12px 18px;background:#07282A;color:#F0EFE8;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;white-space:nowrap;transition:background .25s,color .25s" style-hover="background:#F0EFE8;color:#07282A">Jetzt für mich abstimmen <span aria-hidden="true">↗</span></a>
-  </aside>
 
   <header style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;row-gap:10px;padding:14px clamp(16px,4vw,46px);background:rgba(7,40,42,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(240,239,232,.14)">
     <a href="#top" style="display:flex;align-items:baseline;gap:11px">
