@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://simonschaugg.de/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <image:image>
       <image:loc>https://simonschaugg.de/assets/hero.jpg</image:loc>
     </image:image>
@@ -40,7 +40,7 @@
   </url>
   <url>
     <loc>https://simonschaugg.de/Forschung.dc.html</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <image:image>
       <image:loc>https://simonschaugg.de/assets/identitaet-koepfe.jpg</image:loc>
     </image:image>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://simonschaugg.de/Kunst-Musik.dc.html</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <image:image>
       <image:loc>https://simonschaugg.de/assets/draw/vogel.jpg</image:loc>
     </image:image>
@@ -369,7 +369,7 @@
   </url>
   <url>
     <loc>https://simonschaugg.de/Kunst-Archiv.dc.html</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <image:image>
       <image:loc>https://simonschaugg.de/assets/draw/simon-schaugg-tuscheportraet-schwarzer-hintergrund.png</image:loc>
     </image:image>
@@ -637,7 +637,7 @@
   </url>
   <url>
     <loc>https://simonschaugg.de/Projekte.dc.html</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <image:image>
       <image:loc>https://simonschaugg.de/assets/yold/circle-1.jpg</image:loc>
     </image:image>
@@ -674,7 +674,7 @@
   </url>
   <url>
     <loc>https://simonschaugg.de/Presse.dc.html</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <image:image>
       <image:loc>https://simonschaugg.de/assets/portrait-heidelberg.jpg</image:loc>
     </image:image>
@@ -688,7 +688,7 @@
   </url>
   <url>
     <loc>https://simonschaugg.de/Ueber-mich.dc.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <image:image>
       <image:loc>https://simonschaugg.de/assets/portrait-heidelberg.jpg</image:loc>
     </image:image>
