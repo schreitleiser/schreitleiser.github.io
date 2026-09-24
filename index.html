@@ -260,7 +260,7 @@
   <section id="auszeichnungen" data-screen-label="Auszeichnungen" aria-labelledby="auszeichnungen-titel" style="padding:clamp(22px,3vw,34px) clamp(16px,4vw,46px);background:#041A1B;border-top:1px solid rgba(240,239,232,.14);border-bottom:1px solid rgba(240,239,232,.14)">
     <div style="display:flex;align-items:center;gap:clamp(18px,3vw,44px);flex-wrap:wrap;max-width:1460px">
       <h2 id="auszeichnungen-titel" style="flex:0 0 auto;font-family:'Archivo',system-ui,sans-serif;font-weight:400;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#D8B65E;white-space:nowrap">Auszeichnungen</h2>
-      <ul role="list" style="flex:1 1 600px;min-width:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(16px,2.4vw,32px)">
+      <ul role="list" style="flex:1 1 600px;min-width:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:clamp(16px,2.4vw,32px)">
       <li style="display:flex;align-items:center;gap:14px;min-width:0">
         <span aria-hidden="true" style="flex:0 0 auto;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(216,182,94,.55);border-radius:50%;font-family:'Bodoni Moda',Didot,serif;font-size:15px;color:#D8B65E">SIA</span>
         <span style="min-width:0">
@@ -279,14 +279,14 @@
         <span aria-hidden="true" style="flex:0 0 auto;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(216,182,94,.55);border-radius:50%;font-family:'Bodoni Moda',Didot,serif;font-size:15px;color:#D8B65E">MoT</span>
         <span style="min-width:0">
           <strong style="display:block;font-family:'Bodoni Moda',Didot,serif;font-weight:500;font-size:clamp(1rem,1.25vw,1.12rem);line-height:1.2;color:#F0EFE8">Movers of Tomorrow Award 2026</strong>
-          <span style="display:block;margin-top:3px;font-size:.8rem;line-height:1.45;font-weight:300;color:#AEBCB9">Finalist · persönliche Auszeichnung als Initiator</span>
+          <span style="display:block;margin-top:3px;font-size:.8rem;line-height:1.45;font-weight:300;color:#AEBCB9">Finalist als Initiator · Allianz Foundation</span>
         </span>
       </li>
       <li style="display:flex;align-items:center;gap:14px;min-width:0">
         <span aria-hidden="true" style="flex:0 0 auto;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(216,182,94,.55);border-radius:50%;font-family:'Bodoni Moda',Didot,serif;font-size:15px;color:#D8B65E">SS</span>
         <span style="min-width:0">
           <strong style="display:block;font-family:'Bodoni Moda',Didot,serif;font-weight:500;font-size:clamp(1rem,1.25vw,1.12rem);line-height:1.2;color:#F0EFE8">startsocial-Stipendium 2026</strong>
-          <span style="display:block;margin-top:3px;font-size:.8rem;line-height:1.45;font-weight:300;color:#AEBCB9">Stipendium für NeuHier</span>
+          <span style="display:block;margin-top:3px;font-size:.8rem;line-height:1.45;font-weight:300;color:#AEBCB9">Viermonatige Beratung für NeuHier</span>
         </span>
       </li>
       <li style="display:flex;align-items:center;gap:14px;min-width:0">
@@ -301,6 +301,13 @@
         <span style="min-width:0">
           <strong style="display:block;font-family:'Bodoni Moda',Didot,serif;font-weight:500;font-size:clamp(1rem,1.25vw,1.12rem);line-height:1.2;color:#F0EFE8">Deutschlandstipendium</strong>
           <span style="display:block;margin-top:3px;font-size:.8rem;line-height:1.45;font-weight:300;color:#AEBCB9">2024/25 und erneut 2026/27 · Goethe-Universität</span>
+        </span>
+      </li>
+      <li style="display:flex;align-items:center;gap:14px;min-width:0">
+        <span aria-hidden="true" style="flex:0 0 auto;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(216,182,94,.55);border-radius:50%;font-family:'Bodoni Moda',Didot,serif;font-size:15px;color:#D8B65E">GA</span>
+        <span style="min-width:0">
+          <strong style="display:block;font-family:'Bodoni Moda',Didot,serif;font-weight:500;font-size:clamp(1rem,1.25vw,1.12rem);line-height:1.2;color:#F0EFE8">Goethe-Award 2025</strong>
+          <span style="display:block;margin-top:3px;font-size:.8rem;line-height:1.45;font-weight:300;color:#AEBCB9">Für YOLD · Jahresfest des Deutschlandstipendiums</span>
         </span>
       </li>
       <li style="display:flex;align-items:center;gap:14px;min-width:0">
@@ -498,7 +505,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { gallery: 0, yoldReg: 160, yoldMatches: 50 };
+  state = { gallery: 0, yoldReg: 190, yoldMatches: 50 };
   gallerySlideData = [
     { img: 'assets/yold-group.jpg', alt: 'Gruppenfoto der YOLD-Teilnehmenden bei einem Treffen, im Hintergrund der YOLD-Schriftzug auf der Leinwand.', n: 'YOLD · Treffen', t: 'YOLD bringt Jung und Alt an einen Tisch', x: 'Ein Treffen der YOLD-Community — Studierende und ältere Teilnehmende im Austausch.' },
     { img: 'assets/yold-circle.jpg', alt: 'YOLD-Teilnehmende im Stuhlkreis im Gespräch miteinander.', n: 'YOLD · Austausch', t: 'Im Kreis: Generationenaustausch bei YOLD', x: 'Regelmäßige Treffen, in denen sich Jung und Alt über Erfahrungen und Perspektiven austauschen.' },
