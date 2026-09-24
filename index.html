@@ -30,6 +30,7 @@
 <script src="./assets/vendor/react.production.min.js"></script>
 <script src="./assets/vendor/react-dom.production.min.js"></script>
 <script src="./support.js"></script>
+<script src="/yold-stats.js"></script>
 <!-- Befristetes Award-Banner: blendet sich nach Ende der Abstimmung
      selbst aus (Datum in award-banner.js). Danach entfernbar. -->
 <script src="/award-banner.js" defer></script>
@@ -498,11 +499,6 @@
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { gallery: 0, yoldReg: 160, yoldMatches: 50 };
-  // Selbe RPC + dieselben Offsets wie auf yold.info (js/script.js), damit beide
-  // Seiten immer dieselbe Zahl zeigen statt zweier unabhängiger Definitionen.
-  YOLD_STATS_URL = 'https://kcdobqicmdklyudjbzxj.supabase.co/rest/v1/rpc/get_yold_stats';
-  YOLD_STATS_KEY = 'sb_publishable_yyO8UDikrv-fb3GUlovUUw_6sng6_l5';
-  YOLD_STAT_OFFSETS = { anmeldungen: 20, tandems: 40 };
   gallerySlideData = [
     { img: 'assets/yold-group.jpg', alt: 'Gruppenfoto der YOLD-Teilnehmenden bei einem Treffen, im Hintergrund der YOLD-Schriftzug auf der Leinwand.', n: 'YOLD · Treffen', t: 'YOLD bringt Jung und Alt an einen Tisch', x: 'Ein Treffen der YOLD-Community — Studierende und ältere Teilnehmende im Austausch.' },
     { img: 'assets/yold-circle.jpg', alt: 'YOLD-Teilnehmende im Stuhlkreis im Gespräch miteinander.', n: 'YOLD · Austausch', t: 'Im Kreis: Generationenaustausch bei YOLD', x: 'Regelmäßige Treffen, in denen sich Jung und Alt über Erfahrungen und Perspektiven austauschen.' },
@@ -539,22 +535,11 @@ class Component extends DCLogic {
     this.loadYoldStats();
   }
   loadYoldStats() {
-    fetch(this.YOLD_STATS_URL, {
-      method: 'POST',
-      headers: { apikey: this.YOLD_STATS_KEY, Authorization: 'Bearer ' + this.YOLD_STATS_KEY, 'Content-Type': 'application/json' },
-      body: '{}'
-    })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => {
-        if (!data) return;
-        const anmeldungen = data.anmeldungen + (this.YOLD_STAT_OFFSETS.anmeldungen || 0);
-        const tandems = data.tandems + (this.YOLD_STAT_OFFSETS.tandems || 0);
-        this.setState({
-          yoldReg: Math.floor(anmeldungen / 10) * 10,
-          yoldMatches: Math.floor(tandems / 10) * 10
-        });
-      })
-      .catch(() => {});
+    // Werte kommen aus /yold-stats.js (gemeinsame Quelle fuer alle Seiten)
+    if (!window.yoldStats) return;
+    window.yoldStats.then((w) => {
+      if (w) this.setState({ yoldReg: w.anmeldungen, yoldMatches: w.tandems });
+    });
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.onScroll);
