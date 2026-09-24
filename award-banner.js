@@ -70,7 +70,9 @@
     "color:rgba(255,255,255,.72);font-size:19px;line-height:1;transition:background .2s,color .2s}",
     "#mota-banner .mota-close:hover,#mota-banner .mota-close:focus-visible{background:rgba(255,255,255,.18);color:#fff}",
     "@media(max-width:760px){#mota-banner{flex-direction:column;align-items:flex-start;text-align:left}",
-    "#mota-banner .mota-poster img{height:auto;width:min(100%,320px)}}",
+    "#mota-banner .mota-poster img{height:auto;width:min(100%,320px)}",
+    /* Platz für das Schließen-Kreuz, sonst liegt es auf der Tage-Anzeige */
+    "#mota-banner .mota-text{padding-right:30px}}",
     "@media (prefers-reduced-motion:reduce){#mota-banner *{transition:none!important}}"
   ].join("");
 
