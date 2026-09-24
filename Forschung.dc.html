@@ -33,7 +33,7 @@
 <!-- Befristetes Award-Banner: blendet sich nach Ende der Abstimmung
      selbst aus (Datum in award-banner.js). Danach entfernbar. -->
 <script src="/award-banner.js" defer></script>
-<!-- Zwei animierte Köpfe (Drahtkopf im Titel, schraffierter Kopf bei den Leitfragen) -->
+<!-- Animierter Drahtkopf neben der Überschrift -->
 <script src="/heads3d.js" defer></script>
 <script type="application/ld+json">
 {
@@ -138,9 +138,7 @@
   .head3d{position:absolute;pointer-events:none;z-index:2}
   .head3d canvas{display:block;width:100%;height:100%}
   .head-wire{color:#1C1E1D;right:clamp(0px,3vw,60px);top:clamp(30px,5vw,80px);width:clamp(240px,32vw,500px);height:calc(clamp(240px,32vw,500px)*1.3)}
-  .head-hatch{right:clamp(10px,4vw,80px);top:calc(clamp(180px,24vw,360px)*-0.5);width:clamp(180px,24vw,360px);height:calc(clamp(180px,24vw,360px)*1.35)}
-  .fragen{padding-right:clamp(0px,24vw,360px)}
-  @media(max-width:880px){.head-wire{width:190px;height:247px;top:0;right:-20px;opacity:.4;z-index:0}.hero-in{position:relative;z-index:1}.head-hatch{width:130px;height:176px;top:-45px;right:4px}.fragen{padding-right:0;margin-top:80px}.groups{grid-template-columns:1fr !important}.split{grid-template-columns:1fr !important;gap:30px !important}.cards{grid-template-columns:1fr !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.marg{position:static !important;margin-bottom:10px}}
+  @media(max-width:880px){.head-wire{width:190px;height:247px;top:0;right:-20px;opacity:.4;z-index:0}.hero-in{position:relative;z-index:1}.groups{grid-template-columns:1fr !important}.split{grid-template-columns:1fr !important;gap:30px !important}.cards{grid-template-columns:1fr !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.marg{position:static !important;margin-bottom:10px}}
 </style>
 </helmet>
 
@@ -182,15 +180,14 @@
   </section>
 
   <!-- DIE FRAGEN -->
-  <section data-screen-label="Forschung · Fragen" style="position:relative;max-width:1200px;padding:clamp(20px,3vw,40px) clamp(18px,5vw,60px) clamp(60px,9vw,110px)">
-    <div class="head3d head-hatch" data-head3d="hatch" data-yaw="-1.25" data-color="#3E55B4" aria-hidden="true"></div>
+  <section data-screen-label="Forschung · Fragen" style="max-width:1200px;padding:clamp(20px,3vw,40px) clamp(18px,5vw,60px) clamp(60px,9vw,110px)">
     <div class="split" style="display:grid;grid-template-columns:200px 1fr;gap:clamp(24px,5vw,80px);align-items:start">
       <p class="marg rv lbl" style="position:sticky;top:90px;color:var(--dim)">Leitfragen</p>
-      <div class="rv fragen"><div style="border-top:1px solid var(--line)">
+      <div class="rv" style="border-top:1px solid var(--line)">
         <div class="qrow" style="padding:clamp(20px,2.6vw,32px) 4px;border-bottom:1px solid var(--line)"><p style="font-weight:300;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.24">Wie erzählt sich das Ich über die Zeit — und wer schreibt mit?</p></div>
         <div class="qrow" style="padding:clamp(20px,2.6vw,32px) 4px;border-bottom:1px solid var(--line)"><p style="font-weight:300;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.24">Wie formt <em style="font-style:italic;color:var(--ac)">Sprache</em>, wer wir in einer Gruppe sein dürfen?</p></div>
         <div class="qrow" style="padding:clamp(20px,2.6vw,32px) 4px;border-bottom:1px solid var(--line)"><p style="font-weight:300;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.24">Was hält uns zusammen — Erinnerung, Scham, Sehnsucht oder Zugehörigkeit?</p></div>
-      </div></div>
+      </div>
     </div>
   </section>
 

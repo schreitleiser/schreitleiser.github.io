@@ -1,8 +1,6 @@
-/* Zwei animierte Köpfe für die Psychologie-Seite.
-   - "wire":  Drahtkopf aus tuschartigen Linien (Canvas 2D)
-   - "hatch": blau bemalter Kopf mit Kreuzschraffur (WebGL)
-   Beide teilen dieselbe prozedurale Kopfform und wenden sich dem Mauszeiger zu.
-   Einbinden: <div data-head3d="wire|hatch"></div> */
+/* Animierter Drahtkopf für die Psychologie-Seite: prozedurale Kopfform aus
+   tuschartigen Linien (Canvas 2D), die sich dem Mauszeiger zuwendet.
+   Einbinden: <div data-head3d="wire"></div> */
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const sm = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
@@ -158,81 +156,13 @@
     return draw;
   }
 
-  // ---------- Schraffierter Kopf (WebGL) ----------
-  const VS = `attribute vec3 p;attribute vec3 n;uniform mat3 R;uniform float asp,sc;varying vec3 vn,vp,op;
-void main(){vec3 q=R*(p-vec3(0.,.2,0.));vn=R*n;op=p;vp=q;float s=sc/(5.-q.z);gl_Position=vec4(q.x*s/asp,q.y*s+.15,-q.z*.2,1.);}`;
-  const FS = `precision highp float;varying vec3 vn,vp,op;uniform vec3 base;uniform float dpr;
-float h(vec3 p){return fract(sin(dot(p,vec3(12.9898,78.233,37.719)))*43758.5453);}
-float nz(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
-return mix(mix(mix(h(i),h(i+vec3(1,0,0)),f.x),mix(h(i+vec3(0,1,0)),h(i+vec3(1,1,0)),f.x),f.y),mix(mix(h(i+vec3(0,0,1)),h(i+vec3(1,0,1)),f.x),mix(h(i+vec3(0,1,1)),h(i+vec3(1,1,1)),f.x),f.y),f.z);}
-float hatch(vec2 c,float a,float fr,float th){vec2 d=vec2(cos(a),sin(a));float w=nz(vec3(c*.02,a))*1.6;float l=abs(fract(dot(c,d)/fr+w)-.5)*fr;return 1.-smoothstep(th,th+.9,l);}
-void main(){vec3 N=normalize(vn);if(!gl_FrontFacing)N=-N;vec3 L=normalize(vec3(-.55,.6,.6));
-float pn=nz(op*9.)*.5+nz(op*23.)*.25;N=normalize(N+(vec3(nz(op*7.),nz(op*7.+3.),nz(op*7.+7.))-.5)*.35);
-float d=max(dot(N,L),0.);float tone=d*.85+.1+(pn-.37)*.25;
-vec3 col=base*(.72+.5*pn);float scr=smoothstep(.62,.7,nz(op*3.5+vec3(4.))+.25*nz(op*18.));
-col=mix(col,vec3(.93,.92,.88),scr*step(op.z,.2)*.9);
-float red=smoothstep(.74,.78,nz(op*4.+vec3(9.)))*step(.25,op.z)*step(op.y,.3);col=mix(col,vec3(.8,.22,.12),red*.9);
-vec2 c=gl_FragCoord.xy/dpr;float ink=0.;
-if(tone<.6)ink=max(ink,hatch(c,.8,6.,.35));
-if(tone<.38)ink=max(ink,hatch(c,-.75,5.,.3));
-if(tone<.2)ink=max(ink,hatch(c,.05,4.,.3));
-float rim=1.-abs(N.z);ink=max(ink,smoothstep(.72,.9,rim+nz(op*14.)*.15)*.9);
-float hi=d>.83?hatch(c,-1.1,7.,.35)*.8:0.;
-col=mix(col,vec3(.97,.96,.92),hi);col=mix(col,vec3(.07,.08,.09),ink*.88);
-gl_FragColor=vec4(col,1.);}`;
-
-  function headMesh(NT, NP) {
-    const pos = [], idx = [];
-    for (let i = 0; i <= NT; i++) for (let j = 0; j <= NP; j++) pos.push(...P(...dirOf(0.001 + i / NT * (Math.PI - 0.002), j / NP * 6.2832)));
-    for (let i = 0; i < NT; i++) for (let j = 0; j < NP; j++) { const a = i * (NP + 1) + j, b = a + NP + 1; idx.push(a, b, a + 1, a + 1, b, b + 1); }
-    const nor = new Float32Array(pos.length);
-    for (let k = 0; k < idx.length; k += 3) {
-      const [a, b, c] = [idx[k] * 3, idx[k + 1] * 3, idx[k + 2] * 3];
-      const e1 = [pos[b] - pos[a], pos[b + 1] - pos[a + 1], pos[b + 2] - pos[a + 2]], e2 = [pos[c] - pos[a], pos[c + 1] - pos[a + 1], pos[c + 2] - pos[a + 2]];
-      const n = [e1[1] * e2[2] - e1[2] * e2[1], e1[2] * e2[0] - e1[0] * e2[2], e1[0] * e2[1] - e1[1] * e2[0]];
-      for (const v of [a, b, c]) { nor[v] += n[0]; nor[v + 1] += n[1]; nor[v + 2] += n[2]; }
-    }
-        for (let k = 0; k < nor.length; k += 3) { const l = Math.hypot(nor[k], nor[k + 1], nor[k + 2]) || 1; nor[k] /= l; nor[k + 1] /= l; nor[k + 2] /= l; }
-    return { pos: new Float32Array(pos), nor, idx: new Uint32Array(idx) };
-  }
-
-  function mountHatch(el) {
-    const cv = document.createElement('canvas');
-    const gl = cv.getContext('webgl', { alpha: true, antialias: true, premultipliedAlpha: true });
-    if (!gl || !gl.getExtension('OES_element_index_uint')) return null;
-    el.appendChild(cv);
-    const sh = (t, s) => { const o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); if (!gl.getShaderParameter(o, gl.COMPILE_STATUS)) console.warn(gl.getShaderInfoLog(o)); return o; };
-    const pr = gl.createProgram(); gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(pr); gl.useProgram(pr);
-    const m = headMesh(140, 160);
-    const buf = (data, loc) => { gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer()); gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW); const l = gl.getAttribLocation(pr, loc); gl.enableVertexAttribArray(l); gl.vertexAttribPointer(l, 3, gl.FLOAT, false, 0, 0); };
-    buf(m.pos, 'p'); buf(m.nor, 'n');
-    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.createBuffer()); gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, m.idx, gl.STATIC_DRAW);
-    const U = (n) => gl.getUniformLocation(pr, n);
-    const hex = (el.dataset.color || '#3E55B4').replace('#', '');
-    gl.uniform3f(U('base'), ...[0, 2, 4].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255));
-    gl.enable(gl.DEPTH_TEST);
-    const look = makeLook(parseFloat(el.dataset.yaw || '-1.2'), el);
-    let dpr = 1;
-    const size = () => { dpr = Math.min(2, devicePixelRatio || 1); cv.width = el.clientWidth * dpr; cv.height = el.clientHeight * dpr; };
-    size(); new ResizeObserver(size).observe(el);
-    return (t) => {
-      const { yaw, pitch } = look(t);
-      const cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
-      // R = Rx(pitch) * Ry(yaw), spaltenweise
-      gl.uniformMatrix3fv(U('R'), false, [cy, sp * sy, -cp * sy, 0, cp, sp, sy, -sp * cy, cp * cy]);
-      gl.uniform1f(U('asp'), cv.width / cv.height); gl.uniform1f(U('sc'), 2.5); gl.uniform1f(U('dpr'), dpr);
-      gl.viewport(0, 0, cv.width, cv.height); gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-      gl.drawElements(gl.TRIANGLES, m.idx.length, gl.UNSIGNED_INT, 0);
-    };
-  }
-
   // ---------- Einhängen & Animationsschleife ----------
   const live = new Set();
   function mount(el) {
     if (el.__head) return;
     el.__head = true;
     let draw;
-    try { draw = el.dataset.head3d === 'hatch' ? mountHatch(el) : mountWire(el); } catch (e) { console.warn(e); }
+    try { draw = mountWire(el); } catch (e) { console.warn(e); }
     if (!draw) { el.style.display = 'none'; return; }
     const item = { el, draw, vis: true };
     new IntersectionObserver(([e]) => { item.vis = e.isIntersecting; }).observe(el);
