@@ -156,6 +156,9 @@
      einspaltig würde es den Text beim Scrollen überdecken. */
   @media (max-width:760px){.about-fig{position:relative !important;top:auto !important}}
   @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+  /* Aufmacher zeigt das ganze Porträt; auf dem Handy wäre es dann zu klein
+     und läge unter der Überschrift, dort bleibt der formatfüllende Ausschnitt. */
+  @media (max-width:640px){#top img{object-fit:cover !important;object-position:center 22% !important}}
 </style>
 </helmet>
 
@@ -201,7 +204,7 @@
 
   <section id="top" data-screen-label="Aufmacher" style="position:relative;min-height:clamp(680px,100svh,1180px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#041A1B;isolation:isolate">
     <div ref="{{ heroBandRef }}" style="position:absolute;inset:0;overflow:hidden;z-index:0;background:#041A1B">
-      <img ref="{{ heroImgRef }}" src="assets/simon-schaugg-portrait-2026.jpg" fetchpriority="high" alt="Porträt von Simon Elias Schaugg: lächelnd, mit dunklen halblangen Haaren und hellem Hemd vor einem grünen Vorhang." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;">
+      <img ref="{{ heroImgRef }}" src="assets/simon-schaugg-portrait-2026.jpg" fetchpriority="high" alt="Porträt von Simon Elias Schaugg: lächelnd, mit dunklen halblangen Haaren und hellem Hemd vor einem grünen Vorhang." style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;">
       <div style="position:absolute;inset:0;background:linear-gradient(90deg,#041A1B 0%,rgba(4,26,27,.7) 26%,rgba(4,26,27,.2) 46%,rgba(4,26,27,.05) 62%)"></div>
       <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,26,27,.72) 0%,rgba(4,26,27,.2) 18%,rgba(4,26,27,.3) 38%,rgba(4,26,27,.84) 66%,#041A1B 95%)"></div>
     </div>
