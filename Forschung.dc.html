@@ -75,7 +75,7 @@
     "inLanguage": "de-DE"
   },
   "@id": "https://simonschaugg.de/Forschung.dc.html#webpage",
-  "dateModified": "2026-08-12",
+  "dateModified": "2026-09-24",
   "author": {
     "@id": "https://simonschaugg.de/#person"
   },
@@ -126,7 +126,14 @@
   .card:hover{transform:translateY(-5px);box-shadow:0 26px 50px -34px rgba(28,30,29,.4);border-color:var(--ac)}
   .qrow{transition:padding-left .5s cubic-bezier(.2,.6,.2,1)}
   .qrow:hover{padding-left:14px}
-  @media(max-width:880px){.split{grid-template-columns:1fr !important;gap:30px !important}.cards{grid-template-columns:1fr !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.marg{position:static !important;margin-bottom:10px}}
+  .grp h3{padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .st{display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+  .st .yr{color:var(--faint);font-size:10px;letter-spacing:.12em}
+  .st p{font-size:1.1rem;line-height:1.4}
+  .st strong{font-weight:500}
+  .st .sub{color:var(--dim);font-size:.95rem}
+  .facts>div+div{border-left:1px solid var(--line);padding-left:clamp(14px,2vw,26px) !important}
+  @media(max-width:880px){.groups{grid-template-columns:1fr !important}.split{grid-template-columns:1fr !important;gap:30px !important}.cards{grid-template-columns:1fr !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.marg{position:static !important;margin-bottom:10px}}
 </style>
 </helmet>
 
@@ -223,24 +230,49 @@
     </div>
   </section>
 
-  <!-- LEHRE / FÖRDERUNG -->
+  <!-- STUDIUM & STATIONEN -->
   <section data-screen-label="Forschung · Stationen" style="max-width:1200px;padding:0 clamp(18px,5vw,60px) clamp(60px,9vw,120px)">
     <div class="split" style="display:grid;grid-template-columns:200px 1fr;gap:clamp(24px,5vw,80px);align-items:start">
       <p class="marg rv lbl" style="position:sticky;top:90px;color:var(--dim)">Studium &amp; Stationen</p>
-      <div class="rv">
-        <p style="font-size:1.05rem;line-height:1.6;color:#44463F;max-width:62ch;margin-bottom:clamp(24px,3vw,36px)">Psychologie habe ich nie als Sammlung einzelner Fächer verstanden. Klinische Psychologie, Sozialpsychologie, Neurowissenschaften oder Organisationspsychologie beschreiben für mich unterschiedliche Ebenen derselben Wirklichkeit. Gemeinsam versuchen sie zu erklären, wie Menschen sich selbst verstehen, miteinander leben und Bedeutung schaffen.</p>
-        <div style="border-top:1px solid var(--line)">
-        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2021–24</span><span style="font-size:1.18rem">Jugendleiter · Ev. Kinder- und Jugendwerk Heidelberg — drei internationale Jugendfreizeiten</span></div>
-        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2024</span><span style="font-size:1.18rem">Deutschlandstipendium · Goethe-Universität Frankfurt</span></div>
-        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2025</span><span style="font-size:1.18rem">Intensivkurs Forensische Psychiatrie · Fachbereich Psychologie, Goethe-Universität</span></div>
-        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2025</span><span style="font-size:1.18rem">Wissenschaftliche Hilfskraft · Testsammlung, Bibliothek Psychologie und Sozialwissenschaften</span></div>
-        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2025</span><span style="font-size:1.18rem">e-fellows.net · Online-Stipendium &amp; Karrierenetzwerk</span></div>
-        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2025/26</span><span style="font-size:1.18rem">Praktikum Klinische Psychologie · Praxis Sujata Amend-Sarkar — Diagnostik &amp; Therapie-Assistenz</span></div>
-        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2025/26</span><span style="font-size:1.18rem">GROW@Goethe · Berufliches Mentoring-Programm, Career Service</span></div>
-        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">2026/27</span><span style="font-size:1.18rem">Deutschlandstipendium · Goethe-Universität Frankfurt — zum zweiten Mal vergeben</span></div>
-        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">lfd.</span><span style="font-size:1.18rem">B.Sc. Psychologie — Note 1,2 · Top 5 % der Kohorte</span></div>
-        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">ab 2026</span><span style="font-size:1.18rem">M.Sc. Psychologie — Arbeits- und Organisationspsychologie, Cognitive Neuroscience · parallel B.A. Politikwissenschaft mit VWL</span></div>
-        <div class="qrow" style="display:grid;grid-template-columns:90px 1fr;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line)"><span class="lbl" style="color:var(--ac)">Fokus</span><span style="font-size:1.18rem">Klinische Psychologie &amp; Psychotherapie</span></div>
+      <div>
+        <p class="rv" style="font-size:1.05rem;line-height:1.6;color:#44463F;max-width:62ch;margin-bottom:clamp(28px,4vw,44px)">Psychologie habe ich nie als Sammlung einzelner Fächer verstanden. Klinische Psychologie, Sozialpsychologie, Neurowissenschaften oder Organisationspsychologie beschreiben für mich unterschiedliche Ebenen derselben Wirklichkeit. Gemeinsam versuchen sie zu erklären, wie Menschen sich selbst verstehen, miteinander leben und Bedeutung schaffen.</p>
+
+        <!-- Kennzahlen -->
+        <div class="rv facts" style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:clamp(36px,5vw,56px)">
+          <div style="padding:clamp(18px,2.4vw,26px) 4px"><p style="font-weight:300;font-size:clamp(1.5rem,4vw,3rem);line-height:1;color:var(--ac);white-space:nowrap">1,2</p><p class="lbl" style="color:var(--dim);margin-top:10px">B.Sc.-Schnitt</p></div>
+          <div style="padding:clamp(18px,2.4vw,26px) 4px"><p style="font-weight:300;font-size:clamp(1.5rem,4vw,3rem);line-height:1;color:var(--ac);white-space:nowrap">Top 5 %</p><p class="lbl" style="color:var(--dim);margin-top:10px">der Kohorte</p></div>
+          <div style="padding:clamp(18px,2.4vw,26px) 4px"><p style="font-weight:300;font-size:clamp(1.5rem,4vw,3rem);line-height:1;color:var(--ac);white-space:nowrap">2×</p><p class="lbl" style="color:var(--dim);margin-top:10px">Deutschland&shy;stipendium</p></div>
+        </div>
+
+        <div class="groups" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,64px) clamp(28px,4vw,56px)">
+
+          <div class="rv grp">
+            <h3 class="lbl" style="color:var(--ac)">Studium</h3>
+            <div class="st"><span class="lbl yr">ab 2026</span><p><strong>M.Sc. Psychologie</strong><br><span class="sub">Arbeits- &amp; Organisationspsychologie · Cognitive Neuroscience</span></p></div>
+            <div class="st"><span class="lbl yr">ab 2026</span><p><strong>B.A. Politikwissenschaft</strong> mit VWL<br><span class="sub">parallel als Doppelstudium</span></p></div>
+            <div class="st"><span class="lbl yr">seit 2022</span><p><strong>B.Sc. Psychologie</strong><br><span class="sub">Schwerpunkt Klinische Psychologie &amp; Psychotherapie · Bachelorarbeit bei Prof. Dr. Rolf van Dick</span></p></div>
+          </div>
+
+          <div class="rv grp">
+            <h3 class="lbl" style="color:var(--ac)">Praxis</h3>
+            <div class="st"><span class="lbl yr">2025/26</span><p><strong>Praktikum Klinische Psychologie</strong><br><span class="sub">Praxis Sujata Amend-Sarkar · Diagnostik &amp; Therapie-Assistenz</span></p></div>
+            <div class="st"><span class="lbl yr">2025</span><p><strong>Wissenschaftliche Hilfskraft</strong><br><span class="sub">Testsammlung, Bibliothek Psychologie &amp; Sozialwissenschaften</span></p></div>
+            <div class="st"><span class="lbl yr">2025</span><p><strong>Intensivkurs Forensische Psychiatrie</strong><br><span class="sub">Fachbereich Psychologie, Goethe-Universität</span></p></div>
+          </div>
+
+          <div class="rv grp">
+            <h3 class="lbl" style="color:var(--ac)">Förderung</h3>
+            <div class="st"><span class="lbl yr">2024 · 2026</span><p><strong>Deutschlandstipendium</strong><br><span class="sub">Goethe-Universität Frankfurt · zweimal vergeben</span></p></div>
+            <div class="st"><span class="lbl yr">2025</span><p><strong>e-fellows.net</strong><br><span class="sub">Online-Stipendium &amp; Karrierenetzwerk</span></p></div>
+            <div class="st"><span class="lbl yr">2025/26</span><p><strong>GROW@Goethe</strong><br><span class="sub">Berufliches Mentoring-Programm, Career Service</span></p></div>
+          </div>
+
+          <div class="rv grp">
+            <h3 class="lbl" style="color:var(--ac)">Engagement</h3>
+            <div class="st"><span class="lbl yr">2021–24</span><p><strong>Jugendleiter</strong><br><span class="sub">Ev. Kinder- und Jugendwerk Heidelberg · drei internationale Jugendfreizeiten</span></p></div>
+            <p class="lbl" style="margin-top:22px"><a href="Lebenslauf.dc.html" class="nav-a" style="opacity:1;color:var(--ac)">Vollständiger Lebenslauf →</a></p>
+          </div>
+
         </div>
       </div>
     </div>
