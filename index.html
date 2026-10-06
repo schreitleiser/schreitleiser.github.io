@@ -220,6 +220,15 @@
   a{color:#F0EFE8;text-decoration:none}
   a:hover{color:#D8B65E}
   ::selection{background:#D8B65E;color:#07282A}
+  /* Presse-Logos: grau, beim Darüberfahren farbig */
+  .pl{filter:grayscale(1);opacity:.7;transition:filter .35s ease,opacity .35s ease,transform .35s ease}
+  .pl:hover{filter:none;opacity:1;transform:translateY(-2px) scale(1.04)}
+  [style*="ptMarquee"]:hover{animation-play-state:paused !important}
+  /* Menü: Unterstreichung läuft beim Darüberfahren ein */
+  .nav-l{position:relative;padding-bottom:3px}
+  .nav-l::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:#D8B65E;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+  .nav-l:hover::after,.nav-l:focus-visible::after{transform:scaleX(1)}
+  a:focus-visible{outline:1px solid #D8B65E;outline-offset:3px}
   @keyframes ptMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @keyframes ptDrift{0%,100%{transform:scale(1.05)}50%{transform:scale(1.1)}}
   @keyframes ptBlink{0%,100%{opacity:1}50%{opacity:.2}}
@@ -258,20 +267,20 @@
       <span style="font-family:'Bodoni Moda',Didot,serif;font-weight:600;font-size:19px;letter-spacing:-.01em">Simon Elias Schaugg</span>
     </a>
     <nav style="display:flex;align-items:center;gap:clamp(11px,2vw,24px);flex-wrap:wrap">
-      <a href="Forschung.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Psychologie</a>
-      <a href="Kunst-Musik.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Kunst &amp; Musik</a>
-      <a href="Expertise.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Expertise</a>
+      <a class="nav-l" href="Forschung.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Psychologie</a>
+      <a class="nav-l" href="Kunst-Musik.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Kunst &amp; Musik</a>
+      <a class="nav-l" href="Expertise.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Expertise</a>
       <span data-drop="" style="position:relative;display:inline-flex">
-        <a href="Projekte.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Projekte</a>
+        <a class="nav-l" href="Projekte.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Projekte</a>
         <span data-drop-menu="" style="position:absolute;top:100%;right:0;padding-top:15px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .3s,transform .3s,visibility .3s;z-index:80">
           <span style="display:flex;flex-direction:column;gap:13px;background:#041A1B;border:1px solid rgba(240,239,232,.2);padding:15px 19px">
-            <a href="Projekte.dc.html#yold" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap">YOLD</a>
-            <a href="Projekte.dc.html#neuhier" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap">NeuHier</a>
-            <a href="Kunst-Musik.dc.html#film" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap">Film &amp; Bühne</a>
+            <a href="Projekte.dc.html#yold" class="nav-l" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap">YOLD</a>
+            <a href="Projekte.dc.html#neuhier" class="nav-l" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap">NeuHier</a>
+            <a href="Kunst-Musik.dc.html#film" class="nav-l" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap">Film &amp; Bühne</a>
           </span>
         </span>
       </span>
-      <a href="Presse.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Presse</a>
+      <a class="nav-l" href="Presse.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Presse</a>
       <a href="Kontakt.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#07282A;background:#D8B65E;padding:7px 12px;font-weight:600;transition:background .25s,color .25s" style-hover="background:#F0EFE8;color:#07282A">Kontakt aufnehmen</a>
     </nav>
   </header>
@@ -280,7 +289,7 @@
 
   <section id="top" data-screen-label="Aufmacher" style="position:relative;min-height:clamp(680px,100svh,1180px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#041A1B;isolation:isolate">
     <div ref="{{ heroBandRef }}" style="position:absolute;inset:0;overflow:hidden;z-index:0;background:#041A1B">
-      <img ref="{{ heroImgRef }}" src="assets/simon-schaugg-portrait-2026.jpg" fetchpriority="high" alt="Porträt von Simon Elias Schaugg: lächelnd, mit dunklen halblangen Haaren und hellem Hemd vor einem grünen Vorhang." style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;">
+      <img ref="{{ heroImgRef }}" src="assets/simon-schaugg-portrait-2026.jpg" fetchpriority="high" alt="Porträt von Simon Elias Schaugg: lächelnd, mit dunklen halblangen Haaren und hellem Hemd vor einem grünen Vorhang." style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right center;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%);mask-image:linear-gradient(90deg,transparent 0,#000 16%);">
       <div style="position:absolute;inset:0;background:linear-gradient(90deg,#041A1B 0%,rgba(4,26,27,.7) 26%,rgba(4,26,27,.2) 46%,rgba(4,26,27,.05) 62%)"></div>
       <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,26,27,.72) 0%,rgba(4,26,27,.2) 18%,rgba(4,26,27,.3) 38%,rgba(4,26,27,.84) 66%,#041A1B 95%)"></div>
     </div>
@@ -290,7 +299,6 @@
     <div style="position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(40px,9vh,120px);padding:clamp(26px,3.4vw,44px) clamp(16px,4vw,46px) clamp(40px,5vw,72px)">
       <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-right:clamp(18px,3vw,40px)">
         <p data-rv="" style="display:flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#D8B65E">Frankfurt am Main</p>
-        <p data-rv="" style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#AEBCB9">Psychologie · Kunst · Musik</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:clamp(28px,4vw,52px)">
       <h1 data-split="" id="fragen" style="font-family:'Bodoni Moda',Didot,serif;font-weight:500;font-size:clamp(2.1rem,5.4vw,4.9rem);line-height:1.02;letter-spacing:-.032em;max-width:14ch;text-wrap:balance">Ich baue <em style="font-style:italic;color:#D8B65E">Gemeinschaft</em> — mit Psychologie als Werkzeug.</h1>
@@ -299,6 +307,7 @@
         <div data-rv="" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
           <a data-mag="" href="mailto:kontakt@simonschaugg.de?subject=Anfrage" style="display:inline-flex;align-items:center;gap:10px;padding:16px 22px;background:#D8B65E;color:#07282A;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;transition:background .25s,color .25s" style-hover="background:#F0EFE8;color:#07282A">Kontakt aufnehmen</a>
           <a data-mag="" href="https://www.linkedin.com/in/simonschaugg" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:16px 22px;border:1px solid rgba(240,239,232,.34);font-size:10px;letter-spacing:.18em;text-transform:uppercase;transition:border-color .25s,color .25s" style-hover="border-color:#D8B65E;color:#D8B65E">Zu LinkedIn</a>
+          <a data-mag="" href="https://www.instagram.com/schreitleiser/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:16px 22px;border:1px solid rgba(240,239,232,.34);font-size:10px;letter-spacing:.18em;text-transform:uppercase;transition:border-color .25s,color .25s" style-hover="border-color:#D8B65E;color:#D8B65E">Zu Instagram</a>
           <span style="display:flex;align-items:center;gap:9px;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#AEBCB9;margin-left:auto"><span style="animation:ptNudge 2.2s ease-in-out infinite;display:inline-block">↓</span> weiter</span>
         </div>
       </div>
@@ -309,25 +318,25 @@
   <section aria-label="Presse-Erwähnungen" style="overflow:hidden;padding:clamp(18px,2.6vw,30px) 0;background:#F0EFE8;color:#07282A">
     <div style="display:flex;align-items:center;gap:clamp(30px,5vw,64px);width:max-content;animation:ptMarquee 60s linear infinite">
       <span style="flex:0 0 auto;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7A5D19;white-space:nowrap">Vertreten in</span>
-      <img src="assets/press-logos/faz.png" alt="F.A.Z. / F.A.S. (Frankfurter Allgemeine Zeitung)" height="30" decoding="async" style="flex:0 0 auto;display:block;height:clamp(21px,1.9vw,30px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
-      <img src="assets/press-logos/journal-frankfurt.png" alt="Journal Frankfurt" height="46" decoding="async" style="flex:0 0 auto;display:block;height:clamp(32px,2.9vw,46px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
-      <img src="assets/press-logos/fnp.webp" alt="Frankfurter Neue Presse" height="34" decoding="async" style="flex:0 0 auto;display:block;height:clamp(24px,2.1vw,34px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
+      <img class="pl" src="assets/press-logos/faz.png" alt="F.A.Z. / F.A.S. (Frankfurter Allgemeine Zeitung)" height="30" decoding="async" style="flex:0 0 auto;display:block;height:clamp(21px,1.9vw,30px);width:auto">
+      <img class="pl" src="assets/press-logos/journal-frankfurt.png" alt="Journal Frankfurt" height="46" decoding="async" style="flex:0 0 auto;display:block;height:clamp(32px,2.9vw,46px);width:auto">
+      <img class="pl" src="assets/press-logos/fnp.webp" alt="Frankfurter Neue Presse" height="34" decoding="async" style="flex:0 0 auto;display:block;height:clamp(24px,2.1vw,34px);width:auto">
       <span style="flex:0 0 auto;font-family:'Bodoni Moda',Didot,serif;font-size:clamp(17px,2.2vw,30px);letter-spacing:-.015em;color:#4E5C5A;white-space:nowrap">Frankfurt-Live</span>
-      <img src="assets/press-logos/frankfurt-im-blick.png" alt="Stadt Frankfurt im Blick" height="24" decoding="async" style="flex:0 0 auto;display:block;height:clamp(17px,1.5vw,24px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
-      <img src="assets/press-logos/goethe-universitaet.jpg" alt="UniReport und EinBlick der Goethe-Universität Frankfurt" height="50" decoding="async" style="flex:0 0 auto;display:block;height:clamp(35px,3.1vw,50px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
-      <img src="assets/press-logos/radio-frankfurt.png" alt="Radio Frankfurt" height="40" decoding="async" style="flex:0 0 auto;display:block;height:clamp(28px,2.5vw,40px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
-      <img src="assets/press-logos/social-impact-award.png" alt="Social Impact Award Germany" height="56" decoding="async" style="flex:0 0 auto;display:block;height:clamp(38px,3.5vw,56px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
-      <img src="assets/press-logos/stiftung-polytechnische.jpg" alt="Stiftung Polytechnische Gesellschaft Frankfurt am Main" height="44" decoding="async" style="flex:0 0 auto;display:block;height:clamp(31px,2.8vw,44px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
+      <img class="pl" src="assets/press-logos/frankfurt-im-blick.png" alt="Stadt Frankfurt im Blick" height="24" decoding="async" style="flex:0 0 auto;display:block;height:clamp(17px,1.5vw,24px);width:auto">
+      <img class="pl" src="assets/press-logos/goethe-universitaet.png" alt="UniReport und EinBlick der Goethe-Universität Frankfurt" height="50" decoding="async" style="flex:0 0 auto;display:block;height:clamp(35px,3.1vw,50px);width:auto">
+      <img class="pl" src="assets/press-logos/radio-frankfurt.png" alt="Radio Frankfurt" height="40" decoding="async" style="flex:0 0 auto;display:block;height:clamp(28px,2.5vw,40px);width:auto">
+      <img class="pl" src="assets/press-logos/social-impact-award.png" alt="Social Impact Award Germany" height="56" decoding="async" style="flex:0 0 auto;display:block;height:clamp(38px,3.5vw,56px);width:auto">
+      <img class="pl" src="assets/press-logos/stiftung-polytechnische.png" alt="Stiftung Polytechnische Gesellschaft Frankfurt am Main" height="44" decoding="async" style="flex:0 0 auto;display:block;height:clamp(31px,2.8vw,44px);width:auto">
       <span aria-hidden="true" style="flex:0 0 auto;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7A5D19;white-space:nowrap">Vertreten in</span>
-      <img src="assets/press-logos/faz.png" alt="" height="30" decoding="async" style="flex:0 0 auto;display:block;height:clamp(21px,1.9vw,30px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
-      <img src="assets/press-logos/journal-frankfurt.png" alt="" height="46" decoding="async" style="flex:0 0 auto;display:block;height:clamp(32px,2.9vw,46px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
-      <img src="assets/press-logos/fnp.webp" alt="" height="34" decoding="async" style="flex:0 0 auto;display:block;height:clamp(24px,2.1vw,34px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
+      <img class="pl" src="assets/press-logos/faz.png" alt="" height="30" decoding="async" style="flex:0 0 auto;display:block;height:clamp(21px,1.9vw,30px);width:auto">
+      <img class="pl" src="assets/press-logos/journal-frankfurt.png" alt="" height="46" decoding="async" style="flex:0 0 auto;display:block;height:clamp(32px,2.9vw,46px);width:auto">
+      <img class="pl" src="assets/press-logos/fnp.webp" alt="" height="34" decoding="async" style="flex:0 0 auto;display:block;height:clamp(24px,2.1vw,34px);width:auto">
       <span aria-hidden="true" style="flex:0 0 auto;font-family:'Bodoni Moda',Didot,serif;font-size:clamp(17px,2.2vw,30px);letter-spacing:-.015em;color:#4E5C5A;white-space:nowrap">Frankfurt-Live</span>
-      <img src="assets/press-logos/frankfurt-im-blick.png" alt="" height="24" decoding="async" style="flex:0 0 auto;display:block;height:clamp(17px,1.5vw,24px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
-      <img src="assets/press-logos/goethe-universitaet.jpg" alt="" height="50" decoding="async" style="flex:0 0 auto;display:block;height:clamp(35px,3.1vw,50px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
-      <img src="assets/press-logos/radio-frankfurt.png" alt="" height="40" decoding="async" style="flex:0 0 auto;display:block;height:clamp(28px,2.5vw,40px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
-      <img src="assets/press-logos/social-impact-award.png" alt="" height="56" decoding="async" style="flex:0 0 auto;display:block;height:clamp(38px,3.5vw,56px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
-      <img src="assets/press-logos/stiftung-polytechnische.jpg" alt="" height="44" decoding="async" style="flex:0 0 auto;display:block;height:clamp(31px,2.8vw,44px);width:auto;filter:grayscale(1);opacity:.78;mix-blend-mode:multiply">
+      <img class="pl" src="assets/press-logos/frankfurt-im-blick.png" alt="" height="24" decoding="async" style="flex:0 0 auto;display:block;height:clamp(17px,1.5vw,24px);width:auto">
+      <img class="pl" src="assets/press-logos/goethe-universitaet.png" alt="" height="50" decoding="async" style="flex:0 0 auto;display:block;height:clamp(35px,3.1vw,50px);width:auto">
+      <img class="pl" src="assets/press-logos/radio-frankfurt.png" alt="" height="40" decoding="async" style="flex:0 0 auto;display:block;height:clamp(28px,2.5vw,40px);width:auto">
+      <img class="pl" src="assets/press-logos/social-impact-award.png" alt="" height="56" decoding="async" style="flex:0 0 auto;display:block;height:clamp(38px,3.5vw,56px);width:auto">
+      <img class="pl" src="assets/press-logos/stiftung-polytechnische.png" alt="" height="44" decoding="async" style="flex:0 0 auto;display:block;height:clamp(31px,2.8vw,44px);width:auto">
     </div>
   </section>
 
@@ -563,8 +572,8 @@
         <div data-rv="" style="display:flex;gap:clamp(14px,2.4vw,26px);flex-wrap:wrap">
           <a href="https://www.linkedin.com/in/simonschaugg" target="_blank" rel="noopener" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">LinkedIn</a>
           <a href="https://www.instagram.com/schreitleiser" target="_blank" rel="noopener" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Instagram</a>
-          <a href="Lebenslauf.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Lebenslauf ↓</a>
-          <a href="#top" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Nach oben ↑</a>
+          <a class="nav-l" href="Lebenslauf.dc.html" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Lebenslauf ↓</a>
+          <a class="nav-l" href="#top" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEBCB9;transition:color .25s" style-hover="color:#D8B65E">Nach oben ↑</a>
         </div>
       </div>
     </div>
