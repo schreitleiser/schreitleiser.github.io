@@ -1362,7 +1362,9 @@
       }
       const cls = "scp" + (n++).toString(36);
       const sel = pseudo === "before" || pseudo === "after" ? "." + cls + "::" + pseudo : "." + cls + ":" + pseudo;
-      el.sheet.insertRule(sel + "{" + css + "}", el.sheet.cssRules.length);
+      // Inline-Styles schlagen sonst die :hover-Regel; daher !important (nicht bei ::before/::after).
+      const body = pseudo === "before" || pseudo === "after" ? css : css.split(";").map((d) => d.trim()).filter(Boolean).map((d) => d.replace(/\s*!important\s*$/, "") + " !important").join(";");
+      el.sheet.insertRule(sel + "{" + body + "}", el.sheet.cssRules.length);
       cache.set(k, cls);
       return cls;
     };
