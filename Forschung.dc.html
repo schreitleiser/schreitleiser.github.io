@@ -126,8 +126,18 @@
   .nav-drop .submenu .nav-a{opacity:.72;white-space:nowrap}
   .card{border:1px solid var(--line);padding:clamp(22px,3vw,38px);background:#EFEFEA;transition:transform .55s cubic-bezier(.2,.6,.2,1),box-shadow .55s,border-color .55s}
   .card:hover{transform:translateY(-5px);box-shadow:0 26px 50px -34px rgba(28,30,29,.4);border-color:var(--ac)}
-  .qrow{transition:padding-left .5s cubic-bezier(.2,.6,.2,1)}
-  .qrow:hover{padding-left:14px}
+  .fragen{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:clamp(28px,5vw,80px);align-items:start}
+  .qlist{list-style:none;margin:0;padding:0}
+  .qrow{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;align-items:baseline;padding:clamp(22px,3vw,38px) 0;border-bottom:1px solid var(--line);transition:padding-left .5s cubic-bezier(.2,.6,.2,1)}
+  .qrow:first-child{padding-top:0}
+  .qrow .qn{color:var(--ac);transform:translateY(-.35em)}
+  .qrow p{font-weight:300;font-size:clamp(1.45rem,2.7vw,2.35rem);line-height:1.2;letter-spacing:-.01em;text-wrap:balance}
+  .qrow:hover{padding-left:12px}
+  .ichwir{margin:0;position:sticky;top:90px}
+  .ichwir-stage{position:relative;background:#E1E1DA;border:1px solid var(--line);padding:clamp(22px,3.5vw,48px) clamp(16px,3vw,40px)}
+  .ichwir-stage img{display:block;width:100%;height:auto;max-height:78vh;object-fit:contain}
+  .ichwir-fig{position:absolute;left:16px;top:14px;color:var(--faint)}
+  .ichwir figcaption{color:var(--dim);margin-top:14px;text-align:right}
   .grp h3{padding-bottom:12px;border-bottom:1px solid var(--line)}
   .st{display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
   .st .yr{color:var(--faint);font-size:10px;letter-spacing:.12em}
@@ -138,7 +148,7 @@
   .head3d{position:absolute;pointer-events:none;z-index:2}
   .head3d canvas{display:block;width:100%;height:100%}
   .head-wire{color:#1C1E1D;right:clamp(0px,3vw,60px);top:clamp(30px,5vw,80px);width:clamp(240px,32vw,500px);height:calc(clamp(240px,32vw,500px)*1.3)}
-  @media(max-width:880px){.ichwir{max-width:320px;margin:10px auto 0 !important}.head-wire{width:190px;height:247px;top:0;right:-20px;opacity:.4;z-index:0}.hero-in{position:relative;z-index:1}.groups{grid-template-columns:1fr !important}.split{grid-template-columns:1fr !important;gap:30px !important}.cards{grid-template-columns:1fr !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.marg{position:static !important;margin-bottom:10px}}
+  @media(max-width:880px){.fragen{grid-template-columns:1fr}.ichwir{position:static;max-width:520px;margin:10px auto 0}.qrow:first-child{padding-top:22px}.head-wire{width:190px;height:247px;top:0;right:-20px;opacity:.4;z-index:0}.hero-in{position:relative;z-index:1}.groups{grid-template-columns:1fr !important}.split{grid-template-columns:1fr !important;gap:30px !important}.cards{grid-template-columns:1fr !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.marg{position:static !important;margin-bottom:10px}}
 </style>
 </helmet>
 
@@ -180,18 +190,24 @@
   </section>
 
   <!-- DIE FRAGEN -->
-  <section data-screen-label="Forschung · Fragen" style="max-width:1200px;padding:clamp(20px,3vw,40px) clamp(18px,5vw,60px) clamp(60px,9vw,110px)">
-    <div class="split fragen" style="display:grid;grid-template-columns:200px 1fr clamp(240px,28vw,380px);gap:clamp(24px,5vw,80px) clamp(24px,4vw,56px);align-items:start">
-      <p class="marg rv lbl" style="position:sticky;top:90px;color:var(--dim)">Leitfragen</p>
-      <div class="rv" style="border-top:1px solid var(--line)">
-        <div class="qrow" style="padding:clamp(20px,2.6vw,32px) 4px;border-bottom:1px solid var(--line)"><p style="font-weight:300;font-size:clamp(1.3rem,2.3vw,1.9rem);line-height:1.24">Wie erlebt jeder Mensch die Wirklichkeit — und was prägt dieses Erleben?</p></div>
-        <div class="qrow" style="padding:clamp(20px,2.6vw,32px) 4px;border-bottom:1px solid var(--line)"><p style="font-weight:300;font-size:clamp(1.3rem,2.3vw,1.9rem);line-height:1.24">Wie kooperieren Menschen, und wie entsteht aus vielen Einzelnen ein <em style="font-style:italic;color:var(--ac)">Wir</em>?</p></div>
-        <div class="qrow" style="padding:clamp(20px,2.6vw,32px) 4px;border-bottom:1px solid var(--line)"><p style="font-weight:300;font-size:clamp(1.3rem,2.3vw,1.9rem);line-height:1.24">Was macht ein gutes und gesundes Leben aus?</p></div>
-        <div class="qrow" style="padding:clamp(20px,2.6vw,32px) 4px;border-bottom:1px solid var(--line)"><p style="font-weight:300;font-size:clamp(1.3rem,2.3vw,1.9rem);line-height:1.24">Wie funktioniert Führung?</p></div>
-      </div>
-      <figure class="rv ichwir" style="margin:0">
-        <img src="assets/ich-und-wir.svg" alt="Zeichnung von Simon Schaugg: ein großer Kopf im Profil, in dem mehrere kleine Köpfe stecken, daneben eine Gruppe kleiner Köpfe, die zu ihm aufschaut." width="660" height="760" style="width:100%;height:auto;display:block" loading="lazy" decoding="async">
-        <figcaption class="lbl" style="color:var(--faint);margin-top:14px">Das Ich im Wir — das Wir im Ich</figcaption>
+  <section data-screen-label="Forschung · Fragen" style="max-width:1280px;padding:clamp(28px,4vw,56px) clamp(18px,5vw,60px) clamp(60px,9vw,110px)">
+    <div class="rv" style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:clamp(28px,4vw,56px)">
+      <p class="lbl" style="color:var(--dim)">Leitfragen</p>
+      <p class="lbl" style="color:var(--faint)">Was mich antreibt</p>
+    </div>
+    <div class="split fragen">
+      <ol class="rv qlist">
+        <li class="qrow"><span class="qn lbl">01</span><p>Wie erlebt jeder Mensch die Wirklichkeit — und was prägt dieses Erleben?</p></li>
+        <li class="qrow"><span class="qn lbl">02</span><p>Wie kooperieren Menschen, und wie entsteht aus vielen Einzelnen ein <em style="font-style:italic;color:var(--ac)">Wir</em>?</p></li>
+        <li class="qrow"><span class="qn lbl">03</span><p>Was macht ein gutes und gesundes Leben aus?</p></li>
+        <li class="qrow"><span class="qn lbl">04</span><p>Wie funktioniert Führung?</p></li>
+      </ol>
+      <figure class="rv ichwir">
+        <div class="ichwir-stage">
+          <span class="lbl ichwir-fig">Abb. 1</span>
+          <img src="assets/ich-und-wir.svg" alt="Zeichnung von Simon Schaugg: ein großer Kopf im Profil, in dem mehrere kleine Köpfe stecken, daneben eine Gruppe kleiner Köpfe, die zu ihm aufschaut." width="660" height="760" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="lbl">Das <span style="color:var(--ac)">Ich</span> im <span style="color:var(--ac)">Wir</span> — das <span style="color:var(--ac)">Wir</span> im <span style="color:var(--ac)">Ich</span></figcaption>
       </figure>
     </div>
   </section>
