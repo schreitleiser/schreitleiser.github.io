@@ -532,7 +532,7 @@
   <section data-screen-label="Galerie" style="position:relative;background:#041A1B">
     <div style="position:relative;height:clamp(440px,72vh,720px);overflow:hidden">
       <sc-for list="{{ gallerySlides }}" as="s" hint-placeholder-count="5">
-        <img srcset="{{ s.srcset }}" sizes="100vw" src="{{ s.img }}" alt="{{ s.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(.85);transition:opacity 1.15s ease;opacity:{{ s.opacity }}">
+        <img srcset="{{ s.srcset }}" sizes="100vw" src="{{ s.img }}" alt="{{ s.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ s.pos }};filter:brightness(.62) saturate(.85);transition:opacity 1.15s ease;opacity:{{ s.opacity }}">
       </sc-for>
       <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,26,27,.35) 0%,rgba(4,26,27,.04) 30%,rgba(4,26,27,.92) 100%);pointer-events:none"></div>
       <div style="position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;gap:clamp(10px,1.6vw,16px);padding:clamp(24px,5vw,64px) clamp(16px,4vw,46px)">
@@ -615,11 +615,11 @@
 class Component extends DCLogic {
   state = { gallery: 0, yoldReg: 190, yoldMatches: 50 };
   gallerySlideData = [
-    { img: 'assets/yold-group.jpg', alt: 'Gruppenfoto der YOLD-Teilnehmenden bei einem Treffen der von Simon Schaugg gegründeten Initiative in Frankfurt, im Hintergrund der YOLD-Schriftzug auf der Leinwand.', n: 'YOLD · Treffen', t: 'YOLD bringt Jung und Alt an einen Tisch', x: 'Ein Treffen der YOLD-Community — Studierende und ältere Teilnehmende im Austausch.' },
-    { img: 'assets/yold-circle.jpg', alt: 'YOLD-Teilnehmende im Stuhlkreis im Gespräch miteinander – Generationenprojekt von Simon Schaugg, Frankfurt.', n: 'YOLD · Austausch', t: 'Im Kreis: Generationenaustausch bei YOLD', x: 'Regelmäßige Treffen, in denen sich Jung und Alt über Erfahrungen und Perspektiven austauschen.' },
-    { img: 'assets/neuhier.jpg', alt: 'Simon Schaugg hält den NeuHier-Pitch vor Publikum, im Hintergrund die Folie mit dem Maskottchen Mio.', n: 'NeuHier · Pitch', t: 'NeuHier: ein KI-Begleiter fürs Ankommen', x: 'Pitch von NeuHier — kulturelle Begleitung für internationale Fachkräfte und Studierende.' },
-    { img: 'assets/pitch.jpg', alt: 'Simon Schaugg präsentiert die NeuHier-Problemanalyse „Settling in is harder than arriving“ vor Publikum.', n: 'NeuHier · Ausgangslage', t: 'Ankommen ist schwerer als Einreisen', x: 'Die Datenlage, aus der NeuHier entstanden ist — Grundlage für das Produkt.' },
-    { img: 'assets/award.jpg', alt: 'Gruppenfoto der Finalist:innen beim International Founders Award, darunter Gründer Simon Schaugg mit NeuHier, vor der Bühne.', n: 'NeuHier · Auszeichnung', t: 'Finalist beim International Founders Award', x: 'NeuHier unter den Finalist:innen des International Founders Award, Lokalfinale Hessen 2026.' }
+    { img: 'assets/yold-group.jpg', pos: '50% 20%', alt: 'Gruppenfoto der YOLD-Teilnehmenden bei einem Treffen der von Simon Schaugg gegründeten Initiative in Frankfurt, im Hintergrund der YOLD-Schriftzug auf der Leinwand.', n: 'YOLD · Treffen', t: 'YOLD bringt Jung und Alt an einen Tisch', x: 'Ein Treffen der YOLD-Community — Studierende und ältere Teilnehmende im Austausch.' },
+    { img: 'assets/yold-circle.jpg', pos: '50% 30%', alt: 'YOLD-Teilnehmende im Stuhlkreis im Gespräch miteinander – Generationenprojekt von Simon Schaugg, Frankfurt.', n: 'YOLD · Austausch', t: 'Im Kreis: Generationenaustausch bei YOLD', x: 'Regelmäßige Treffen, in denen sich Jung und Alt über Erfahrungen und Perspektiven austauschen.' },
+    { img: 'assets/neuhier.jpg', pos: '50% 40%', alt: 'Simon Schaugg hält den NeuHier-Pitch vor Publikum, im Hintergrund die Folie mit dem Maskottchen Mio.', n: 'NeuHier · Pitch', t: 'NeuHier: ein KI-Begleiter fürs Ankommen', x: 'Pitch von NeuHier — kulturelle Begleitung für internationale Fachkräfte und Studierende.' },
+    { img: 'assets/pitch.jpg', pos: '50% 60%', alt: 'Simon Schaugg präsentiert die NeuHier-Problemanalyse „Settling in is harder than arriving“ vor Publikum.', n: 'NeuHier · Ausgangslage', t: 'Ankommen ist schwerer als Einreisen', x: 'Die Datenlage, aus der NeuHier entstanden ist — Grundlage für das Produkt.' },
+    { img: 'assets/award.jpg', pos: '50% 45%', alt: 'Gruppenfoto der Finalist:innen beim International Founders Award, darunter Gründer Simon Schaugg mit NeuHier, vor der Bühne.', n: 'NeuHier · Auszeichnung', t: 'Finalist beim International Founders Award', x: 'NeuHier unter den Finalist:innen des International Founders Award, Lokalfinale Hessen 2026.' }
   ];
   // Verkleinerte WebP-Fassungen unter assets/thumbs/: [Breite des Originals, [vorhandene Breiten]].
   // Das Original bleibt src und groesste Stufe; der Browser waehlt per sizes die passende Datei.
@@ -862,7 +862,7 @@ class Component extends DCLogic {
       yoldRegDisplay: this.state.yoldReg + '+',
       yoldMatchesDisplay: this.state.yoldMatches + '+',
       gallerySlides: this.gallerySlideData.map((d, i) => ({
-        img: d.img, srcset: this.srcsetFor(d.img),
+        img: d.img, srcset: this.srcsetFor(d.img), pos: d.pos || 'center',
         alt: d.alt,
         opacity: i === this.state.gallery ? 1 : 0,
         dotColor: i === this.state.gallery ? '#D8B65E' : 'rgba(240,239,232,.3)',
