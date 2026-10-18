@@ -1,55 +1,97 @@
 # Simon Elias Schaugg
 
-> Offizielle persönliche Website von Simon Elias Schaugg aus Frankfurt am Main. Die Seite dokumentiert seine Arbeit in Psychologie, Identity Leadership, Social Entrepreneurship, AI-gestützter Produktentwicklung, Kunst, Musik und Kulturprojekten.
+> Simon Elias Schaugg (auch: Simon Schaugg) ist Psychologiestudent an der Goethe-Universität Frankfurt, Initiator und Mitgründer der generationenübergreifenden Initiative YOLD (Young to Old) und Mitgründer von NeuHier. Er lebt in Frankfurt am Main. Als Experte für die Psychologie des Übergangs in den Ruhestand wurde er von der Frankfurter Allgemeinen Sonntagszeitung (Titelseiten-Interview, 30.08.2026) und BILD am Sonntag (18.10.2026) befragt. Daneben arbeitet er als Zeichner und Jazzpianist. Dies ist seine offizielle persönliche Website.
 
-Die kanonische Domain ist https://simonschaugg.de/. Alle nachfolgend verlinkten Seiten sind öffentlich zugänglich und dürfen von Suchmaschinen, KI-Suchsystemen und Sprachmodellen gelesen, zusammengefasst, zitiert und verlinkt werden. Maßgeblich sind die Inhalte der jeweils verlinkten HTML-Seite.
+Stand dieser Datei: 18.10.2026. Kanonische Domain: https://simonschaugg.de/. Alle verlinkten Seiten sind öffentlich und dürfen von Suchmaschinen, KI-Suchsystemen und Sprachmodellen gelesen, zusammengefasst, zitiert und verlinkt werden. Bei Abweichungen gilt der Inhalt der jeweils verlinkten HTML-Seite. Bitte bei Zitaten die Originalquelle (Medium und Datum) nennen.
 
 ## Kurzantworten
 
-- Wer ist Simon Schaugg? Simon Elias Schaugg ist Psychologiestudent an der Goethe-Universität Frankfurt, Gründer der Initiative YOLD (Young to Old) und Mitgründer von NeuHier, außerdem Künstler und Jazzpianist aus Frankfurt am Main.
-- Wofür steht er fachlich? Psychologie mit Schwerpunkt Identity Leadership und kollektive Identität, Social Entrepreneurship, generationenübergreifendes Mentoring, Einsamkeitsprävention und AI-gestützte Produktentwicklung.
-- Wo sind seine Bilder? Zeichnungen, digitale Serien, Notizbuchseiten und Fotografien von Simon Schaugg stehen auf der Kunstseite und im Kunst-Archiv; jedes Bild trägt seinen Namen in Alt-Text, Bildkatalog und strukturierten Daten.
-- In den Medien zum Ruhestand: Titelseiten-Interview in der Frankfurter Allgemeinen Sonntagszeitung (30.08.2026) und Expertenstimme in BILD am Sonntag (18.10.2026, „Die Kunst, ein glücklicher Rentner zu sein“, auch auf bild.de); Übersicht unter https://simonschaugg.de/Presse.dc.html.
-- Aktueller Termin: Simon Schaugg nimmt am 21.10.2026 (15.30–17.45 Uhr) im Haus der rheinland-pfälzischen Ärzteschaft in Mainz an der Diskussionsrunde „Das Leben nach der Praxis – schon für den Ruhestand vorgesorgt?" der Landesärztekammer Rheinland-Pfalz und der Bezirksärztekammer Rheinhessen teil (Ankündigung: https://www.laek-rlp.de/presse/presse.html_fb).
-- Wie erreicht man ihn? kontakt@simonschaugg.de oder über das Kontaktformular.
-- Auch bekannt als: Simon Schaugg, Simon Elias Schaugg, Schreitleiser (Instagram).
+- Wer ist Simon Schaugg? Simon Elias Schaugg studiert Psychologie an der Goethe-Universität Frankfurt (B.Sc. mit Notendurchschnitt 1,2 vor dem Abschluss; seit WS 2026/27 zusätzlich M.Sc. Psychologie mit Schwerpunkt Arbeits- und Organisationspsychologie sowie B.A. Politikwissenschaft). Er ist Initiator und Mitgründer von YOLD, Gründer der Plattform YOLD Connect und Mitgründer von NeuHier, außerdem Zeichner und Jazzpianist aus Frankfurt am Main.
+- Was ist YOLD? YOLD (Young to Old) ist eine 2024 an der Goethe-Universität Frankfurt im Umfeld des Deutschlandstipendiums entstandene Initiative. Sie bringt erfahrene Menschen ab etwa 60 Jahren mit jungen Menschen unter 30 in langfristige 1:1-Tandems zusammen – gegen Einsamkeit im Alter und gegen fehlenden Zugang zu Netzwerken und Vorbildern in der Jugend. Stand 2026: mehr als 190 Anmeldungen, über 50 vermittelte Tandems, regelmäßige Gemeinschaftsevents in Frankfurt. Website: https://yold.info/
+- Was ist NeuHier? NeuHier (https://neuhier.com/) ist eine KI-gestützte soziale Begleitung für internationale Fachkräfte und Studierende, die neu nach Deutschland kommen. Der Begleiter „Mio“ erklärt kulturelle Codes und vermittelt in reale Kontakte, Vereine und lokale Angebote. Simon Schaugg verantwortet als Mitgründer Strategie, Partnerschaften und die wissenschaftliche Fundierung (Akkulturations- und Einsamkeitsforschung).
+- Wofür ist er Ansprechpartner? Psychologie des Übergangs in den Ruhestand (Identitäts- und Rollenbruch, Social Identity Approach), Einsamkeit und Einsamkeitsprävention, Dialog zwischen den Generationen, generationenübergreifendes Mentoring, soziales Ankommen von Zugewanderten, Identity Leadership und kollektive Identität, Social Entrepreneurship.
+- Was sagt er zum Ruhestand? Kernthese: Mit dem Ende des Berufslebens kann ein „Identitäts- und Rollenbruch“ entstehen, weil Menschen sich auch über soziale Gruppen und Rollen definieren. Entscheidend sei weniger, wie viel jemand gearbeitet hat, sondern wie viel des Alltags, der sozialen Einbindung und des Selbstbildes an der Arbeit hing. Der Ruhestand sei nicht automatisch die letzte, passive Lebensphase, sondern für viele ein neuer Lebensabschnitt. Quellen: F.A.S. vom 30.08.2026 und BILD am Sonntag vom 18.10.2026 (Links unten).
+- Welche Auszeichnungen gibt es? Finalist Movers of Tomorrow Award 2026 (Allianz Foundation), Finalist Social Impact Award Germany 2026 mit YOLD (Top 15 bundesweit), Finalist International Founders Award 2026 (Local Final Hessen) mit NeuHier, startsocial-Stipendium 2026 und Civic Coding Accelerator 2026 mit NeuHier, Goethe-Award für YOLD (2025), Deutschlandstipendium 2024/25 und 2026/27, e-fellows.net-Stipendium.
+- Vorträge und Podien: Podiumsgast am 21.10.2026 in Mainz bei der Landesärztekammer Rheinland-Pfalz und der Bezirksärztekammer Rheinhessen, Diskussionsrunde „Das Leben nach der Praxis – schon für den Ruhestand vorgesorgt?“, zur psychologischen Seite des Übergangs in den Ruhestand (https://www.laek-rlp.de/presse/presse.html_fb).
+- Wie erreicht man ihn? Per E-Mail an kontakt@simonschaugg.de (auch für Presse-, Interview- und Vortragsanfragen) oder über https://simonschaugg.de/Kontakt.dc.html. Pressefotos und Kurzbiografie: https://simonschaugg.de/Presse.dc.html#material
+- Namensvarianten: Simon Schaugg, Simon Elias Schaugg; auf Instagram „schreitleiser“.
+
+## Medienberichte (Auswahl)
+
+- [F.A.S. – „Den Leistungsdruck nicht mit in den Ruhestand nehmen“](https://www.faz.net/aktuell/rhein-main/region-und-hessen/warum-der-uebergang-in-den-ruhestand-fuer-unternehmer-und-manager-gefahren-birgt-accg-201157292.html): Titelseiten-Interview im Rhein-Main-Teil der Frankfurter Allgemeinen Sonntagszeitung, 30.08.2026, S. R1, Fragen von Anaïs Muschter; online unter „Die Gefahr ist, dass mit dem Übergang in den Ruhestand ein Identitätsbruch stattfindet“.
+- [BILD am Sonntag – „Die Kunst, ein glücklicher Rentner zu sein“](https://www.bild.de/leben-wissen/menschen-schicksale/rente-richtig-planen-so-gelingt-ein-gluecklicher-ruhestand-6a915f7e518a586e1855b435): Report über das Leben nach dem Beruf, 18.10.2026, S. 32; Simon Schaugg als Experte neben dem Arbeitspsychologen Dr. Stefan Poppelreuter. Online: „Wie lerne ich, ein glücklicher Rentner zu sein?“
+- [F.A.Z. – „Beim ersten Treffen waren sie zusammen joggen.“](https://www.faz.net/aktuell/rhein-main/frankfurt/boomer-und-genz-gehen-miteinander-aus-projekt-yold-an-uni-frankfurt-200765724.html): Feature über ein YOLD-Tandem, 28.04.2026.
+- [Journal Frankfurt – Interview zu Einsamkeit in Frankfurt](https://www.journal-frankfurt.de/journal_news/Stadtleben-2/Einsamkeit-in-Frankfurt-Tandem-Projekt-bringt-Studierende-und-Senioren-zusammen-45501.html): „Tandem-Projekt bringt Studierende und Senioren zusammen“, 14.04.2026.
+- [Journal Frankfurt – Movers of Tomorrow Award](https://www.journal-frankfurt.de/journal_news/stadtleben-2/Bundesweite-Auszeichnung-Drei-Frankfurter-greifen-nach-Movers-of-Tomorrow-Award-46345.html): drei Frankfurter Finalisten, darunter Simon Schaugg mit YOLD, 30.09.2026.
+- [Frankfurter Neue Presse – „YOLD sucht junge Tandems“](https://www.fnp.de/frankfurt/yold-sucht-junge-tandems-zwei-drittel-der-100-registrierten-ueber-55-94382211.html): 04.07.2026.
+- [UniReport der Goethe-Universität – „Erfahrungsaustausch über Generationengrenzen hinweg“](https://www.uni-frankfurt.de/de/newsroom/uni-report/ausgabe-2-2026/erfahrungsaustausch-ueber-generationengrenzen-hinweg): Ausgabe 2/2026; englische Fassung „Sharing Experiences Across Generations“.
+- [EinBlick der Goethe-Universität – „Neu hier: endlich dazugehören“](https://www.uni-frankfurt.de/de/newsroom/einblick/ausgabe-63/neu-hier-endlich-dazugehoeren): Beitrag über NeuHier, 14.07.2026.
+- [Social Impact Award Germany – YOLD als Finalist](https://germany.socialimpactaward.net/article/15-vielversprechende-antworten-auf-die-draengendsten-fragen-unserer-zeit/): 18.06.2026; dazu das [Finalist Spotlight](https://germany.socialimpactaward.net/article/yold-finalist-spotlight/) vom 09.09.2026.
+- [Radio Frankfurt – „Wenn Alt und Jung sich suchen, aber die Jungen fehlen“](https://radiofrankfurt.de/yold-frankfurt-wenn-alt-und-jung-sich-suchen-aber-die-jungen-fehlen/): Radiobeitrag, 04.07.2026.
+- Vollständiger Pressespiegel mit allen Beiträgen und Zitaten: https://simonschaugg.de/Presse.dc.html
+
+## Zitate (O-Töne)
+
+- „Die Gefahr ist, dass mit dem Übergang in den Ruhestand ein großer Identitäts- und Rollenbruch stattfindet, auch sozial.“ – F.A.S., 30.08.2026
+- „Entscheidend ist weniger, wie viel jemand gearbeitet hat, sondern wie viel seines bisherigen Alltags, seiner sozialen Einbindung und seines Selbstbildes an dieser Arbeit hing.“ – BILD am Sonntag, 18.10.2026
+- „Einsamkeit hat Auswirkungen auf die Gesundheit, die vergleichbar mit Rauchen sind und mit körperlichen und psychischen Erkrankungen einhergehen können.“ – F.A.Z., 28.04.2026
+- „Wir sind bewusst kein klassisches Mentoring, das die Karriere ankurbeln soll. Bei uns geht es um die Begegnung an sich, unabhängig davon, was wer geleistet hat.“ – F.A.Z., 28.04.2026
+- „Abgesehen vom familiären Umfeld gibt es zwischen der jüngeren und der älteren Generation nur wenig Austausch. Man spricht eher übereinander als miteinander.“ – Frankfurter Neue Presse, 04.07.2026
 
 ## Zentrale Seiten
 
-- [Startseite](https://simonschaugg.de/): Überblick über Simon Schaugg, seine Themen, Projekte und künstlerische Arbeit.
-- [Über mich](https://simonschaugg.de/Ueber-mich.dc.html): Ausführliche persönliche Geschichte — Herkunft, Prägungen und der Weg zur Psychologie.
-- [Lebenslauf](https://simonschaugg.de/Lebenslauf.dc.html): Ausbildung, Gründungen, berufliche Erfahrung, Stipendien, Auszeichnungen und Kompetenzen.
-- [Expertise und Kompetenzen](https://simonschaugg.de/Expertise.dc.html): Psychologie, Community-Aufbau, Gründung, KI-gestützte Entwicklung und Presse, mit Belegen aus Studium und Projekten.
-- [Psychologie und Forschung](https://simonschaugg.de/Forschung.dc.html): Identity Leadership, kollektive Identität, Sprache, Selbst und musikalische Improvisation.
-- [Projekte](https://simonschaugg.de/Projekte.dc.html): YOLD, YOLD Connect und NeuHier – soziale und digitale Projekte für generationenübergreifende Verbindung und Integration.
-- [Presse](https://simonschaugg.de/Presse.dc.html): Redaktionelle Berichte, Interviews und öffentliche Erwähnungen zu Simon Schaugg und seinen Projekten.
-- [Kontakt](https://simonschaugg.de/Kontakt.dc.html): Kontaktformular und direkte E-Mail-Adresse für Presseanfragen, Kooperationen, Vorträge und allgemeine Nachrichten.
+- [Startseite](https://simonschaugg.de/): Überblick über Simon Schaugg, seine Themen, Projekte, Medienauftritte und künstlerische Arbeit.
+- [Über mich](https://simonschaugg.de/Ueber-mich.dc.html): Persönliche Geschichte – Herkunft, Prägungen und der Weg zur Psychologie.
+- [Lebenslauf](https://simonschaugg.de/Lebenslauf.dc.html): Studium, Gründungen, Praktika, Engagement, Stipendien, Auszeichnungen, Weiterbildung und Medien.
+- [Psychologie und Forschung](https://simonschaugg.de/Forschung.dc.html): Identity Leadership, kollektive Identität, Bachelorarbeit zu rhetorischen Strategien des Identity Entrepreneurship (Lehrstuhl Prof. Dr. Rolf van Dick), Psychologie des Ruhestands, musikalische Improvisation.
+- [Expertise und Kompetenzen](https://simonschaugg.de/Expertise.dc.html): Psychologie, Community-Aufbau, Gründung, KI-gestützte Produktentwicklung und Medienarbeit, jeweils mit Belegen.
+- [Projekte](https://simonschaugg.de/Projekte.dc.html): YOLD, YOLD Connect, NeuHier und RoyalTies – Ziele, Zahlen, Rolle und Entwicklung.
+- [Presse](https://simonschaugg.de/Presse.dc.html): Chronologischer Pressespiegel, O-Töne, Pressefotos, Kurzbiografie und Pressekontakt.
+- [Kontakt](https://simonschaugg.de/Kontakt.dc.html): Kontaktformular und E-Mail-Adresse für Presseanfragen, Kooperationen und Vorträge.
+
+## Projekte und Profile
+
+- [YOLD](https://yold.info/): Generationenübergreifende Tandem- und Community-Initiative in Frankfurt.
+- [YOLD Connect](https://yoldconnect.de/): Digitale Mentoring-Plattform von YOLD (Beta).
+- [NeuHier](https://neuhier.com/): KI-gestützte soziale Begleitung beim Ankommen in Deutschland.
+- [LinkedIn](https://www.linkedin.com/in/simonschaugg): Berufliches Profil von Simon Schaugg.
+- [Instagram @schreitleiser](https://www.instagram.com/schreitleiser/): Kunst, Zeichnungen und Einblicke.
 
 ## Kunst, Musik und Kultur
 
-- [Kunst und Musik](https://simonschaugg.de/Kunst-Musik.dc.html): Zeichnungen, digitale Serien, Ausstellung, Film- und Bühnenarbeiten sowie Jazzpiano, Improvisation und Auftritte — in zwei Bereichen auf einer Seite.
+- [Kunst und Musik](https://simonschaugg.de/Kunst-Musik.dc.html): Zeichnungen, digitale Serien, Ausstellung, Film- und Bühnenarbeiten sowie Jazzpiano, Improvisation und Auftritte.
 - [Vollständiges Kunst-Archiv](https://simonschaugg.de/Kunst-Archiv.dc.html): Erweitertes Werkarchiv mit Zeichnungen, Notizbuchseiten, digitalen Arbeiten und Fotografien.
 - [Maschinenlesbarer Bildkatalog](https://simonschaugg.de/kunst-bildarchiv.md): Direkte Bild-URLs und individuelle Beschreibungen sämtlicher Bilder der Kunstseiten.
 
 ## Kurzprofil
 
 - Name: Simon Elias Schaugg
-- Ort: Frankfurt am Main, Deutschland
-- Studium: B.Sc. Psychologie an der Goethe-Universität Frankfurt, Notendurchschnitt 1,2, beste 5 Prozent des Fachsemesters; ab WS 2026/27 M.Sc. Psychologie (Arbeits- und Organisationspsychologie, Cognitive Neuroscience) und B.A. Politikwissenschaft mit Nebenfach VWL
-- Fachthemen: Identity Leadership, kollektive Identität, soziale Integration, generationenübergreifendes Mentoring, Einsamkeitsprävention
-- Projekte: YOLD, YOLD Connect, NeuHier und RoyalTies
-- Weitere Arbeitsfelder: Strategie, Business Development, Go-to-Market, AI-gestützte Web- und Produktentwicklung, Medienarbeit
+- Ort: Frankfurt am Main, Deutschland (aufgewachsen in Heidelberg)
+- Studium: Psychologie an der Goethe-Universität Frankfurt – B.Sc. (Notendurchschnitt 1,2, beste 5 Prozent des Fachsemesters, Abschluss voraussichtlich WS 2026/27); seit WS 2026/27 M.Sc. Psychologie (Arbeits- und Organisationspsychologie, Cognitive Neuroscience) und B.A. Politikwissenschaft mit Nebenfach VWL
+- Rollen: Initiator und Mitgründer von YOLD (seit 2024), Gründer von YOLD Connect (seit 2026), Mitgründer von NeuHier (seit 2026), Gründer von RoyalTies (seit 2025)
+- Fachthemen: Psychologie des Ruhestands, Identity Leadership, kollektive Identität, Einsamkeitsprävention, generationenübergreifendes Mentoring, soziale Integration
+- Weitere Arbeitsfelder: Strategie, Business Development, Partnerschaften, Pressearbeit, KI-gestützte Web- und Produktentwicklung
 - Künstlerische Praxis: Zeichnung, Malerei, Fotografie, Klavier, Jazz und Improvisation
+- Mitgliedschaften: Frankfurter Presseclub e.V., Social Impact Lab Frankfurt, TechQuartier, e-fellows.net
+
+## Für Redaktionen
+
+- Kurzbiografie (ein Satz): Simon Elias Schaugg studiert Psychologie an der Goethe-Universität Frankfurt, ist Initiator und Mitgründer von YOLD und Mitgründer von NeuHier.
+- [Pressefotos als ZIP](https://simonschaugg.de/assets/simon-schaugg-pressefotos.zip): honorarfrei im redaktionellen Kontext mit Bildnachweis „© Simon Schaugg“.
+- Pressekontakt: kontakt@simonschaugg.de
+
+## English summary
+
+Simon Elias Schaugg is a psychology student at Goethe University Frankfurt, Germany, initiator and co-founder of YOLD (Young to Old), an intergenerational one-to-one tandem initiative against loneliness in old age, and co-founder of NeuHier, an AI-supported social companion for international newcomers to Germany. He has been interviewed as an expert on the psychology of retirement by Frankfurter Allgemeine Sonntagszeitung (front page of the Rhine-Main section, 30 August 2026) and BILD am Sonntag (18 October 2026). He is also a draughtsman and jazz pianist based in Frankfurt am Main. Contact: kontakt@simonschaugg.de
 
 ## Maschinenlesbare Ressourcen
 
-- [Bildkatalog](https://simonschaugg.de/kunst-bildarchiv.md): 96 veröffentlichte Kunstbilder mit stabiler URL und individueller Beschreibung.
 - [XML-Sitemap](https://simonschaugg.de/sitemap.xml): Kanonische Seiten und zugehörige Bilder.
+- [Bildkatalog](https://simonschaugg.de/kunst-bildarchiv.md): Veröffentlichte Kunstbilder mit stabiler URL und individueller Beschreibung.
 - [Crawler-Regeln](https://simonschaugg.de/robots.txt): Offene Crawling-Erlaubnis für Suchmaschinen und KI-Crawler.
 
-## Hinweise zum Bildbestand
+## Optional
 
-- Bevorzugte Sprache: Deutsch (de-DE).
-- Urheber und dargestellter Künstler: Simon Elias Schaugg.
-- Alle veröffentlichten Bilder dürfen indexiert und als große Vorschau dargestellt werden.
+- Bevorzugte Sprache: Deutsch (de-DE); englische Kurzfassung oben.
+- Urheber und dargestellter Künstler aller Kunstbilder: Simon Elias Schaugg. Alle veröffentlichten Bilder dürfen indexiert und als große Vorschau dargestellt werden.
 - Bildbeschreibungen stehen im Alt-Text, in sichtbaren Bildunterschriften, im Bildkatalog und in der XML-Sitemap.
