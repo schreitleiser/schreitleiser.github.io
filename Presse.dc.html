@@ -158,7 +158,7 @@
   /* Logo-Leiste */
   .logos{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
   .logos .wrap{display:flex;align-items:center;gap:16px clamp(18px,2.6vw,36px);flex-wrap:wrap;justify-content:space-between;padding-top:22px;padding-bottom:22px}
-  .logos p{flex:0 0 auto}
+  .logos p{flex:0 0 100%}
   .logos img{height:clamp(18px,1.7vw,24px);width:auto;filter:grayscale(1) contrast(1.1);opacity:.62;transition:opacity .2s,filter .2s}
   .logos img.tall{height:clamp(28px,2.6vw,38px)}
   .logos img:hover{filter:none;opacity:1}
@@ -292,7 +292,6 @@
   .foot nav a:hover{color:var(--ac)}
 
   @media(max-width:1000px){
-    .logos p{flex-basis:100%}
     .hero-grid,.focus,.kit-cols,.two{grid-template-columns:1fr}
     .photos{grid-template-columns:repeat(2,minmax(0,1fr))}
     .chans{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -364,6 +363,8 @@
     <div class="wrap">
       <p class="eyebrow">Berichterstattung u. a. in</p>
       <img src="assets/press-logos/fas.png" alt="Frankfurter Allgemeine Sonntagszeitung (F.A.S.)" decoding="async" loading="lazy">
+      <img class="tall" src="assets/press-logos/bild-am-sonntag.png" alt="BILD am Sonntag" decoding="async" loading="lazy">
+      <img class="tall" src="assets/press-logos/bild.png" alt="BILD" decoding="async" loading="lazy">
       <img src="assets/press-logos/faz.png" alt="F.A.Z. (Frankfurter Allgemeine Zeitung)" decoding="async" loading="lazy">
       <img src="assets/press-logos/fnp.webp" alt="Frankfurter Neue Presse" decoding="async" loading="lazy">
       <img class="tall" src="assets/press-logos/journal-frankfurt.png" alt="Journal Frankfurt" decoding="async" loading="lazy">
