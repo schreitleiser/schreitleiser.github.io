@@ -42,7 +42,10 @@
       "@type": "Person",
       "@id": "https://simonschaugg.de/#person",
       "name": "Simon Elias Schaugg",
-      "alternateName": "Simon Schaugg",
+      "alternateName": [
+        "Simon Schaugg",
+        "schreitleiser"
+      ],
       "givenName": "Simon Elias",
       "familyName": "Schaugg",
       "url": "https://simonschaugg.de/",
@@ -75,7 +78,7 @@
           "caption": "Simon Schaugg auf einer Mauer am Neckarufer in Heidelberg"
         }
       ],
-      "description": "Simon Elias Schaugg ist Psychologiestudent an der Goethe-Universität Frankfurt, Gründer von YOLD, Mitgründer von NeuHier sowie Künstler und Jazzpianist aus Frankfurt am Main – mit Schwerpunkten in Identity Leadership, Social Entrepreneurship und AI-gestützter Produktentwicklung.",
+      "description": "Simon Elias Schaugg ist Psychologiestudent an der Goethe-Universität Frankfurt, Initiator und Mitgründer von YOLD, Gründer von YOLD Connect und Mitgründer von NeuHier sowie Zeichner und Jazzpianist aus Frankfurt am Main. Als Experte für die Psychologie des Übergangs in den Ruhestand wurde er von der Frankfurter Allgemeinen Sonntagszeitung und BILD am Sonntag befragt.",
       "jobTitle": [
         "Psychologiestudent",
         "Gründer",
@@ -93,17 +96,15 @@
           "url": "https://www.uni-frankfurt.de/"
         },
         {
-          "@type": "Organization",
-          "name": "YOLD",
-          "url": "https://yold.info/"
+          "@id": "https://simonschaugg.de/#yold"
         },
         {
-          "@type": "Organization",
-          "name": "NeuHier",
-          "url": "https://neuhier.com/"
+          "@id": "https://simonschaugg.de/#neuhier"
         }
       ],
       "knowsAbout": [
+        "Psychologie des Ruhestands",
+        "Übergang in den Ruhestand",
         "Psychologie",
         "Identity Leadership",
         "Kollektive Identität",
@@ -143,25 +144,21 @@
         }
       ],
       "award": [
+        "Finalist Movers of Tomorrow Award 2026 (Allianz Foundation)",
         "Finalist Social Impact Award Germany 2026 (YOLD)",
         "Finalist International Founders Award 2026, Local Final Hessen (NeuHier)",
-        "Finalist Movers of Tomorrow Award 2026",
-        "startsocial-Stipendium 2026",
+        "startsocial-Stipendium 2026 (NeuHier)",
+        "Civic Coding Accelerator 2026 (NeuHier)",
+        "Goethe-Award 2025 (YOLD)",
         "Deutschlandstipendium 2024/25 und 2026/27",
         "e-fellows.net-Stipendium"
       ],
       "worksFor": [
         {
-          "@type": "Organization",
-          "name": "YOLD – Young to Old",
-          "url": "https://yold.info/",
-          "description": "Intergenerationelle Mentoring- und Community-Initiative in Frankfurt, gegründet von Simon Schaugg"
+          "@id": "https://simonschaugg.de/#yold"
         },
         {
-          "@type": "Organization",
-          "name": "NeuHier",
-          "url": "https://neuhier.com/",
-          "description": "KI-Plattform für soziale Integration, mitgegründet von Simon Schaugg"
+          "@id": "https://simonschaugg.de/#neuhier"
         }
       ],
       "hasOccupation": {
@@ -171,7 +168,189 @@
           "@type": "City",
           "name": "Frankfurt am Main"
         }
+      },
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Frankfurter Presseclub e.V."
+        },
+        {
+          "@type": "Organization",
+          "name": "Social Impact Lab Frankfurt"
+        },
+        {
+          "@type": "Organization",
+          "name": "TechQuartier"
+        },
+        {
+          "@type": "Organization",
+          "name": "e-fellows.net"
+        }
+      ],
+      "subjectOf": [
+        {
+          "@type": "NewsArticle",
+          "headline": "Den Leistungsdruck nicht mit in den Ruhestand nehmen",
+          "url": "https://www.faz.net/aktuell/rhein-main/region-und-hessen/warum-der-uebergang-in-den-ruhestand-fuer-unternehmer-und-manager-gefahren-birgt-accg-201157292.html",
+          "datePublished": "2026-08-30",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Frankfurter Allgemeine Sonntagszeitung"
+          },
+          "mentions": {
+            "@id": "https://simonschaugg.de/#person"
+          },
+          "alternativeHeadline": "Die Gefahr ist, dass mit dem Übergang in den Ruhestand ein Identitätsbruch stattfindet",
+          "about": "Interview mit Simon Schaugg zur Psychologie des Übergangs in den Ruhestand"
+        },
+        {
+          "@type": "NewsArticle",
+          "headline": "Die Kunst, ein glücklicher Rentner zu sein",
+          "url": "https://www.bild.de/leben-wissen/menschen-schicksale/rente-richtig-planen-so-gelingt-ein-gluecklicher-ruhestand-6a915f7e518a586e1855b435",
+          "datePublished": "2026-10-18",
+          "publisher": {
+            "@type": "Organization",
+            "name": "BILD am Sonntag"
+          },
+          "mentions": {
+            "@id": "https://simonschaugg.de/#person"
+          },
+          "alternativeHeadline": "Wie lerne ich, ein glücklicher Rentner zu sein?",
+          "about": "Report zum Ruhestand mit Simon Schaugg als Experte"
+        },
+        {
+          "@type": "NewsArticle",
+          "headline": "Beim ersten Treffen waren sie zusammen joggen.",
+          "url": "https://www.faz.net/aktuell/rhein-main/frankfurt/boomer-und-genz-gehen-miteinander-aus-projekt-yold-an-uni-frankfurt-200765724.html",
+          "datePublished": "2026-04-28",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Frankfurter Allgemeine Zeitung"
+          },
+          "mentions": {
+            "@id": "https://simonschaugg.de/#person"
+          },
+          "about": "Feature über die Initiative YOLD"
+        },
+        {
+          "@type": "NewsArticle",
+          "headline": "Tandem-Projekt bringt Studierende und Senioren zusammen",
+          "url": "https://www.journal-frankfurt.de/journal_news/Stadtleben-2/Einsamkeit-in-Frankfurt-Tandem-Projekt-bringt-Studierende-und-Senioren-zusammen-45501.html",
+          "datePublished": "2026-04-14",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Journal Frankfurt"
+          },
+          "mentions": {
+            "@id": "https://simonschaugg.de/#person"
+          },
+          "about": "Interview mit Simon Schaugg über Einsamkeit in Frankfurt"
+        },
+        {
+          "@type": "NewsArticle",
+          "headline": "Drei Frankfurter greifen nach ‚Movers of Tomorrow Award‘",
+          "url": "https://www.journal-frankfurt.de/journal_news/stadtleben-2/Bundesweite-Auszeichnung-Drei-Frankfurter-greifen-nach-Movers-of-Tomorrow-Award-46345.html",
+          "datePublished": "2026-09-30",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Journal Frankfurt"
+          },
+          "mentions": {
+            "@id": "https://simonschaugg.de/#person"
+          }
+        },
+        {
+          "@type": "NewsArticle",
+          "headline": "YOLD sucht junge Tandems",
+          "url": "https://www.fnp.de/frankfurt/yold-sucht-junge-tandems-zwei-drittel-der-100-registrierten-ueber-55-94382211.html",
+          "datePublished": "2026-07-04",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Frankfurter Neue Presse"
+          },
+          "mentions": {
+            "@id": "https://simonschaugg.de/#person"
+          }
+        },
+        {
+          "@type": "Article",
+          "headline": "Erfahrungsaustausch über Generationengrenzen hinweg",
+          "url": "https://www.uni-frankfurt.de/de/newsroom/uni-report/ausgabe-2-2026/erfahrungsaustausch-ueber-generationengrenzen-hinweg",
+          "datePublished": "2026-06-25",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Goethe-Universität Frankfurt (UniReport)"
+          },
+          "mentions": {
+            "@id": "https://simonschaugg.de/#person"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://simonschaugg.de/#yold",
+      "name": "YOLD – Young to Old",
+      "alternateName": "YOLD",
+      "url": "https://yold.info/",
+      "foundingDate": "2024",
+      "foundingLocation": {
+        "@type": "City",
+        "name": "Frankfurt am Main"
+      },
+      "description": "Generationenübergreifende Tandem- und Community-Initiative in Frankfurt am Main, entstanden 2024 an der Goethe-Universität Frankfurt im Umfeld des Deutschlandstipendiums.",
+      "founder": [
+        {
+          "@id": "https://simonschaugg.de/#person"
+        },
+        {
+          "@type": "Person",
+          "name": "Carl Brammer"
+        },
+        {
+          "@type": "Person",
+          "name": "Steffen Luhn"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/yold.community",
+        "https://www.linkedin.com/company/yold-info"
+      ],
+      "award": [
+        "Finalist Social Impact Award Germany 2026",
+        "Goethe-Award 2025"
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://simonschaugg.de/#yoldconnect",
+      "name": "YOLD Connect",
+      "url": "https://yoldconnect.de/",
+      "applicationCategory": "SocialNetworkingApplication",
+      "description": "Digitale Mentoring-Plattform von YOLD für generationenübergreifendes Mentoring (Beta).",
+      "creator": {
+        "@id": "https://simonschaugg.de/#person"
+      },
+      "publisher": {
+        "@id": "https://simonschaugg.de/#yold"
       }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://simonschaugg.de/#neuhier",
+      "name": "NeuHier",
+      "url": "https://neuhier.com/",
+      "foundingDate": "2026",
+      "description": "KI-gestützte soziale Begleitung für internationale Fachkräfte und Studierende beim Ankommen in Deutschland.",
+      "founder": [
+        {
+          "@id": "https://simonschaugg.de/#person"
+        }
+      ],
+      "award": [
+        "Finalist International Founders Award 2026, Local Final Hessen",
+        "startsocial-Stipendium 2026"
+      ]
     },
     {
       "@type": "WebSite",
@@ -191,7 +370,7 @@
       "name": "Simon Schaugg – Psychologie, Kunst und Musik",
       "description": "Simon Elias Schaugg aus Frankfurt am Main: Psychologie (Goethe-Universität), Gründer von YOLD, Mitgründer von NeuHier, Künstler und Jazzpianist. Forschung, Projekte, Presse, Kunst.",
       "inLanguage": "de-DE",
-      "dateModified": "2026-08-12",
+      "dateModified": "2026-10-18",
       "isPartOf": {
         "@id": "https://simonschaugg.de/#website"
       },
