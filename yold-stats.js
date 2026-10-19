@@ -18,9 +18,11 @@
   var URL = "https://kcdobqicmdklyudjbzxj.supabase.co/rest/v1/rpc/get_yold_stats";
   /* Publishable Key – fuer den Browser gedacht, nur Lesezugriff auf die RPC. */
   var KEY = "sb_publishable_yyO8UDikrv-fb3GUlovUUw_6sng6_l5";
-  /* Aufschlag fuer Anmeldungen und Tandems, die nicht in der Datenbank stehen
+  /* Aufschlag fuer Anmeldungen aus der Pilotrunde vor der Plattform. Tandems:
+     der Altbestand wird seit 10/2026 in der Datenbank mitgezaehlt (historical_matches).
+     Frueher: Aufschlag fuer Anmeldungen und Tandems, die nicht in der Datenbank stehen
      (z.B. aus der Zeit vor der Plattform). */
-  var OFFSETS = { anmeldungen: 20, tandems: 40 };
+  var OFFSETS = { anmeldungen: 20, tandems: 0 };
 
   function abrunden(n) { return Math.floor(n / 10) * 10; }
 
