@@ -36,6 +36,8 @@
 <script src="/award-banner.js" defer></script>
 <!-- Animierter Drahtkopf neben der Überschrift -->
 <script src="/heads3d.js" defer></script>
+<!-- Partikel-Animation „Ich/Wir“ -->
+<script src="/ichwir.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -189,6 +191,11 @@
   .ichwir-stage img{display:block;width:100%;height:auto;max-height:78vh;object-fit:contain}
   .ichwir-fig{position:absolute;left:16px;top:14px;color:var(--faint)}
   .ichwir figcaption{color:var(--dim);margin-top:14px;text-align:right}
+  .ichwir-stage [data-ichwir]{aspect-ratio:660/760}
+  .ichwir-stage canvas{display:block;width:100%;height:100%;touch-action:pan-y}
+  .ichwir-cap{display:grid;justify-items:end}
+  .ichwir-cap>span{grid-area:1/1;transition:opacity .7s,transform .7s}
+  .ichwir-cap[data-state="wir-im-ich"] .c2,.ichwir-cap[data-state="ich-im-wir"] .c1{opacity:0;transform:translateY(6px)}
 
   /* Arbeiten */
   .works{list-style:none;margin:0;padding:0}
@@ -352,9 +359,10 @@
       <figure class="rv ichwir">
         <div class="ichwir-stage">
           <span class="lbl ichwir-fig">Abb. 1</span>
-          <img src="assets/ich-und-wir.svg" alt="Zeichnung von Simon Schaugg: ein großer Kopf im Profil, in dem mehrere kleine Köpfe stecken, daneben eine Gruppe kleiner Köpfe, die zu ihm aufschaut." width="660" height="760" loading="lazy" decoding="async">
+          <div data-ichwir role="img" aria-label="Animation: Aus vielen kleinen Köpfen formt sich ein großer Kopf, in dem wieder viele kleine stecken — und löst sich in eine Gruppe auf, in der ein einzelner Kopf blau hervorsticht."></div>
+          <noscript><img src="assets/ich-und-wir.svg" alt="Zeichnung von Simon Schaugg: ein großer Kopf im Profil, in dem mehrere kleine Köpfe stecken, daneben eine Gruppe kleiner Köpfe, die zu ihm aufschaut." style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#E1E1DA"></noscript>
         </div>
-        <figcaption class="lbl">Das <span style="color:var(--ac)">Ich</span> im <span style="color:var(--ac)">Wir</span> — das <span style="color:var(--ac)">Wir</span> im <span style="color:var(--ac)">Ich</span></figcaption>
+        <figcaption class="lbl ichwir-cap" data-ichwir-cap data-state="wir-im-ich"><span class="c1">Das <span style="color:var(--ac)">Wir</span> im <span style="color:var(--ac)">Ich</span></span><span class="c2">Das <span style="color:var(--ac)">Ich</span> im <span style="color:var(--ac)">Wir</span></span></figcaption>
       </figure>
     </div>
   </section>
