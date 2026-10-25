@@ -78,7 +78,7 @@
     "inLanguage": "de-DE"
   },
   "@id": "https://simonschaugg.de/Forschung.dc.html#webpage",
-  "dateModified": "2026-09-24",
+  "dateModified": "2026-10-25",
   "author": {
     "@id": "https://simonschaugg.de/#person"
   },
@@ -103,7 +103,7 @@
 </script>
 </head>
 <body>
-<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+<noscript><style>.rv{opacity:1!important;transform:none!important}.ln>span{transform:none!important}</style></noscript>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,33 +127,155 @@
   .nav-drop .submenu .nav-a{opacity:.72;white-space:nowrap}
   .card{border:1px solid var(--line);padding:clamp(22px,3vw,38px);background:#EFEFEA;transition:transform .55s cubic-bezier(.2,.6,.2,1),box-shadow .55s,border-color .55s}
   .card:hover{transform:translateY(-5px);box-shadow:0 26px 50px -34px rgba(28,30,29,.4);border-color:var(--ac)}
-  .fragen{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:clamp(28px,5vw,80px);align-items:start}
+  .head3d{position:absolute;pointer-events:none;z-index:2}
+  .head3d canvas{display:block;width:100%;height:100%}
+
+  /* Fortschritt */
+  .prog{position:fixed;left:0;top:0;height:2px;width:100%;background:var(--ac);transform:scaleX(0);transform-origin:left;z-index:90;pointer-events:none}
+
+  /* Layout-Grundraster */
+  .wrap{max-width:1440px;margin:0 auto;padding-left:clamp(18px,5vw,60px);padding-right:clamp(18px,5vw,60px)}
+  .sec{padding-top:clamp(56px,9vw,130px);padding-bottom:clamp(56px,9vw,130px)}
+  .sh{display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:baseline;gap:6px 18px;padding-bottom:clamp(14px,2vw,22px);border-bottom:1px solid var(--line);margin-bottom:clamp(30px,5vw,68px)}
+  .sh h2{font-weight:300;font-size:clamp(2rem,4.8vw,4.2rem);line-height:1;letter-spacing:-.02em}
+  .sh h2 em{font-style:italic;color:var(--ac)}
+  .sh .sn{color:var(--ac)}
+  .sh .sr{color:var(--faint);text-align:right}
+
+  /* Hero */
+  .hero-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px 28px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:clamp(40px,7vw,110px)}
+  .hero-idx{display:flex;gap:6px 22px;flex-wrap:wrap}
+  .hero-idx a{color:var(--dim);transition:color .4s}
+  .hero-idx a:hover{color:var(--ac)}
+  .hero-idx sup{color:var(--faint);font-size:9px;margin-right:5px;vertical-align:baseline}
+  .h1big{font-weight:300;font-size:clamp(2.5rem,6.3vw,6.1rem);line-height:1.03;letter-spacing:-.022em;margin-bottom:clamp(44px,8vw,120px)}
+  .ln{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+  .ln>span{display:block;transform:translateY(108%);transition:transform 1.4s cubic-bezier(.16,.8,.1,1)}
+  .ready .ln>span{transform:none}
+  .ln:nth-child(2)>span{transition-delay:.13s}
+  .ln:nth-child(3)>span{transition-delay:.26s}
+  .ln em{font-style:italic;color:var(--ac)}
+  .intro{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(20px,5vw,80px);align-items:start;padding-bottom:clamp(50px,8vw,110px)}
+  .intro .lead{font-weight:300;font-size:clamp(1.3rem,2.1vw,1.85rem);line-height:1.42;letter-spacing:-.005em;max-width:44ch;margin-bottom:clamp(26px,3.4vw,44px);text-wrap:pretty}
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3vw,48px);max-width:62rem}
+  .cols2 p{font-size:clamp(1.02rem,1.2vw,1.12rem);line-height:1.68;color:#33352F}
+  .head-wire{color:#1C1E1D;right:clamp(0px,3vw,60px);top:clamp(96px,11vw,190px);width:clamp(230px,28vw,460px);height:calc(clamp(230px,28vw,460px)*1.3)}
+
+  /* Laufband */
+  .mq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:#EFEFEA;user-select:none}
+  .mq-track{display:flex;width:max-content;animation:mq 46s linear infinite}
+  .mq:hover .mq-track{animation-play-state:paused}
+  .mq-set{display:flex;align-items:center;flex-shrink:0}
+  .mq-set span{font-style:italic;font-weight:300;font-size:clamp(1.5rem,3.4vw,2.9rem);padding:clamp(16px,2.2vw,28px) 0;white-space:nowrap}
+  .mq-set i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ac);margin:0 clamp(22px,3vw,46px);flex-shrink:0}
+  @keyframes mq{to{transform:translateX(-50%)}}
+
+  /* Banner */
+  .ban{position:relative;overflow:hidden;background:#E4E4DE;height:clamp(260px,40vw,560px)}
+  .ban img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;will-change:transform;transform:scale(1.12)}
+  .ban figcaption{position:absolute;left:clamp(18px,5vw,60px);bottom:clamp(16px,2.5vw,32px);color:#33352F;background:rgba(233,233,228,.86);padding:9px 14px;backdrop-filter:blur(3px)}
+
+  /* Leitfragen */
+  .fragen{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,6vw,100px);align-items:start}
   .qlist{list-style:none;margin:0;padding:0}
-  .qrow{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;align-items:baseline;padding:clamp(22px,3vw,38px) 0;border-bottom:1px solid var(--line);transition:padding-left .5s cubic-bezier(.2,.6,.2,1)}
+  .qrow{display:grid;grid-template-columns:56px 1fr;gap:6px 14px;align-items:baseline;padding:clamp(24px,3.4vw,46px) 0;border-bottom:1px solid var(--line);transition:padding-left .55s cubic-bezier(.2,.6,.2,1),opacity .5s}
   .qrow:first-child{padding-top:0}
-  .qrow .qn{color:var(--ac);transform:translateY(-.35em)}
-  .qrow p{font-weight:300;font-size:clamp(1.45rem,2.7vw,2.35rem);line-height:1.2;letter-spacing:-.01em;text-wrap:balance}
-  .qrow:hover{padding-left:12px}
+  .qrow .qn{color:var(--ac);transform:translateY(-.45em)}
+  .qrow p{font-weight:300;font-size:clamp(1.55rem,3vw,2.7rem);line-height:1.14;letter-spacing:-.015em;text-wrap:balance}
+  .qlist:hover .qrow:not(:hover){opacity:.38}
+  .qrow:hover{padding-left:14px}
   .ichwir{margin:0;position:sticky;top:90px}
   .ichwir-stage{position:relative;background:#E1E1DA;border:1px solid var(--line);padding:clamp(22px,3.5vw,48px) clamp(16px,3vw,40px)}
   .ichwir-stage img{display:block;width:100%;height:auto;max-height:78vh;object-fit:contain}
   .ichwir-fig{position:absolute;left:16px;top:14px;color:var(--faint)}
   .ichwir figcaption{color:var(--dim);margin-top:14px;text-align:right}
-  .grp h3{padding-bottom:12px;border-bottom:1px solid var(--line)}
-  .st{display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+
+  /* Arbeiten */
+  .works{list-style:none;margin:0;padding:0}
+  .work{display:grid;grid-template-columns:64px minmax(0,1.5fr) minmax(0,1fr);gap:clamp(14px,3vw,56px);padding:clamp(28px,4vw,56px) 0;border-bottom:1px solid var(--line);transition:padding-left .6s cubic-bezier(.2,.6,.2,1),background .6s}
+  .work:first-child{padding-top:0}
+  .work:hover{padding-left:14px}
+  .work .wn{color:var(--ac);padding-top:.6em}
+  .work h3{font-weight:300;font-size:clamp(1.6rem,3.2vw,2.8rem);line-height:1.1;letter-spacing:-.015em;margin-bottom:clamp(14px,2vw,24px);text-wrap:balance}
+  .work .wm p{color:#44463F;font-size:clamp(1.02rem,1.2vw,1.12rem);line-height:1.66;max-width:56ch}
+  .work .wx{display:flex;flex-direction:column;gap:12px;align-items:flex-start;padding-top:.6em}
+  .work .wt{color:var(--ac)}
+  .work .wf{color:var(--dim)}
+  .work .wl{display:flex;gap:6px 22px;flex-wrap:wrap}
+  .work figure{margin:10px 0 0;overflow:hidden;background:#E4E4DE;width:100%;max-width:420px}
+  .work figure img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.6,.2,1)}
+  .work:hover figure img{transform:scale(1.05)}
+
+  /* Medien (dunkel) */
+  .dk{background:#151716;color:#E9E9E4;--line:rgba(233,233,228,.18);--dim:#A5A8A1;--faint:#7C7F79;--acl:color-mix(in srgb,var(--ac) 50%,#fff)}
+  .dk .sh .sn,.dk .sh h2 em{color:var(--acl)}
+  .dk ::selection{background:#E9E9E4;color:#151716}
+  .pr{display:grid;grid-template-columns:200px minmax(0,1.35fr) minmax(0,1fr);gap:clamp(20px,4vw,64px);padding:clamp(30px,4.4vw,60px) 0;border-top:1px solid var(--line);transition:padding-left .6s cubic-bezier(.2,.6,.2,1)}
+  .sh+.pr{border-top:0;padding-top:0}
+  .pr:last-of-type{border-bottom:1px solid var(--line)}
+  .pr:hover{padding-left:16px}
+  .pr .pm{color:var(--dim);line-height:1.9}
+  .pr .pm b{display:block;font-weight:400;color:#E9E9E4}
+  .pr h3{font-weight:300;font-style:italic;font-size:clamp(1.6rem,3vw,2.6rem);line-height:1.12;letter-spacing:-.01em;margin-bottom:clamp(14px,2vw,24px);text-wrap:balance}
+  .pr .pt{color:#C3C5BE;font-size:clamp(1.02rem,1.2vw,1.12rem);line-height:1.66;max-width:54ch}
+  .pr .cta{display:inline-flex;gap:10px;align-items:baseline;color:var(--acl);margin-top:clamp(20px,2.6vw,30px)}
+  .pr .cta span{display:inline-block;transition:transform .5s cubic-bezier(.2,.6,.2,1)}
+  .pr:hover .cta span{transform:translate(5px,-5px)}
+  .pr blockquote{border-left:2px solid var(--acl);padding-left:clamp(18px,2.4vw,30px)}
+  .pr blockquote p{font-style:italic;font-weight:300;font-size:clamp(1.05rem,1.55vw,1.35rem);line-height:1.5;color:#E1E2DC}
+  .pr blockquote cite{display:block;font-style:normal;color:var(--faint);margin-top:16px;text-transform:none;letter-spacing:.04em;font-size:12px}
+  .dk .more{margin-top:clamp(24px,3vw,36px);color:var(--acl)}
+
+  /* Stationen */
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line);margin-bottom:clamp(40px,6vw,84px)}
+  .facts>div{padding:0 clamp(14px,2vw,30px) clamp(24px,3vw,40px)}
+  .facts>div:first-child{padding-left:0}
+  .facts>div+div{border-left:1px solid var(--line)}
+  .facts .fn{font-weight:300;font-size:clamp(2.1rem,7.4vw,6.8rem);line-height:.95;letter-spacing:-.035em;color:var(--ac);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .facts .fl{color:var(--dim);margin-top:clamp(12px,1.6vw,20px)}
+  .groups{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,72px) clamp(28px,5vw,88px)}
+  .grp h3{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid var(--ink,#1C1E1D);font-weight:300;font-style:italic;font-size:clamp(1.5rem,2.4vw,2.1rem);letter-spacing:-.01em}
+  .grp h3 .lbl{color:var(--ac);font-style:normal}
+  .st{display:grid;grid-template-columns:88px 1fr;gap:14px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);transition:padding-left .45s cubic-bezier(.2,.6,.2,1)}
+  .st:hover{padding-left:8px}
   .st .yr{color:var(--faint);font-size:10px;letter-spacing:.12em}
   .st p{font-size:1.1rem;line-height:1.4}
   .st strong{font-weight:500}
   .st .sub{color:var(--dim);font-size:.95rem}
-  .facts>div+div{border-left:1px solid var(--line);padding-left:clamp(14px,2vw,26px) !important}
-  .head3d{position:absolute;pointer-events:none;z-index:2}
-  .head3d canvas{display:block;width:100%;height:100%}
-  .head-wire{color:#1C1E1D;right:clamp(0px,3vw,60px);top:clamp(30px,5vw,80px);width:clamp(240px,32vw,500px);height:calc(clamp(240px,32vw,500px)*1.3)}
-  @media(max-width:880px){.fragen{grid-template-columns:1fr}.ichwir{position:static;max-width:520px;margin:10px auto 0}.qrow:first-child{padding-top:22px}.head-wire{width:190px;height:247px;top:0;right:-20px;opacity:.4;z-index:0}.hero-in{position:relative;z-index:1}.groups{grid-template-columns:1fr !important}.split{grid-template-columns:1fr !important;gap:30px !important}.cards{grid-template-columns:1fr !important}.navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}.marg{position:static !important;margin-bottom:10px}}
+
+  /* Footer */
+  .fl-big{display:flex;flex-direction:column;gap:clamp(4px,1vw,12px)}
+  .fl-big a{display:flex;justify-content:space-between;align-items:baseline;gap:20px;font-style:italic;font-weight:300;font-size:clamp(2.2rem,7vw,6.2rem);line-height:1.08;letter-spacing:-.02em;padding:clamp(8px,1.2vw,16px) 0;border-top:1px solid var(--line);transition:padding-left .6s cubic-bezier(.2,.6,.2,1),color .4s}
+  .fl-big a:last-child{border-bottom:1px solid var(--line)}
+  .fl-big a:hover{padding-left:clamp(10px,2vw,28px);color:var(--ac)}
+  .fl-big a span{font-style:normal;font-size:.5em;transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+  .fl-big a:hover span{transform:translateX(-10px)}
+
+  @media(max-width:880px){
+    .sh{grid-template-columns:44px minmax(0,1fr)}.sh .sr{display:none}
+    .intro{grid-template-columns:1fr}.cols2{grid-template-columns:1fr}
+    .head-wire{width:170px;height:221px;top:150px;right:-24px;opacity:.22;z-index:0}
+    .hero-top,.h1big,.intro{position:relative;z-index:1}
+    .fragen{grid-template-columns:1fr}.ichwir{position:static;max-width:520px;margin:10px auto 0}.qrow:first-child{padding-top:22px}
+    .work{grid-template-columns:34px minmax(0,1fr)}.work .wx{grid-column:2;padding-top:0}
+    .pr{grid-template-columns:1fr}
+    .groups{grid-template-columns:1fr}
+    .cards{grid-template-columns:1fr !important}
+    .navwrap{gap:11px 14px !important;flex-wrap:wrap !important;justify-content:flex-end !important}
+    .facts .fl{font-size:9px;letter-spacing:.1em}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .ln>span{transform:none!important;transition:none!important}
+    .mq-track{animation:none!important}
+    .rv{opacity:1!important;transform:none!important;transition:none!important}
+    .ban img{transform:none!important}
+  }
 </style>
 </helmet>
 
 <div ref="{{ rootRef }}" style="--ac:#2A5FD9;--dim:#6A6E69;--faint:#9DA09A;--line:rgba(28,30,29,.18);background:#E9E9E4;min-height:100vh">
+
+  <div class="prog" aria-hidden="true"></div>
 
   <header style="position:sticky;top:0;z-index:60;display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:18px clamp(18px,5vw,60px);background:linear-gradient(180deg,#E9E9E4 60%,rgba(233,233,228,0))">
     <a href="index.html" style="display:flex;align-items:baseline;gap:11px"><span style="font-size:17px">Simon Elias Schaugg</span><span class="lbl" style="color:var(--faint)">Archiv</span></a>
@@ -170,33 +292,57 @@
   <main>
 
   <!-- HERO -->
-  <div style="position:relative">
+  <div style="position:relative;overflow-x:clip">
   <div class="head3d head-wire" data-head3d="wire" data-yaw="-0.95" aria-hidden="true"></div>
-  <section class="hero-in" data-screen-label="Forschung · Titel" style="max-width:1200px;padding:clamp(46px,9vw,120px) clamp(18px,5vw,60px) clamp(40px,6vw,80px)">
-    <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(30px,5vw,56px)">Forschung · Psychologie · Goethe-Universität Frankfurt</p>
-    <h1 class="rv" style="font-weight:300;font-size:clamp(2.2rem,5.4vw,4.6rem);line-height:1.09;letter-spacing:-.012em;max-width:20ch;margin-bottom:clamp(30px,4vw,52px);text-wrap:balance">Kein Mensch ist eins. Jeder Mensch ist ein eigenes <em style="font-style:italic;color:var(--ac)">Universum</em>.</h1>
-    <p class="rv" style="max-width:62ch;font-size:clamp(1.06rem,1.5vw,1.3rem);line-height:1.68;color:#33352F;margin-bottom:18px">Mich fasziniert seit meiner Kindheit, dass wir dieselbe Welt erleben – und doch nie dieselbe Wirklichkeit teilen. Jeder Mensch trägt Erinnerungen, Sprache, Beziehungen und Erfahrungen in sich, die seine eigene Innenwelt formen. Kommunikation ist deshalb für mich mehr als Informationsaustausch. Sie ist der Versuch, Brücken zwischen verschiedenen Universen zu bauen.</p>
-    <p class="rv" style="max-width:62ch;font-size:clamp(1.06rem,1.5vw,1.3rem);line-height:1.68;color:#33352F;margin-bottom:18px">Vielleicht führte mich genau deshalb der Weg zur Psychologie. Nicht, weil sie alle Antworten bereithält, sondern weil sie den Menschen in seiner ganzen Vielfalt ernst nimmt. Mich interessieren weniger einzelne Teilgebiete als ihre Verbindungen: Wie entsteht Identität? Wie verändert Sprache unser Selbstbild? Wie formen Gruppen unser Denken? Warum entstehen Kunst, Musik oder Literatur – und was erzählen sie über den Menschen?</p>
-    <p class="rv" style="max-width:62ch;font-size:clamp(1.06rem,1.5vw,1.3rem);line-height:1.68;color:#33352F">Psychologie verstehe ich deshalb nicht als Gegenpol zu Kunst oder Musik, sondern als eine weitere Sprache, um menschliche Erfahrung zu beschreiben. Die wissenschaftliche Perspektive ergänzt für mich das, was Zeichnungen, Literatur oder Improvisation auf andere Weise sichtbar machen. Erst gemeinsam entsteht ein vollständigeres Bild.</p>
+  <section class="hero-in wrap" data-screen-label="Forschung · Titel" style="padding-top:clamp(34px,6vw,84px)">
+    <div class="rv hero-top">
+      <p class="lbl" style="color:var(--ac)">Psychologie · Goethe-Universität Frankfurt</p>
+      <nav class="lbl hero-idx" aria-label="Auf dieser Seite">
+        <a href="#fragen"><sup>01</sup>Leitfragen</a>
+        <a href="#arbeiten"><sup>02</sup>Arbeiten</a>
+        <a href="#artikel"><sup>03</sup>Artikel</a>
+        <a href="#medien"><sup>04</sup>Medien</a>
+        <a href="#stationen"><sup>05</sup>Stationen</a>
+      </nav>
+    </div>
+    <h1 class="h1big" aria-label="Kein Mensch ist eins. Jeder Mensch ist ein eigenes Universum.">
+      <span class="ln"><span>Kein Mensch ist eins.</span></span>
+      <span class="ln"><span>Jeder Mensch ist ein</span></span>
+      <span class="ln"><span>eigenes <em>Universum.</em></span></span>
+    </h1>
+    <div class="intro">
+      <p class="rv lbl" style="color:var(--dim);position:sticky;top:90px">Mein Zugang</p>
+      <div>
+        <p class="rv lead">Mich fasziniert seit meiner Kindheit, dass wir dieselbe Welt erleben – und doch nie dieselbe Wirklichkeit teilen. Jeder Mensch trägt Erinnerungen, Sprache, Beziehungen und Erfahrungen in sich, die seine eigene Innenwelt formen. Kommunikation ist deshalb für mich mehr als Informationsaustausch. Sie ist der Versuch, Brücken zwischen verschiedenen Universen zu bauen.</p>
+        <div class="cols2">
+          <p class="rv">Vielleicht führte mich genau deshalb der Weg zur Psychologie. Nicht, weil sie alle Antworten bereithält, sondern weil sie den Menschen in seiner ganzen Vielfalt ernst nimmt. Mich interessieren weniger einzelne Teilgebiete als ihre Verbindungen: Wie entsteht Identität? Wie verändert Sprache unser Selbstbild? Wie formen Gruppen unser Denken? Warum entstehen Kunst, Musik oder Literatur – und was erzählen sie über den Menschen?</p>
+          <p class="rv">Psychologie verstehe ich deshalb nicht als Gegenpol zu Kunst oder Musik, sondern als eine weitere Sprache, um menschliche Erfahrung zu beschreiben. Die wissenschaftliche Perspektive ergänzt für mich das, was Zeichnungen, Literatur oder Improvisation auf andere Weise sichtbar machen. Erst gemeinsam entsteht ein vollständigeres Bild.</p>
+        </div>
+      </div>
+    </div>
   </section>
+  </div>
 
+  <!-- LAUFBAND -->
+  <div class="mq" aria-hidden="true">
+    <div class="mq-track">
+      <div class="mq-set"><span>Identity Leadership</span><i></i><span>Social Identity Approach</span><i></i><span>Kollektive Identität</span><i></i><span>Sprache &amp; Selbstbild</span><i></i><span>Musikalische Improvisation</span><i></i><span>Klinische Psychologie</span><i></i><span>Kognitive Neurowissenschaft</span><i></i><span>Organisationspsychologie</span><i></i></div>
+      <div class="mq-set"><span>Identity Leadership</span><i></i><span>Social Identity Approach</span><i></i><span>Kollektive Identität</span><i></i><span>Sprache &amp; Selbstbild</span><i></i><span>Musikalische Improvisation</span><i></i><span>Klinische Psychologie</span><i></i><span>Kognitive Neurowissenschaft</span><i></i><span>Organisationspsychologie</span><i></i></div>
+    </div>
   </div>
 
   <!-- BANNER · IDENTITÄT -->
-  <section data-screen-label="Forschung · Banner" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-    <figure class="rv" style="margin:0;position:relative;overflow:hidden;background:#E4E4DE">
-      <img srcset="assets/thumbs/identitaet-koepfe-480.webp 480w, assets/thumbs/identitaet-koepfe-960.webp 960w, assets/identitaet-koepfe.jpg 1672w" sizes="(max-width: 900px) 100vw, 1920px" src="assets/identitaet-koepfe.jpg" alt="Köpfe von Simon Schaugg zum Thema Identität — dasselbe Motiv in Spiegel, Glas, Holz und Farbe ausgeführt." style="width:100%;height:clamp(220px,32vw,420px);object-fit:cover;object-position:center 42%;display:block">
-      <figcaption class="lbl" style="position:absolute;left:clamp(18px,5vw,60px);bottom:clamp(16px,2.5vw,28px);color:#33352F;background:rgba(233,233,228,.82);padding:9px 14px;backdrop-filter:blur(3px)">Ein Kopf, viele Fassungen — das Selbst als Prozess</figcaption>
+  <section data-screen-label="Forschung · Banner">
+    <figure class="ban" style="margin:0">
+      <img data-par srcset="assets/thumbs/identitaet-koepfe-480.webp 480w, assets/thumbs/identitaet-koepfe-960.webp 960w, assets/identitaet-koepfe.jpg 1672w" sizes="100vw" src="assets/identitaet-koepfe.jpg" alt="Köpfe von Simon Schaugg zum Thema Identität — dasselbe Motiv in Spiegel, Glas, Holz und Farbe ausgeführt.">
+      <figcaption class="lbl">Ein Kopf, viele Fassungen — das Selbst als Prozess</figcaption>
     </figure>
   </section>
 
   <!-- DIE FRAGEN -->
-  <section data-screen-label="Forschung · Fragen" style="max-width:1280px;padding:clamp(28px,4vw,56px) clamp(18px,5vw,60px) clamp(60px,9vw,110px)">
-    <div class="rv" style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:clamp(28px,4vw,56px)">
-      <p class="lbl" style="color:var(--dim)">Leitfragen</p>
-      <p class="lbl" style="color:var(--faint)">Was mich antreibt</p>
-    </div>
-    <div class="split fragen">
+  <section id="fragen" class="wrap sec" data-screen-label="Forschung · Fragen">
+    <div class="rv sh"><span class="lbl sn">01</span><h2>Leit<em>fragen</em></h2><span class="lbl sr">Was mich antreibt</span></div>
+    <div class="fragen">
       <ol class="rv qlist">
         <li class="qrow"><span class="qn lbl">01</span><p>Wie erlebt jeder Mensch die Wirklichkeit — und was prägt dieses Erleben?</p></li>
         <li class="qrow"><span class="qn lbl">02</span><p>Wie kooperieren Menschen, und wie entsteht aus vielen Einzelnen ein <em style="font-style:italic;color:var(--ac)">Wir</em>?</p></li>
@@ -214,34 +360,32 @@
   </section>
 
   <!-- ARBEITEN -->
-  <section data-screen-label="Forschung · Arbeiten" style="max-width:1200px;padding:clamp(40px,6vw,80px) clamp(18px,5vw,60px) clamp(60px,9vw,120px);border-top:1px solid var(--line)">
-    <h2 class="rv lbl" style="color:var(--dim);margin-bottom:clamp(28px,4vw,48px)">Ausgewählte Arbeiten</h2>
-    <div class="cards" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.5vw,34px)">
-      <article class="card rv">
-        <p class="lbl" style="color:var(--ac);margin-bottom:16px">Bachelorarbeit</p>
-        <h3 style="font-weight:400;font-size:clamp(1.4rem,2.4vw,1.95rem);line-height:1.2;margin-bottom:14px">Identity Leadership und Sprache</h3>
-        <p style="color:#44463F;font-size:1.05rem;line-height:1.6;margin-bottom:18px">Wie entsteht aus vielen Einzelnen ein gemeinsames »Wir«? Meine Bachelorarbeit untersuchte, wie Führungssprache kollektive Identität formt — und verschob damit dieselbe Frage, die mich zuvor am Individuum interessierte, auf Gruppen. Sprache beschreibt Gemeinschaft nicht nur, sie kann sie auch entstehen lassen.</p>
-        <p class="lbl" style="color:var(--faint)">Sozial- &amp; Organisationspsychologie</p>
-      </article>
-      <article class="card rv">
-        <p class="lbl" style="color:var(--ac);margin-bottom:16px">Seminararbeit · Note 1,0</p>
-        <h3 style="font-weight:400;font-size:clamp(1.4rem,2.4vw,1.95rem);line-height:1.2;margin-bottom:14px">Neuronale Grundlagen musikalischer Improvisation</h3>
-        <p style="color:#44463F;font-size:1.05rem;line-height:1.6;margin-bottom:18px">Was geschieht im Gehirn, wenn eine Hand etwas spielt, das eine Sekunde zuvor noch nicht existierte? Mich interessierte dabei weniger die Musik selbst als Improvisation als menschlicher Ausdruck: Wie entstehen Kreativität und Spontaneität? Welche Prozesse ermöglichen es, dass innere Erfahrung unmittelbar in Klang übergeht?</p>
-        <p class="lbl" style="color:var(--faint);display:flex;gap:20px;flex-wrap:wrap"><span>Biopsychologie</span><a href="assets/seminararbeit-improvisation.pdf" rel="noopener" class="nav-a" style="opacity:1;color:var(--ac)">↓ PDF lesen</a><a href="Kunst-Musik.dc.html#musik" class="nav-a" style="opacity:1;color:var(--ac)">→ siehe Musik</a></p>
-      </article>
-      <article class="card rv">
-        <figure style="margin:0 0 18px;overflow:hidden;background:#E4E4DE"><img srcset="assets/thumbs/forschung-poster-praesentation-480.webp 480w, assets/thumbs/forschung-poster-praesentation-960.webp 960w, assets/thumbs/forschung-poster-praesentation-1600.webp 1600w, assets/forschung-poster-praesentation.jpg 1800w" sizes="(max-width: 900px) 85vw, 445px" src="assets/forschung-poster-praesentation.jpg" alt="Simon Schaugg bei der Posterpräsentation seines experimentellen Praktikums an der Goethe-Universität Frankfurt." style="width:100%;aspect-ratio:3/2;object-fit:cover" loading="lazy" decoding="async"></figure>
-        <p class="lbl" style="color:var(--ac);margin-bottom:16px">Experimentelles Praktikum · Note 1,0</p>
-        <h3 style="font-weight:400;font-size:clamp(1.4rem,2.4vw,1.95rem);line-height:1.2;margin-bottom:14px">Attention in Auditory Entrainment and its Effects on Perception</h3>
-        <p style="color:#44463F;font-size:1.05rem;line-height:1.6;margin-bottom:18px">Gruppenprojekt zur auditiven Aufmerksamkeit und rhythmischen Synchronisation, vorgestellt als wissenschaftliches Poster an der Goethe-Universität Frankfurt. Mich interessierte dabei die Frage, wie Aufmerksamkeit unsere Wahrnehmung verändert — und wie stark unser Erleben von Prozessen beeinflusst wird, die uns oft gar nicht bewusst sind.</p>
-        <p class="lbl" style="color:var(--faint);display:flex;gap:20px;flex-wrap:wrap"><span>Kognitive Psychologie</span><a href="assets/expra-report-schaugg.pdf" rel="noopener" class="nav-a" style="opacity:1;color:var(--ac)">↓ Bericht lesen</a></p>
-      </article>
-    </div>
+  <section id="arbeiten" class="wrap" data-screen-label="Forschung · Arbeiten" style="padding-bottom:clamp(56px,9vw,130px)">
+    <div class="rv sh"><span class="lbl sn">02</span><h2>Ausgewählte <em>Arbeiten</em></h2><span class="lbl sr">3 Arbeiten</span></div>
+    <ol class="works">
+      <li class="rv work">
+        <span class="lbl wn">01</span>
+        <div class="wm"><h3>Identity Leadership und Sprache</h3><p>Wie entsteht aus vielen Einzelnen ein gemeinsames »Wir«? Meine Bachelorarbeit untersuchte, wie Führungssprache kollektive Identität formt — und verschob damit dieselbe Frage, die mich zuvor am Individuum interessierte, auf Gruppen. Sprache beschreibt Gemeinschaft nicht nur, sie kann sie auch entstehen lassen.</p></div>
+        <div class="wx"><p class="lbl wt">Bachelorarbeit</p><p class="lbl wf">Sozial- &amp; Organisationspsychologie</p></div>
+      </li>
+      <li class="rv work">
+        <span class="lbl wn">02</span>
+        <div class="wm"><h3>Neuronale Grundlagen musikalischer Improvisation</h3><p>Was geschieht im Gehirn, wenn eine Hand etwas spielt, das eine Sekunde zuvor noch nicht existierte? Mich interessierte dabei weniger die Musik selbst als Improvisation als menschlicher Ausdruck: Wie entstehen Kreativität und Spontaneität? Welche Prozesse ermöglichen es, dass innere Erfahrung unmittelbar in Klang übergeht?</p></div>
+        <div class="wx"><p class="lbl wt">Seminararbeit · Note 1,0</p><p class="lbl wf">Biopsychologie</p><p class="lbl wl"><a href="assets/seminararbeit-improvisation.pdf" rel="noopener" class="nav-a" style="opacity:1;color:var(--ac)">↓ PDF lesen</a><a href="Kunst-Musik.dc.html#musik" class="nav-a" style="opacity:1;color:var(--ac)">→ siehe Musik</a></p></div>
+      </li>
+      <li class="rv work">
+        <span class="lbl wn">03</span>
+        <div class="wm"><h3>Attention in Auditory Entrainment and its Effects on Perception</h3><p>Gruppenprojekt zur auditiven Aufmerksamkeit und rhythmischen Synchronisation, vorgestellt als wissenschaftliches Poster an der Goethe-Universität Frankfurt. Mich interessierte dabei die Frage, wie Aufmerksamkeit unsere Wahrnehmung verändert — und wie stark unser Erleben von Prozessen beeinflusst wird, die uns oft gar nicht bewusst sind.</p></div>
+        <div class="wx"><p class="lbl wt">Experimentelles Praktikum · Note 1,0</p><p class="lbl wf">Kognitive Psychologie</p><p class="lbl wl"><a href="assets/expra-report-schaugg.pdf" rel="noopener" class="nav-a" style="opacity:1;color:var(--ac)">↓ Bericht lesen</a></p>
+          <figure><img srcset="assets/thumbs/forschung-poster-praesentation-480.webp 480w, assets/thumbs/forschung-poster-praesentation-960.webp 960w, assets/thumbs/forschung-poster-praesentation-1600.webp 1600w, assets/forschung-poster-praesentation.jpg 1800w" sizes="(max-width: 880px) 85vw, 420px" src="assets/forschung-poster-praesentation.jpg" alt="Simon Schaugg bei der Posterpräsentation seines experimentellen Praktikums an der Goethe-Universität Frankfurt." loading="lazy" decoding="async"></figure>
+        </div>
+      </li>
+    </ol>
   </section>
 
   <!-- ARTIKEL AUF LINKEDIN -->
-  <section id="artikel" data-screen-label="Forschung · Artikel" style="max-width:1200px;padding:clamp(40px,6vw,80px) clamp(18px,5vw,60px) clamp(60px,9vw,120px);border-top:1px solid var(--line)">
-    <h2 class="rv lbl" style="color:var(--dim);margin-bottom:clamp(28px,4vw,48px)">Artikel auf LinkedIn</h2>
+  <section id="artikel" class="wrap" data-screen-label="Forschung · Artikel" style="padding-bottom:clamp(56px,9vw,130px)">
+    <div class="rv sh"><span class="lbl sn">03</span><h2>Artikel auf <em>LinkedIn</em></h2><span class="lbl sr">Identity Leadership</span></div>
     <div class="cards" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.5vw,34px)">
       <a href="https://www.linkedin.com/pulse/haben-5300-euro-mit-der-psychologie-politischer-f%C3%BChrung-schaugg-xkloe" target="_blank" rel="noopener" class="card rv" style="display:block">
         <figure style="margin:0 0 18px;overflow:hidden;background:#E4E4DE"><img srcset="assets/thumbs/linkedin-5300-euro-480.webp 480w, assets/thumbs/linkedin-5300-euro-960.webp 960w, assets/thumbs/linkedin-5300-euro-1600.webp 1600w" sizes="(max-width: 900px) 85vw, 445px" src="assets/linkedin-5300-euro.jpg" alt="Titelbild des Artikels: 5.300 € – Was macht Führung glaubwürdig? Vor dem Reichstagsgebäude in Berlin (KI-generiert)." style="width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy" decoding="async"></figure>
@@ -260,101 +404,88 @@
     </div>
   </section>
 
-  <!-- IN DEN MEDIEN · F.A.Z.-INTERVIEW -->
-  <section id="medien" data-screen-label="Forschung · In den Medien" style="padding:clamp(50px,8vw,100px) clamp(18px,5vw,60px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#EFEFEA">
-    <div style="max-width:1200px;margin:0 auto">
-      <p class="rv lbl" style="color:var(--ac);margin-bottom:clamp(24px,4vw,40px)">Als Experte befragt</p>
-      <a href="https://www.faz.net/aktuell/rhein-main/region-und-hessen/warum-der-uebergang-in-den-ruhestand-fuer-unternehmer-und-manager-gefahren-birgt-accg-201157292.html" target="_blank" rel="noopener" class="card rv" style="display:block">
-        <div class="split" style="display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4vw,64px);align-items:start">
-          <div>
-            <p class="lbl" style="color:var(--dim);margin-bottom:16px">F.A.S. · 30.08.2026 · Titelseite Rhein-Main &amp; Hessen</p>
-            <h3 style="font-weight:400;font-style:italic;font-size:clamp(1.4rem,2.8vw,2.3rem);line-height:1.16;margin-bottom:18px;text-wrap:balance">„Den Leistungsdruck nicht mit in den Ruhestand nehmen."</h3>
-            <p style="color:#44463F;font-size:1.05rem;line-height:1.6;max-width:52ch">Für die Frankfurter Allgemeine Sonntagszeitung habe ich erklärt, was psychologisch geschieht, wenn nach Jahrzehnten im Beruf die Rolle wegfällt, die das Selbstbild getragen hat — und warum der Ruhestand nicht zwangsläufig in eine Krise führen muss. Das Interview war der Aufmacher der Titelseite des Rhein-Main-Teils; die Fragen stellte Anaïs Muschter.</p>
-            <p class="lbl" style="color:var(--ac);margin-top:clamp(20px,3vw,28px);display:inline-flex;gap:8px;align-items:baseline">Interview auf faz.net lesen <span>↗</span></p>
-          </div>
-          <div style="border-left:2px solid var(--ac);padding-left:clamp(18px,2.4vw,28px)">
-            <p style="font-style:italic;font-size:clamp(1.05rem,1.7vw,1.3rem);line-height:1.5;color:#33352F">„Die Gefahr ist, dass mit dem Übergang in den Ruhestand ein großer Identitäts- und Rollenbruch stattfindet, auch sozial. In der Sozialpsychologie gibt es den Social Identity Approach. Das heißt, dass wir uns als Personen nicht nur über individuelle Eigenschaften definieren, sondern auch über unsere Zugehörigkeit zu verschiedenen sozialen Gruppen und Rollen."</p>
-            <p class="lbl" style="color:var(--faint);margin-top:16px;text-transform:none;letter-spacing:.04em;font-size:12px">Aus dem Interview — dieselbe Theorie, auf der auch meine Bachelorarbeit aufbaut</p>
-          </div>
+  <!-- IN DEN MEDIEN -->
+  <section id="medien" class="dk" data-screen-label="Forschung · In den Medien">
+    <div class="wrap sec">
+      <div class="rv sh"><span class="lbl sn">04</span><h2>Als Experte <em>befragt</em></h2><span class="lbl sr">F.A.S. · BILD · Landesärztekammer</span></div>
+      <a href="https://www.faz.net/aktuell/rhein-main/region-und-hessen/warum-der-uebergang-in-den-ruhestand-fuer-unternehmer-und-manager-gefahren-birgt-accg-201157292.html" target="_blank" rel="noopener" class="pr rv">
+        <p class="lbl pm"><b>F.A.S.</b>30.08.2026<br>Titelseite Rhein-Main &amp; Hessen</p>
+        <div>
+          <h3>„Den Leistungsdruck nicht mit in den Ruhestand nehmen."</h3>
+          <p class="pt">Für die Frankfurter Allgemeine Sonntagszeitung habe ich erklärt, was psychologisch geschieht, wenn nach Jahrzehnten im Beruf die Rolle wegfällt, die das Selbstbild getragen hat — und warum der Ruhestand nicht zwangsläufig in eine Krise führen muss. Das Interview war der Aufmacher der Titelseite des Rhein-Main-Teils; die Fragen stellte Anaïs Muschter.</p>
+          <p class="lbl cta">Interview auf faz.net lesen <span>↗</span></p>
         </div>
+        <blockquote>
+          <p>„Die Gefahr ist, dass mit dem Übergang in den Ruhestand ein großer Identitäts- und Rollenbruch stattfindet, auch sozial. In der Sozialpsychologie gibt es den Social Identity Approach. Das heißt, dass wir uns als Personen nicht nur über individuelle Eigenschaften definieren, sondern auch über unsere Zugehörigkeit zu verschiedenen sozialen Gruppen und Rollen."</p>
+          <cite class="lbl">Aus dem Interview — dieselbe Theorie, auf der auch meine Bachelorarbeit aufbaut</cite>
+        </blockquote>
       </a>
-      <a href="https://www.bild.de/leben-wissen/menschen-schicksale/rente-richtig-planen-so-gelingt-ein-gluecklicher-ruhestand-6a915f7e518a586e1855b435" target="_blank" rel="noopener" class="card rv" style="display:block;margin-top:clamp(28px,4vw,48px)">
-        <div class="split" style="display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4vw,64px);align-items:start">
-          <div>
-            <p class="lbl" style="color:var(--dim);margin-bottom:16px">BILD am Sonntag · 18.10.2026 · Seite 32 · auch auf bild.de</p>
-            <h3 style="font-weight:400;font-style:italic;font-size:clamp(1.4rem,2.8vw,2.3rem);line-height:1.16;margin-bottom:18px;text-wrap:balance">„Die Kunst, ein glücklicher Rentner zu sein"</h3>
-            <p style="color:#44463F;font-size:1.05rem;line-height:1.6;max-width:52ch">In einem großen Report über das Leben nach dem Beruf ordne ich als Experte ein, warum der Übergang in den Ruhestand zu einem Identitäts- und Rollenbruch werden kann.</p>
-            <p class="lbl" style="color:var(--ac);margin-top:clamp(20px,3vw,28px);display:inline-flex;gap:8px;align-items:baseline">Artikel auf bild.de lesen <span>↗</span></p>
-          </div>
-          <div style="border-left:2px solid var(--ac);padding-left:clamp(18px,2.4vw,28px)">
-            <p style="font-style:italic;font-size:clamp(1.05rem,1.7vw,1.3rem);line-height:1.5;color:#33352F">„Entscheidend ist weniger, wie viel jemand gearbeitet hat, sondern wie viel seines bisherigen Alltags, seiner sozialen Einbindung und seines Selbstbildes an dieser Arbeit hing."</p>
-            <p class="lbl" style="color:var(--faint);margin-top:16px;text-transform:none;letter-spacing:.04em;font-size:12px">Aus dem Artikel in BILD am Sonntag</p>
-          </div>
+      <a href="https://www.bild.de/leben-wissen/menschen-schicksale/rente-richtig-planen-so-gelingt-ein-gluecklicher-ruhestand-6a915f7e518a586e1855b435" target="_blank" rel="noopener" class="pr rv">
+        <p class="lbl pm"><b>BILD am Sonntag</b>18.10.2026<br>Seite 32 · auch auf bild.de</p>
+        <div>
+          <h3>„Die Kunst, ein glücklicher Rentner zu sein"</h3>
+          <p class="pt">In einem großen Report über das Leben nach dem Beruf ordne ich als Experte ein, warum der Übergang in den Ruhestand zu einem Identitäts- und Rollenbruch werden kann.</p>
+          <p class="lbl cta">Artikel auf bild.de lesen <span>↗</span></p>
         </div>
+        <blockquote>
+          <p>„Entscheidend ist weniger, wie viel jemand gearbeitet hat, sondern wie viel seines bisherigen Alltags, seiner sozialen Einbindung und seines Selbstbildes an dieser Arbeit hing."</p>
+          <cite class="lbl">Aus dem Artikel in BILD am Sonntag</cite>
+        </blockquote>
       </a>
-      <a href="https://www.linkedin.com/posts/landes%C3%A4rztekammer-rheinland-pfalz-%C3%A4rztekammer_gut-vorbereitet-auf-das-leben-nach-der-praxis-activity-7518946186259509248-Ge06" target="_blank" rel="noopener" class="card rv" style="display:block;margin-top:clamp(28px,4vw,48px)">
-        <div class="split" style="display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4vw,64px);align-items:start">
-          <div>
-            <p class="lbl" style="color:var(--dim);margin-bottom:16px">Vortrag · Mittwoch, 21.10.2026 · Mainz</p>
-            <h3 style="font-weight:400;font-style:italic;font-size:clamp(1.4rem,2.8vw,2.3rem);line-height:1.16;margin-bottom:18px;text-wrap:balance">„Das Leben nach der Praxis – schon für den Ruhestand vorgesorgt?"</h3>
-            <p style="color:#44463F;font-size:1.05rem;line-height:1.6;max-width:52ch">Auf Einladung der Landesärztekammer Rheinland-Pfalz und der Bezirksärztekammer Rheinhessen war ich als Wissenschaftler Teil der Diskussionsrunde für Ärztinnen und Ärzte und habe über die psychologische Seite des Übergangs in den Ruhestand gesprochen, gemeinsam mit einem Rechtsanwalt, einem Praxisberater und einem Steuerberater.</p>
-            <p class="lbl" style="color:var(--ac);margin-top:clamp(20px,3vw,28px);display:inline-flex;gap:8px;align-items:baseline">Beitrag der Landesärztekammer auf LinkedIn <span>↗</span></p>
-          </div>
-          <div style="border-left:2px solid var(--ac);padding-left:clamp(18px,2.4vw,28px)">
-            <p style="font-size:clamp(1.05rem,1.7vw,1.3rem);line-height:1.5;color:#33352F">Haus der rheinland-pfälzischen Ärzteschaft<br>Mittlere Bleiche 40, Mainz</p>
-            <p class="lbl" style="color:var(--faint);margin-top:16px;text-transform:none;letter-spacing:.04em;font-size:12px">Anknüpfung an das F.A.S.-Interview zur Psychologie des Ruhestands</p>
-          </div>
+      <a href="https://www.linkedin.com/posts/landes%C3%A4rztekammer-rheinland-pfalz-%C3%A4rztekammer_gut-vorbereitet-auf-das-leben-nach-der-praxis-activity-7518946186259509248-Ge06" target="_blank" rel="noopener" class="pr rv">
+        <p class="lbl pm"><b>Vortrag</b>Mittwoch, 21.10.2026<br>Mainz</p>
+        <div>
+          <h3>„Das Leben nach der Praxis – schon für den Ruhestand vorgesorgt?"</h3>
+          <p class="pt">Auf Einladung der Landesärztekammer Rheinland-Pfalz und der Bezirksärztekammer Rheinhessen war ich als Wissenschaftler Teil der Diskussionsrunde für Ärztinnen und Ärzte und habe über die psychologische Seite des Übergangs in den Ruhestand gesprochen, gemeinsam mit einem Rechtsanwalt, einem Praxisberater und einem Steuerberater.</p>
+          <p class="lbl cta">Beitrag der Landesärztekammer auf LinkedIn <span>↗</span></p>
         </div>
+        <blockquote>
+          <p>Haus der rheinland-pfälzischen Ärzteschaft<br>Mittlere Bleiche 40, Mainz</p>
+          <cite class="lbl">Anknüpfung an das F.A.S.-Interview zur Psychologie des Ruhestands</cite>
+        </blockquote>
       </a>
-      <p class="rv lbl" style="color:var(--dim);margin-top:clamp(22px,3vw,32px)"><a href="Presse.dc.html" class="nav-a" style="opacity:1;color:var(--ac)">Alle Presseberichte →</a></p>
+      <p class="rv lbl more"><a href="Presse.dc.html" class="nav-a" style="opacity:1;color:inherit">Alle Presseberichte →</a></p>
     </div>
   </section>
 
   <!-- STUDIUM & STATIONEN -->
-  <section data-screen-label="Forschung · Stationen" style="max-width:1200px;padding:0 clamp(18px,5vw,60px) clamp(60px,9vw,120px)">
-    <div class="split" style="display:grid;grid-template-columns:200px 1fr;gap:clamp(24px,5vw,80px);align-items:start">
-      <p class="marg rv lbl" style="position:sticky;top:90px;color:var(--dim)">Studium &amp; Stationen</p>
-      <div>
-        <p class="rv" style="font-size:1.05rem;line-height:1.6;color:#44463F;max-width:62ch;margin-bottom:clamp(28px,4vw,44px)">Psychologie habe ich nie als Sammlung einzelner Fächer verstanden. Klinische Psychologie, Sozialpsychologie, Neurowissenschaften oder Organisationspsychologie beschreiben für mich unterschiedliche Ebenen derselben Wirklichkeit. Gemeinsam versuchen sie zu erklären, wie Menschen sich selbst verstehen, miteinander leben und Bedeutung schaffen.</p>
+  <section id="stationen" class="wrap sec" data-screen-label="Forschung · Stationen">
+    <div class="rv sh"><span class="lbl sn">05</span><h2>Studium &amp; <em>Stationen</em></h2><span class="lbl sr">Goethe-Universität Frankfurt</span></div>
+    <p class="rv" style="font-weight:300;font-size:clamp(1.2rem,1.9vw,1.6rem);line-height:1.5;color:#33352F;max-width:52ch;margin-bottom:clamp(36px,6vw,84px);text-wrap:pretty">Psychologie habe ich nie als Sammlung einzelner Fächer verstanden. Klinische Psychologie, Sozialpsychologie, Neurowissenschaften oder Organisationspsychologie beschreiben für mich unterschiedliche Ebenen derselben Wirklichkeit. Gemeinsam versuchen sie zu erklären, wie Menschen sich selbst verstehen, miteinander leben und Bedeutung schaffen.</p>
 
-        <!-- Kennzahlen -->
-        <div class="rv facts" style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:clamp(36px,5vw,56px)">
-          <div style="padding:clamp(18px,2.4vw,26px) 4px"><p style="font-weight:300;font-size:clamp(1.5rem,4vw,3rem);line-height:1;color:var(--ac);white-space:nowrap">1,2</p><p class="lbl" style="color:var(--dim);margin-top:10px">B.Sc.-Schnitt</p></div>
-          <div style="padding:clamp(18px,2.4vw,26px) 4px"><p style="font-weight:300;font-size:clamp(1.5rem,4vw,3rem);line-height:1;color:var(--ac);white-space:nowrap">Top 5 %</p><p class="lbl" style="color:var(--dim);margin-top:10px">der Kohorte</p></div>
-          <div style="padding:clamp(18px,2.4vw,26px) 4px"><p style="font-weight:300;font-size:clamp(1.5rem,4vw,3rem);line-height:1;color:var(--ac);white-space:nowrap">2×</p><p class="lbl" style="color:var(--dim);margin-top:10px">Deutschland&shy;stipendium</p></div>
-        </div>
+    <div class="rv facts">
+      <div><p class="fn" data-count="1.2" data-dec="1">1,2</p><p class="lbl fl">B.Sc.-Schnitt</p></div>
+      <div><p class="fn" data-count="5" data-pre="Top " data-suf=" %">Top 5 %</p><p class="lbl fl">der Kohorte</p></div>
+      <div><p class="fn" data-count="2" data-suf="×">2×</p><p class="lbl fl">Deutschland&shy;stipendium</p></div>
+    </div>
 
-        <div class="groups" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,64px) clamp(28px,4vw,56px)">
+    <div class="groups">
+      <div class="rv grp">
+        <h3>Studium <span class="lbl">03</span></h3>
+        <div class="st"><span class="lbl yr">ab 2026</span><p><strong>M.Sc. Psychologie</strong><br><span class="sub">Arbeits- &amp; Organisationspsychologie · Cognitive Neuroscience</span></p></div>
+        <div class="st"><span class="lbl yr">ab 2026</span><p><strong>B.A. Politikwissenschaft</strong> mit VWL<br><span class="sub">parallel als Doppelstudium</span></p></div>
+        <div class="st"><span class="lbl yr">seit 2022</span><p><strong>B.Sc. Psychologie</strong><br><span class="sub">Schwerpunkt Klinische Psychologie &amp; Psychotherapie · Bachelorarbeit bei Prof. Dr. Rolf van Dick</span></p></div>
+      </div>
 
-          <div class="rv grp">
-            <h3 class="lbl" style="color:var(--ac)">Studium</h3>
-            <div class="st"><span class="lbl yr">ab 2026</span><p><strong>M.Sc. Psychologie</strong><br><span class="sub">Arbeits- &amp; Organisationspsychologie · Cognitive Neuroscience</span></p></div>
-            <div class="st"><span class="lbl yr">ab 2026</span><p><strong>B.A. Politikwissenschaft</strong> mit VWL<br><span class="sub">parallel als Doppelstudium</span></p></div>
-            <div class="st"><span class="lbl yr">seit 2022</span><p><strong>B.Sc. Psychologie</strong><br><span class="sub">Schwerpunkt Klinische Psychologie &amp; Psychotherapie · Bachelorarbeit bei Prof. Dr. Rolf van Dick</span></p></div>
-          </div>
+      <div class="rv grp">
+        <h3>Praxis <span class="lbl">03</span></h3>
+        <div class="st"><span class="lbl yr">2025/26</span><p><strong>Praktikum Klinische Psychologie</strong><br><span class="sub">Praxis Sujata Amend-Sarkar · Diagnostik &amp; Therapie-Assistenz</span></p></div>
+        <div class="st"><span class="lbl yr">2025</span><p><strong>Wissenschaftliche Hilfskraft</strong><br><span class="sub">Testsammlung, Bibliothek Psychologie &amp; Sozialwissenschaften</span></p></div>
+        <div class="st"><span class="lbl yr">2025</span><p><strong>Intensivkurs Forensische Psychiatrie</strong><br><span class="sub">Fachbereich Psychologie, Goethe-Universität</span></p></div>
+      </div>
 
-          <div class="rv grp">
-            <h3 class="lbl" style="color:var(--ac)">Praxis</h3>
-            <div class="st"><span class="lbl yr">2025/26</span><p><strong>Praktikum Klinische Psychologie</strong><br><span class="sub">Praxis Sujata Amend-Sarkar · Diagnostik &amp; Therapie-Assistenz</span></p></div>
-            <div class="st"><span class="lbl yr">2025</span><p><strong>Wissenschaftliche Hilfskraft</strong><br><span class="sub">Testsammlung, Bibliothek Psychologie &amp; Sozialwissenschaften</span></p></div>
-            <div class="st"><span class="lbl yr">2025</span><p><strong>Intensivkurs Forensische Psychiatrie</strong><br><span class="sub">Fachbereich Psychologie, Goethe-Universität</span></p></div>
-          </div>
+      <div class="rv grp">
+        <h3>Förderung <span class="lbl">04</span></h3>
+        <div class="st"><span class="lbl yr">2026</span><p><strong>sdw-Stipendium</strong><br><span class="sub">Studienförderwerk Klaus Murmann · Stiftung der Deutschen Wirtschaft</span></p></div>
+        <div class="st"><span class="lbl yr">2024 · 2026</span><p><strong>Deutschlandstipendium</strong><br><span class="sub">Goethe-Universität Frankfurt · zweimal vergeben</span></p></div>
+        <div class="st"><span class="lbl yr">2025</span><p><strong>e-fellows.net</strong><br><span class="sub">Online-Stipendium &amp; Karrierenetzwerk</span></p></div>
+        <div class="st"><span class="lbl yr">2025/26</span><p><strong>GROW@Goethe</strong><br><span class="sub">Berufliches Mentoring-Programm, Career Service</span></p></div>
+      </div>
 
-          <div class="rv grp">
-            <h3 class="lbl" style="color:var(--ac)">Förderung</h3>
-            <div class="st"><span class="lbl yr">2026</span><p><strong>sdw-Stipendium</strong><br><span class="sub">Studienförderwerk Klaus Murmann · Stiftung der Deutschen Wirtschaft</span></p></div>
-            <div class="st"><span class="lbl yr">2024 · 2026</span><p><strong>Deutschlandstipendium</strong><br><span class="sub">Goethe-Universität Frankfurt · zweimal vergeben</span></p></div>
-            <div class="st"><span class="lbl yr">2025</span><p><strong>e-fellows.net</strong><br><span class="sub">Online-Stipendium &amp; Karrierenetzwerk</span></p></div>
-            <div class="st"><span class="lbl yr">2025/26</span><p><strong>GROW@Goethe</strong><br><span class="sub">Berufliches Mentoring-Programm, Career Service</span></p></div>
-          </div>
-
-          <div class="rv grp">
-            <h3 class="lbl" style="color:var(--ac)">Engagement</h3>
-            <div class="st"><span class="lbl yr">2021–24</span><p><strong>Jugendleiter</strong><br><span class="sub">Ev. Kinder- und Jugendwerk Heidelberg · drei internationale Jugendfreizeiten</span></p></div>
-            <p class="lbl" style="margin-top:22px"><a href="Lebenslauf.dc.html" class="nav-a" style="opacity:1;color:var(--ac)">Vollständiger Lebenslauf →</a></p>
-          </div>
-
-        </div>
+      <div class="rv grp">
+        <h3>Engagement <span class="lbl">01</span></h3>
+        <div class="st"><span class="lbl yr">2021–24</span><p><strong>Jugendleiter</strong><br><span class="sub">Ev. Kinder- und Jugendwerk Heidelberg · drei internationale Jugendfreizeiten</span></p></div>
+        <p class="lbl" style="margin-top:22px"><a href="Lebenslauf.dc.html" class="nav-a" style="opacity:1;color:var(--ac)">Vollständiger Lebenslauf →</a></p>
       </div>
     </div>
   </section>
@@ -362,12 +493,12 @@
   <!-- FOOTER NAV -->
   </main>
 
-  <footer style="padding:clamp(40px,7vw,90px) clamp(18px,5vw,60px) clamp(34px,5vw,56px);border-top:1px solid var(--line)">
-    <p class="rv lbl" style="color:var(--faint);margin-bottom:24px">Weiter im Archiv</p>
-    <div class="rv" style="display:flex;gap:28px;flex-wrap:wrap;font-style:italic;font-size:clamp(1.3rem,2.4vw,2rem)">
-      <a href="Projekte.dc.html" class="nav-a" style="opacity:1">Projekte →</a>
-      <a href="Kunst-Musik.dc.html" class="nav-a" style="opacity:1">Kunst →</a>
-      <a href="index.html" class="nav-a" style="opacity:1">Zurück zum Index →</a>
+  <footer class="wrap" style="padding-top:clamp(20px,4vw,50px);padding-bottom:clamp(34px,5vw,56px)">
+    <p class="rv lbl" style="color:var(--faint);margin-bottom:clamp(20px,3vw,34px)">Weiter im Archiv</p>
+    <div class="rv fl-big">
+      <a href="Projekte.dc.html">Projekte <span>→</span></a>
+      <a href="Kunst-Musik.dc.html">Kunst &amp; Musik <span>→</span></a>
+      <a href="index.html">Zurück zum Index <span>→</span></a>
     </div>
   </footer>
 
@@ -378,8 +509,15 @@ class Component extends DCLogic {
   applyTheme(){ const r=this.rootEl; if(!r) return; r.style.setProperty('--ac', this.props.accent || '#2A5FD9'); }
   componentDidMount(){
     this.applyTheme();
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.classList.add('ready')));
     const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
     document.querySelectorAll('.rv').forEach((el)=>{const s=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));el.style.transitionDelay=(Math.max(0,s.indexOf(el))%4)*0.08+'s';io.observe(el);});
+    const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,to=parseFloat(el.dataset.count),dec=+el.dataset.dec||0,pre=el.dataset.pre||'',suf=el.dataset.suf||'',t0=performance.now(),d=1700;const step=(t)=>{const p=Math.min(1,(t-t0)/d),v=to*(1-Math.pow(1-p,4));el.textContent=pre+v.toFixed(dec).replace('.',',')+suf;if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);});},{threshold:0.6});
+    if(!reduce)document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+    const prog=document.querySelector('.prog'),par=document.querySelector('[data-par]');let tick=false;
+    const upd=()=>{tick=false;const h=document.documentElement,m=h.scrollHeight-h.clientHeight;if(prog)prog.style.transform='scaleX('+(m>0?h.scrollTop/m:0)+')';if(par&&!reduce){const r=par.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){const c=(r.top+r.height/2-innerHeight/2)/innerHeight;par.style.transform='translate3d(0,'+(c*-70).toFixed(1)+'px,0) scale(1.14)';}}};
+    addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});addEventListener('resize',upd);upd();
   }
   componentDidUpdate(){ this.applyTheme(); }
   renderVals(){ return { rootRef:(el)=>{this.rootEl=el;} }; }
