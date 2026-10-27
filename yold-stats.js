@@ -6,11 +6,11 @@
  *   <span data-yold="tandems">50</span>+ Tandems
  * Der Text im HTML ist der Fallback (ohne JS, offline, Fehler). Sobald die
  * Abfrage antwortet, wird er durch den aktuellen, auf Zehner abgerundeten
- * Wert ersetzt. Das "+" bzw. "mehr als"/"ueber" steht ausserhalb.
+ * Wert (fertig berechnet von der Datenbank) ersetzt. Das "+" bzw. "mehr als"/"ueber" steht ausserhalb.
  *
  * Die Startseite liest dieselben Werte ueber window.yoldStats (Promise).
- * RPC und Offsets sind dieselben wie auf yold.info (js/script.js), damit
- * beide Seiten immer dieselbe Zahl zeigen.
+ * Aufschlag und Rundung stehen nur in der RPC get_yold_stats – yold.info und
+ * yoldconnect.de lesen dasselbe Feld, damit alle Seiten dieselbe Zahl zeigen.
  */
 (function () {
   "use strict";
@@ -18,13 +18,9 @@
   var URL = "https://kcdobqicmdklyudjbzxj.supabase.co/rest/v1/rpc/get_yold_stats";
   /* Publishable Key – fuer den Browser gedacht, nur Lesezugriff auf die RPC. */
   var KEY = "sb_publishable_yyO8UDikrv-fb3GUlovUUw_6sng6_l5";
-  /* Aufschlag fuer Anmeldungen aus der Pilotrunde vor der Plattform. Tandems:
-     der Altbestand wird seit 10/2026 in der Datenbank mitgezaehlt (historical_matches).
-     Frueher: Aufschlag fuer Anmeldungen und Tandems, die nicht in der Datenbank stehen
-     (z.B. aus der Zeit vor der Plattform). */
-  var OFFSETS = { anmeldungen: 20, tandems: 0 };
-
-  function abrunden(n) { return Math.floor(n / 10) * 10; }
+  /* Aufschlag und Rundung rechnet ausschliesslich die Datenbankfunktion
+     get_yold_stats (Feld "anzeige"). yold.info und yoldconnect.de lesen
+     denselben Wert – hier wird nichts nachgerechnet. */
 
   var werte = null;
 
@@ -35,11 +31,9 @@
   })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (data) {
-      if (!data || typeof data.anmeldungen !== "number" || typeof data.tandems !== "number") return null;
-      werte = {
-        anmeldungen: abrunden(data.anmeldungen + OFFSETS.anmeldungen),
-        tandems: abrunden(data.tandems + OFFSETS.tandems)
-      };
+      var a = data && data.anzeige;
+      if (!a || typeof a.anmeldungen !== "number" || typeof a.tandems !== "number") return null;
+      werte = { anmeldungen: a.anmeldungen, tandems: a.tandems };
       einsetzen();
       return werte;
     })
